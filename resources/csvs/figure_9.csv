@@ -1,0 +1,461 @@
+location,code,groupname,quantity,description,material
+parc-des-pierrettes,G1,food and drink,0,Six pack rings,Plastic
+parc-des-pierrettes,G10,food and drink,1,Food containers single use foamed or plastic,Plastic
+parc-des-pierrettes,G100,waste water,66,Medical; containers/tubes/ packaging,Plastic
+parc-des-pierrettes,G101,personal items,0,Dog feces bag,Plastic
+parc-des-pierrettes,G102,personal items,0,Flip-flops,Plastic
+parc-des-pierrettes,G103,micro plastics (< 5mm),0,Plastic fragments rounded <5mm,Plastic
+parc-des-pierrettes,G104,micro plastics (< 5mm),0,Plastic fragments subrounded <5mm,Plastic
+parc-des-pierrettes,G105,micro plastics (< 5mm),0,Plastic fragments subangular <5mm,Plastic
+parc-des-pierrettes,G106,micro plastics (< 5mm),1,Plastic fragments angular <5mm,Plastic
+parc-des-pierrettes,G107,micro plastics (< 5mm),0,Cylindrical pellets < 5mm,Plastic
+parc-des-pierrettes,G108,micro plastics (< 5mm),0,disk pellets  <5mm,Plastic
+parc-des-pierrettes,G109,micro plastics (< 5mm),0,Flat pellets  <5mm,Plastic
+parc-des-pierrettes,G11,recreation,0,"Cosmetics for the beach, e.g. sunblock",Plastic
+parc-des-pierrettes,G111,micro plastics (< 5mm),0,Spheruloid pellets < 5mm,Plastic
+parc-des-pierrettes,G112,micro plastics (< 5mm),11,Industrial pellets (nurdles),Plastic
+parc-des-pierrettes,G113,micro plastics (< 5mm),0,Filaments  <5mm,Plastic
+parc-des-pierrettes,G114,micro plastics (< 5mm),0,Films  <5mm,Plastic
+parc-des-pierrettes,G115,micro plastics (< 5mm),0,Foamed  plastic <5mm,Plastic
+parc-des-pierrettes,G116,micro plastics (< 5mm),0,Granules <5mm,Plastic
+parc-des-pierrettes,G117,micro plastics (< 5mm),1,Styrofoam < 5mm,Plastic
+parc-des-pierrettes,G118,micro plastics (< 5mm),3,Small industrial spheres <5mm,Plastic
+parc-des-pierrettes,G119,micro plastics (< 5mm),0,Sheetlike user plastic (>1mm),Plastic
+parc-des-pierrettes,G12,personal items,0,"Cosmetics, non-beach use personal care containers",Plastic
+parc-des-pierrettes,G122,micro plastics (< 5mm),0,Plastic fragments ( >1mm),Plastic
+parc-des-pierrettes,G123,micro plastics (< 5mm),0,Polyurethane granules < 5mm,Plastic
+parc-des-pierrettes,G124,unclassified,0,Other plastic or foam products,Plastic
+parc-des-pierrettes,G125,recreation,3,Balloons and balloon sticks,Rubber
+parc-des-pierrettes,G126,recreation,0,Balls,Rubber
+parc-des-pierrettes,G128,unclassified,2,Tires and belts,Rubber
+parc-des-pierrettes,G129,unclassified,0,Inner tubes and rubber sheets,Rubber
+parc-des-pierrettes,G13,agriculture,0,"Bottles, containers, drums to transport, store material",Plastic
+parc-des-pierrettes,G131,personal items,0,Rubber bands,Rubber
+parc-des-pierrettes,G132,recreation,0,Bobbers (fishing),Rubber
+parc-des-pierrettes,G133,waste water,0,Condoms incl. packaging,Rubber
+parc-des-pierrettes,G134,unclassified,0,Other rubber,Rubber
+parc-des-pierrettes,G135,personal items,0,"Clothes, footware, headware, gloves",Cloth
+parc-des-pierrettes,G136,personal items,0,Shoes,Cloth
+parc-des-pierrettes,G137,personal items,8,"Clothing, towels & rags",Cloth
+parc-des-pierrettes,G138,personal items,0,Shoes and sandals,Cloth
+parc-des-pierrettes,G139,personal items,0,Backpacks,Cloth
+parc-des-pierrettes,G14,unclassified,0,Engine oil bottles,Plastic
+parc-des-pierrettes,G140,agriculture,0,"Bags, burlap, hessian, jute or hemp",Cloth
+parc-des-pierrettes,G141,unclassified,0,Carpet,Cloth
+parc-des-pierrettes,G142,recreation,3,"Rope , string or nets",Cloth
+parc-des-pierrettes,G143,recreation,0,Sails and canvas,Cloth
+parc-des-pierrettes,G144,waste water,0,Tampons,Cloth
+parc-des-pierrettes,G145,personal items,4,Other textiles,Cloth
+parc-des-pierrettes,G146,packaging non food,0,"Paper, cardboard",Paper
+parc-des-pierrettes,G147,packaging non food,0,Paper bags,Paper
+parc-des-pierrettes,G148,packaging non food,0,Cardboard (boxes and fragments),Paper
+parc-des-pierrettes,G149,packaging non food,0,Paper packaging,Paper
+parc-des-pierrettes,G150,food and drink,0,"Milk cartons, tetrapack",Paper
+parc-des-pierrettes,G151,food and drink,0,"Cartons, Tetrapacks",Paper
+parc-des-pierrettes,G152,tobacco,1,"Cigarette boxes, tobacco related paper/cardboard",Paper
+parc-des-pierrettes,G153,food and drink,3,"Cups, food containers, wrappers (paper)",Paper
+parc-des-pierrettes,G154,personal items,0,Newspapers or magazines,Paper
+parc-des-pierrettes,G155,recreation,0,Fireworks paper tubes and fragments,Paper
+parc-des-pierrettes,G156,packaging non food,15,Paper fragments,Paper
+parc-des-pierrettes,G157,packaging non food,0,Paper,Paper
+parc-des-pierrettes,G158,packaging non food,0,Other paper items,Paper
+parc-des-pierrettes,G159,food and drink,2,Corks,Wood
+parc-des-pierrettes,G160,infrastructure,0,Pallets,Wood
+parc-des-pierrettes,G161,agriculture,0,Processed timber,Wood
+parc-des-pierrettes,G162,infrastructure,0,Crates,Wood
+parc-des-pierrettes,G165,food and drink,1,"Ice cream sticks, toothpicks, chopsticks",Wood
+parc-des-pierrettes,G166,infrastructure,0,Paint brushes,Wood
+parc-des-pierrettes,G167,recreation,0,Matches or fireworks,Wood
+parc-des-pierrettes,G168,agriculture,0,Wood boards,Wood
+parc-des-pierrettes,G17,infrastructure,0,Injection gun cartridge,Plastic
+parc-des-pierrettes,G170,agriculture,0,Wood (processed),Wood
+parc-des-pierrettes,G171,agriculture,0,Other wood < 50cm,Wood
+parc-des-pierrettes,G172,agriculture,0,Other wood > 50cm,Wood
+parc-des-pierrettes,G173,unclassified,0,Other,Wood
+parc-des-pierrettes,G174,infrastructure,0,Aerosol spray cans,Metal
+parc-des-pierrettes,G175,food and drink,1,"Cans, beverage",Metal
+parc-des-pierrettes,G176,food and drink,0,"Cans, food",Metal
+parc-des-pierrettes,G177,food and drink,20,"Foil wrappers, aluminum foil",Metal
+parc-des-pierrettes,G178,food and drink,1,"Metal bottle caps, lids & pull tabs from cans",Metal
+parc-des-pierrettes,G179,food and drink,0,Disposable BBQs,Metal
+parc-des-pierrettes,G180,unclassified,0,Appliances,Metal
+parc-des-pierrettes,G181,food and drink,0,"Tableware metal;  cups, cutlery etc.",Metal
+parc-des-pierrettes,G182,recreation,0,"Fishing; hooks, weights, lures, sinkers etc.",Metal
+parc-des-pierrettes,G183,recreation,0,Fish hook remains,Metal
+parc-des-pierrettes,G185,unclassified,0,Middle size containers,Metal
+parc-des-pierrettes,G186,infrastructure,0,Industrial scrap,Metal
+parc-des-pierrettes,G188,infrastructure,0,Other cans < 4 L,Metal
+parc-des-pierrettes,G19,unclassified,0,Car parts,Plastic
+parc-des-pierrettes,G190,infrastructure,0,Paint cans,Metal
+parc-des-pierrettes,G191,agriculture,0,Wire and mesh,Metal
+parc-des-pierrettes,G193,unclassified,0,car parts and batteries,Metal
+parc-des-pierrettes,G194,infrastructure,0,"Cables, metal wire(s) often inside rubber or plastic tubes",Metal
+parc-des-pierrettes,G195,personal items,0,Batteries - household,Metal
+parc-des-pierrettes,G196,unclassified,0,Large metallic objects,Metal
+parc-des-pierrettes,G197,infrastructure,0,Other metal,Metal
+parc-des-pierrettes,G198,infrastructure,1,Other metal pieces < 50cm,Metal
+parc-des-pierrettes,G199,infrastructure,0,Other metal pieces > 50cm,Metal
+parc-des-pierrettes,G2,packaging non food,0,Bags,Plastic
+parc-des-pierrettes,G20,packaging non food,0,Caps and lids,Plastic
+parc-des-pierrettes,G200,food and drink,80,"Glass drink bottles, pieces",Glass
+parc-des-pierrettes,G201,food and drink,0,"Jars, includes pieces",Glass
+parc-des-pierrettes,G202,unclassified,0,Light bulbs,Glass
+parc-des-pierrettes,G203,food and drink,3,"Tableware ceramic or glass, cups, plates, pieces",Glass
+parc-des-pierrettes,G204,infrastructure,15,"Construction material; bricks, pipes, cement",Glass
+parc-des-pierrettes,G205,unclassified,0,Fluorescent light tubes,Glass
+parc-des-pierrettes,G207,unclassified,0,Octopus pots,Glass
+parc-des-pierrettes,G208,unclassified,0,Glass or ceramic fragments > 2.5 cm,Glass
+parc-des-pierrettes,G21,food and drink,7,Drink lids,Plastic
+parc-des-pierrettes,G210,unclassified,0,Other glass/ceramic,Glass
+parc-des-pierrettes,G211,personal items,6,"Other medical (swabs, bandaging, adhesive plaster)",Plastic
+parc-des-pierrettes,G213,recreation,0,Paraffin wax,Chemicals
+parc-des-pierrettes,G214,infrastructure,0,Oil/tar,Chemicals
+parc-des-pierrettes,G22,infrastructure,1,"Lids for chemicals, detergents (non-food)",Plastic
+parc-des-pierrettes,G23,packaging non food,14,Lids unidentified,Plastic
+parc-des-pierrettes,G24,food and drink,6,Lid/cap rings from plastic bottles/containers,Plastic
+parc-des-pierrettes,G25,tobacco,33,"Tobacco; plastic packaging, containers",Plastic
+parc-des-pierrettes,G26,tobacco,2,Cigarette lighters,Plastic
+parc-des-pierrettes,G27,tobacco,169,Cigarette filters,Plastic
+parc-des-pierrettes,G28,personal items,1,"Pens, lids, mechanical pencils etc.",Plastic
+parc-des-pierrettes,G29,personal items,0,"Combs, brushes and sunglasses",Plastic
+parc-des-pierrettes,G3,packaging non food,0,Bags; plastic shopping/carrier/grocery and pieces,Plastic
+parc-des-pierrettes,G30,food and drink,86,"Food wrappers; candy, snacks",Plastic
+parc-des-pierrettes,G31,food and drink,10,Lollypop sticks,Plastic
+parc-des-pierrettes,G32,recreation,10,Toys and party favors,Plastic
+parc-des-pierrettes,G33,food and drink,5,"Cups, lids, single use foamed and hard plastic",Plastic
+parc-des-pierrettes,G34,food and drink,1,"Cutlery, plates and trays",Plastic
+parc-des-pierrettes,G35,food and drink,2,Straws and stirrers,Plastic
+parc-des-pierrettes,G36,agriculture,0,"Bags/sacks heavy duty plastic for 25 Kg or more; animal feed, fertilizers, garden trash etc.",Plastic
+parc-des-pierrettes,G37,personal items,0,Mesh bags,Plastic
+parc-des-pierrettes,G38,unclassified,0,"Coverings; plastic packaging, sheeting for protecting large cargo items",Plastic
+parc-des-pierrettes,G39,personal items,0,Gloves,Plastic
+parc-des-pierrettes,G4,packaging non food,14,"Small plastic bags; freezer, zip-lock etc.",Plastic
+parc-des-pierrettes,G40,personal items,0,Gloves household/gardening,Plastic
+parc-des-pierrettes,G41,agriculture,0,Glove industrial/professional,Plastic
+parc-des-pierrettes,G43,recreation,0,"Tags fishing or industry (security tags, seals)",Plastic
+parc-des-pierrettes,G48,recreation,0,"Rope, synthetic",Plastic
+parc-des-pierrettes,G49,recreation,0,Rope > 1cm,Plastic
+parc-des-pierrettes,G5,packaging non food,0,Generic plastic bags,Plastic
+parc-des-pierrettes,G50,recreation,1,String < 1cm,Plastic
+parc-des-pierrettes,G51,recreation,0,Fishing net,Plastic
+parc-des-pierrettes,G52,recreation,0,Nets and pieces,Plastic
+parc-des-pierrettes,G53,recreation,0,Nets and pieces < 50cm,Plastic
+parc-des-pierrettes,G55,recreation,0,Fishing line (entangled),Plastic
+parc-des-pierrettes,G56,recreation,0,Tangled nets,Plastic
+parc-des-pierrettes,G59,recreation,1,Fishing line monofilament (angling),Plastic
+parc-des-pierrettes,G6,packaging non food,0,"Bottles and containers, plastic non food/drink",Plastic
+parc-des-pierrettes,G60,recreation,0,Light sticks,Plastic
+parc-des-pierrettes,G61,recreation,0,Other fishing related,Plastic
+parc-des-pierrettes,G62,unclassified,0,Floats for nets,Plastic
+parc-des-pierrettes,G63,recreation,0,Buoys,Plastic
+parc-des-pierrettes,G64,unclassified,0,Fenders,Plastic
+parc-des-pierrettes,G65,agriculture,0,Buckets,Plastic
+parc-des-pierrettes,G66,infrastructure,5,"Straps/bands;  hard, plastic package fastener",Plastic
+parc-des-pierrettes,G67,agriculture,19,Industrial sheeting,Plastic
+parc-des-pierrettes,G68,infrastructure,0,Fiberglass fragments,Plastic
+parc-des-pierrettes,G7,food and drink,5,Drink bottles < = 0.5L,Plastic
+parc-des-pierrettes,G70,recreation,4,Shotgun cartridges,Plastic
+parc-des-pierrettes,G702,infrastructure,0,piquet de ballisage,Wood
+parc-des-pierrettes,G703,infrastructure,0,piquet de ballisage,Plastic
+parc-des-pierrettes,G704,infrastructure,0,Brosse de télésiège,Plastic
+parc-des-pierrettes,G705,infrastructure,0,Screws and bolts,Metal
+parc-des-pierrettes,G706,recreation,0,Abonnement de ski,Plastic
+parc-des-pierrettes,G707,recreation,0,étiquette d’équipement de ski,Plastic
+parc-des-pierrettes,G708,recreation,0,Batons de ski,Metal
+parc-des-pierrettes,G709,recreation,0,"Batons de ski parties (rondelles, attaches)",Plastic
+parc-des-pierrettes,G71,personal items,0,Shoes sandals,Plastic
+parc-des-pierrettes,G710,recreation,0,"Ski / Snowboards (ski, fixations et autres pièces)",Plastic
+parc-des-pierrettes,G711,recreation,0,Chaufferette,Plastic
+parc-des-pierrettes,G712,recreation,0,Gants de ski,Cloth
+parc-des-pierrettes,G713,infrastructure,0,Carpet from ski lift,Plastic
+parc-des-pierrettes,G73,recreation,0,Foamed items & pieces (non packaging/insulation) foamed sponge material,Plastic
+parc-des-pierrettes,G74,infrastructure,34,Foam packaging/insulation/polyurethane,Plastic
+parc-des-pierrettes,G8,food and drink,0,Drink bottles  > 0.5L,Plastic
+parc-des-pierrettes,G84,personal items,0,CD or CD box,Plastic
+parc-des-pierrettes,G87,infrastructure,9,"Tape, masking/duct/packing",Plastic
+parc-des-pierrettes,G88,personal items,0,Telephone incl. parts,Plastic
+parc-des-pierrettes,G89,infrastructure,49,Plastic construction waste,Plastic
+parc-des-pierrettes,G9,infrastructure,0,"Cleaner, chemical bottles & containers",Plastic
+parc-des-pierrettes,G90,agriculture,0,Plastic flower pots,Plastic
+parc-des-pierrettes,G900,personal items,0,Gloves latex  personal protective equipment,Rubber
+parc-des-pierrettes,G901,personal items,0,"Mask medical, synthetic",Plastic
+parc-des-pierrettes,G902,personal items,0,"Mask medical, cloth",Cloth
+parc-des-pierrettes,G903,personal items,0,Hand sanitizer containers & packets,Plastic
+parc-des-pierrettes,G904,recreation,3,"Fireworks; rocket caps, exploded parts & packaging",Plastic
+parc-des-pierrettes,G905,personal items,2,"Hair clip,  hair ties, personal accessories plastic",Plastic
+parc-des-pierrettes,G906,food and drink,0,coffee capsules aluminum,Metal
+parc-des-pierrettes,G907,food and drink,0,coffee capsules plastic,Plastic
+parc-des-pierrettes,G908,infrastructure,4,"Tape; electrical, insulating",Plastic
+parc-des-pierrettes,G91,waste water,2,Biomass holder,Plastic
+parc-des-pierrettes,G913,personal items,0,Pacifier,Plastic
+parc-des-pierrettes,G914,personal items,2,"Paperclips, clothespins, plastic utility items",Plastic
+parc-des-pierrettes,G915,personal items,0,"Reflectors, plastic mobility items",Plastic
+parc-des-pierrettes,G916,personal items,0,Pencils and pieces,Wood
+parc-des-pierrettes,G917,unclassified,0,Terracotta balls,Glass
+parc-des-pierrettes,G918,personal items,0,"Safety pins, paper clips, small metal utility items",Metal
+parc-des-pierrettes,G919,infrastructure,0,"Nails, screws, bolts etc.",Metal
+parc-des-pierrettes,G92,recreation,0,Bait containers,Plastic
+parc-des-pierrettes,G921,infrastructure,0,Ceramic tile and pieces,Glass
+parc-des-pierrettes,G922,packaging non food,23,"Labels, bar codes",Plastic
+parc-des-pierrettes,G923,personal items,0,"Tissue, toilet paper, napkins, paper towels",Paper
+parc-des-pierrettes,G925,packaging non food,0,"Packets: desiccant/ moisture absorbers, plastic case filled with silica",Plastic
+parc-des-pierrettes,G926,food and drink,0,"Chewing gum, often contains plastics",Plastic
+parc-des-pierrettes,G927,infrastructure,0,"String trimmer line, used to cut grass, weeds, and shrubbery",Plastic
+parc-des-pierrettes,G928,personal items,0,Ribbons and bows,Plastic
+parc-des-pierrettes,G929,personal items,0,"Electronics and pieces; sensors, headsets etc.",Metal
+parc-des-pierrettes,G93,infrastructure,0,"Cable ties; steggel, zip, zap straps",Plastic
+parc-des-pierrettes,G930,personal items,2,Foam earplugs,Plastic
+parc-des-pierrettes,G931,infrastructure,0,"Tape-caution for barrier, police, construction etc.",Plastic
+parc-des-pierrettes,G932,waste water,0,"Bio-beads, micro plastic for wastewater treatment, irregular shape, ridged sides < 5mm",Plastic
+parc-des-pierrettes,G933,personal items,0,"Bags, cases for accessories; glasses, electronics, incl. straps, pieces, plstc. nylon etc.",Plastic
+parc-des-pierrettes,G934,agriculture,0,"Sandbag, plastic for flood, erosion control etc..",Plastic
+parc-des-pierrettes,G935,personal items,0,"Walking stick pads and pieces, often elastomeric material",Plastic
+parc-des-pierrettes,G936,agriculture,0,Sheeting ag. greenhouse film,Plastic
+parc-des-pierrettes,G937,agriculture,0,Pheromone baits for vineyards,Plastic
+parc-des-pierrettes,G938,food and drink,0,"Toothpicks, dental floss plastic",Plastic
+parc-des-pierrettes,G939,personal items,3,"Flowers, plants plastic",Plastic
+parc-des-pierrettes,G94,recreation,0,Table cloth,Plastic
+parc-des-pierrettes,G940,recreation,0,Foamed EVA (flexible plastic) for crafts & watersports,Plastic
+parc-des-pierrettes,G941,packaging non food,0,Packaging films nonfood or unknown,Plastic
+parc-des-pierrettes,G942,unclassified,0,"Plastic shavings from lathes, CNC machining",Plastic
+parc-des-pierrettes,G943,agriculture,0,"Fencing agriculture, plastic",Plastic
+parc-des-pierrettes,G944,unclassified,0,Pellet mass from injection molding,Plastic
+parc-des-pierrettes,G945,personal items,0,Razor blades,Metal
+parc-des-pierrettes,G95,waste water,80,Cotton bud/swab sticks,Plastic
+parc-des-pierrettes,G96,waste water,13,Sanitary pads /panty liners/tampons and applicators,Plastic
+parc-des-pierrettes,G97,waste water,0,Toilet fresheners,Plastic
+parc-des-pierrettes,G98,waste water,10,Diapers - wipes,Plastic
+parc-des-pierrettes,G99,personal items,3,Syringes - needles,Plastic
+parc-des-pierrettes,G999,unclassified,0,No objects found on this survey,Unidentified
+parc-des-pierrettes,Gfoam,infrastructure,333,Expanded polystyrene,Plastic
+parc-des-pierrettes,Gfrags,plastic pieces,195,Fragmented plastics,Plastic
+plage-de-st-sulpice,G1,food and drink,0,Six pack rings,Plastic
+plage-de-st-sulpice,G10,food and drink,12,Food containers single use foamed or plastic,Plastic
+plage-de-st-sulpice,G100,waste water,57,Medical; containers/tubes/ packaging,Plastic
+plage-de-st-sulpice,G101,personal items,0,Dog feces bag,Plastic
+plage-de-st-sulpice,G102,personal items,0,Flip-flops,Plastic
+plage-de-st-sulpice,G103,micro plastics (< 5mm),0,Plastic fragments rounded <5mm,Plastic
+plage-de-st-sulpice,G104,micro plastics (< 5mm),0,Plastic fragments subrounded <5mm,Plastic
+plage-de-st-sulpice,G105,micro plastics (< 5mm),0,Plastic fragments subangular <5mm,Plastic
+plage-de-st-sulpice,G106,micro plastics (< 5mm),0,Plastic fragments angular <5mm,Plastic
+plage-de-st-sulpice,G107,micro plastics (< 5mm),0,Cylindrical pellets < 5mm,Plastic
+plage-de-st-sulpice,G108,micro plastics (< 5mm),0,disk pellets  <5mm,Plastic
+plage-de-st-sulpice,G109,micro plastics (< 5mm),0,Flat pellets  <5mm,Plastic
+plage-de-st-sulpice,G11,recreation,0,"Cosmetics for the beach, e.g. sunblock",Plastic
+plage-de-st-sulpice,G111,micro plastics (< 5mm),0,Spheruloid pellets < 5mm,Plastic
+plage-de-st-sulpice,G112,micro plastics (< 5mm),1,Industrial pellets (nurdles),Plastic
+plage-de-st-sulpice,G113,micro plastics (< 5mm),0,Filaments  <5mm,Plastic
+plage-de-st-sulpice,G114,micro plastics (< 5mm),0,Films  <5mm,Plastic
+plage-de-st-sulpice,G115,micro plastics (< 5mm),0,Foamed  plastic <5mm,Plastic
+plage-de-st-sulpice,G116,micro plastics (< 5mm),0,Granules <5mm,Plastic
+plage-de-st-sulpice,G117,micro plastics (< 5mm),0,Styrofoam < 5mm,Plastic
+plage-de-st-sulpice,G118,micro plastics (< 5mm),1,Small industrial spheres <5mm,Plastic
+plage-de-st-sulpice,G119,micro plastics (< 5mm),0,Sheetlike user plastic (>1mm),Plastic
+plage-de-st-sulpice,G12,personal items,0,"Cosmetics, non-beach use personal care containers",Plastic
+plage-de-st-sulpice,G122,micro plastics (< 5mm),0,Plastic fragments ( >1mm),Plastic
+plage-de-st-sulpice,G123,micro plastics (< 5mm),0,Polyurethane granules < 5mm,Plastic
+plage-de-st-sulpice,G124,unclassified,0,Other plastic or foam products,Plastic
+plage-de-st-sulpice,G125,recreation,17,Balloons and balloon sticks,Rubber
+plage-de-st-sulpice,G126,recreation,1,Balls,Rubber
+plage-de-st-sulpice,G128,unclassified,0,Tires and belts,Rubber
+plage-de-st-sulpice,G129,unclassified,1,Inner tubes and rubber sheets,Rubber
+plage-de-st-sulpice,G13,agriculture,0,"Bottles, containers, drums to transport, store material",Plastic
+plage-de-st-sulpice,G131,personal items,10,Rubber bands,Rubber
+plage-de-st-sulpice,G132,recreation,0,Bobbers (fishing),Rubber
+plage-de-st-sulpice,G133,waste water,0,Condoms incl. packaging,Rubber
+plage-de-st-sulpice,G134,unclassified,0,Other rubber,Rubber
+plage-de-st-sulpice,G135,personal items,0,"Clothes, footware, headware, gloves",Cloth
+plage-de-st-sulpice,G136,personal items,0,Shoes,Cloth
+plage-de-st-sulpice,G137,personal items,0,"Clothing, towels & rags",Cloth
+plage-de-st-sulpice,G138,personal items,0,Shoes and sandals,Cloth
+plage-de-st-sulpice,G139,personal items,0,Backpacks,Cloth
+plage-de-st-sulpice,G14,unclassified,0,Engine oil bottles,Plastic
+plage-de-st-sulpice,G140,agriculture,0,"Bags, burlap, hessian, jute or hemp",Cloth
+plage-de-st-sulpice,G141,unclassified,0,Carpet,Cloth
+plage-de-st-sulpice,G142,recreation,1,"Rope , string or nets",Cloth
+plage-de-st-sulpice,G143,recreation,0,Sails and canvas,Cloth
+plage-de-st-sulpice,G144,waste water,0,Tampons,Cloth
+plage-de-st-sulpice,G145,personal items,12,Other textiles,Cloth
+plage-de-st-sulpice,G146,packaging non food,0,"Paper, cardboard",Paper
+plage-de-st-sulpice,G147,packaging non food,0,Paper bags,Paper
+plage-de-st-sulpice,G148,packaging non food,0,Cardboard (boxes and fragments),Paper
+plage-de-st-sulpice,G149,packaging non food,0,Paper packaging,Paper
+plage-de-st-sulpice,G150,food and drink,0,"Milk cartons, tetrapack",Paper
+plage-de-st-sulpice,G151,food and drink,0,"Cartons, Tetrapacks",Paper
+plage-de-st-sulpice,G152,tobacco,0,"Cigarette boxes, tobacco related paper/cardboard",Paper
+plage-de-st-sulpice,G153,food and drink,0,"Cups, food containers, wrappers (paper)",Paper
+plage-de-st-sulpice,G154,personal items,0,Newspapers or magazines,Paper
+plage-de-st-sulpice,G155,recreation,0,Fireworks paper tubes and fragments,Paper
+plage-de-st-sulpice,G156,packaging non food,15,Paper fragments,Paper
+plage-de-st-sulpice,G157,packaging non food,0,Paper,Paper
+plage-de-st-sulpice,G158,packaging non food,0,Other paper items,Paper
+plage-de-st-sulpice,G159,food and drink,0,Corks,Wood
+plage-de-st-sulpice,G160,infrastructure,0,Pallets,Wood
+plage-de-st-sulpice,G161,agriculture,7,Processed timber,Wood
+plage-de-st-sulpice,G162,infrastructure,0,Crates,Wood
+plage-de-st-sulpice,G165,food and drink,5,"Ice cream sticks, toothpicks, chopsticks",Wood
+plage-de-st-sulpice,G166,infrastructure,0,Paint brushes,Wood
+plage-de-st-sulpice,G167,recreation,0,Matches or fireworks,Wood
+plage-de-st-sulpice,G168,agriculture,0,Wood boards,Wood
+plage-de-st-sulpice,G17,infrastructure,0,Injection gun cartridge,Plastic
+plage-de-st-sulpice,G170,agriculture,0,Wood (processed),Wood
+plage-de-st-sulpice,G171,agriculture,0,Other wood < 50cm,Wood
+plage-de-st-sulpice,G172,agriculture,1,Other wood > 50cm,Wood
+plage-de-st-sulpice,G173,unclassified,0,Other,Wood
+plage-de-st-sulpice,G174,infrastructure,0,Aerosol spray cans,Metal
+plage-de-st-sulpice,G175,food and drink,14,"Cans, beverage",Metal
+plage-de-st-sulpice,G176,food and drink,0,"Cans, food",Metal
+plage-de-st-sulpice,G177,food and drink,35,"Foil wrappers, aluminum foil",Metal
+plage-de-st-sulpice,G178,food and drink,36,"Metal bottle caps, lids & pull tabs from cans",Metal
+plage-de-st-sulpice,G179,food and drink,0,Disposable BBQs,Metal
+plage-de-st-sulpice,G180,unclassified,0,Appliances,Metal
+plage-de-st-sulpice,G181,food and drink,0,"Tableware metal;  cups, cutlery etc.",Metal
+plage-de-st-sulpice,G182,recreation,0,"Fishing; hooks, weights, lures, sinkers etc.",Metal
+plage-de-st-sulpice,G183,recreation,0,Fish hook remains,Metal
+plage-de-st-sulpice,G185,unclassified,0,Middle size containers,Metal
+plage-de-st-sulpice,G186,infrastructure,0,Industrial scrap,Metal
+plage-de-st-sulpice,G188,infrastructure,0,Other cans < 4 L,Metal
+plage-de-st-sulpice,G19,unclassified,0,Car parts,Plastic
+plage-de-st-sulpice,G190,infrastructure,0,Paint cans,Metal
+plage-de-st-sulpice,G191,agriculture,2,Wire and mesh,Metal
+plage-de-st-sulpice,G193,unclassified,0,car parts and batteries,Metal
+plage-de-st-sulpice,G194,infrastructure,0,"Cables, metal wire(s) often inside rubber or plastic tubes",Metal
+plage-de-st-sulpice,G195,personal items,0,Batteries - household,Metal
+plage-de-st-sulpice,G196,unclassified,0,Large metallic objects,Metal
+plage-de-st-sulpice,G197,infrastructure,0,Other metal,Metal
+plage-de-st-sulpice,G198,infrastructure,7,Other metal pieces < 50cm,Metal
+plage-de-st-sulpice,G199,infrastructure,0,Other metal pieces > 50cm,Metal
+plage-de-st-sulpice,G2,packaging non food,0,Bags,Plastic
+plage-de-st-sulpice,G20,packaging non food,0,Caps and lids,Plastic
+plage-de-st-sulpice,G200,food and drink,737,"Glass drink bottles, pieces",Glass
+plage-de-st-sulpice,G201,food and drink,6,"Jars, includes pieces",Glass
+plage-de-st-sulpice,G202,unclassified,0,Light bulbs,Glass
+plage-de-st-sulpice,G203,food and drink,0,"Tableware ceramic or glass, cups, plates, pieces",Glass
+plage-de-st-sulpice,G204,infrastructure,29,"Construction material; bricks, pipes, cement",Glass
+plage-de-st-sulpice,G205,unclassified,0,Fluorescent light tubes,Glass
+plage-de-st-sulpice,G207,unclassified,0,Octopus pots,Glass
+plage-de-st-sulpice,G208,unclassified,0,Glass or ceramic fragments > 2.5 cm,Glass
+plage-de-st-sulpice,G21,food and drink,20,Drink lids,Plastic
+plage-de-st-sulpice,G210,unclassified,0,Other glass/ceramic,Glass
+plage-de-st-sulpice,G211,personal items,22,"Other medical (swabs, bandaging, adhesive plaster)",Plastic
+plage-de-st-sulpice,G213,recreation,0,Paraffin wax,Chemicals
+plage-de-st-sulpice,G214,infrastructure,0,Oil/tar,Chemicals
+plage-de-st-sulpice,G22,infrastructure,28,"Lids for chemicals, detergents (non-food)",Plastic
+plage-de-st-sulpice,G23,packaging non food,48,Lids unidentified,Plastic
+plage-de-st-sulpice,G24,food and drink,14,Lid/cap rings from plastic bottles/containers,Plastic
+plage-de-st-sulpice,G25,tobacco,15,"Tobacco; plastic packaging, containers",Plastic
+plage-de-st-sulpice,G26,tobacco,0,Cigarette lighters,Plastic
+plage-de-st-sulpice,G27,tobacco,341,Cigarette filters,Plastic
+plage-de-st-sulpice,G28,personal items,7,"Pens, lids, mechanical pencils etc.",Plastic
+plage-de-st-sulpice,G29,personal items,0,"Combs, brushes and sunglasses",Plastic
+plage-de-st-sulpice,G3,packaging non food,0,Bags; plastic shopping/carrier/grocery and pieces,Plastic
+plage-de-st-sulpice,G30,food and drink,279,"Food wrappers; candy, snacks",Plastic
+plage-de-st-sulpice,G31,food and drink,23,Lollypop sticks,Plastic
+plage-de-st-sulpice,G32,recreation,31,Toys and party favors,Plastic
+plage-de-st-sulpice,G33,food and drink,7,"Cups, lids, single use foamed and hard plastic",Plastic
+plage-de-st-sulpice,G34,food and drink,15,"Cutlery, plates and trays",Plastic
+plage-de-st-sulpice,G35,food and drink,20,Straws and stirrers,Plastic
+plage-de-st-sulpice,G36,agriculture,0,"Bags/sacks heavy duty plastic for 25 Kg or more; animal feed, fertilizers, garden trash etc.",Plastic
+plage-de-st-sulpice,G37,personal items,0,Mesh bags,Plastic
+plage-de-st-sulpice,G38,unclassified,2,"Coverings; plastic packaging, sheeting for protecting large cargo items",Plastic
+plage-de-st-sulpice,G39,personal items,0,Gloves,Plastic
+plage-de-st-sulpice,G4,packaging non food,0,"Small plastic bags; freezer, zip-lock etc.",Plastic
+plage-de-st-sulpice,G40,personal items,0,Gloves household/gardening,Plastic
+plage-de-st-sulpice,G41,agriculture,0,Glove industrial/professional,Plastic
+plage-de-st-sulpice,G43,recreation,0,"Tags fishing or industry (security tags, seals)",Plastic
+plage-de-st-sulpice,G48,recreation,0,"Rope, synthetic",Plastic
+plage-de-st-sulpice,G49,recreation,0,Rope > 1cm,Plastic
+plage-de-st-sulpice,G5,packaging non food,6,Generic plastic bags,Plastic
+plage-de-st-sulpice,G50,recreation,7,String < 1cm,Plastic
+plage-de-st-sulpice,G51,recreation,0,Fishing net,Plastic
+plage-de-st-sulpice,G52,recreation,0,Nets and pieces,Plastic
+plage-de-st-sulpice,G53,recreation,0,Nets and pieces < 50cm,Plastic
+plage-de-st-sulpice,G55,recreation,0,Fishing line (entangled),Plastic
+plage-de-st-sulpice,G56,recreation,0,Tangled nets,Plastic
+plage-de-st-sulpice,G59,recreation,1,Fishing line monofilament (angling),Plastic
+plage-de-st-sulpice,G6,packaging non food,1,"Bottles and containers, plastic non food/drink",Plastic
+plage-de-st-sulpice,G60,recreation,0,Light sticks,Plastic
+plage-de-st-sulpice,G61,recreation,0,Other fishing related,Plastic
+plage-de-st-sulpice,G62,unclassified,0,Floats for nets,Plastic
+plage-de-st-sulpice,G63,recreation,0,Buoys,Plastic
+plage-de-st-sulpice,G64,unclassified,0,Fenders,Plastic
+plage-de-st-sulpice,G65,agriculture,0,Buckets,Plastic
+plage-de-st-sulpice,G66,infrastructure,48,"Straps/bands;  hard, plastic package fastener",Plastic
+plage-de-st-sulpice,G67,agriculture,65,Industrial sheeting,Plastic
+plage-de-st-sulpice,G68,infrastructure,0,Fiberglass fragments,Plastic
+plage-de-st-sulpice,G7,food and drink,1,Drink bottles < = 0.5L,Plastic
+plage-de-st-sulpice,G70,recreation,16,Shotgun cartridges,Plastic
+plage-de-st-sulpice,G702,infrastructure,0,piquet de ballisage,Wood
+plage-de-st-sulpice,G703,infrastructure,0,piquet de ballisage,Plastic
+plage-de-st-sulpice,G704,infrastructure,0,Brosse de télésiège,Plastic
+plage-de-st-sulpice,G705,infrastructure,0,Screws and bolts,Metal
+plage-de-st-sulpice,G706,recreation,0,Abonnement de ski,Plastic
+plage-de-st-sulpice,G707,recreation,0,étiquette d’équipement de ski,Plastic
+plage-de-st-sulpice,G708,recreation,0,Batons de ski,Metal
+plage-de-st-sulpice,G709,recreation,0,"Batons de ski parties (rondelles, attaches)",Plastic
+plage-de-st-sulpice,G71,personal items,0,Shoes sandals,Plastic
+plage-de-st-sulpice,G710,recreation,0,"Ski / Snowboards (ski, fixations et autres pièces)",Plastic
+plage-de-st-sulpice,G711,recreation,0,Chaufferette,Plastic
+plage-de-st-sulpice,G712,recreation,0,Gants de ski,Cloth
+plage-de-st-sulpice,G713,infrastructure,0,Carpet from ski lift,Plastic
+plage-de-st-sulpice,G73,recreation,0,Foamed items & pieces (non packaging/insulation) foamed sponge material,Plastic
+plage-de-st-sulpice,G74,infrastructure,16,Foam packaging/insulation/polyurethane,Plastic
+plage-de-st-sulpice,G8,food and drink,1,Drink bottles  > 0.5L,Plastic
+plage-de-st-sulpice,G84,personal items,0,CD or CD box,Plastic
+plage-de-st-sulpice,G87,infrastructure,59,"Tape, masking/duct/packing",Plastic
+plage-de-st-sulpice,G88,personal items,0,Telephone incl. parts,Plastic
+plage-de-st-sulpice,G89,infrastructure,52,Plastic construction waste,Plastic
+plage-de-st-sulpice,G9,infrastructure,1,"Cleaner, chemical bottles & containers",Plastic
+plage-de-st-sulpice,G90,agriculture,0,Plastic flower pots,Plastic
+plage-de-st-sulpice,G900,personal items,0,Gloves latex  personal protective equipment,Rubber
+plage-de-st-sulpice,G901,personal items,0,"Mask medical, synthetic",Plastic
+plage-de-st-sulpice,G902,personal items,0,"Mask medical, cloth",Cloth
+plage-de-st-sulpice,G903,personal items,0,Hand sanitizer containers & packets,Plastic
+plage-de-st-sulpice,G904,recreation,3,"Fireworks; rocket caps, exploded parts & packaging",Plastic
+plage-de-st-sulpice,G905,personal items,4,"Hair clip,  hair ties, personal accessories plastic",Plastic
+plage-de-st-sulpice,G906,food and drink,0,coffee capsules aluminum,Metal
+plage-de-st-sulpice,G907,food and drink,0,coffee capsules plastic,Plastic
+plage-de-st-sulpice,G908,infrastructure,8,"Tape; electrical, insulating",Plastic
+plage-de-st-sulpice,G91,waste water,8,Biomass holder,Plastic
+plage-de-st-sulpice,G913,personal items,0,Pacifier,Plastic
+plage-de-st-sulpice,G914,personal items,1,"Paperclips, clothespins, plastic utility items",Plastic
+plage-de-st-sulpice,G915,personal items,1,"Reflectors, plastic mobility items",Plastic
+plage-de-st-sulpice,G916,personal items,0,Pencils and pieces,Wood
+plage-de-st-sulpice,G917,unclassified,0,Terracotta balls,Glass
+plage-de-st-sulpice,G918,personal items,0,"Safety pins, paper clips, small metal utility items",Metal
+plage-de-st-sulpice,G919,infrastructure,0,"Nails, screws, bolts etc.",Metal
+plage-de-st-sulpice,G92,recreation,0,Bait containers,Plastic
+plage-de-st-sulpice,G921,infrastructure,0,Ceramic tile and pieces,Glass
+plage-de-st-sulpice,G922,packaging non food,1,"Labels, bar codes",Plastic
+plage-de-st-sulpice,G923,personal items,1,"Tissue, toilet paper, napkins, paper towels",Paper
+plage-de-st-sulpice,G925,packaging non food,0,"Packets: desiccant/ moisture absorbers, plastic case filled with silica",Plastic
+plage-de-st-sulpice,G926,food and drink,0,"Chewing gum, often contains plastics",Plastic
+plage-de-st-sulpice,G927,infrastructure,1,"String trimmer line, used to cut grass, weeds, and shrubbery",Plastic
+plage-de-st-sulpice,G928,personal items,2,Ribbons and bows,Plastic
+plage-de-st-sulpice,G929,personal items,1,"Electronics and pieces; sensors, headsets etc.",Metal
+plage-de-st-sulpice,G93,infrastructure,2,"Cable ties; steggel, zip, zap straps",Plastic
+plage-de-st-sulpice,G930,personal items,1,Foam earplugs,Plastic
+plage-de-st-sulpice,G931,infrastructure,0,"Tape-caution for barrier, police, construction etc.",Plastic
+plage-de-st-sulpice,G932,waste water,0,"Bio-beads, micro plastic for wastewater treatment, irregular shape, ridged sides < 5mm",Plastic
+plage-de-st-sulpice,G933,personal items,0,"Bags, cases for accessories; glasses, electronics, incl. straps, pieces, plstc. nylon etc.",Plastic
+plage-de-st-sulpice,G934,agriculture,0,"Sandbag, plastic for flood, erosion control etc..",Plastic
+plage-de-st-sulpice,G935,personal items,0,"Walking stick pads and pieces, often elastomeric material",Plastic
+plage-de-st-sulpice,G936,agriculture,0,Sheeting ag. greenhouse film,Plastic
+plage-de-st-sulpice,G937,agriculture,0,Pheromone baits for vineyards,Plastic
+plage-de-st-sulpice,G938,food and drink,0,"Toothpicks, dental floss plastic",Plastic
+plage-de-st-sulpice,G939,personal items,0,"Flowers, plants plastic",Plastic
+plage-de-st-sulpice,G94,recreation,0,Table cloth,Plastic
+plage-de-st-sulpice,G940,recreation,0,Foamed EVA (flexible plastic) for crafts & watersports,Plastic
+plage-de-st-sulpice,G941,packaging non food,14,Packaging films nonfood or unknown,Plastic
+plage-de-st-sulpice,G942,unclassified,0,"Plastic shavings from lathes, CNC machining",Plastic
+plage-de-st-sulpice,G943,agriculture,0,"Fencing agriculture, plastic",Plastic
+plage-de-st-sulpice,G944,unclassified,0,Pellet mass from injection molding,Plastic
+plage-de-st-sulpice,G945,personal items,0,Razor blades,Metal
+plage-de-st-sulpice,G95,waste water,252,Cotton bud/swab sticks,Plastic
+plage-de-st-sulpice,G96,waste water,16,Sanitary pads /panty liners/tampons and applicators,Plastic
+plage-de-st-sulpice,G97,waste water,0,Toilet fresheners,Plastic
+plage-de-st-sulpice,G98,waste water,1,Diapers - wipes,Plastic
+plage-de-st-sulpice,G99,personal items,15,Syringes - needles,Plastic
+plage-de-st-sulpice,G999,unclassified,0,No objects found on this survey,Unidentified
+plage-de-st-sulpice,Gfoam,infrastructure,142,Expanded polystyrene,Plastic
+plage-de-st-sulpice,Gfrags,plastic pieces,475,Fragmented plastics,Plastic
