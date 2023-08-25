@@ -312,14 +312,30 @@ document.write(`
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#results-lake-geneva">2.8. Results Lake Geneva</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#results-saint-sulpice">2.9. Results Saint Sulpice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#results-lake-geneva">2.8. Results Lake Geneva</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#previous-and-expected-survey-totals">2.8.1. Previous and expected survey totals</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#previous-and-expected-survey-results-of-objects-of-interest">2.8.2. Previous and expected survey results of objects of interest</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#expected-results-fragmented-plastics">2.8.2.1. Expected results fragmented plastics</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#expected-results-personal-consumption">2.8.2.2. Expected results personal consumption</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-expected-survey-results-lake-geneva">2.8.2.3. Summary of expected survey results Lake Geneva</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#results-saint-sulpice">2.9. Results Saint Sulpice</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2.9.1. Previous and expected survey totals</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">2.9.2. Previous and expected survey results of objects of interest</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">2.9.2.1. Expected results fragmented plastics</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-expected-survey-results-saint-sulpice">2.9.3. Summary of expected survey results Saint Sulpice</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion">2.10. Discussion</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusions">2.11. Conclusions</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#next-steps">2.11.1. Next steps</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#participating-organizations">2.11.2. Participating organizations</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#financial-disclosure">2.11.3. Financial disclosure</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-references-for-empirical-bayes-and-priors">2.11.4. Additional references for Empirical Bayes and priors</a></li>
 </ul>
 </li>
 </ul>
@@ -350,6 +366,7 @@ document.write(`
 <li><p>Common sense guidance:</p>
 <ol class="arabic simple">
 <li><p>The data should be considered as a reasonable estimate of the minimum amount of trash on the ground at the time of the survey.</p></li>
+<li><p>The shoreline is the point where objects abandoned on land enter the water and where objects that are in the water get deposited on the beach.</p></li>
 <li><p>It is necessary to consider the data as a whole. There are many sources of variance. We have treated litter density between sampling groups and the covariance of litter density with topographical features.</p>
 <ol class="arabic simple">
 <li><p>There are differences between the sampling groups.</p></li>
@@ -358,13 +375,15 @@ document.write(`
 <li><p>Surveyors are volunteers and have different levels of experience or physical constraints that limit what will actually be collected and counted.</p></li>
 </ol>
 </li>
-<li><p>If we are using the data to estimate the environmental condition then the response should answer the question: <strong>What and how much are the volunteers likely to find?</strong></p>
-<ol class="arabic simple">
-<li><p><strong>This is the most honest answer that can be derived from the data. How well the counts perform over time is part of what we are discussing here.</strong></p></li>
 </ol>
 </li>
 </ol>
-</li>
+<div class="admonition-if-we-are-using-the-data-to-estimate-the-environmental-condition-then-the-response-should-answer-the-question admonition">
+<p class="admonition-title">If we are using the data to estimate the environmental condition then the response should answer the question:</p>
+<p><strong>What and how much are the volunteers likely to find?</strong></p>
+<p><em>This is the most honest answer that can be derived from the data. How well the counts perform over time is part of what we are discussing here.</em></p>
+</div>
+<ol class="arabic simple" start="2">
 <li><p>Application:</p>
 <ol class="arabic simple">
 <li><p><strong>Environmental assessment:</strong> Where this fits in the environmental assessment process is not clear. For example, when the health of the lake is considered are the findings for litter-data considered alongside bathing water quality? The EU adopted the principle of precaution when the suggested threshold of beach litter was set to 20 pieces of trash for 100 meters <a class="reference external" href="https://mcc.jrc.ec.europa.eu/main/dev.py?N=41&amp;O=454">Beach litter thresholds</a>.</p></li>
@@ -460,16 +479,15 @@ document.write(`
 </div>
 <div class="section" id="test-data-training-data-and-objects-of-interest">
 <h2><span class="section-number">2.6. </span>Test data, training data and objects of interest<a class="headerlink" href="#test-data-training-data-and-objects-of-interest" title="Permalink to this headline">#</a></h2>
-<p><strong>Note! This report does not inculde surveys from the French side of the lake. This is becasue the orginal six years was done using the set of topographical data from Swiss geo admin. To include French locations in this model regional authoritities/experts need to define the appropriate map layers or data sources from France and then a correspondance needs to be established between the two sources.</strong></p>
-<blockquote>
-<div><p>Training data: All the survey records on or before May 31, 2021</p>
-</div></blockquote>
-<blockquote>
-<div><p>Test data: All the survey records after after May 31, 2021</p>
-</div></blockquote>
-<blockquote>
-<div><p>objects of interest: The object(s) for which further information is requested. Identified by the object-code.</p>
-</div></blockquote>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This report does not inculde surveys from the French side of the lake. This is becasue the orginal six years was done using the set of topographical data from Swiss geo admin. To include French locations in this model regional authoritities/experts need to define the appropriate map layers or data sources from France and then a correspondance needs to be established between the two sources.</p>
+</div>
+<ul class="simple">
+<li><p><strong>Training data:</strong> All the survey records on or before May 31, 2021</p></li>
+<li><p><strong>Test data:</strong> All the survey records after after May 31, 2021</p></li>
+<li><p><strong>objects of interest:</strong> The object(s) for which further information is requested. Identified by the object-code.</p></li>
+</ul>
 <p>The test and training data is the set of all data collected in Switzerland using the protocol defined in <em>the guide</em> (<a class="reference external" href="https://publications.jrc.ec.europa.eu/repository/handle/JRC83985">Guidance on Monitoring Marine Litter in European Seas</a>). More specifically: the test and training data are the results of object (trash) counts from individual survey locations over a delimitted length or surface area that is bordered on one side by a lake. <em>The guide</em> suggests a standard length of 100 m of shoreline, this was encouraged but not considered a criteria for exclusion. The minimum recorded survey length of the training data is 5 m, in the test data it is 18 m. The width is measured from the water line to the high-water mark or the physical limits of the beach itself. For the purposes of this study the only minimum length or width for a survey to be valid is that which is imposed by the data itself.</p>
 <div class="section" id="the-training-data">
 <h3><span class="section-number">2.6.1. </span>The training data<a class="headerlink" href="#the-training-data" title="Permalink to this headline">#</a></h3>
@@ -563,27 +581,27 @@ name: objects_of_interest
 </div>
 <table class="colwidths-auto table">
 <thead>
-<tr class="row-odd"><th class="head"><p>Figure 1, Table 1</p></th>
-<th class="head"><p>Table 2, Figure 3</p></th>
+<tr class="row-odd"><th class="text-center head"><p>Figure 1, Table 1</p></th>
+<th class="text-center head"><p>Table 2, Figure 3</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><img alt="_images/49a4920e390fa76f03c2d756b41fccc8ad9a59edf0b9aab5c4c186b37d2cc1a5.png" src="_images/49a4920e390fa76f03c2d756b41fccc8ad9a59edf0b9aab5c4c186b37d2cc1a5.png" /></p></td>
-<td><p><span class="output text_html"><style type="text/css">
-#T_039f5 tr:nth-child(even) {
+<tr class="row-even"><td class="text-center"><p><img alt="_images/49a4920e390fa76f03c2d756b41fccc8ad9a59edf0b9aab5c4c186b37d2cc1a5.png" src="_images/49a4920e390fa76f03c2d756b41fccc8ad9a59edf0b9aab5c4c186b37d2cc1a5.png" /></p></td>
+<td class="text-center"><p><span class="output text_html"><style type="text/css">
+#T_824af tr:nth-child(even) {
   background-color: rgba(139, 69, 19, 0.08);
 }
-#T_039f5 tr:nth-child(odd) {
+#T_824af tr:nth-child(odd) {
   background: #FFF;
 }
-#T_039f5 tr {
+#T_824af tr {
   font-size: 14px;
 }
-#T_039f5 th:nth-child(1) {
+#T_824af th:nth-child(1) {
   background-color: #FFF;
   text-align: right;
 }
-#T_039f5 caption {
+#T_824af caption {
   font-size: 14px;
   font-style: italic;
   caption-side: bottom;
@@ -591,65 +609,65 @@ name: objects_of_interest
   margin-top: 10px;
 }
 </style>
-<table id="T_039f5">
+<table id="T_824af">
   <caption>The observed values from the training and testing data. Remark that the testing data is only 22% of all the data. This is because we are only in the first year of a six year sampling period</caption>
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_039f5_level0_col0" class="col_heading level0 col0" >Training</th>
-      <th id="T_039f5_level0_col1" class="col_heading level0 col1" >Testing</th>
+      <th id="T_824af_level0_col0" class="col_heading level0 col0" >Training</th>
+      <th id="T_824af_level0_col1" class="col_heading level0 col1" >Testing</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_039f5_level0_row0" class="row_heading level0 row0" >weight all samples</th>
-      <td id="T_039f5_row0_col0" class="data row0 col0" >0.78</td>
-      <td id="T_039f5_row0_col1" class="data row0 col1" >0.22</td>
+      <th id="T_824af_level0_row0" class="row_heading level0 row0" >weight all samples</th>
+      <td id="T_824af_row0_col0" class="data row0 col0" >0.78</td>
+      <td id="T_824af_row0_col1" class="data row0 col1" >0.22</td>
     </tr>
     <tr>
-      <th id="T_039f5_level0_row1" class="row_heading level0 row1" >Number of samples</th>
-      <td id="T_039f5_row1_col0" class="data row1 col0" >246</td>
-      <td id="T_039f5_row1_col1" class="data row1 col1" >71</td>
+      <th id="T_824af_level0_row1" class="row_heading level0 row1" >Number of samples</th>
+      <td id="T_824af_row1_col0" class="data row1 col0" >246</td>
+      <td id="T_824af_row1_col1" class="data row1 col1" >71</td>
     </tr>
     <tr>
-      <th id="T_039f5_level0_row2" class="row_heading level0 row2" >Median</th>
-      <td id="T_039f5_row2_col0" class="data row2 col0" >3.70</td>
-      <td id="T_039f5_row2_col1" class="data row2 col1" >2.00</td>
+      <th id="T_824af_level0_row2" class="row_heading level0 row2" >Median</th>
+      <td id="T_824af_row2_col0" class="data row2 col0" >3.70</td>
+      <td id="T_824af_row2_col1" class="data row2 col1" >2.00</td>
     </tr>
     <tr>
-      <th id="T_039f5_level0_row3" class="row_heading level0 row3" >Average</th>
-      <td id="T_039f5_row3_col0" class="data row3 col0" >6.67</td>
-      <td id="T_039f5_row3_col1" class="data row3 col1" >3.03</td>
+      <th id="T_824af_level0_row3" class="row_heading level0 row3" >Average</th>
+      <td id="T_824af_row3_col0" class="data row3 col0" >6.67</td>
+      <td id="T_824af_row3_col1" class="data row3 col1" >3.03</td>
     </tr>
     <tr>
-      <th id="T_039f5_level0_row4" class="row_heading level0 row4" >25th percentile</th>
-      <td id="T_039f5_row4_col0" class="data row4 col0" >1.75</td>
-      <td id="T_039f5_row4_col1" class="data row4 col1" >0.67</td>
+      <th id="T_824af_level0_row4" class="row_heading level0 row4" >25th percentile</th>
+      <td id="T_824af_row4_col0" class="data row4 col0" >1.75</td>
+      <td id="T_824af_row4_col1" class="data row4 col1" >0.67</td>
     </tr>
     <tr>
-      <th id="T_039f5_level0_row5" class="row_heading level0 row5" >75th percentile</th>
-      <td id="T_039f5_row5_col0" class="data row5 col0" >7.47</td>
-      <td id="T_039f5_row5_col1" class="data row5 col1" >3.80</td>
+      <th id="T_824af_level0_row5" class="row_heading level0 row5" >75th percentile</th>
+      <td id="T_824af_row5_col0" class="data row5 col0" >7.47</td>
+      <td id="T_824af_row5_col1" class="data row5 col1" >3.80</td>
     </tr>
   </tbody>
 </table>
 </span></p></td>
 </tr>
-<tr class="row-odd"><td><p><span class="output text_html"><style type="text/css">
-#T_a00c6 tr:nth-child(even) {
+<tr class="row-odd"><td class="text-center"><p><span class="output text_html"><style type="text/css">
+#T_68bcf tr:nth-child(even) {
   background-color: rgba(139, 69, 19, 0.08);
 }
-#T_a00c6 tr:nth-child(odd) {
+#T_68bcf tr:nth-child(odd) {
   background: #FFF;
 }
-#T_a00c6 tr {
+#T_68bcf tr {
   font-size: 14px;
 }
-#T_a00c6 th:nth-child(1) {
+#T_68bcf th:nth-child(1) {
   background-color: #FFF;
   text-align: right;
 }
-#T_a00c6 caption {
+#T_68bcf caption {
   font-size: 14px;
   font-style: italic;
   caption-side: bottom;
@@ -657,35 +675,35 @@ name: objects_of_interest
   margin-top: 10px;
 }
 </style>
-<table id="T_a00c6">
+<table id="T_68bcf">
   <caption>The number of different locations and cities for the data. Note that there are 25 different municipalitites in all.</caption>
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_a00c6_level0_col0" class="col_heading level0 col0" >Training</th>
-      <th id="T_a00c6_level0_col1" class="col_heading level0 col1" >Testing</th>
+      <th id="T_68bcf_level0_col0" class="col_heading level0 col0" >Training</th>
+      <th id="T_68bcf_level0_col1" class="col_heading level0 col1" >Testing</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_a00c6_level0_row0" class="row_heading level0 row0" >Number of cities</th>
-      <td id="T_a00c6_row0_col0" class="data row0 col0" >15</td>
-      <td id="T_a00c6_row0_col1" class="data row0 col1" >18</td>
+      <th id="T_68bcf_level0_row0" class="row_heading level0 row0" >Number of cities</th>
+      <td id="T_68bcf_row0_col0" class="data row0 col0" >15</td>
+      <td id="T_68bcf_row0_col1" class="data row0 col1" >18</td>
     </tr>
     <tr>
-      <th id="T_a00c6_level0_row1" class="row_heading level0 row1" >Number of locations</th>
-      <td id="T_a00c6_row1_col0" class="data row1 col0" >38</td>
-      <td id="T_a00c6_row1_col1" class="data row1 col1" >21</td>
+      <th id="T_68bcf_level0_row1" class="row_heading level0 row1" >Number of locations</th>
+      <td id="T_68bcf_row1_col0" class="data row1 col0" >38</td>
+      <td id="T_68bcf_row1_col1" class="data row1 col1" >21</td>
     </tr>
     <tr>
-      <th id="T_a00c6_level0_row2" class="row_heading level0 row2" >Total objects</th>
-      <td id="T_a00c6_row2_col0" class="data row2 col0" >58,295</td>
-      <td id="T_a00c6_row2_col1" class="data row2 col1" >13,804</td>
+      <th id="T_68bcf_level0_row2" class="row_heading level0 row2" >Total objects</th>
+      <td id="T_68bcf_row2_col0" class="data row2 col0" >58,295</td>
+      <td id="T_68bcf_row2_col1" class="data row2 col1" >13,804</td>
     </tr>
   </tbody>
 </table>
 </span></p></td>
-<td><p><img alt="_images/bdd546630c27e5536317f50ea4060242fa68b2719b674d7240cd1188c707b3a7.png" src="_images/bdd546630c27e5536317f50ea4060242fa68b2719b674d7240cd1188c707b3a7.png" /></p></td>
+<td class="text-center"><p><img alt="_images/bdd546630c27e5536317f50ea4060242fa68b2719b674d7240cd1188c707b3a7.png" src="_images/bdd546630c27e5536317f50ea4060242fa68b2719b674d7240cd1188c707b3a7.png" /></p></td>
 </tr>
 </tbody>
 </table>
@@ -698,12 +716,18 @@ name: objects_of_interest
 <p>The research questions and practical applications are inquiring about expected results at the municipal level. There are records for 25 municipalities on Lake Geneva, some only have one sample in the entire sampling period. The negative binomial distribution was used to model expected survey results at the river bassin and national level <a class="reference external" href="https://www.plagespropres.ch/baselines.html#calculating-baselines">Estimating baselines IQAASL</a>. Here we are abandoning the assumption that the data has a particular shape and solving the binomial portion of the negative binomial distribution at each interval on the set of numbers from 0 - 10, every 0.01.</p>
 <p>We use conditional probability because of the assumptions of our model. In this sense we are following trends from the conservationists and wildlife biologists. Both fields have a rich history of treating observations from the field that originate from citizen science projects and/or difficult field sampling conditions. Beach litter data collection is one such program. (<a class="reference external" href="https://www.fs.usda.gov/psw/publications/documents/psw_gtr191/psw_gtr191_0762-0770_sauer.pdf">summarizing bird counts</a>, <a class="reference external" href="https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.14077">estimating age of survival</a>, <a class="reference external" href="https://hal.science/hal-02637100/">estimating tick abundance</a>). The magnitude of the exchange between the water source and the beach is yet another variable that is for the most part unknown, except that which can be interpreted from the survey data (<a class="reference external" href="https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2021GL097214">Identifying Marine Sources of Beached Plastics</a>). In summary, there are many sources of variance, only one of which is the sampling error.</p>
 <p>The applied method would best be classified as Empirical Bayes, in the sense that the prior is derived from the data (<a class="reference external" href="https://users.aalto.fi/~ssarkka/pub/cup_book_online_20131111.pdf">Bayesian Filtering and Smoothing</a>, <a class="reference external" href="https://link.springer.com/article/10.1007/s40300-014-0044-1">Empirical Bayes methods in classical and Bayesian inference</a>). However, we share the concerns of Davidson-Pillon (<a class="reference external" href="https://dataorigami.net/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers/#contents">Bayesian methods for hackers</a>) about double counting and eliminate it as part of the formulation of the prior. This is possible because of the number of different locations and regions that were sampled durring the sampling period. The basis for this method was originally explored in the Swiss federal report and then again with much more rigor in <a class="reference external" href="https://hammerdirt-analyst.github.io/landuse/titlepage.html">Near or far</a>.</p>
-<p><em>Note: Model types or analytical labels are only important if the context is understood. Empirical Bayes means we are building a probabilistic model that uses existing data to establish those probabilities.</em></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Model types or analytical labels are only important if the context is understood. Empirical Bayes means we are building a probabilistic model that uses existing data to establish those probabilities.</p>
+</div>
 <div class="section" id="grid-approximation">
 <h3><span class="section-number">2.7.1. </span>Grid Approximation<a class="headerlink" href="#grid-approximation" title="Permalink to this headline">#</a></h3>
 <p>Grid approximations are made from a series of point estimates calculated using Bayes theorem. Condtional probability and Bayes theorem makes it possible to measure the magnitude of an unknown parameter as long as the conditions can be quantified. There is no assumption about the underlying relationships between variables except that a realtionship exists. The relationship is defined in the notation: <em>the probability of a given b</em> or <span class="math notranslate nohighlight">\(p(a|b)\)</span>. (<a class="reference external" href="https://www.stat.cmu.edu/~larry/=sml/Bayes.pdf">Statistical Machine Learning</a> <a class="reference external" href="https://en.wikipedia.org/wiki/Bayes%27_theorem">Bayes’ theorem</a>) (<a class="reference external" href="https://en.wikipedia.org/wiki/Conditional_probability">conditional proabability</a>).</p>
 <p>The proposed model only demands whether or not a threshold has been exceeded. This is a binary variable. Therfore each step in the grid can be modeled using the binomial distribution (<a class="reference external" href="https://allendowney.github.io/ThinkBayes2/chap02.html">Think Bayes 2</a>, <a class="reference external" href="https://www.bayesrulesbook.com/chapter-6.html">Bayes Rules! An Introduction to Applied Bayesian Modeling</a>). The prior data can be introduced and the integral can be solved analytically by using the prior conjugate of the binomial(<a class="reference external" href="https://dataorigami.net/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers/#contents">Bayesian methods for hackers</a>,<a class="reference external" href="https://bayes.wustl.edu/etj/articles/prior.pdf">Prior Probabilities</a>). The grid we are covering is relatively small, 1000 points, but it does represent real values in pieces of trash per meter between 0 and 10. This accounts for 99% of the data in the previous section.</p>
-<p><em>Note: A grid approximation is not the same as a hierarchical model. The grid approximation is away to explore the suitability of the method with the data, in relation to the research question without the overhead of developing a full model.</em></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A grid approximation is not the same as a hierarchical model. The grid approximation is away to explore the suitability of the method with the data, in relation to the research question without the overhead of developing a full model. Because of the compromise a grid approximation is less accurate than a hierarchical model.</p>
+</div>
 </div>
 <div class="section" id="conditional-probability">
 <h3><span class="section-number">2.7.2. </span>Conditional probability<a class="headerlink" href="#conditional-probability" title="Permalink to this headline">#</a></h3>
@@ -721,21 +745,32 @@ p(b | a) =&amp;\ \frac{p(b \cap a)}{p(a)}\ =\ \frac{p(a \cap b)}{p(a)} \tag{3}\\
 p(a)p(b|a) =&amp;\ p(a \cap b) \tag{4}\\[10pt]
 finally\\
 p(a | b) =&amp;\ \frac{p(a)p(b|a)}{p(b)} \tag{5}\\[10pt]
-\text{total probability} =&amp;\ p(b) =\ p(b|a)p(a) + p(b|a^{\prime})p(a^{\prime}) \tag{6}\\[10pt]
-posterior =&amp;  \frac{likelihood*prior}{total\ probability}\tag{7}\\[10pt]
+\text{total probability = evidence} =&amp;\ p(b) =\ p(b|a)p(a) + p(b|a^{\prime})p(a^{\prime}) \tag{6}\\[11pt]
+posterior =&amp;  \frac{likelihood*prior}{evidence}\tag{7}\\[10pt]
 \end{align}
 \end{split}\]</div>
-<p>This is Bayes theorem, it tells us that the probability of event <em>a</em> is conditioned on event <em>b</em>. If the sample space can be defined by <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(a^{\prime}\)</span> then the total probability is the sum of the (likelihood * the prior) and (the complement to the prior*the complement to the likelihood). This means that we consider only two possible results: <span class="math notranslate nohighlight">\(y \ge x\)</span> or <span class="math notranslate nohighlight">\(y \lt x\)</span>, where x is a threshold value and y is a survey result in pieces per meter (pcs/m). Bayes theorem is used extensively in machine learning. Many processes have been optimized for data pipelines (<a class="reference external" href="https://scikit-learn.org/stable/modules/naive_bayes.html">Scikit Naive Bayes</a>) and solving Generalized Linear Models (<a class="reference external" href="https://paul-buerkner.github.io/brms/">Bayesian regression models using Stan</a>). Fully developed, the proposed model is a Bayesian Neural Network (<a class="reference external" href="https://arxiv.org/pdf/2007.06823.pdf">Deep Learning</a>). The variables can be substituded directly with the binomial and beta distributions.</p>
+<p>This is Bayes theorem, it tells us that the probability of event <em>a</em> is conditioned on event <em>b</em>. If the sample space can be defined by <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(a^{\prime}\)</span> then the total probability is the sum of the (likelihood * the prior) and (the complement to the prior*the complement to the likelihood). This means that we consider only two possible results: <span class="math notranslate nohighlight">\(y \ge x\)</span> or <span class="math notranslate nohighlight">\(y \lt x\)</span>, where x is a threshold value and y is a survey result in pieces per meter (pcs/m). To use Bayes theorem we need to assign values to the likelihood and prior and cary out the math in (7).</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{align}
-\text{Likelihood} &amp;= {n\choose k}\theta^{k} (1-\theta)^{n-k} \tag{8} \\[12pt]
-\text{Prior} &amp;= \frac{1}{Beta(k_{p},n_{p} - k_{p})}\theta^{k_{p}}(1-\theta)^{n_{p} - k_{p}} \tag{9} \\[12pt]
-\text{Likelihood * Prior} &amp;= \frac{1}{Beta(k_{p},n_{p} - k_{p}}) {n+n_{p}\choose k+k_{p}} \theta^{k+k_{p}}(1-\theta)^{n+n_{p}- k+k_{p}} \tag{10} \\[12pt]
-&amp;= \theta^{k+k_{p}}(1-\theta)^{n+n_{p}- k+k_{p}} \tag{11} \\[12pt]
-\text{Add derivation of the mean of the}&amp;\ \text{ beta distribution and application to grid approximation}\\[12pt]
+\text{prior} =&amp; \frac{\Gamma(a + b)}{\Gamma(a)\Gamma(b)} * \theta^{k} (1-\theta)^{n_{pr} - k}, \ \ \text{beta distribution} \tag{8} \\[12pt]
+\text{likelihood} =&amp; {n\choose s}*\theta^{s}(1-\theta)^{n-s},\ \ \text{binomial distribution} \tag{9} \\[12pt]
+\text{prior*likelihood} =&amp; C*\theta^{s+a}*(1-\theta)^{n+b-k-a},\ \ C=\frac{\Gamma(a + b + n)}{\Gamma(s+a)\Gamma(n - s + b)} \tag{10} \\[12pt]
+\text{evidence} =&amp; \int_{i=0}^1 \theta*\theta^{s+a}*(1-\theta)^{n+b-k-a} d\theta\ = \frac{\Gamma(s+a)\Gamma(n - s + b)}{\Gamma(a + b + n)} = 1 \tag{11} \\[12pt] 
 \end{align}
 \end{split}\]</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The beta distribution (8) is the prior conjugate to the binomial distribution (9) (<a class="reference external" href="https://www.stat.cmu.edu/~larry/=sml/Bayes.pdf">Statistical Machine Learning</a>, <a class="reference external" href="https://en.wikipedia.org/wiki/Conjugate_prior">Conjugate prior</a>). This means that the posterior distribution can be solved analytically. The evidence (11) which is an integral can be solved by recognizing that (11) is another way to write the beta distribution which integrates to one.</p>
+<p>Therefore we can write the solution of Bayes theorem using the beta binomial conjugate model as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+p(a|b) \sim &amp; \ Beta(s+a, n+b-s) \tag{12} \\[12pt]
+\end{align}
+\end{split}\]</div>
+<p>The mean (average) of the beta distribution above is <span class="math notranslate nohighlight">\(\frac{a + s}{a + b + n}\)</span>, which is the value that is calculated for each interval in the grid approximation.</p>
+</div>
 </div>
 <div class="section" id="the-priors">
 <h3><span class="section-number">2.7.3. </span>The priors<a class="headerlink" href="#the-priors" title="Permalink to this headline">#</a></h3>
@@ -772,12 +807,12 @@ posterior =&amp;  \frac{likelihood*prior}{total\ probability}\tag{7}\\[10pt]
 </div>
 <div class="section" id="the-measured-land-use-attributes">
 <h4><span class="section-number">2.7.3.3. </span>The measured land-use attributes<a class="headerlink" href="#the-measured-land-use-attributes" title="Permalink to this headline">#</a></h4>
-<p><em><strong>Note:</strong> There are slight changes in the way the land-use variables are handled and described with respect to <a class="reference external" href="https://hammerdirt-analyst.github.io/landuse/titlepage.html">Near or far</a>. Notably the infrastruture and recreation variables are scaled separately from the land-cover variables.</em></p>
-<p><em><strong>Note:</strong> The land-use attributes are described here in detail. The descriptions are issue from the map themselves, these are easy to integrate into other geo maps from the swiss admin system. Here we are letting go of some of the control and limitting our varaibles to a set of choices. Those choices were derived by experts, they are certainly better at classifying land use than us.</em></p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>There are slight changes in the way the land-use variables are handled and described with respect to <a class="reference external" href="https://hammerdirt-analyst.github.io/landuse/titlepage.html">Near or far</a>. Notably the infrastruture and recreation variables are scaled separately from the land-cover variables.</p>
+<p>The land-use attributes are described here in detail. The descriptions are issue from the map themselves, these are easy to integrate into other geo maps from the swiss admin system. Here we are letting go of some of the control and limitting our varaibles to a set of choices. Those choices were derived by experts, they are certainly better at classifying land use than us.</p>
+</div>
 <p>The informed priors in this study are assembled by considering the survey results from locations that have similar environmental conditions. The connection between measurable land-use attributes and survey results was illustrated in the swiss national survey (<a class="reference external" href="https://hammerdirt-analyst.github.io/IQAASL-End-0f-Sampling-2021/land_use_correlation.html">IQAASL</a>) and explored in depth, including early versions of the proposed model in <a class="reference external" href="https://hammerdirt-analyst.github.io/landuse/titlepage.html">Near or far</a>. The source of the land-use data is <a class="reference external" href="https://www.swisstopo.admin.ch/de/geodata/landscape/tlmregio.html">swissTLMRegio</a>, the details of extracting the data and defining the boundary conditions can be found here <a class="reference external" href="https://hammerdirt-analyst.github.io/landuse/hex-3000-m.html">New map data</a>.</p>
-<blockquote>
-<div><p><strong>Environmental conditions:</strong> are the <strong>measurable land-use attributes</strong> defined by or derived from an accurate topographic map.</p>
-</div></blockquote>
 <p><strong>land-cover</strong></p>
 <p>These measured land-use attributes are the labeled polygons from the map layer <em>Landcover</em> defined here (<a class="reference external" href="https://www.swisstopo.admin.ch/fr/geodata/landscape/tlm3d.html#dokumente">swissTLMRegio product information</a>), they are extracted using vector overlay techniques in QGIS (<a class="reference external" href="https://qgis.org/en/site/">QGIS</a>). The overlay is a hexagon-grid, each hex is 3000m, circumcscribed by a circle r=1500m. The survey location is located at the center of the hex. The magnitude of the land-use variable is the portion of the total dry surface area for any particular land-use attribute. Areas of the hex that are not defined with a land-use attribute in this map layer are labeled <em>undefined</em> and processed like any other land-use attribute. The land-cover variables of interest are:</p>
 <ol class="arabic simple">
@@ -828,16 +863,16 @@ posterior =&amp;  \frac{likelihood*prior}{total\ probability}\tag{7}\\[10pt]
 </div>
 <table class="colwidths-auto table">
 <thead>
-<tr class="row-odd"><th class="head"><p>Figure 3</p></th>
-<th class="head"><p>Figure 4</p></th>
+<tr class="row-odd"><th class="text-center head"><p>Figure 3</p></th>
+<th class="text-center head"><p>Figure 4</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><img alt="_images/6b200105437344ce67d804b1467b8ea41ca83151e32c82040376863aa2b0aa12.png" src="_images/6b200105437344ce67d804b1467b8ea41ca83151e32c82040376863aa2b0aa12.png" /></p></td>
-<td><p><img alt="_images/66df7095bc0ae3f8e32a318afa0e1679e27871d33459cb00ef2b5d3d2f862b75.png" src="_images/66df7095bc0ae3f8e32a318afa0e1679e27871d33459cb00ef2b5d3d2f862b75.png" /></p></td>
+<tr class="row-even"><td class="text-center"><p><img alt="_images/6b200105437344ce67d804b1467b8ea41ca83151e32c82040376863aa2b0aa12.png" src="_images/6b200105437344ce67d804b1467b8ea41ca83151e32c82040376863aa2b0aa12.png" /></p></td>
+<td class="text-center"><p><img alt="_images/66df7095bc0ae3f8e32a318afa0e1679e27871d33459cb00ef2b5d3d2f862b75.png" src="_images/66df7095bc0ae3f8e32a318afa0e1679e27871d33459cb00ef2b5d3d2f862b75.png" /></p></td>
 </tr>
-<tr class="row-odd"><td><p>Correlation of land-use variables from the prior data.</p></td>
-<td><p>Correlation of land-use variables from the likelihood data</p></td>
+<tr class="row-odd"><td class="text-center"><p>Correlation of land-use variables from the prior data.</p></td>
+<td class="text-center"><p>Correlation of land-use variables from the likelihood data</p></td>
 </tr>
 </tbody>
 </table>
@@ -846,39 +881,44 @@ posterior =&amp;  \frac{likelihood*prior}{total\ probability}\tag{7}\\[10pt]
 </div>
 <div class="section" id="results-lake-geneva">
 <h2><span class="section-number">2.8. </span>Results Lake Geneva<a class="headerlink" href="#results-lake-geneva" title="Permalink to this headline">#</a></h2>
-<blockquote>
-<div><p>Given the data from 2022, Is there an increase, decrease or no change in the expected survey results given the consolidated results from 2015 - 2021?</p>
-</div></blockquote>
-<p>The <strong>combined daily total</strong> is the sum of the objects of interest per sample. In this case we are concerned with the objects listed in the <a class="reference internal" href="#objects-of-interest"><span class="std std-ref">Objects of interest</span></a> section. The average number of objects counted and indentified per meter is expected to decline going into 2024. However, the reduction is minimal (Figure 5) and not equally spread between all object groups or survey locations. Which means that these changes will not be readily observable and also the sampling distribution for 2024 will be very close to 2021 (Table 4, Figure 6).</p>
-<div class="cell tag_remove-input docutils container">
+<!-- > 1. Given the data from 2022, Is there an increase, decrease or no change in the expected survey results given the consolidated results from 2015 - 2021?
+
+The __combined daily total__ is the sum of the objects of interest per sample. In this case we are concerned with the objects listed in the [Objects of interest](objects-of-interest) section. The average number of objects counted and indentified per meter is expected to decline going into 2024. However, the reduction is minimal (Figure 5) and not equally spread between all object groups or survey locations. Which means that these changes will not be readily observable and also the sampling distribution for 2024 will be very close to 2021 (Table 4, Figure 6). -->
+<div class="admonition-given-the-data-from-2022-is-there-an-increase-decrease-or-no-change-in-the-expected-survey-results-given-the-consolidated-results-from-2015-2021 admonition">
+<p class="admonition-title">Given the data from 2022, Is there an increase, decrease or no change in the expected survey results given the consolidated results from 2015 - 2021?</p>
+<p>The average number of objects counted and indentified per meter is expected to decline going into 2024. However, the reduction is minimal (Figure 5) and not equally spread between all object groups or survey locations. Which means that these changes will not be readily observable and also the sampling distribution for 2024 will be very close to 2021 (Table 4, Figure 6). The <strong>combined daily total</strong> is the sum of the objects of interest per sample. In this case we are concerned with the objects listed in the <a class="reference internal" href="#objects-of-interest"><span class="std std-ref">Objects of interest</span></a> section.</p>
 </div>
 <div class="cell tag_remove-input docutils container">
 </div>
+<div class="cell tag_remove-input docutils container">
+</div>
+<div class="section" id="previous-and-expected-survey-totals">
+<h3><span class="section-number">2.8.1. </span>Previous and expected survey totals<a class="headerlink" href="#previous-and-expected-survey-totals" title="Permalink to this headline">#</a></h3>
 <div class="cell tag_remove-input docutils container">
 </div>
 <table class="colwidths-auto table">
 <thead>
-<tr class="row-odd"><th class="text-left head"><p>Figure 5, Table 3</p></th>
+<tr class="row-odd"><th class="text-center head"><p>Figure 5, Table 3</p></th>
 <th class="text-center head"><p>Table 4, Figure 6</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-left"><p><img alt="_images/556ee6790d540a0db4d750d47b78a326e4f752007d47fe9f4576f2b7cfc1447b.png" src="_images/556ee6790d540a0db4d750d47b78a326e4f752007d47fe9f4576f2b7cfc1447b.png" /></p></td>
+<tr class="row-even"><td class="text-center"><p><img alt="_images/b2db047691efbf5fecd7883c8bf06705426a026002cca3baca38b52af2bb1ae6.png" src="_images/b2db047691efbf5fecd7883c8bf06705426a026002cca3baca38b52af2bb1ae6.png" /></p></td>
 <td class="text-center"><p><span class="output text_html"><style type="text/css">
-#T_128fd tr:nth-child(even) {
+#T_b3336 tr:nth-child(even) {
   background-color: rgba(139, 69, 19, 0.08);
 }
-#T_128fd tr:nth-child(odd) {
+#T_b3336 tr:nth-child(odd) {
   background: #FFF;
 }
-#T_128fd tr {
+#T_b3336 tr {
   font-size: 14px;
 }
-#T_128fd th:nth-child(1) {
+#T_b3336 th:nth-child(1) {
   background-color: #FFF;
   text-align: right;
 }
-#T_128fd caption {
+#T_b3336 caption {
   font-size: 14px;
   font-style: italic;
   caption-side: bottom;
@@ -886,54 +926,54 @@ posterior =&amp;  \frac{likelihood*prior}{total\ probability}\tag{7}\\[10pt]
   margin-top: 10px;
 }
 </style>
-<table id="T_128fd">
+<table id="T_b3336">
   <caption>Previous and expected median values of the combined daily totals of the Unkown objects group</caption>
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_128fd_level0_col0" class="col_heading level0 col0" >pcs/m</th>
+      <th id="T_b3336_level0_col0" class="col_heading level0 col0" >pcs/m</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_128fd_level0_row0" class="row_heading level0 row0" >Median 2021</th>
-      <td id="T_128fd_row0_col0" class="data row0 col0" >3.70</td>
+      <th id="T_b3336_level0_row0" class="row_heading level0 row0" >Median 2021</th>
+      <td id="T_b3336_row0_col0" class="data row0 col0" >3.70</td>
     </tr>
     <tr>
-      <th id="T_128fd_level0_row1" class="row_heading level0 row1" >Median 2022</th>
-      <td id="T_128fd_row1_col0" class="data row1 col0" >2.00</td>
+      <th id="T_b3336_level0_row1" class="row_heading level0 row1" >Median 2022</th>
+      <td id="T_b3336_row1_col0" class="data row1 col0" >2.00</td>
     </tr>
     <tr>
-      <th id="T_128fd_level0_row2" class="row_heading level0 row2" >Expected sampling median 2024</th>
-      <td id="T_128fd_row2_col0" class="data row2 col0" >2.55</td>
+      <th id="T_b3336_level0_row2" class="row_heading level0 row2" >Expected sampling median 2024</th>
+      <td id="T_b3336_row2_col0" class="data row2 col0" >2.83</td>
     </tr>
     <tr>
-      <th id="T_128fd_level0_row3" class="row_heading level0 row3" >% 2022 in 50% IQR  predicted</th>
-      <td id="T_128fd_row3_col0" class="data row3 col0" >0.44</td>
+      <th id="T_b3336_level0_row3" class="row_heading level0 row3" >% 2022 in 50% IQR  predicted</th>
+      <td id="T_b3336_row3_col0" class="data row3 col0" >0.44</td>
     </tr>
     <tr>
-      <th id="T_128fd_level0_row4" class="row_heading level0 row4" >% 2022 in 94% IQR  predicted</th>
-      <td id="T_128fd_row4_col0" class="data row4 col0" >0.82</td>
+      <th id="T_b3336_level0_row4" class="row_heading level0 row4" >% 2022 in 94% IQR  predicted</th>
+      <td id="T_b3336_row4_col0" class="data row4 col0" >0.82</td>
     </tr>
   </tbody>
 </table>
 </span></p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p><span class="output text_html"><style type="text/css">
-#T_2f461 tr:nth-child(even) {
+<tr class="row-odd"><td class="text-center"><p><span class="output text_html"><style type="text/css">
+#T_2858b tr:nth-child(even) {
   background-color: rgba(139, 69, 19, 0.08);
 }
-#T_2f461 tr:nth-child(odd) {
+#T_2858b tr:nth-child(odd) {
   background: #FFF;
 }
-#T_2f461 tr {
+#T_2858b tr {
   font-size: 14px;
 }
-#T_2f461 th:nth-child(1) {
+#T_2858b th:nth-child(1) {
   background-color: #FFF;
   text-align: right;
 }
-#T_2f461 caption {
+#T_2858b caption {
   font-size: 14px;
   font-style: italic;
   caption-side: bottom;
@@ -941,56 +981,53 @@ posterior =&amp;  \frac{likelihood*prior}{total\ probability}\tag{7}\\[10pt]
   margin-top: 10px;
 }
 </style>
-<table id="T_2f461">
+<table id="T_2858b">
   <caption>The observed values from the training and testing data.</caption>
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_2f461_level0_col0" class="col_heading level0 col0" >Training</th>
-      <th id="T_2f461_level0_col1" class="col_heading level0 col1" >Testing</th>
+      <th id="T_2858b_level0_col0" class="col_heading level0 col0" >Training</th>
+      <th id="T_2858b_level0_col1" class="col_heading level0 col1" >Testing</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_2f461_level0_row0" class="row_heading level0 row0" >weight all samples</th>
-      <td id="T_2f461_row0_col0" class="data row0 col0" >0.78</td>
-      <td id="T_2f461_row0_col1" class="data row0 col1" >0.22</td>
+      <th id="T_2858b_level0_row0" class="row_heading level0 row0" >weight all samples</th>
+      <td id="T_2858b_row0_col0" class="data row0 col0" >0.78</td>
+      <td id="T_2858b_row0_col1" class="data row0 col1" >0.22</td>
     </tr>
     <tr>
-      <th id="T_2f461_level0_row1" class="row_heading level0 row1" >Number of samples</th>
-      <td id="T_2f461_row1_col0" class="data row1 col0" >246</td>
-      <td id="T_2f461_row1_col1" class="data row1 col1" >71</td>
+      <th id="T_2858b_level0_row1" class="row_heading level0 row1" >Number of samples</th>
+      <td id="T_2858b_row1_col0" class="data row1 col0" >246</td>
+      <td id="T_2858b_row1_col1" class="data row1 col1" >71</td>
     </tr>
     <tr>
-      <th id="T_2f461_level0_row2" class="row_heading level0 row2" >Median</th>
-      <td id="T_2f461_row2_col0" class="data row2 col0" >3.70</td>
-      <td id="T_2f461_row2_col1" class="data row2 col1" >2.00</td>
+      <th id="T_2858b_level0_row2" class="row_heading level0 row2" >Median</th>
+      <td id="T_2858b_row2_col0" class="data row2 col0" >3.70</td>
+      <td id="T_2858b_row2_col1" class="data row2 col1" >2.00</td>
     </tr>
     <tr>
-      <th id="T_2f461_level0_row3" class="row_heading level0 row3" >Average</th>
-      <td id="T_2f461_row3_col0" class="data row3 col0" >6.67</td>
-      <td id="T_2f461_row3_col1" class="data row3 col1" >3.03</td>
+      <th id="T_2858b_level0_row3" class="row_heading level0 row3" >Average</th>
+      <td id="T_2858b_row3_col0" class="data row3 col0" >6.67</td>
+      <td id="T_2858b_row3_col1" class="data row3 col1" >3.03</td>
     </tr>
     <tr>
-      <th id="T_2f461_level0_row4" class="row_heading level0 row4" >25th percentile</th>
-      <td id="T_2f461_row4_col0" class="data row4 col0" >1.75</td>
-      <td id="T_2f461_row4_col1" class="data row4 col1" >0.67</td>
+      <th id="T_2858b_level0_row4" class="row_heading level0 row4" >25th percentile</th>
+      <td id="T_2858b_row4_col0" class="data row4 col0" >1.75</td>
+      <td id="T_2858b_row4_col1" class="data row4 col1" >0.67</td>
     </tr>
     <tr>
-      <th id="T_2f461_level0_row5" class="row_heading level0 row5" >75th percentile</th>
-      <td id="T_2f461_row5_col0" class="data row5 col0" >7.47</td>
-      <td id="T_2f461_row5_col1" class="data row5 col1" >3.80</td>
+      <th id="T_2858b_level0_row5" class="row_heading level0 row5" >75th percentile</th>
+      <td id="T_2858b_row5_col0" class="data row5 col0" >7.47</td>
+      <td id="T_2858b_row5_col1" class="data row5 col1" >3.80</td>
     </tr>
   </tbody>
 </table>
 </span></p></td>
-<td class="text-center"><p><img alt="_images/d110c93541c7d3e7de9ba60058840c51e20abf2a49fc40751379df653c5924e2.png" src="_images/d110c93541c7d3e7de9ba60058840c51e20abf2a49fc40751379df653c5924e2.png" /></p></td>
+<td class="text-center"><p><img alt="_images/2b1663061574667854a482925372410387b0a0a1c3110fc5d63362c59f736130.png" src="_images/2b1663061574667854a482925372410387b0a0a1c3110fc5d63362c59f736130.png" /></p></td>
 </tr>
 </tbody>
 </table>
-<blockquote>
-<div><p><em>Given the median value for the objects of interest in 2021, what is the chance that a survey in 2022 will exceed this value?</em></p>
-</div></blockquote>
 <div class="cell tag_remove-input docutils container">
 </div>
 <div class="cell tag_remove-input docutils container">
@@ -1018,27 +1055,32 @@ posterior =&amp;  \frac{likelihood*prior}{total\ probability}\tag{7}\\[10pt]
 </div>
 <div class="cell tag_remove-input docutils container">
 </div>
+</div>
+<div class="section" id="previous-and-expected-survey-results-of-objects-of-interest">
+<h3><span class="section-number">2.8.2. </span>Previous and expected survey results of objects of interest<a class="headerlink" href="#previous-and-expected-survey-results-of-objects-of-interest" title="Permalink to this headline">#</a></h3>
+<div class="admonition-given-the-median-value-for-the-objects-of-interest-in-2021-what-is-the-chance-that-a-survey-in-2022-will-exceed-this-value admonition">
+<p class="admonition-title">Given the median value for the objects of interest in 2021, what is the chance that a survey in 2022 will exceed this value?</p>
 <table class="colwidths-auto table">
 <thead>
-<tr class="row-odd"><th class="head"><p>Table 5</p></th>
+<tr class="row-odd"><th class="text-left head"><p>Table 5</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><span class="output text_html"><style type="text/css">
-#T_34943 tr:nth-child(even) {
+<tr class="row-even"><td class="text-left"><p><span class="output text_html"><style type="text/css">
+#T_aed51 tr:nth-child(even) {
   background-color: rgba(139, 69, 19, 0.08);
 }
-#T_34943 tr:nth-child(odd) {
+#T_aed51 tr:nth-child(odd) {
   background: #FFF;
 }
-#T_34943 tr {
-  font-size: 10px;
+#T_aed51 tr {
+  font-size: 14px;
 }
-#T_34943 th:nth-child(1) {
+#T_aed51 th:nth-child(1) {
   background-color: #FFF;
   text-align: right;
 }
-#T_34943 caption {
+#T_aed51 caption {
   font-size: 14px;
   font-style: italic;
   caption-side: bottom;
@@ -1046,57 +1088,69 @@ posterior =&amp;  \frac{likelihood*prior}{total\ probability}\tag{7}\\[10pt]
   margin-top: 10px;
 }
 </style>
-<table id="T_34943">
+<table id="T_aed51">
   <caption>The probability that a survey in 2024 will exceed the median (50%) from 2021</caption>
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_34943_level0_col0" class="col_heading level0 col0" >Unknown</th>
-      <th id="T_34943_level0_col1" class="col_heading level0 col1" >Personal consumption</th>
-      <th id="T_34943_level0_col2" class="col_heading level0 col2" >Personal hygiene</th>
-      <th id="T_34943_level0_col3" class="col_heading level0 col3" >Recreation/sports</th>
-      <th id="T_34943_level0_col4" class="col_heading level0 col4" >Industrial/professional</th>
+      <th id="T_aed51_level0_col0" class="col_heading level0 col0" >P</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_34943_level0_row0" class="row_heading level0 row0" >Probability of exceeding previous median</th>
-      <td id="T_34943_row0_col0" class="data row0 col0" >0.53</td>
-      <td id="T_34943_row0_col1" class="data row0 col1" >0.43</td>
-      <td id="T_34943_row0_col2" class="data row0 col2" >0.46</td>
-      <td id="T_34943_row0_col3" class="data row0 col3" >0.45</td>
-      <td id="T_34943_row0_col4" class="data row0 col4" >0.42</td>
+      <th id="T_aed51_level0_row0" class="row_heading level0 row0" >Unknown</th>
+      <td id="T_aed51_row0_col0" class="data row0 col0" >0.53</td>
+    </tr>
+    <tr>
+      <th id="T_aed51_level0_row1" class="row_heading level0 row1" >Personal consumption</th>
+      <td id="T_aed51_row1_col0" class="data row1 col0" >0.43</td>
+    </tr>
+    <tr>
+      <th id="T_aed51_level0_row2" class="row_heading level0 row2" >Personal hygiene</th>
+      <td id="T_aed51_row2_col0" class="data row2 col0" >0.46</td>
+    </tr>
+    <tr>
+      <th id="T_aed51_level0_row3" class="row_heading level0 row3" >Recreation/sports</th>
+      <td id="T_aed51_row3_col0" class="data row3 col0" >0.45</td>
+    </tr>
+    <tr>
+      <th id="T_aed51_level0_row4" class="row_heading level0 row4" >Industrial/professional</th>
+      <td id="T_aed51_row4_col0" class="data row4 col0" >0.42</td>
     </tr>
   </tbody>
 </table>
 </span></p></td>
 </tr>
+<tr class="row-odd"><td class="text-left"><p>There were more fragmented plastics identified per/meter in 2022 than 2021 (Figure 7, Table 6). Most municipalities will either experience a slight increase or nothing at all. Locations that have historically high counts of these objects will see the greatest increases. This was hypothesised in the 2021 report, the results from the testing data lend support to the assessement. From table 7 and figure 8 we can see how similar the expected values for 2024 are to 2021.</p></td>
+</tr>
 </tbody>
 </table>
-<p><strong>Example: Unknown group.</strong> The unknown objects are the fragmented plastics. There were more fragmented plastics identified per/meter in 2022 than 2021 (Figure 7, Table 6). Most municipalities will either experience a slight increase or nothing at all. Locations that have historically high counts of these objects will see the greatest increases. This was hypothesised in the 2021 report, the results from the testing data lend support to the assessement. From table 7 and figure 8 we can see how similar the expected values for 2024 are to 2021.</p>
+</div>
+<div class="section" id="expected-results-fragmented-plastics">
+<h4><span class="section-number">2.8.2.1. </span>Expected results fragmented plastics<a class="headerlink" href="#expected-results-fragmented-plastics" title="Permalink to this headline">#</a></h4>
 <table class="colwidths-auto table">
 <thead>
-<tr class="row-odd"><th class="head"><p>Figure 7, Table 6</p></th>
-<th class="head"><p>Table 7, Figure 8</p></th>
+<tr class="row-odd"><th class="text-center head"><p>Figure 7, Table 6</p></th>
+<th class="text-center head"><p>Table 7, Figure 8</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><img alt="_images/16c49f3b83c12b1d417c738ef07c8598329cc7f9b80f318c0454011bb2c725e1.png" src="_images/16c49f3b83c12b1d417c738ef07c8598329cc7f9b80f318c0454011bb2c725e1.png" /></p></td>
-<td><p><span class="output text_html"><style type="text/css">
-#T_c44e6 tr:nth-child(even) {
+<tr class="row-even"><td class="text-center"><p><img alt="_images/90dc4dffb21717de9bc13b72ab59b2f5c50c420b960b4a1f4ee844ae27d055c7.png" src="_images/90dc4dffb21717de9bc13b72ab59b2f5c50c420b960b4a1f4ee844ae27d055c7.png" /></p></td>
+<td class="text-center"><p><span class="output text_html"><style type="text/css">
+#T_09063 tr:nth-child(even) {
   background-color: rgba(139, 69, 19, 0.08);
 }
-#T_c44e6 tr:nth-child(odd) {
+#T_09063 tr:nth-child(odd) {
   background: #FFF;
 }
-#T_c44e6 tr {
+#T_09063 tr {
   font-size: 14px;
 }
-#T_c44e6 th:nth-child(1) {
+#T_09063 th:nth-child(1) {
   background-color: #FFF;
   text-align: right;
 }
-#T_c44e6 caption {
+#T_09063 caption {
   font-size: 14px;
   font-style: italic;
   caption-side: bottom;
@@ -1104,54 +1158,54 @@ posterior =&amp;  \frac{likelihood*prior}{total\ probability}\tag{7}\\[10pt]
   margin-top: 10px;
 }
 </style>
-<table id="T_c44e6">
+<table id="T_09063">
   <caption>Previous and expected median values of the combined daily totals of the Unkown objects group</caption>
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_c44e6_level0_col0" class="col_heading level0 col0" >pcs/m</th>
+      <th id="T_09063_level0_col0" class="col_heading level0 col0" >pcs/m</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_c44e6_level0_row0" class="row_heading level0 row0" >Median 2021</th>
-      <td id="T_c44e6_row0_col0" class="data row0 col0" >0.52</td>
+      <th id="T_09063_level0_row0" class="row_heading level0 row0" >Median 2021</th>
+      <td id="T_09063_row0_col0" class="data row0 col0" >0.52</td>
     </tr>
     <tr>
-      <th id="T_c44e6_level0_row1" class="row_heading level0 row1" >Median 2022</th>
-      <td id="T_c44e6_row1_col0" class="data row1 col0" >0.85</td>
+      <th id="T_09063_level0_row1" class="row_heading level0 row1" >Median 2022</th>
+      <td id="T_09063_row1_col0" class="data row1 col0" >0.85</td>
     </tr>
     <tr>
-      <th id="T_c44e6_level0_row2" class="row_heading level0 row2" >Expected sampling median 2024</th>
-      <td id="T_c44e6_row2_col0" class="data row2 col0" >0.56</td>
+      <th id="T_09063_level0_row2" class="row_heading level0 row2" >Expected sampling median 2024</th>
+      <td id="T_09063_row2_col0" class="data row2 col0" >0.56</td>
     </tr>
     <tr>
-      <th id="T_c44e6_level0_row3" class="row_heading level0 row3" >% 2022 in 50% IQR  predicted</th>
-      <td id="T_c44e6_row3_col0" class="data row3 col0" >0.41</td>
+      <th id="T_09063_level0_row3" class="row_heading level0 row3" >% 2022 in 50% IQR  predicted</th>
+      <td id="T_09063_row3_col0" class="data row3 col0" >0.41</td>
     </tr>
     <tr>
-      <th id="T_c44e6_level0_row4" class="row_heading level0 row4" >% 2022 in 94% IQR  predicted</th>
-      <td id="T_c44e6_row4_col0" class="data row4 col0" >0.99</td>
+      <th id="T_09063_level0_row4" class="row_heading level0 row4" >% 2022 in 94% IQR  predicted</th>
+      <td id="T_09063_row4_col0" class="data row4 col0" >0.99</td>
     </tr>
   </tbody>
 </table>
 </span></p></td>
 </tr>
-<tr class="row-odd"><td><p><span class="output text_html"><style type="text/css">
-#T_d8d29 tr:nth-child(even) {
+<tr class="row-odd"><td class="text-center"><p><span class="output text_html"><style type="text/css">
+#T_a5b87 tr:nth-child(even) {
   background-color: rgba(139, 69, 19, 0.08);
 }
-#T_d8d29 tr:nth-child(odd) {
+#T_a5b87 tr:nth-child(odd) {
   background: #FFF;
 }
-#T_d8d29 tr {
+#T_a5b87 tr {
   font-size: 14px;
 }
-#T_d8d29 th:nth-child(1) {
+#T_a5b87 th:nth-child(1) {
   background-color: #FFF;
   text-align: right;
 }
-#T_d8d29 caption {
+#T_a5b87 caption {
   font-size: 14px;
   font-style: italic;
   caption-side: bottom;
@@ -1159,77 +1213,80 @@ posterior =&amp;  \frac{likelihood*prior}{total\ probability}\tag{7}\\[10pt]
   margin-top: 10px;
 }
 </style>
-<table id="T_d8d29">
+<table id="T_a5b87">
   <caption>The observed values from the training and testing data.</caption>
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_d8d29_level0_col0" class="col_heading level0 col0" >Training</th>
-      <th id="T_d8d29_level0_col1" class="col_heading level0 col1" >Testing</th>
+      <th id="T_a5b87_level0_col0" class="col_heading level0 col0" >Training</th>
+      <th id="T_a5b87_level0_col1" class="col_heading level0 col1" >Testing</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_d8d29_level0_row0" class="row_heading level0 row0" >weight all samples</th>
-      <td id="T_d8d29_row0_col0" class="data row0 col0" >0.78</td>
-      <td id="T_d8d29_row0_col1" class="data row0 col1" >0.22</td>
+      <th id="T_a5b87_level0_row0" class="row_heading level0 row0" >weight all samples</th>
+      <td id="T_a5b87_row0_col0" class="data row0 col0" >0.78</td>
+      <td id="T_a5b87_row0_col1" class="data row0 col1" >0.22</td>
     </tr>
     <tr>
-      <th id="T_d8d29_level0_row1" class="row_heading level0 row1" >Number of samples</th>
-      <td id="T_d8d29_row1_col0" class="data row1 col0" >246</td>
-      <td id="T_d8d29_row1_col1" class="data row1 col1" >69</td>
+      <th id="T_a5b87_level0_row1" class="row_heading level0 row1" >Number of samples</th>
+      <td id="T_a5b87_row1_col0" class="data row1 col0" >246</td>
+      <td id="T_a5b87_row1_col1" class="data row1 col1" >69</td>
     </tr>
     <tr>
-      <th id="T_d8d29_level0_row2" class="row_heading level0 row2" >Median</th>
-      <td id="T_d8d29_row2_col0" class="data row2 col0" >0.52</td>
-      <td id="T_d8d29_row2_col1" class="data row2 col1" >0.85</td>
+      <th id="T_a5b87_level0_row2" class="row_heading level0 row2" >Median</th>
+      <td id="T_a5b87_row2_col0" class="data row2 col0" >0.52</td>
+      <td id="T_a5b87_row2_col1" class="data row2 col1" >0.85</td>
     </tr>
     <tr>
-      <th id="T_d8d29_level0_row3" class="row_heading level0 row3" >Average</th>
-      <td id="T_d8d29_row3_col0" class="data row3 col0" >1.36</td>
-      <td id="T_d8d29_row3_col1" class="data row3 col1" >1.40</td>
+      <th id="T_a5b87_level0_row3" class="row_heading level0 row3" >Average</th>
+      <td id="T_a5b87_row3_col0" class="data row3 col0" >1.36</td>
+      <td id="T_a5b87_row3_col1" class="data row3 col1" >1.40</td>
     </tr>
     <tr>
-      <th id="T_d8d29_level0_row4" class="row_heading level0 row4" >25th percentile</th>
-      <td id="T_d8d29_row4_col0" class="data row4 col0" >0.16</td>
-      <td id="T_d8d29_row4_col1" class="data row4 col1" >0.24</td>
+      <th id="T_a5b87_level0_row4" class="row_heading level0 row4" >25th percentile</th>
+      <td id="T_a5b87_row4_col0" class="data row4 col0" >0.16</td>
+      <td id="T_a5b87_row4_col1" class="data row4 col1" >0.24</td>
     </tr>
     <tr>
-      <th id="T_d8d29_level0_row5" class="row_heading level0 row5" >75th percentile</th>
-      <td id="T_d8d29_row5_col0" class="data row5 col0" >1.29</td>
-      <td id="T_d8d29_row5_col1" class="data row5 col1" >2.08</td>
+      <th id="T_a5b87_level0_row5" class="row_heading level0 row5" >75th percentile</th>
+      <td id="T_a5b87_row5_col0" class="data row5 col0" >1.29</td>
+      <td id="T_a5b87_row5_col1" class="data row5 col1" >2.08</td>
     </tr>
   </tbody>
 </table>
 </span></p></td>
-<td><p><img alt="_images/98ae3da1791323c4404be9c38018de0151fa3d25aec15a94c81feec9da17e3fc.png" src="_images/98ae3da1791323c4404be9c38018de0151fa3d25aec15a94c81feec9da17e3fc.png" /></p></td>
+<td class="text-center"><p><img alt="_images/ce966e7dd272c8f70d23bc97d15bb7943f034ee5df23f17cdf29f19164bf01f7.png" src="_images/ce966e7dd272c8f70d23bc97d15bb7943f034ee5df23f17cdf29f19164bf01f7.png" /></p></td>
 </tr>
 </tbody>
 </table>
+</div>
+<div class="section" id="expected-results-personal-consumption">
+<h4><span class="section-number">2.8.2.2. </span>Expected results personal consumption<a class="headerlink" href="#expected-results-personal-consumption" title="Permalink to this headline">#</a></h4>
 <p><strong>Example: Personal consumption.</strong> The personal consumption objects are those objects that are likely to be used at the beach by visitors, this includes food and tobaco items. There were less personal consumption objects identified per/meter in 2022 than 2021 (Figure 9, Table 8). This effect should be the most noticeable in communities that have active prevention programs (Table 9, Figure 10).</p>
 <table class="colwidths-auto table">
 <thead>
-<tr class="row-odd"><th class="head"><p>Figure 9, Table 8</p></th>
-<th class="head"><p>Table 9, Figure 10</p></th>
+<tr class="row-odd"><th class="text-center head"><p>Figure 9, Table 8</p></th>
+<th class="text-center head"><p>Table 9, Figure 10</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><img alt="_images/b4abea68f7eef8628898dcdf099c2adef174e98de9d76c087a9470f08e1b7e6f.png" src="_images/b4abea68f7eef8628898dcdf099c2adef174e98de9d76c087a9470f08e1b7e6f.png" /></p></td>
-<td><p><span class="output text_html"><style type="text/css">
-#T_98419 tr:nth-child(even) {
+<tr class="row-even"><td class="text-center"><p><img alt="_images/6aaf148113a1792fab936786927753e995a4523c305ce114f1348b5558b08e9b.png" src="_images/6aaf148113a1792fab936786927753e995a4523c305ce114f1348b5558b08e9b.png" /></p></td>
+<td class="text-center"><p><span class="output text_html"><style type="text/css">
+#T_ac983 tr:nth-child(even) {
   background-color: rgba(139, 69, 19, 0.08);
 }
-#T_98419 tr:nth-child(odd) {
+#T_ac983 tr:nth-child(odd) {
   background: #FFF;
 }
-#T_98419 tr {
+#T_ac983 tr {
   font-size: 14px;
 }
-#T_98419 th:nth-child(1) {
+#T_ac983 th:nth-child(1) {
   background-color: #FFF;
   text-align: right;
 }
-#T_98419 caption {
+#T_ac983 caption {
   font-size: 14px;
   font-style: italic;
   caption-side: bottom;
@@ -1237,54 +1294,54 @@ posterior =&amp;  \frac{likelihood*prior}{total\ probability}\tag{7}\\[10pt]
   margin-top: 10px;
 }
 </style>
-<table id="T_98419">
+<table id="T_ac983">
   <caption>Previous and expected median values of indentified Personal consumption group</caption>
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_98419_level0_col0" class="col_heading level0 col0" >pcs/m</th>
+      <th id="T_ac983_level0_col0" class="col_heading level0 col0" >pcs/m</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_98419_level0_row0" class="row_heading level0 row0" >Median 2021</th>
-      <td id="T_98419_row0_col0" class="data row0 col0" >1.75</td>
+      <th id="T_ac983_level0_row0" class="row_heading level0 row0" >Median 2021</th>
+      <td id="T_ac983_row0_col0" class="data row0 col0" >1.75</td>
     </tr>
     <tr>
-      <th id="T_98419_level0_row1" class="row_heading level0 row1" >Median 2022</th>
-      <td id="T_98419_row1_col0" class="data row1 col0" >0.56</td>
+      <th id="T_ac983_level0_row1" class="row_heading level0 row1" >Median 2022</th>
+      <td id="T_ac983_row1_col0" class="data row1 col0" >0.56</td>
     </tr>
     <tr>
-      <th id="T_98419_level0_row2" class="row_heading level0 row2" >Expected sampling median 2024</th>
-      <td id="T_98419_row2_col0" class="data row2 col0" >1.46</td>
+      <th id="T_ac983_level0_row2" class="row_heading level0 row2" >Expected sampling median 2024</th>
+      <td id="T_ac983_row2_col0" class="data row2 col0" >1.46</td>
     </tr>
     <tr>
-      <th id="T_98419_level0_row3" class="row_heading level0 row3" >% 2022 in 50% IQR  predicted</th>
-      <td id="T_98419_row3_col0" class="data row3 col0" >0.39</td>
+      <th id="T_ac983_level0_row3" class="row_heading level0 row3" >% 2022 in 50% IQR  predicted</th>
+      <td id="T_ac983_row3_col0" class="data row3 col0" >0.39</td>
     </tr>
     <tr>
-      <th id="T_98419_level0_row4" class="row_heading level0 row4" >% 2022 in 94% IQR  predicted</th>
-      <td id="T_98419_row4_col0" class="data row4 col0" >0.72</td>
+      <th id="T_ac983_level0_row4" class="row_heading level0 row4" >% 2022 in 94% IQR  predicted</th>
+      <td id="T_ac983_row4_col0" class="data row4 col0" >0.72</td>
     </tr>
   </tbody>
 </table>
 </span></p></td>
 </tr>
-<tr class="row-odd"><td><p><span class="output text_html"><style type="text/css">
-#T_17674 tr:nth-child(even) {
+<tr class="row-odd"><td class="text-center"><p><span class="output text_html"><style type="text/css">
+#T_97548 tr:nth-child(even) {
   background-color: rgba(139, 69, 19, 0.08);
 }
-#T_17674 tr:nth-child(odd) {
+#T_97548 tr:nth-child(odd) {
   background: #FFF;
 }
-#T_17674 tr {
+#T_97548 tr {
   font-size: 14px;
 }
-#T_17674 th:nth-child(1) {
+#T_97548 th:nth-child(1) {
   background-color: #FFF;
   text-align: right;
 }
-#T_17674 caption {
+#T_97548 caption {
   font-size: 14px;
   font-style: italic;
   caption-side: bottom;
@@ -1292,56 +1349,60 @@ posterior =&amp;  \frac{likelihood*prior}{total\ probability}\tag{7}\\[10pt]
   margin-top: 10px;
 }
 </style>
-<table id="T_17674">
+<table id="T_97548">
   <caption>The observed values from the training and testing data.</caption>
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_17674_level0_col0" class="col_heading level0 col0" >Training</th>
-      <th id="T_17674_level0_col1" class="col_heading level0 col1" >Testing</th>
+      <th id="T_97548_level0_col0" class="col_heading level0 col0" >Training</th>
+      <th id="T_97548_level0_col1" class="col_heading level0 col1" >Testing</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_17674_level0_row0" class="row_heading level0 row0" >weight all samples</th>
-      <td id="T_17674_row0_col0" class="data row0 col0" >0.78</td>
-      <td id="T_17674_row0_col1" class="data row0 col1" >0.22</td>
+      <th id="T_97548_level0_row0" class="row_heading level0 row0" >weight all samples</th>
+      <td id="T_97548_row0_col0" class="data row0 col0" >0.78</td>
+      <td id="T_97548_row0_col1" class="data row0 col1" >0.22</td>
     </tr>
     <tr>
-      <th id="T_17674_level0_row1" class="row_heading level0 row1" >Number of samples</th>
-      <td id="T_17674_row1_col0" class="data row1 col0" >246</td>
-      <td id="T_17674_row1_col1" class="data row1 col1" >69</td>
+      <th id="T_97548_level0_row1" class="row_heading level0 row1" >Number of samples</th>
+      <td id="T_97548_row1_col0" class="data row1 col0" >246</td>
+      <td id="T_97548_row1_col1" class="data row1 col1" >69</td>
     </tr>
     <tr>
-      <th id="T_17674_level0_row2" class="row_heading level0 row2" >Median</th>
-      <td id="T_17674_row2_col0" class="data row2 col0" >1.75</td>
-      <td id="T_17674_row2_col1" class="data row2 col1" >0.56</td>
+      <th id="T_97548_level0_row2" class="row_heading level0 row2" >Median</th>
+      <td id="T_97548_row2_col0" class="data row2 col0" >1.75</td>
+      <td id="T_97548_row2_col1" class="data row2 col1" >0.56</td>
     </tr>
     <tr>
-      <th id="T_17674_level0_row3" class="row_heading level0 row3" >Average</th>
-      <td id="T_17674_row3_col0" class="data row3 col0" >2.82</td>
-      <td id="T_17674_row3_col1" class="data row3 col1" >1.01</td>
+      <th id="T_97548_level0_row3" class="row_heading level0 row3" >Average</th>
+      <td id="T_97548_row3_col0" class="data row3 col0" >2.82</td>
+      <td id="T_97548_row3_col1" class="data row3 col1" >1.01</td>
     </tr>
     <tr>
-      <th id="T_17674_level0_row4" class="row_heading level0 row4" >25th percentile</th>
-      <td id="T_17674_row4_col0" class="data row4 col0" >0.66</td>
-      <td id="T_17674_row4_col1" class="data row4 col1" >0.16</td>
+      <th id="T_97548_level0_row4" class="row_heading level0 row4" >25th percentile</th>
+      <td id="T_97548_row4_col0" class="data row4 col0" >0.66</td>
+      <td id="T_97548_row4_col1" class="data row4 col1" >0.16</td>
     </tr>
     <tr>
-      <th id="T_17674_level0_row5" class="row_heading level0 row5" >75th percentile</th>
-      <td id="T_17674_row5_col0" class="data row5 col0" >3.27</td>
-      <td id="T_17674_row5_col1" class="data row5 col1" >1.34</td>
+      <th id="T_97548_level0_row5" class="row_heading level0 row5" >75th percentile</th>
+      <td id="T_97548_row5_col0" class="data row5 col0" >3.27</td>
+      <td id="T_97548_row5_col1" class="data row5 col1" >1.34</td>
     </tr>
   </tbody>
 </table>
 </span></p></td>
-<td><p><img alt="_images/bbb5d572eed4216e9546a47b6b2487b1103e983d5787782a5b226f9536bbac33.png" src="_images/bbb5d572eed4216e9546a47b6b2487b1103e983d5787782a5b226f9536bbac33.png" /></p></td>
+<td class="text-center"><p><img alt="_images/a9e5e69cfc769033b4729693b503f67a48a0f9b38ce1ca808625b23dc69a01b3.png" src="_images/a9e5e69cfc769033b4729693b503f67a48a0f9b38ce1ca808625b23dc69a01b3.png" /></p></td>
 </tr>
 </tbody>
 </table>
-<blockquote>
-<div><p><em>How do the results from 2022 change the expected survey results going forward?</em></p>
-</div></blockquote>
+</div>
+<div class="section" id="summary-of-expected-survey-results-lake-geneva">
+<h4><span class="section-number">2.8.2.3. </span>Summary of expected survey results Lake Geneva<a class="headerlink" href="#summary-of-expected-survey-results-lake-geneva" title="Permalink to this headline">#</a></h4>
+<div class="cell tag_remove-input docutils container">
+</div>
+<div class="admonition-how-do-the-results-from-2022-change-the-expected-survey-results-going-forward admonition">
+<p class="admonition-title">How do the results from 2022 change the expected survey results going forward??</p>
 <p>With the exception of fragmented plastics we expect reported beach litter densities to be lower in 2024. The greatest improvement will be concerning the objects of personal consumption, there is evidence of a decline that started in 2018 <a class="reference external" href="https://hammerdirt-analyst.github.io/IQAASL-End-0f-Sampling-2021/slr-iqaasl.html">Summary comparison 2018 - 2021</a>. These objects are often the main focus of anti litter campaigns. The expected low values for the Industrial group may be a case of mistaken identity. We base this on the fact that in 2021 fragmented plastics were 18% of the total, in 2022 that number rose to 50%. This is usually because inexperienced surveyors tend to not differentiate between fragmented items, thus some of the objects would be classified as Industrial or professional get placed under the more general category.</p>
 <p>There are several item types that can be readily identified as Industrial or Profesional:</p>
 <ol class="arabic simple">
@@ -1353,23 +1414,27 @@ posterior =&amp;  \frac{likelihood*prior}{total\ probability}\tag{7}\\[10pt]
 <li><p>Pheromone baits</p></li>
 </ol>
 <p>The expected decline in Personal hygiene products is encouraging. However, there is no other reason to support the data. For example we are unaware if the sales of plastic cotton swabs has declined or if there is a proposed ban on these products like in France. We also note that there were no reported <em>plastic tampon applicators</em> indentified in 2022.  This also may be case of lack of experience, given that <em>plastic tampon applicators</em> were found in 40% of the samples in 2021 <a class="reference external" href="https://hammerdirt-analyst.github.io/finding-one-object/chance_of_an_encounter.html#results-and-discussion">Finding one object</a>.</p>
-<div class="cell tag_remove-input docutils container">
-<div class="cell_output docutils container">
-<div class="output text_html"><style type="text/css">
-#T_93aa5 tr:nth-child(even) {
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-center head"><p>Table 10</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><span class="output text_html"><style type="text/css">
+#T_68d37 tr:nth-child(even) {
   background-color: rgba(139, 69, 19, 0.08);
 }
-#T_93aa5 tr:nth-child(odd) {
+#T_68d37 tr:nth-child(odd) {
   background: #FFF;
 }
-#T_93aa5 tr {
+#T_68d37 tr {
   font-size: 14px;
 }
-#T_93aa5 th:nth-child(1) {
+#T_68d37 th:nth-child(1) {
   background-color: #FFF;
   text-align: right;
 }
-#T_93aa5 caption {
+#T_68d37 caption {
   font-size: 14px;
   font-style: italic;
   caption-side: bottom;
@@ -1377,98 +1442,107 @@ posterior =&amp;  \frac{likelihood*prior}{total\ probability}\tag{7}\\[10pt]
   margin-top: 10px;
 }
 </style>
-<table id="T_93aa5">
+<table id="T_68d37">
   <caption>Previous and expected results and the percent of observed samples from 2022 that were included in either the 50% IQR or the 94% IQR of the predicted values.</caption>
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_93aa5_level0_col0" class="col_heading level0 col0" >Unk</th>
-      <th id="T_93aa5_level0_col1" class="col_heading level0 col1" >Pc</th>
-      <th id="T_93aa5_level0_col2" class="col_heading level0 col2" >Ph</th>
-      <th id="T_93aa5_level0_col3" class="col_heading level0 col3" >Rc</th>
-      <th id="T_93aa5_level0_col4" class="col_heading level0 col4" >Ip</th>
+      <th id="T_68d37_level0_col0" class="col_heading level0 col0" >Unk</th>
+      <th id="T_68d37_level0_col1" class="col_heading level0 col1" >Pc</th>
+      <th id="T_68d37_level0_col2" class="col_heading level0 col2" >Ph</th>
+      <th id="T_68d37_level0_col3" class="col_heading level0 col3" >Rc</th>
+      <th id="T_68d37_level0_col4" class="col_heading level0 col4" >Ip</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_93aa5_level0_row0" class="row_heading level0 row0" >Median 2021</th>
-      <td id="T_93aa5_row0_col0" class="data row0 col0" >0.52</td>
-      <td id="T_93aa5_row0_col1" class="data row0 col1" >1.75</td>
-      <td id="T_93aa5_row0_col2" class="data row0 col2" >0.16</td>
-      <td id="T_93aa5_row0_col3" class="data row0 col3" >0.02</td>
-      <td id="T_93aa5_row0_col4" class="data row0 col4" >0.73</td>
+      <th id="T_68d37_level0_row0" class="row_heading level0 row0" >Median 2021</th>
+      <td id="T_68d37_row0_col0" class="data row0 col0" >0.52</td>
+      <td id="T_68d37_row0_col1" class="data row0 col1" >1.75</td>
+      <td id="T_68d37_row0_col2" class="data row0 col2" >0.16</td>
+      <td id="T_68d37_row0_col3" class="data row0 col3" >0.02</td>
+      <td id="T_68d37_row0_col4" class="data row0 col4" >0.73</td>
     </tr>
     <tr>
-      <th id="T_93aa5_level0_row1" class="row_heading level0 row1" >Median 2022</th>
-      <td id="T_93aa5_row1_col0" class="data row1 col0" >0.85</td>
-      <td id="T_93aa5_row1_col1" class="data row1 col1" >0.56</td>
-      <td id="T_93aa5_row1_col2" class="data row1 col2" >0.00</td>
-      <td id="T_93aa5_row1_col3" class="data row1 col3" >0.00</td>
-      <td id="T_93aa5_row1_col4" class="data row1 col4" >0.06</td>
+      <th id="T_68d37_level0_row1" class="row_heading level0 row1" >Median 2022</th>
+      <td id="T_68d37_row1_col0" class="data row1 col0" >0.85</td>
+      <td id="T_68d37_row1_col1" class="data row1 col1" >0.56</td>
+      <td id="T_68d37_row1_col2" class="data row1 col2" >0.00</td>
+      <td id="T_68d37_row1_col3" class="data row1 col3" >0.00</td>
+      <td id="T_68d37_row1_col4" class="data row1 col4" >0.06</td>
     </tr>
     <tr>
-      <th id="T_93aa5_level0_row2" class="row_heading level0 row2" >Expected sampling median 2024</th>
-      <td id="T_93aa5_row2_col0" class="data row2 col0" >0.56</td>
-      <td id="T_93aa5_row2_col1" class="data row2 col1" >1.46</td>
-      <td id="T_93aa5_row2_col2" class="data row2 col2" >0.14</td>
-      <td id="T_93aa5_row2_col3" class="data row2 col3" >0.01</td>
-      <td id="T_93aa5_row2_col4" class="data row2 col4" >0.57</td>
+      <th id="T_68d37_level0_row2" class="row_heading level0 row2" >Expected sampling median 2024</th>
+      <td id="T_68d37_row2_col0" class="data row2 col0" >0.56</td>
+      <td id="T_68d37_row2_col1" class="data row2 col1" >1.46</td>
+      <td id="T_68d37_row2_col2" class="data row2 col2" >0.14</td>
+      <td id="T_68d37_row2_col3" class="data row2 col3" >0.01</td>
+      <td id="T_68d37_row2_col4" class="data row2 col4" >0.57</td>
     </tr>
     <tr>
-      <th id="T_93aa5_level0_row3" class="row_heading level0 row3" >% 2022 in 50% IQR  predicted</th>
-      <td id="T_93aa5_row3_col0" class="data row3 col0" >0.41</td>
-      <td id="T_93aa5_row3_col1" class="data row3 col1" >0.46</td>
-      <td id="T_93aa5_row3_col2" class="data row3 col2" >0.42</td>
-      <td id="T_93aa5_row3_col3" class="data row3 col3" >0.91</td>
-      <td id="T_93aa5_row3_col4" class="data row3 col4" >0.33</td>
+      <th id="T_68d37_level0_row3" class="row_heading level0 row3" >% 2022 in 50% IQR  predicted</th>
+      <td id="T_68d37_row3_col0" class="data row3 col0" >0.41</td>
+      <td id="T_68d37_row3_col1" class="data row3 col1" >0.46</td>
+      <td id="T_68d37_row3_col2" class="data row3 col2" >0.42</td>
+      <td id="T_68d37_row3_col3" class="data row3 col3" >0.91</td>
+      <td id="T_68d37_row3_col4" class="data row3 col4" >0.33</td>
     </tr>
     <tr>
-      <th id="T_93aa5_level0_row4" class="row_heading level0 row4" >% 2022 in 94% IQR  predicted</th>
-      <td id="T_93aa5_row4_col0" class="data row4 col0" >0.99</td>
-      <td id="T_93aa5_row4_col1" class="data row4 col1" >0.88</td>
-      <td id="T_93aa5_row4_col2" class="data row4 col2" >1.00</td>
-      <td id="T_93aa5_row4_col3" class="data row4 col3" >1.00</td>
-      <td id="T_93aa5_row4_col4" class="data row4 col4" >1.00</td>
+      <th id="T_68d37_level0_row4" class="row_heading level0 row4" >% 2022 in 94% IQR  predicted</th>
+      <td id="T_68d37_row4_col0" class="data row4 col0" >0.99</td>
+      <td id="T_68d37_row4_col1" class="data row4 col1" >0.88</td>
+      <td id="T_68d37_row4_col2" class="data row4 col2" >1.00</td>
+      <td id="T_68d37_row4_col3" class="data row4 col3" >1.00</td>
+      <td id="T_68d37_row4_col4" class="data row4 col4" >1.00</td>
     </tr>
   </tbody>
 </table>
-</div></div>
+</span></p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Legend:</strong> Unk = Unknown group, PC = personal consumption, Ph = personal hygiene, Rc = recreation, Ip = industrial professional</p>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="results-saint-sulpice">
 <h2><span class="section-number">2.9. </span>Results Saint Sulpice<a class="headerlink" href="#results-saint-sulpice" title="Permalink to this headline">#</a></h2>
-<blockquote>
-<div><p><em>Given the data from 2022, Is there an increase, decrease or no change in the expected survey results given the consolidated results from 2015 - 2021?</em></p>
-</div></blockquote>
 <div class="cell tag_remove-input docutils container">
 </div>
 <div class="cell tag_remove-input docutils container">
 </div>
 <div class="cell tag_remove-input docutils container">
+</div>
+<div class="section" id="id2">
+<h3><span class="section-number">2.9.1. </span>Previous and expected survey totals<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
+<div class="admonition-given-the-data-from-2022-is-there-an-increase-decrease-or-no-change-in-the-expected-survey-results-given-the-consolidated-results-from-2015-2021 admonition">
+<p class="admonition-title">Given the data from 2022, Is there an increase, decrease or no change in the expected survey results given the consolidated results from 2015 - 2021?</p>
+<p>The average number of objects counted and indentified per meter at Saint Sulpice is expected to decline going into 2024 (figure 11, table 12). The difference between 2021 and 2022 is minimal (table 11). If we consider that the estimated median is a point estimate of the probable distribution for 2024 (table 12) then there will be no noticable change in 2024 for the residents of Saint Sulpice (figure 12).</p>
 </div>
 <table class="colwidths-auto table">
 <thead>
-<tr class="row-odd"><th class="text-left head"><p></p></th>
-<th class="text-center head"><p></p></th>
+<tr class="row-odd"><th class="text-center head"><p>Figure 11, Table 11</p></th>
+<th class="text-center head"><p>Table 12, Figure 12</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-left"><p><img alt="_images/2188854740fce23410df3c3731290454a2d72e22299d4a02516d3847f45e8e23.png" src="_images/2188854740fce23410df3c3731290454a2d72e22299d4a02516d3847f45e8e23.png" /></p></td>
+<tr class="row-even"><td class="text-center"><p><img alt="_images/91c7eac7289b26771657204f14bfe457b394d3faf927df129aea8a4ffcb3c7f2.png" src="_images/91c7eac7289b26771657204f14bfe457b394d3faf927df129aea8a4ffcb3c7f2.png" /></p></td>
 <td class="text-center"><p><span class="output text_html"><style type="text/css">
-#T_71b86 tr:nth-child(even) {
+#T_142c2 tr:nth-child(even) {
   background-color: rgba(139, 69, 19, 0.08);
 }
-#T_71b86 tr:nth-child(odd) {
+#T_142c2 tr:nth-child(odd) {
   background: #FFF;
 }
-#T_71b86 tr {
+#T_142c2 tr {
   font-size: 14px;
 }
-#T_71b86 th:nth-child(1) {
+#T_142c2 th:nth-child(1) {
   background-color: #FFF;
   text-align: right;
 }
-#T_71b86 caption {
+#T_142c2 caption {
   font-size: 14px;
   font-style: italic;
   caption-side: bottom;
@@ -1476,54 +1550,54 @@ posterior =&amp;  \frac{likelihood*prior}{total\ probability}\tag{7}\\[10pt]
   margin-top: 10px;
 }
 </style>
-<table id="T_71b86">
+<table id="T_142c2">
   <caption>Previous and expected median values of the combined daily totals of the Unkown objects group</caption>
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_71b86_level0_col0" class="col_heading level0 col0" >pcs/m</th>
+      <th id="T_142c2_level0_col0" class="col_heading level0 col0" >pcs/m</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_71b86_level0_row0" class="row_heading level0 row0" >Median 2021</th>
-      <td id="T_71b86_row0_col0" class="data row0 col0" >5.64</td>
+      <th id="T_142c2_level0_row0" class="row_heading level0 row0" >Median 2021</th>
+      <td id="T_142c2_row0_col0" class="data row0 col0" >5.64</td>
     </tr>
     <tr>
-      <th id="T_71b86_level0_row1" class="row_heading level0 row1" >Median 2022</th>
-      <td id="T_71b86_row1_col0" class="data row1 col0" >6.90</td>
+      <th id="T_142c2_level0_row1" class="row_heading level0 row1" >Median 2022</th>
+      <td id="T_142c2_row1_col0" class="data row1 col0" >6.90</td>
     </tr>
     <tr>
-      <th id="T_71b86_level0_row2" class="row_heading level0 row2" >Expected sampling median 2024</th>
-      <td id="T_71b86_row2_col0" class="data row2 col0" >1.99</td>
+      <th id="T_142c2_level0_row2" class="row_heading level0 row2" >Expected sampling median 2024</th>
+      <td id="T_142c2_row2_col0" class="data row2 col0" >6.34</td>
     </tr>
     <tr>
-      <th id="T_71b86_level0_row3" class="row_heading level0 row3" >% 2022 in 50% IQR  predicted</th>
-      <td id="T_71b86_row3_col0" class="data row3 col0" >0.53</td>
+      <th id="T_142c2_level0_row3" class="row_heading level0 row3" >% 2022 in 50% IQR  predicted</th>
+      <td id="T_142c2_row3_col0" class="data row3 col0" >0.53</td>
     </tr>
     <tr>
-      <th id="T_71b86_level0_row4" class="row_heading level0 row4" >% 2022 in 94% IQR  predicted</th>
-      <td id="T_71b86_row4_col0" class="data row4 col0" >0.88</td>
+      <th id="T_142c2_level0_row4" class="row_heading level0 row4" >% 2022 in 94% IQR  predicted</th>
+      <td id="T_142c2_row4_col0" class="data row4 col0" >0.88</td>
     </tr>
   </tbody>
 </table>
 </span></p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p><span class="output text_html"><style type="text/css">
-#T_713ef tr:nth-child(even) {
+<tr class="row-odd"><td class="text-center"><p><span class="output text_html"><style type="text/css">
+#T_f9ba3 tr:nth-child(even) {
   background-color: rgba(139, 69, 19, 0.08);
 }
-#T_713ef tr:nth-child(odd) {
+#T_f9ba3 tr:nth-child(odd) {
   background: #FFF;
 }
-#T_713ef tr {
+#T_f9ba3 tr {
   font-size: 14px;
 }
-#T_713ef th:nth-child(1) {
+#T_f9ba3 th:nth-child(1) {
   background-color: #FFF;
   text-align: right;
 }
-#T_713ef caption {
+#T_f9ba3 caption {
   font-size: 14px;
   font-style: italic;
   caption-side: bottom;
@@ -1531,50 +1605,50 @@ posterior =&amp;  \frac{likelihood*prior}{total\ probability}\tag{7}\\[10pt]
   margin-top: 10px;
 }
 </style>
-<table id="T_713ef">
+<table id="T_f9ba3">
   <caption>The observed values from the training and testing data.</caption>
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_713ef_level0_col0" class="col_heading level0 col0" >Training</th>
-      <th id="T_713ef_level0_col1" class="col_heading level0 col1" >Testing</th>
+      <th id="T_f9ba3_level0_col0" class="col_heading level0 col0" >Training</th>
+      <th id="T_f9ba3_level0_col1" class="col_heading level0 col1" >Testing</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_713ef_level0_row0" class="row_heading level0 row0" >weight all samples</th>
-      <td id="T_713ef_row0_col0" class="data row0 col0" >0.55</td>
-      <td id="T_713ef_row0_col1" class="data row0 col1" >0.45</td>
+      <th id="T_f9ba3_level0_row0" class="row_heading level0 row0" >weight all samples</th>
+      <td id="T_f9ba3_row0_col0" class="data row0 col0" >0.55</td>
+      <td id="T_f9ba3_row0_col1" class="data row0 col1" >0.45</td>
     </tr>
     <tr>
-      <th id="T_713ef_level0_row1" class="row_heading level0 row1" >Number of samples</th>
-      <td id="T_713ef_row1_col0" class="data row1 col0" >21</td>
-      <td id="T_713ef_row1_col1" class="data row1 col1" >17</td>
+      <th id="T_f9ba3_level0_row1" class="row_heading level0 row1" >Number of samples</th>
+      <td id="T_f9ba3_row1_col0" class="data row1 col0" >21</td>
+      <td id="T_f9ba3_row1_col1" class="data row1 col1" >17</td>
     </tr>
     <tr>
-      <th id="T_713ef_level0_row2" class="row_heading level0 row2" >Median</th>
-      <td id="T_713ef_row2_col0" class="data row2 col0" >5.64</td>
-      <td id="T_713ef_row2_col1" class="data row2 col1" >6.90</td>
+      <th id="T_f9ba3_level0_row2" class="row_heading level0 row2" >Median</th>
+      <td id="T_f9ba3_row2_col0" class="data row2 col0" >5.64</td>
+      <td id="T_f9ba3_row2_col1" class="data row2 col1" >6.90</td>
     </tr>
     <tr>
-      <th id="T_713ef_level0_row3" class="row_heading level0 row3" >Average</th>
-      <td id="T_713ef_row3_col0" class="data row3 col0" >7.88</td>
-      <td id="T_713ef_row3_col1" class="data row3 col1" >12.26</td>
+      <th id="T_f9ba3_level0_row3" class="row_heading level0 row3" >Average</th>
+      <td id="T_f9ba3_row3_col0" class="data row3 col0" >7.88</td>
+      <td id="T_f9ba3_row3_col1" class="data row3 col1" >12.26</td>
     </tr>
     <tr>
-      <th id="T_713ef_level0_row4" class="row_heading level0 row4" >25th percentile</th>
-      <td id="T_713ef_row4_col0" class="data row4 col0" >2.70</td>
-      <td id="T_713ef_row4_col1" class="data row4 col1" >3.90</td>
+      <th id="T_f9ba3_level0_row4" class="row_heading level0 row4" >25th percentile</th>
+      <td id="T_f9ba3_row4_col0" class="data row4 col0" >2.70</td>
+      <td id="T_f9ba3_row4_col1" class="data row4 col1" >3.90</td>
     </tr>
     <tr>
-      <th id="T_713ef_level0_row5" class="row_heading level0 row5" >75th percentile</th>
-      <td id="T_713ef_row5_col0" class="data row5 col0" >7.89</td>
-      <td id="T_713ef_row5_col1" class="data row5 col1" >11.58</td>
+      <th id="T_f9ba3_level0_row5" class="row_heading level0 row5" >75th percentile</th>
+      <td id="T_f9ba3_row5_col0" class="data row5 col0" >7.89</td>
+      <td id="T_f9ba3_row5_col1" class="data row5 col1" >11.58</td>
     </tr>
   </tbody>
 </table>
 </span></p></td>
-<td class="text-center"><p><img alt="_images/199f64841a33f0f0cf5811ffce8448f58f538e66aebcfc51afef5c9a911b1efc.png" src="_images/199f64841a33f0f0cf5811ffce8448f58f538e66aebcfc51afef5c9a911b1efc.png" /></p></td>
+<td class="text-center"><p><img alt="_images/df605415be88894041414351aa3c0e6a69a9ab1ea50fea0c5ece946b28ee6dc8.png" src="_images/df605415be88894041414351aa3c0e6a69a9ab1ea50fea0c5ece946b28ee6dc8.png" /></p></td>
 </tr>
 </tbody>
 </table>
@@ -1592,29 +1666,34 @@ posterior =&amp;  \frac{likelihood*prior}{total\ probability}\tag{7}\\[10pt]
 </div>
 <div class="cell tag_remove-input docutils container">
 </div>
+<div class="cell tag_remove-input docutils container">
+</div>
+</div>
+<div class="section" id="id3">
+<h3><span class="section-number">2.9.2. </span>Previous and expected survey results of objects of interest<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<div class="admonition-given-the-median-value-for-the-objects-of-interest-in-2021-what-is-the-chance-that-a-survey-in-2022-will-exceed-this-value admonition">
+<p class="admonition-title">Given the median value for the objects of interest in 2021, what is the chance that a survey in 2022 will exceed this value?</p>
 <table class="colwidths-auto table">
 <thead>
-<tr class="row-odd"><th class="head"><p></p></th>
-<th class="head"><p></p></th>
+<tr class="row-odd"><th class="text-left head"><p>Table 13</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><img alt="_images/543d3f541baa4bbfa61b03bbef45030197ad4120f2c1a36b8520ff7533e68718.png" src="_images/543d3f541baa4bbfa61b03bbef45030197ad4120f2c1a36b8520ff7533e68718.png" /></p></td>
-<td><p><span class="output text_html"><style type="text/css">
-#T_3c56e tr:nth-child(even) {
+<tr class="row-even"><td class="text-left"><p><span class="output text_html"><style type="text/css">
+#T_9cfa7 tr:nth-child(even) {
   background-color: rgba(139, 69, 19, 0.08);
 }
-#T_3c56e tr:nth-child(odd) {
+#T_9cfa7 tr:nth-child(odd) {
   background: #FFF;
 }
-#T_3c56e tr {
+#T_9cfa7 tr {
   font-size: 14px;
 }
-#T_3c56e th:nth-child(1) {
+#T_9cfa7 th:nth-child(1) {
   background-color: #FFF;
   text-align: right;
 }
-#T_3c56e caption {
+#T_9cfa7 caption {
   font-size: 14px;
   font-style: italic;
   caption-side: bottom;
@@ -1622,54 +1701,124 @@ posterior =&amp;  \frac{likelihood*prior}{total\ probability}\tag{7}\\[10pt]
   margin-top: 10px;
 }
 </style>
-<table id="T_3c56e">
+<table id="T_9cfa7">
+  <caption>The probability that a survey in 2024 will exceed the median (50%) from 2021</caption>
+  <thead>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th id="T_9cfa7_level0_col0" class="col_heading level0 col0" >P</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_9cfa7_level0_row0" class="row_heading level0 row0" >Unknown</th>
+      <td id="T_9cfa7_row0_col0" class="data row0 col0" >0.61</td>
+    </tr>
+    <tr>
+      <th id="T_9cfa7_level0_row1" class="row_heading level0 row1" >Personal consumption</th>
+      <td id="T_9cfa7_row1_col0" class="data row1 col0" >0.55</td>
+    </tr>
+    <tr>
+      <th id="T_9cfa7_level0_row2" class="row_heading level0 row2" >Personal hygiene</th>
+      <td id="T_9cfa7_row2_col0" class="data row2 col0" >0.55</td>
+    </tr>
+    <tr>
+      <th id="T_9cfa7_level0_row3" class="row_heading level0 row3" >Recreation/sports</th>
+      <td id="T_9cfa7_row3_col0" class="data row3 col0" >0.97</td>
+    </tr>
+    <tr>
+      <th id="T_9cfa7_level0_row4" class="row_heading level0 row4" >Industrial/professional</th>
+      <td id="T_9cfa7_row4_col0" class="data row4 col0" >0.58</td>
+    </tr>
+  </tbody>
+</table>
+</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Contrary to the trend of the lake, we expect an increase in the amount of beach litter density at Saint Sulpice. This is valid for all object groups.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id4">
+<h4><span class="section-number">2.9.2.1. </span>Expected results fragmented plastics<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h4>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-center head"><p>Figure 12, Table 14</p></th>
+<th class="text-center head"><p>Table 15, Figure 13</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><img alt="_images/ea8444377226e9132fb5049ed45b76cd2569ef6ae2a1972edcae8f8a25bba0b5.png" src="_images/ea8444377226e9132fb5049ed45b76cd2569ef6ae2a1972edcae8f8a25bba0b5.png" /></p></td>
+<td class="text-center"><p><span class="output text_html"><style type="text/css">
+#T_86c41 tr:nth-child(even) {
+  background-color: rgba(139, 69, 19, 0.08);
+}
+#T_86c41 tr:nth-child(odd) {
+  background: #FFF;
+}
+#T_86c41 tr {
+  font-size: 14px;
+}
+#T_86c41 th:nth-child(1) {
+  background-color: #FFF;
+  text-align: right;
+}
+#T_86c41 caption {
+  font-size: 14px;
+  font-style: italic;
+  caption-side: bottom;
+  text-align: left;
+  margin-top: 10px;
+}
+</style>
+<table id="T_86c41">
   <caption>Previous and expected median values of the combined daily totals of the Unkown objects group</caption>
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_3c56e_level0_col0" class="col_heading level0 col0" >pcs/m</th>
+      <th id="T_86c41_level0_col0" class="col_heading level0 col0" >pcs/m</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_3c56e_level0_row0" class="row_heading level0 row0" >Median 2021</th>
-      <td id="T_3c56e_row0_col0" class="data row0 col0" >0.85</td>
+      <th id="T_86c41_level0_row0" class="row_heading level0 row0" >Median 2021</th>
+      <td id="T_86c41_row0_col0" class="data row0 col0" >0.85</td>
     </tr>
     <tr>
-      <th id="T_3c56e_level0_row1" class="row_heading level0 row1" >Median 2022</th>
-      <td id="T_3c56e_row1_col0" class="data row1 col0" >2.28</td>
+      <th id="T_86c41_level0_row1" class="row_heading level0 row1" >Median 2022</th>
+      <td id="T_86c41_row1_col0" class="data row1 col0" >2.28</td>
     </tr>
     <tr>
-      <th id="T_3c56e_level0_row2" class="row_heading level0 row2" >Expected sampling median 2024</th>
-      <td id="T_3c56e_row2_col0" class="data row2 col0" >2.16</td>
+      <th id="T_86c41_level0_row2" class="row_heading level0 row2" >Expected sampling median 2024</th>
+      <td id="T_86c41_row2_col0" class="data row2 col0" >0.98</td>
     </tr>
     <tr>
-      <th id="T_3c56e_level0_row3" class="row_heading level0 row3" >% 2022 in 50% IQR  predicted</th>
-      <td id="T_3c56e_row3_col0" class="data row3 col0" >0.18</td>
+      <th id="T_86c41_level0_row3" class="row_heading level0 row3" >% 2022 in 50% IQR  predicted</th>
+      <td id="T_86c41_row3_col0" class="data row3 col0" >0.18</td>
     </tr>
     <tr>
-      <th id="T_3c56e_level0_row4" class="row_heading level0 row4" >% 2022 in 94% IQR  predicted</th>
-      <td id="T_3c56e_row4_col0" class="data row4 col0" >0.82</td>
+      <th id="T_86c41_level0_row4" class="row_heading level0 row4" >% 2022 in 94% IQR  predicted</th>
+      <td id="T_86c41_row4_col0" class="data row4 col0" >0.82</td>
     </tr>
   </tbody>
 </table>
 </span></p></td>
 </tr>
-<tr class="row-odd"><td><p><span class="output text_html"><style type="text/css">
-#T_d06b1 tr:nth-child(even) {
+<tr class="row-odd"><td class="text-center"><p><span class="output text_html"><style type="text/css">
+#T_ae158 tr:nth-child(even) {
   background-color: rgba(139, 69, 19, 0.08);
 }
-#T_d06b1 tr:nth-child(odd) {
+#T_ae158 tr:nth-child(odd) {
   background: #FFF;
 }
-#T_d06b1 tr {
+#T_ae158 tr {
   font-size: 14px;
 }
-#T_d06b1 th:nth-child(1) {
+#T_ae158 th:nth-child(1) {
   background-color: #FFF;
   text-align: right;
 }
-#T_d06b1 caption {
+#T_ae158 caption {
   font-size: 14px;
   font-style: italic;
   caption-side: bottom;
@@ -1677,65 +1826,168 @@ posterior =&amp;  \frac{likelihood*prior}{total\ probability}\tag{7}\\[10pt]
   margin-top: 10px;
 }
 </style>
-<table id="T_d06b1">
+<table id="T_ae158">
   <caption>The observed values from the training and testing data.</caption>
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_d06b1_level0_col0" class="col_heading level0 col0" >Training</th>
-      <th id="T_d06b1_level0_col1" class="col_heading level0 col1" >Testing</th>
+      <th id="T_ae158_level0_col0" class="col_heading level0 col0" >Training</th>
+      <th id="T_ae158_level0_col1" class="col_heading level0 col1" >Testing</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_d06b1_level0_row0" class="row_heading level0 row0" >weight all samples</th>
-      <td id="T_d06b1_row0_col0" class="data row0 col0" >0.55</td>
-      <td id="T_d06b1_row0_col1" class="data row0 col1" >0.45</td>
+      <th id="T_ae158_level0_row0" class="row_heading level0 row0" >weight all samples</th>
+      <td id="T_ae158_row0_col0" class="data row0 col0" >0.55</td>
+      <td id="T_ae158_row0_col1" class="data row0 col1" >0.45</td>
     </tr>
     <tr>
-      <th id="T_d06b1_level0_row1" class="row_heading level0 row1" >Number of samples</th>
-      <td id="T_d06b1_row1_col0" class="data row1 col0" >21</td>
-      <td id="T_d06b1_row1_col1" class="data row1 col1" >17</td>
+      <th id="T_ae158_level0_row1" class="row_heading level0 row1" >Number of samples</th>
+      <td id="T_ae158_row1_col0" class="data row1 col0" >21</td>
+      <td id="T_ae158_row1_col1" class="data row1 col1" >17</td>
     </tr>
     <tr>
-      <th id="T_d06b1_level0_row2" class="row_heading level0 row2" >Median</th>
-      <td id="T_d06b1_row2_col0" class="data row2 col0" >0.85</td>
-      <td id="T_d06b1_row2_col1" class="data row2 col1" >2.28</td>
+      <th id="T_ae158_level0_row2" class="row_heading level0 row2" >Median</th>
+      <td id="T_ae158_row2_col0" class="data row2 col0" >0.85</td>
+      <td id="T_ae158_row2_col1" class="data row2 col1" >2.28</td>
     </tr>
     <tr>
-      <th id="T_d06b1_level0_row3" class="row_heading level0 row3" >Average</th>
-      <td id="T_d06b1_row3_col0" class="data row3 col0" >2.67</td>
-      <td id="T_d06b1_row3_col1" class="data row3 col1" >3.89</td>
+      <th id="T_ae158_level0_row3" class="row_heading level0 row3" >Average</th>
+      <td id="T_ae158_row3_col0" class="data row3 col0" >2.67</td>
+      <td id="T_ae158_row3_col1" class="data row3 col1" >3.89</td>
     </tr>
     <tr>
-      <th id="T_d06b1_level0_row4" class="row_heading level0 row4" >25th percentile</th>
-      <td id="T_d06b1_row4_col0" class="data row4 col0" >0.63</td>
-      <td id="T_d06b1_row4_col1" class="data row4 col1" >0.83</td>
+      <th id="T_ae158_level0_row4" class="row_heading level0 row4" >25th percentile</th>
+      <td id="T_ae158_row4_col0" class="data row4 col0" >0.63</td>
+      <td id="T_ae158_row4_col1" class="data row4 col1" >0.83</td>
     </tr>
     <tr>
-      <th id="T_d06b1_level0_row5" class="row_heading level0 row5" >75th percentile</th>
-      <td id="T_d06b1_row5_col0" class="data row5 col0" >1.20</td>
-      <td id="T_d06b1_row5_col1" class="data row5 col1" >3.30</td>
+      <th id="T_ae158_level0_row5" class="row_heading level0 row5" >75th percentile</th>
+      <td id="T_ae158_row5_col0" class="data row5 col0" >1.20</td>
+      <td id="T_ae158_row5_col1" class="data row5 col1" >3.30</td>
     </tr>
   </tbody>
 </table>
 </span></p></td>
-<td><p><img alt="_images/f0d372e7ec2a255b5a58b014862bd44cfb1ed929c18e0b38362e3b79be4c7fd0.png" src="_images/f0d372e7ec2a255b5a58b014862bd44cfb1ed929c18e0b38362e3b79be4c7fd0.png" /></p></td>
+<td class="text-center"><p><img alt="_images/d1cefd71bcb3d145fb1aee44c5a644dc83376d0d268ff98f47a28326c84532b6.png" src="_images/d1cefd71bcb3d145fb1aee44c5a644dc83376d0d268ff98f47a28326c84532b6.png" /></p></td>
 </tr>
 </tbody>
 </table>
-<blockquote>
-<div><p><em>Given the median value for the objects of interest in 2021, what is the chance that a survey in 2022 will exceed this value?</em></p>
-</div></blockquote>
-<blockquote>
-<div><p><em>How do the results from 2022 change the expected survey results going forward?</em></p>
-</div></blockquote>
+</div>
+</div>
+<div class="section" id="summary-of-expected-survey-results-saint-sulpice">
+<h3><span class="section-number">2.9.3. </span>Summary of expected survey results Saint Sulpice<a class="headerlink" href="#summary-of-expected-survey-results-saint-sulpice" title="Permalink to this headline">#</a></h3>
+<div class="cell tag_remove-input docutils container">
+</div>
+<div class="admonition-how-do-the-results-from-2022-change-the-expected-survey-results-going-forward admonition">
+<p class="admonition-title">How do the results from 2022 change the expected survey results going forward??</p>
+<p>Beach litter density at Saint Sulpice is expected to increase. Given the data from 2022 we expect the survey results to increase from the 2021 levels and the density at Saint Sulpice is expected to be greater than the expected value for the lake in general.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-center head"><p>Table 10</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><span class="output text_html"><style type="text/css">
+#T_c02a1 tr:nth-child(even) {
+  background-color: rgba(139, 69, 19, 0.08);
+}
+#T_c02a1 tr:nth-child(odd) {
+  background: #FFF;
+}
+#T_c02a1 tr {
+  font-size: 14px;
+}
+#T_c02a1 th:nth-child(1) {
+  background-color: #FFF;
+  text-align: right;
+}
+#T_c02a1 caption {
+  font-size: 14px;
+  font-style: italic;
+  caption-side: bottom;
+  text-align: left;
+  margin-top: 10px;
+}
+</style>
+<table id="T_c02a1">
+  <caption>Previous and expected results and the percent of observed samples from 2022 that were included in either the 50% IQR or the 94% IQR of the predicted values.</caption>
+  <thead>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th id="T_c02a1_level0_col0" class="col_heading level0 col0" >Unk</th>
+      <th id="T_c02a1_level0_col1" class="col_heading level0 col1" >Pc</th>
+      <th id="T_c02a1_level0_col2" class="col_heading level0 col2" >Ph</th>
+      <th id="T_c02a1_level0_col3" class="col_heading level0 col3" >Rc</th>
+      <th id="T_c02a1_level0_col4" class="col_heading level0 col4" >Ip</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_c02a1_level0_row0" class="row_heading level0 row0" >Median 2021</th>
+      <td id="T_c02a1_row0_col0" class="data row0 col0" >0.85</td>
+      <td id="T_c02a1_row0_col1" class="data row0 col1" >2.11</td>
+      <td id="T_c02a1_row0_col2" class="data row0 col2" >0.52</td>
+      <td id="T_c02a1_row0_col3" class="data row0 col3" >0.00</td>
+      <td id="T_c02a1_row0_col4" class="data row0 col4" >0.73</td>
+    </tr>
+    <tr>
+      <th id="T_c02a1_level0_row1" class="row_heading level0 row1" >Median 2022</th>
+      <td id="T_c02a1_row1_col0" class="data row1 col0" >2.28</td>
+      <td id="T_c02a1_row1_col1" class="data row1 col1" >2.40</td>
+      <td id="T_c02a1_row1_col2" class="data row1 col2" >0.68</td>
+      <td id="T_c02a1_row1_col3" class="data row1 col3" >0.04</td>
+      <td id="T_c02a1_row1_col4" class="data row1 col4" >1.30</td>
+    </tr>
+    <tr>
+      <th id="T_c02a1_level0_row2" class="row_heading level0 row2" >Expected sampling median 2024</th>
+      <td id="T_c02a1_row2_col0" class="data row2 col0" >0.98</td>
+      <td id="T_c02a1_row2_col1" class="data row2 col1" >2.31</td>
+      <td id="T_c02a1_row2_col2" class="data row2 col2" >0.57</td>
+      <td id="T_c02a1_row2_col3" class="data row2 col3" >0.07</td>
+      <td id="T_c02a1_row2_col4" class="data row2 col4" >1.06</td>
+    </tr>
+    <tr>
+      <th id="T_c02a1_level0_row3" class="row_heading level0 row3" >% 2022 in 50% IQR  predicted</th>
+      <td id="T_c02a1_row3_col0" class="data row3 col0" >0.18</td>
+      <td id="T_c02a1_row3_col1" class="data row3 col1" >0.71</td>
+      <td id="T_c02a1_row3_col2" class="data row3 col2" >0.59</td>
+      <td id="T_c02a1_row3_col3" class="data row3 col3" >0.41</td>
+      <td id="T_c02a1_row3_col4" class="data row3 col4" >0.35</td>
+    </tr>
+    <tr>
+      <th id="T_c02a1_level0_row4" class="row_heading level0 row4" >% 2022 in 94% IQR  predicted</th>
+      <td id="T_c02a1_row4_col0" class="data row4 col0" >0.82</td>
+      <td id="T_c02a1_row4_col1" class="data row4 col1" >0.76</td>
+      <td id="T_c02a1_row4_col2" class="data row4 col2" >0.82</td>
+      <td id="T_c02a1_row4_col3" class="data row4 col3" >0.65</td>
+      <td id="T_c02a1_row4_col4" class="data row4 col4" >0.82</td>
+    </tr>
+  </tbody>
+</table>
+</span></p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Legend:</strong> Unk = Unknown group, PC = personal consumption, Ph = personal hygiene, Rc = recreation, Ip = industrial professional</p>
+</div>
+</div>
 </div>
 <div class="section" id="discussion">
 <h2><span class="section-number">2.10. </span>Discussion<a class="headerlink" href="#discussion" title="Permalink to this headline">#</a></h2>
+<p>Potential points of discussion</p>
+<ol class="arabic simple">
+<li><p>The lake samples show a decline but the results at Saint Sulpice show an increase. Could this be because the samples at the lake level came from one group and at Saint Sulpice from anothe</p></li>
+<li><p>There were no tampon applicators identified in 2022 but yet they were identified in 40% of samples from 2015-2021.</p></li>
+<li><p>Fragmented plastics are 40% of the objects in 2022 and but hisotrically it is around 20% for the lake. Why is their such a difference?</p></li>
+<li><p>Is their other evidence to support the expected decline of personal consumption products found on the beach?</p></li>
+<li><p>Were there changes to the water treatment facilities (or processes) that would support an anticipated decline in personal hygiene products in general but an increase at Saint Sulpice?</p></li>
+<li><p>What does the presence of shotgun shells on the beach at Saint Sulpice say about hydrological transport mechanisms in lake?</p></li>
+</ol>
 </div>
 <div class="section" id="conclusions">
 <h2><span class="section-number">2.11. </span>Conclusions<a class="headerlink" href="#conclusions" title="Permalink to this headline">#</a></h2>
+<p>The grid approximations function as we expected. The flat areas in the predicted curves demonstrate the need for a more comprehensive model. However, the observed samples in 2022 are within the 94% HDI of the predictions. In most cases we can account for 80% - 100% of the observed with the prediction.</p>
 <div class="section" id="next-steps">
 <h3><span class="section-number">2.11.1. </span>Next steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">#</a></h3>
 </div>
@@ -1744,92 +1996,10 @@ posterior =&amp;  \frac{likelihood*prior}{total\ probability}\tag{7}\\[10pt]
 </div>
 <div class="section" id="financial-disclosure">
 <h3><span class="section-number">2.11.3. </span>Financial disclosure<a class="headerlink" href="#financial-disclosure" title="Permalink to this headline">#</a></h3>
-</div>
-<div class="section" id="additional-references-for-empirical-bayes-and-priors">
-<h3><span class="section-number">2.11.4. </span>Additional references for Empirical Bayes and priors<a class="headerlink" href="#additional-references-for-empirical-bayes-and-priors" title="Permalink to this headline">#</a></h3>
-<p><a class="reference external" href="https://projecteuclid.org/journals/annals-of-statistics/volume-12/issue-4/Bayesianly-Justifiable-and-Relevant-Frequency-Calculations-for-the-Applied-Statistician/10.1214/aos/1176346785.full">Bayesianly Justifiable and Relevant Frequency Calculations for the Applied Statistician</a> Rubin. Ann. Statist. 12 (4) 1151 - 1172, December, 1984. <a class="reference external" href="https://doi.org/10.1214/aos/1176346785">https://doi.org/10.1214/aos/1176346785</a></p>
-<p><strong>Why use this method ?</strong></p>
-<ol class="arabic simple">
-<li><p>Users generally interpret interval estimates as proability statements about the likely parameters.</p></li>
-</ol>
-<p><strong>example:</strong> Supose that <span class="math notranslate nohighlight">\(x\)</span> is normally distributed with mean<span class="math notranslate nohighlight">\(\mu\)</span> and standard deviation of 1. Formally: <span class="math notranslate nohighlight">\(x_{i} \sim N(\mu, 1),\ i=1,... N\)</span>. The standard interval estimate for <span class="math notranslate nohighlight">\(\mu\)</span> is based on the statement <span class="math notranslate nohighlight">\((\bar{x} - \mu) \sim N(0, \frac{1}{\sqrt{N}})\)</span> where <span class="math notranslate nohighlight">\(\bar{x}\)</span> is the observed mean of <span class="math notranslate nohighlight">\(X\)</span> in the sample. Which of course leads to the standard <span class="math notranslate nohighlight">\(95%\)</span> confidence interval of <span class="math notranslate nohighlight">\(\bar{x} \pm \frac{2}{\sqrt{N}}\)</span>. This is often interpreted as the 95% interval of <span class="math notranslate nohighlight">\(\mu\)</span>, from the table we can see, and Rubin points out that it is not. On the other hand the <span class="math notranslate nohighlight">\(95\)</span>% interval from a Bayesian calculation is.</p>
-<ol class="arabic simple" start="2">
-<li><p>Computational directness, this is a restatement of sorts of the first point. Analysis that were once computationaly hopeless can now be handled quite easily.</p></li>
-</ol>
-<p><a class="reference external" href="https://users.aalto.fi/~ssarkka/pub/cup_book_online_20131111.pdf">Bayesian Filtering and Smoothing</a> Simo S¨arkk¨  (2013). Bayesian Filtering and, Smoothing. Cambridge University Press.</p>
-<p><strong>priors</strong></p>
-<ol class="arabic simple">
-<li><p>Empirical Bayesians estimate the prior distribution from the data</p></li>
-</ol>
-<p><a class="reference external" href="https://www.stat.cmu.edu/~larry/=sml/Bayes.pdf">Statistical Machine Learning</a> Han Liu and Larry Wasserman. Statistical Machine Learning, 2014.</p>
-<p><strong>Difference between frequentist and bayes</strong></p>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="text-left head"><p></p></th>
-<th class="text-left head"><p>Frequentist</p></th>
-<th class="text-left head"><p>Bayesian</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td class="text-left"><p>Probability is:</p></td>
-<td class="text-left"><p>limiting relative frequency</p></td>
-<td class="text-left"><p>degree of belief</p></td>
-</tr>
-<tr class="row-odd"><td class="text-left"><p>Parameter <span class="math notranslate nohighlight">\(\theta\)</span> is a:</p></td>
-<td class="text-left"><p>fixed constant</p></td>
-<td class="text-left"><p>random variable</p></td>
-</tr>
-<tr class="row-even"><td class="text-left"><p>Probability statements are about:</p></td>
-<td class="text-left"><p>procedures</p></td>
-<td class="text-left"><p>parameters</p></td>
-</tr>
-<tr class="row-odd"><td class="text-left"><p>Frequency guarantees?</p></td>
-<td class="text-left"><p>yes</p></td>
-<td class="text-left"><p>no</p></td>
-</tr>
-</tbody>
-</table>
-<p><a class="reference external" href="https://bayes.wustl.edu/etj/articles/prior.pdf">Prior Probabilities</a> Edwin Jaynes. Prior Probabilities. IEEE Transactions On Systems Science and Cybernetics, vol. sec-4, no. 3, 1968, pp. 227-241</p>
-<ol class="arabic simple">
-<li><p>If the information incorporated into the maximum-entropy analysis includes all the constraints actually operative in the random experiment, then the distribution predicted by maximum entropy is overwhelmingly the most likely to be observed experimentally, because it can be realized in overwhelmingly the greatest number of ways.</p></li>
-<li><p>From a mathematical standpoint, therefore, it is immaterial whether we approach the theory of Bernoulli trials in the conventional way, or whether we regard it as an example of maximum-entropy inference on a “higher manifold” than the sample space of a single trial, in which the only information available is the mean value.</p></li>
-</ol>
-<p><a class="reference external" href="http://www.med.mcgill.ca/epidemiology/hanley/bios601/GaussianModel/JaynesProbabilityTheory.pdf">Probability Theory: The logic of science</a> Edwin Jyanes. Probability Theory: The logic of science. Cambridge University Press, 2003. ISBN-13 978-0-511-06589-7 eBook (NetLibrary).</p>
-<p><strong>priors</strong></p>
-<ol class="arabic simple">
-<li><p>any additional information beyond the immediate data D of the current problem is by definition ‘prior information’</p></li>
-<li><p>why priors are misunderstood: this was only an artifact of an unsymmetrical way of formulating problems, which left them ill-posed. One could see clearly how to assign sampling probabilities because the hypothesis H was stated very specifically; had the prior information X been specified equally well, it would have been equally clear how to assign prior probabilities.</p></li>
-</ol>
-<p>From a mathematical standpoint, therefore, it is immaterial whether we approach the theory of Bernoulli trials in the conventional way, or whether we regard it as an example of maximum-entropy inference on a “higher manifold” than the sample space of a single trial, in which the only information available is the mean value.</p>
-<p><a class="reference external" href="https://jkkweb.sitehost.iu.edu/DBDA.html">Doing Byesian Data Analysis</a> Kruske, John. Doing Bayesian Data Analysis, 2nd Edition. 2015. <a class="reference external" href="http://dx.doi.org/10.1016/B978-0-12-405888-0.00002-7">http://dx.doi.org/10.1016/B978-0-12-405888-0.00002-7</a></p>
-<p><strong>What is Bayes</strong></p>
-<ol class="arabic simple">
-<li><p>Bayesian data analysis has two foundational ideas. The first idea is that Bayesian inference is reallocation of credibility across possibilities. The second foundational idea
-is that the possibilities, over which we allocate credibility, are parameter values in meaningful mathematical models.</p></li>
-</ol>
-<p><a class="reference external" href="https://link.springer.com/article/10.1007/s40300-014-0044-1">Empirical Bayes methods in classical and Bayesian inference</a> Sonia Petrone, Stefano Rizzelli, Judith Rousseau, Catia Scricciolo. Empirical Bayes methods in classical and Bayesian inference. DOI 10.1007/s40300-014-0044-1. June 2014 Sapienza Università di Roma 2014.</p>
-<p><strong>priors</strong></p>
-<ol class="arabic simple">
-<li><p>empirical Bayes is commonly associated with general techniques that make use of a data-driven choice of the prior distribution in Bayesian inference</p></li>
-</ol>
-<p><strong>Empirical Bayes</strong></p>
-<ol class="arabic simple">
-<li><p>Classical empirical Bayes methods arose in the context of compound experiments, where a latent distribution driving experiment-specific parameters formally acts as a prior on each one such parameter and is estimated from the data, usually by maximum likelihood.</p></li>
-<li><p>The term empirical Bayes is also used in the context of purely Bayesian inference when hyper-parameters of a subjective prior distribution are selected through the data.</p></li>
-<li><p>Robbins compound sampling problems such as multisite clinical trials</p></li>
-<li><p>frameowrk from Robbins or Petrone:</p>
-<ol class="arabic simple">
-<li><p>In this setting, n values θ1 , … , θn are drawn at random rom a latent distribution G. Then, conditionally on θ1 , … , θn , observable random variables X1 , … , Xn are drawn independently from probability distributions p(· | θ1 ), … , p(· | θn ), respectively.</p></li>
-</ol>
-</li>
-</ol>
-<p><a class="reference external" href="https://dataorigami.net/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers/#contents">Bayesian methods for hackers</a></p>
-<p>Personally, I feel that Empirical Bayes is double-counting the data. That is, we are using the data twice: once in the prior, which will influence our results towards the observed data, and again in the inferential engine of MCMC. This double-counting will understate our true uncertainty. To minimize this double-counting, I would only suggest using Empirical Bayes when you have lots of observations, else the prior will have too strong of an influence.</p>
-<p><a class="reference external" href="http://www.stat.columbia.edu/~gelman/book/BDA3.pdf">Bayesian Data Analysis</a> Copyright 1995–2020, by Andrew Gelman, John Carlin, Hal Stern,
-Donald Rubin, David Dunson, and Aki Vehtari.</p>
+<p>This is unfunded</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<p>This script updated 23/08/2023 in Biel, CH</p>
+<p>This script updated 25/08/2023 in Biel, CH</p>
 <blockquote>
 <div><p>❤️ what you do everyday</p>
 </div></blockquote>
@@ -1842,12 +2012,12 @@ Donald Rubin, David Dunson, and Aki Vehtari.</p>
 
 Git branch: newsummary
 
-seaborn   : 0.12.2
-numpy     : 1.24.3
-pandas    : 2.0.2
 scipy     : 1.10.1
+pandas    : 2.0.2
 matplotlib: 3.7.1
 slugify   : 8.0.1
+numpy     : 1.24.3
+seaborn   : 0.12.2
 </pre></div>
 </div>
 </div>
@@ -1937,14 +2107,30 @@ slugify   : 8.0.1
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#results-lake-geneva">2.8. Results Lake Geneva</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#results-saint-sulpice">2.9. Results Saint Sulpice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#results-lake-geneva">2.8. Results Lake Geneva</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#previous-and-expected-survey-totals">2.8.1. Previous and expected survey totals</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#previous-and-expected-survey-results-of-objects-of-interest">2.8.2. Previous and expected survey results of objects of interest</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#expected-results-fragmented-plastics">2.8.2.1. Expected results fragmented plastics</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#expected-results-personal-consumption">2.8.2.2. Expected results personal consumption</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-expected-survey-results-lake-geneva">2.8.2.3. Summary of expected survey results Lake Geneva</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#results-saint-sulpice">2.9. Results Saint Sulpice</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2.9.1. Previous and expected survey totals</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">2.9.2. Previous and expected survey results of objects of interest</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">2.9.2.1. Expected results fragmented plastics</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-expected-survey-results-saint-sulpice">2.9.3. Summary of expected survey results Saint Sulpice</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion">2.10. Discussion</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusions">2.11. Conclusions</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#next-steps">2.11.1. Next steps</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#participating-organizations">2.11.2. Participating organizations</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#financial-disclosure">2.11.3. Financial disclosure</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-references-for-empirical-bayes-and-priors">2.11.4. Additional references for Empirical Bayes and priors</a></li>
 </ul>
 </li>
 </ul>
