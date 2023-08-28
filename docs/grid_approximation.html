@@ -555,19 +555,46 @@ document.write(`
 </div>
 <div class="cell tag_remove-input docutils container">
 </div>
-<!-- ```{glue:figure} objects_of_interest
----
-name: objects_of_interest
----
-{glue:text}`blank_caption` 
-```
-{numref}`figure %s: <objects_of_interest>` The objects of interest from the end of the last sampling period, Lake Genea 2020 - 2021. --></div>
+</div>
 <div class="section" id="summary-test-and-training-data">
 <span id="data-context"></span><h3><span class="section-number">2.6.4. </span>Summary test and training data<a class="headerlink" href="#summary-test-and-training-data" title="Permalink to this headline">#</a></h3>
 <p>Another way to look at this collection of observations is that each sampling group collected the data for reasons that were specific to that group, the protocol provided a framework for ensuring consistency and a pathway to interpreting the results. However, this does not mean that each group interpreted the protocol in the same manner, nor does it mean that all objects collected were counted. By limiting analysis to specific object-codes, those that appear most often and/or those that are easily identified, uncertainty is reduced by leveraging frequency of occurence and domain experience.</p>
-<div class="cell tag_remove-input docutils container">
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">asl_beaches</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;resources/u_asl_beaches.csv&quot;</span><span class="p">)</span>
+<span class="n">plastock</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;resources/u_pstk.csv&quot;</span><span class="p">)</span>
+<span class="n">plastock</span><span class="p">[</span><span class="s2">&quot;date&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">plastock</span><span class="p">[</span><span class="s2">&quot;date&quot;</span><span class="p">])</span>
+
+<span class="n">pstock</span> <span class="o">=</span> <span class="n">plastock</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;loc_date&quot;</span><span class="p">,</span> <span class="s2">&quot;location&quot;</span><span class="p">,</span> <span class="s2">&quot;city&quot;</span><span class="p">,</span> <span class="s2">&quot;date&quot;</span><span class="p">,</span> <span class="s2">&quot;doy&quot;</span><span class="p">,</span> <span class="s2">&quot;Project&quot;</span><span class="p">,</span> <span class="s2">&quot;code&quot;</span><span class="p">],</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s2">&quot;pcs/m&quot;</span><span class="p">:</span> <span class="s1">&#39;sum&#39;</span><span class="p">,</span> <span class="s1">&#39;quantity&#39;</span><span class="p">:</span><span class="s1">&#39;sum&#39;</span><span class="p">})</span>
+<span class="n">pstockx</span> <span class="o">=</span> <span class="n">pstock</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;loc_date&quot;</span><span class="p">,</span><span class="s2">&quot;city&quot;</span> <span class="p">,</span><span class="s2">&quot;date&quot;</span><span class="p">,</span> <span class="s2">&quot;doy&quot;</span><span class="p">,</span> <span class="s2">&quot;Project&quot;</span><span class="p">],</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s2">&quot;pcs/m&quot;</span><span class="p">:</span> <span class="s1">&#39;sum&#39;</span><span class="p">,</span> <span class="s1">&#39;quantity&#39;</span><span class="p">:</span><span class="s1">&#39;sum&#39;</span><span class="p">})</span>
+
+<span class="c1"># partion the data on </span>
+<span class="n">date_mask</span> <span class="o">=</span>  <span class="p">(</span><span class="n">all_data</span><span class="p">[</span><span class="s2">&quot;date&quot;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="s2">&quot;2021-05-31&quot;</span><span class="p">)</span>
+<span class="n">prior_d</span> <span class="o">=</span> <span class="n">all_data</span><span class="p">[</span><span class="n">date_mask</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">prior_d</span> <span class="o">=</span> <span class="n">prior_d</span><span class="p">[</span><span class="n">prior_d</span><span class="o">.</span><span class="n">water_name_slug</span> <span class="o">==</span> <span class="n">lake</span><span class="p">]</span>
+<span class="n">prior_d</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;pcs_m&quot;</span><span class="p">:</span><span class="s2">&quot;pcs/m&quot;</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">prior_d</span><span class="p">[</span><span class="s2">&quot;Project&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Training&quot;</span>
+<span class="n">prior_dt</span> <span class="o">=</span> <span class="n">prior_d</span><span class="p">[[</span><span class="s2">&quot;loc_date&quot;</span><span class="p">,</span> <span class="s2">&quot;location&quot;</span><span class="p">,</span> <span class="s2">&quot;city&quot;</span> <span class="p">,</span><span class="s2">&quot;date&quot;</span><span class="p">,</span> <span class="s2">&quot;doy&quot;</span><span class="p">,</span> <span class="s2">&quot;Project&quot;</span><span class="p">,</span> <span class="s2">&quot;code&quot;</span><span class="p">,</span> <span class="s2">&quot;pcs/m&quot;</span><span class="p">,</span> <span class="s2">&quot;quantity&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;loc_date&quot;</span><span class="p">,</span> <span class="s2">&quot;location&quot;</span><span class="p">,</span> <span class="s2">&quot;city&quot;</span><span class="p">,</span> <span class="s2">&quot;date&quot;</span><span class="p">,</span> <span class="s2">&quot;doy&quot;</span><span class="p">,</span> <span class="s2">&quot;Project&quot;</span><span class="p">,</span> <span class="s2">&quot;code&quot;</span><span class="p">],</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s2">&quot;pcs/m&quot;</span><span class="p">:</span> <span class="s1">&#39;sum&#39;</span><span class="p">,</span> <span class="s1">&#39;quantity&#39;</span><span class="p">:</span><span class="s1">&#39;sum&#39;</span><span class="p">})</span>
+<span class="n">prior_dx</span> <span class="o">=</span> <span class="n">prior_dt</span><span class="p">[</span><span class="n">prior_dt</span><span class="o">.</span><span class="n">code</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">pstock</span><span class="o">.</span><span class="n">code</span><span class="o">.</span><span class="n">unique</span><span class="p">())]</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;loc_date&quot;</span><span class="p">,</span> <span class="s2">&quot;city&quot;</span><span class="p">,</span> <span class="s2">&quot;date&quot;</span><span class="p">,</span> <span class="s2">&quot;doy&quot;</span><span class="p">,</span> <span class="s2">&quot;Project&quot;</span><span class="p">],</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s2">&quot;pcs/m&quot;</span><span class="p">:</span> <span class="s1">&#39;sum&#39;</span><span class="p">,</span> <span class="s1">&#39;quantity&#39;</span><span class="p">:</span><span class="s1">&#39;sum&#39;</span><span class="p">})</span>
+
+<span class="n">combined</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">prior_dt</span><span class="p">,</span> <span class="n">pstock</span><span class="p">])</span>
+<span class="n">combinedx</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">prior_dx</span><span class="p">,</span> <span class="n">pstockx</span><span class="p">])</span>
+
+<span class="n">sup_after</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;resources/sup_after.csv&quot;</span><span class="p">)</span>
+<span class="n">sup_after</span> <span class="o">=</span> <span class="n">sup_after</span><span class="p">[</span><span class="n">sup_after</span><span class="o">.</span><span class="n">code</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">combined</span><span class="o">.</span><span class="n">code</span><span class="o">.</span><span class="n">unique</span><span class="p">())]</span>
+<span class="n">sup_afterx</span> <span class="o">=</span> <span class="n">sup_after</span><span class="p">[</span><span class="n">sup_after</span><span class="o">.</span><span class="n">code</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">toi</span><span class="p">)]</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;loc_date&quot;</span><span class="p">,</span> <span class="s2">&quot;date&quot;</span><span class="p">,</span> <span class="s2">&quot;city&quot;</span><span class="p">,</span> <span class="s2">&quot;Project&quot;</span><span class="p">],</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s2">&quot;pcs/m&quot;</span><span class="p">:</span> <span class="s1">&#39;sum&#39;</span><span class="p">,</span> <span class="s1">&#39;quantity&#39;</span><span class="p">:</span><span class="s1">&#39;sum&#39;</span><span class="p">})</span>
+
+<span class="c1"># add those values to the plastock data and samples prior to end training date</span>
+<span class="n">cbdi</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">combined</span><span class="p">,</span> <span class="n">sup_after</span><span class="p">[[</span><span class="s2">&quot;loc_date&quot;</span><span class="p">,</span> <span class="s2">&quot;location&quot;</span><span class="p">,</span> <span class="s2">&quot;city&quot;</span><span class="p">,</span> <span class="s2">&quot;date&quot;</span><span class="p">,</span> <span class="s2">&quot;doy&quot;</span><span class="p">,</span> <span class="s2">&quot;Project&quot;</span><span class="p">,</span> <span class="s2">&quot;code&quot;</span><span class="p">,</span> <span class="s2">&quot;pcs/m&quot;</span><span class="p">]]],</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">cbdx</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">combinedx</span><span class="p">,</span> <span class="n">sup_afterx</span><span class="p">],</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">cbd</span> <span class="o">=</span> <span class="n">cbdi</span><span class="p">[</span><span class="n">cbdi</span><span class="o">.</span><span class="n">code</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">toi</span><span class="p">)]</span>
+
+<span class="n">column_names_groups</span> <span class="o">=</span> <span class="p">{</span><span class="n">v</span><span class="p">:</span><span class="n">k</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">abbrev_use_g</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+<span class="n">code_groups</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">column_names_groups</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+</pre></div>
 </div>
-<div class="cell tag_remove-input docutils container">
+</div>
 </div>
 <div class="cell tag_remove-input docutils container">
 </div>
@@ -586,22 +613,23 @@ name: objects_of_interest
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-center"><p><img alt="_images/49a4920e390fa76f03c2d756b41fccc8ad9a59edf0b9aab5c4c186b37d2cc1a5.png" src="_images/49a4920e390fa76f03c2d756b41fccc8ad9a59edf0b9aab5c4c186b37d2cc1a5.png" /></p></td>
+<tr class="row-even"><td class="text-center"><p><img alt="_images/b674618fddc8c4fef06fc1107ba9d27765afecfe79f727b7e5356bddf020c3f1.png" src="_images/b674618fddc8c4fef06fc1107ba9d27765afecfe79f727b7e5356bddf020c3f1.png" /></p></td>
 <td class="text-center"><p><span class="output text_html"><style type="text/css">
-#T_824af tr:nth-child(even) {
+#T_eb075 tr:nth-child(even) {
   background-color: rgba(139, 69, 19, 0.08);
 }
-#T_824af tr:nth-child(odd) {
+#T_eb075 tr:nth-child(odd) {
   background: #FFF;
 }
-#T_824af tr {
+#T_eb075 tr {
   font-size: 14px;
+  padding: 12px;
 }
-#T_824af th:nth-child(1) {
+#T_eb075 th:nth-child(1) {
   background-color: #FFF;
   text-align: right;
 }
-#T_824af caption {
+#T_eb075 caption {
   font-size: 14px;
   font-style: italic;
   caption-side: bottom;
@@ -609,65 +637,66 @@ name: objects_of_interest
   margin-top: 10px;
 }
 </style>
-<table id="T_824af">
+<table id="T_eb075">
   <caption>The observed values from the training and testing data. Remark that the testing data is only 22% of all the data. This is because we are only in the first year of a six year sampling period</caption>
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_824af_level0_col0" class="col_heading level0 col0" >Training</th>
-      <th id="T_824af_level0_col1" class="col_heading level0 col1" >Testing</th>
+      <th id="T_eb075_level0_col0" class="col_heading level0 col0" >Training</th>
+      <th id="T_eb075_level0_col1" class="col_heading level0 col1" >Testing</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_824af_level0_row0" class="row_heading level0 row0" >weight all samples</th>
-      <td id="T_824af_row0_col0" class="data row0 col0" >0.78</td>
-      <td id="T_824af_row0_col1" class="data row0 col1" >0.22</td>
+      <th id="T_eb075_level0_row0" class="row_heading level0 row0" >weight all samples</th>
+      <td id="T_eb075_row0_col0" class="data row0 col0" >0.77</td>
+      <td id="T_eb075_row0_col1" class="data row0 col1" >0.23</td>
     </tr>
     <tr>
-      <th id="T_824af_level0_row1" class="row_heading level0 row1" >Number of samples</th>
-      <td id="T_824af_row1_col0" class="data row1 col0" >246</td>
-      <td id="T_824af_row1_col1" class="data row1 col1" >71</td>
+      <th id="T_eb075_level0_row1" class="row_heading level0 row1" >Number of samples</th>
+      <td id="T_eb075_row1_col0" class="data row1 col0" >246</td>
+      <td id="T_eb075_row1_col1" class="data row1 col1" >73</td>
     </tr>
     <tr>
-      <th id="T_824af_level0_row2" class="row_heading level0 row2" >Median</th>
-      <td id="T_824af_row2_col0" class="data row2 col0" >3.70</td>
-      <td id="T_824af_row2_col1" class="data row2 col1" >2.00</td>
+      <th id="T_eb075_level0_row2" class="row_heading level0 row2" >Median</th>
+      <td id="T_eb075_row2_col0" class="data row2 col0" >3.70</td>
+      <td id="T_eb075_row2_col1" class="data row2 col1" >2.34</td>
     </tr>
     <tr>
-      <th id="T_824af_level0_row3" class="row_heading level0 row3" >Average</th>
-      <td id="T_824af_row3_col0" class="data row3 col0" >6.67</td>
-      <td id="T_824af_row3_col1" class="data row3 col1" >3.03</td>
+      <th id="T_eb075_level0_row3" class="row_heading level0 row3" >Average</th>
+      <td id="T_eb075_row3_col0" class="data row3 col0" >6.67</td>
+      <td id="T_eb075_row3_col1" class="data row3 col1" >3.16</td>
     </tr>
     <tr>
-      <th id="T_824af_level0_row4" class="row_heading level0 row4" >25th percentile</th>
-      <td id="T_824af_row4_col0" class="data row4 col0" >1.75</td>
-      <td id="T_824af_row4_col1" class="data row4 col1" >0.67</td>
+      <th id="T_eb075_level0_row4" class="row_heading level0 row4" >25th percentile</th>
+      <td id="T_eb075_row4_col0" class="data row4 col0" >1.75</td>
+      <td id="T_eb075_row4_col1" class="data row4 col1" >0.78</td>
     </tr>
     <tr>
-      <th id="T_824af_level0_row5" class="row_heading level0 row5" >75th percentile</th>
-      <td id="T_824af_row5_col0" class="data row5 col0" >7.47</td>
-      <td id="T_824af_row5_col1" class="data row5 col1" >3.80</td>
+      <th id="T_eb075_level0_row5" class="row_heading level0 row5" >75th percentile</th>
+      <td id="T_eb075_row5_col0" class="data row5 col0" >7.47</td>
+      <td id="T_eb075_row5_col1" class="data row5 col1" >3.99</td>
     </tr>
   </tbody>
 </table>
 </span></p></td>
 </tr>
 <tr class="row-odd"><td class="text-center"><p><span class="output text_html"><style type="text/css">
-#T_68bcf tr:nth-child(even) {
+#T_cf71f tr:nth-child(even) {
   background-color: rgba(139, 69, 19, 0.08);
 }
-#T_68bcf tr:nth-child(odd) {
+#T_cf71f tr:nth-child(odd) {
   background: #FFF;
 }
-#T_68bcf tr {
+#T_cf71f tr {
   font-size: 14px;
+  padding: 12px;
 }
-#T_68bcf th:nth-child(1) {
+#T_cf71f th:nth-child(1) {
   background-color: #FFF;
   text-align: right;
 }
-#T_68bcf caption {
+#T_cf71f caption {
   font-size: 14px;
   font-style: italic;
   caption-side: bottom;
@@ -675,40 +704,38 @@ name: objects_of_interest
   margin-top: 10px;
 }
 </style>
-<table id="T_68bcf">
+<table id="T_cf71f">
   <caption>The number of different locations and cities for the data. Note that there are 25 different municipalitites in all.</caption>
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_68bcf_level0_col0" class="col_heading level0 col0" >Training</th>
-      <th id="T_68bcf_level0_col1" class="col_heading level0 col1" >Testing</th>
+      <th id="T_cf71f_level0_col0" class="col_heading level0 col0" >Training</th>
+      <th id="T_cf71f_level0_col1" class="col_heading level0 col1" >Testing</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_68bcf_level0_row0" class="row_heading level0 row0" >Number of cities</th>
-      <td id="T_68bcf_row0_col0" class="data row0 col0" >15</td>
-      <td id="T_68bcf_row0_col1" class="data row0 col1" >18</td>
+      <th id="T_cf71f_level0_row0" class="row_heading level0 row0" >Number of cities</th>
+      <td id="T_cf71f_row0_col0" class="data row0 col0" >15</td>
+      <td id="T_cf71f_row0_col1" class="data row0 col1" >19</td>
     </tr>
     <tr>
-      <th id="T_68bcf_level0_row1" class="row_heading level0 row1" >Number of locations</th>
-      <td id="T_68bcf_row1_col0" class="data row1 col0" >38</td>
-      <td id="T_68bcf_row1_col1" class="data row1 col1" >21</td>
+      <th id="T_cf71f_level0_row1" class="row_heading level0 row1" >Number of locations</th>
+      <td id="T_cf71f_row1_col0" class="data row1 col0" >38</td>
+      <td id="T_cf71f_row1_col1" class="data row1 col1" >23</td>
     </tr>
     <tr>
-      <th id="T_68bcf_level0_row2" class="row_heading level0 row2" >Total objects</th>
-      <td id="T_68bcf_row2_col0" class="data row2 col0" >58,295</td>
-      <td id="T_68bcf_row2_col1" class="data row2 col1" >13,804</td>
+      <th id="T_cf71f_level0_row2" class="row_heading level0 row2" >Total objects</th>
+      <td id="T_cf71f_row2_col0" class="data row2 col0" >58,295</td>
+      <td id="T_cf71f_row2_col1" class="data row2 col1" >13,804</td>
     </tr>
   </tbody>
 </table>
 </span></p></td>
-<td class="text-center"><p><img alt="_images/bdd546630c27e5536317f50ea4060242fa68b2719b674d7240cd1188c707b3a7.png" src="_images/bdd546630c27e5536317f50ea4060242fa68b2719b674d7240cd1188c707b3a7.png" /></p></td>
+<td class="text-center"><p><img alt="_images/724a8af3e3cdbb16255594aa144b903aa8c84aeed2780aae4504d1d186cb8217.png" src="_images/724a8af3e3cdbb16255594aa144b903aa8c84aeed2780aae4504d1d186cb8217.png" /></p></td>
 </tr>
 </tbody>
 </table>
-<div class="cell tag_remove-input docutils container">
-</div>
 </div>
 </div>
 <div class="section" id="methods">
@@ -840,27 +867,6 @@ p(a|b) \sim &amp; \ Beta(s+a, n+b-s) \tag{12} \\[12pt]
 </div>
 <div class="cell tag_remove-input docutils container">
 </div>
-<!-- ```{glue:figure} uninformed_prior_example
-:name: uninformed_prior_example
-
-{glue:text}`blank_caption`
-```
-{numref}`Figure %s: <uninformed_prior_example>` The expected distribution of the grid approximation is approximately equal to the solution if we used a Beta distribution to the model sample results. The observed test data appears to be a better fit to the posterior distribution than the observed data. -->
-<!-- |       |  |
-|--------------------------------------------------------|-------------------------------------------|
-|{glue:}`uninformed_prior_example`                       | {glue:}`test_data_example`         |
-|{glue:}`new_beliefs`                                    | words -->
-<!-- |                                                        |                                           |
-|--------------------------------------------------------|-------------------------------------------|
-|{glue:}`city_prior_data`                                | {glue:}`city_posterior`                   |
-|{glue:}`city_outlook`                                   | describe                                  | --><div class="cell tag_remove-input docutils container">
-</div>
-<div class="cell tag_remove-input docutils container">
-</div>
-<div class="cell tag_remove-input docutils container">
-</div>
-<div class="cell tag_remove-input docutils container">
-</div>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="text-center head"><p>Figure 3</p></th>
@@ -868,8 +874,8 @@ p(a|b) \sim &amp; \ Beta(s+a, n+b-s) \tag{12} \\[12pt]
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-center"><p><img alt="_images/6b200105437344ce67d804b1467b8ea41ca83151e32c82040376863aa2b0aa12.png" src="_images/6b200105437344ce67d804b1467b8ea41ca83151e32c82040376863aa2b0aa12.png" /></p></td>
-<td class="text-center"><p><img alt="_images/66df7095bc0ae3f8e32a318afa0e1679e27871d33459cb00ef2b5d3d2f862b75.png" src="_images/66df7095bc0ae3f8e32a318afa0e1679e27871d33459cb00ef2b5d3d2f862b75.png" /></p></td>
+<tr class="row-even"><td class="text-center"><p><img alt="_images/8db7b910c57cb3a4700ab9ae1ea9f405fe3e089f19c663d12b5ece9203d4120a.png" src="_images/8db7b910c57cb3a4700ab9ae1ea9f405fe3e089f19c663d12b5ece9203d4120a.png" /></p></td>
+<td class="text-center"><p><img alt="_images/df626c7c6ff2f0e031246a375e0740254d6131d77156e334cec6bddcad009e20.png" src="_images/df626c7c6ff2f0e031246a375e0740254d6131d77156e334cec6bddcad009e20.png" /></p></td>
 </tr>
 <tr class="row-odd"><td class="text-center"><p>Correlation of land-use variables from the prior data.</p></td>
 <td class="text-center"><p>Correlation of land-use variables from the likelihood data</p></td>
@@ -903,22 +909,23 @@ The __combined daily total__ is the sum of the objects of interest per sample. I
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-center"><p><img alt="_images/b2db047691efbf5fecd7883c8bf06705426a026002cca3baca38b52af2bb1ae6.png" src="_images/b2db047691efbf5fecd7883c8bf06705426a026002cca3baca38b52af2bb1ae6.png" /></p></td>
+<tr class="row-even"><td class="text-center"><p><img alt="_images/b1b0af7d6eef8bcbeb5e8db5480746b5419b3b1e8465da137c9ca48b13b67591.png" src="_images/b1b0af7d6eef8bcbeb5e8db5480746b5419b3b1e8465da137c9ca48b13b67591.png" /></p></td>
 <td class="text-center"><p><span class="output text_html"><style type="text/css">
-#T_b3336 tr:nth-child(even) {
+#T_b3e63 tr:nth-child(even) {
   background-color: rgba(139, 69, 19, 0.08);
 }
-#T_b3336 tr:nth-child(odd) {
+#T_b3e63 tr:nth-child(odd) {
   background: #FFF;
 }
-#T_b3336 tr {
+#T_b3e63 tr {
   font-size: 14px;
+  padding: 12px;
 }
-#T_b3336 th:nth-child(1) {
+#T_b3e63 th:nth-child(1) {
   background-color: #FFF;
   text-align: right;
 }
-#T_b3336 caption {
+#T_b3e63 caption {
   font-size: 14px;
   font-style: italic;
   caption-side: bottom;
@@ -926,54 +933,55 @@ The __combined daily total__ is the sum of the objects of interest per sample. I
   margin-top: 10px;
 }
 </style>
-<table id="T_b3336">
+<table id="T_b3e63">
   <caption>Previous and expected median values of the combined daily totals of the Unkown objects group</caption>
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_b3336_level0_col0" class="col_heading level0 col0" >pcs/m</th>
+      <th id="T_b3e63_level0_col0" class="col_heading level0 col0" >pcs/m</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_b3336_level0_row0" class="row_heading level0 row0" >Median 2021</th>
-      <td id="T_b3336_row0_col0" class="data row0 col0" >3.70</td>
+      <th id="T_b3e63_level0_row0" class="row_heading level0 row0" >Median 2021</th>
+      <td id="T_b3e63_row0_col0" class="data row0 col0" >3.70</td>
     </tr>
     <tr>
-      <th id="T_b3336_level0_row1" class="row_heading level0 row1" >Median 2022</th>
-      <td id="T_b3336_row1_col0" class="data row1 col0" >2.00</td>
+      <th id="T_b3e63_level0_row1" class="row_heading level0 row1" >Median 2022</th>
+      <td id="T_b3e63_row1_col0" class="data row1 col0" >2.34</td>
     </tr>
     <tr>
-      <th id="T_b3336_level0_row2" class="row_heading level0 row2" >Expected sampling median 2024</th>
-      <td id="T_b3336_row2_col0" class="data row2 col0" >2.83</td>
+      <th id="T_b3e63_level0_row2" class="row_heading level0 row2" >Expected sampling median 2024</th>
+      <td id="T_b3e63_row2_col0" class="data row2 col0" >2.78</td>
     </tr>
     <tr>
-      <th id="T_b3336_level0_row3" class="row_heading level0 row3" >% 2022 in 50% IQR  predicted</th>
-      <td id="T_b3336_row3_col0" class="data row3 col0" >0.44</td>
+      <th id="T_b3e63_level0_row3" class="row_heading level0 row3" >% 2022 in 50% IQR  predicted</th>
+      <td id="T_b3e63_row3_col0" class="data row3 col0" >0.44</td>
     </tr>
     <tr>
-      <th id="T_b3336_level0_row4" class="row_heading level0 row4" >% 2022 in 94% IQR  predicted</th>
-      <td id="T_b3336_row4_col0" class="data row4 col0" >0.82</td>
+      <th id="T_b3e63_level0_row4" class="row_heading level0 row4" >% 2022 in 94% IQR  predicted</th>
+      <td id="T_b3e63_row4_col0" class="data row4 col0" >0.82</td>
     </tr>
   </tbody>
 </table>
 </span></p></td>
 </tr>
 <tr class="row-odd"><td class="text-center"><p><span class="output text_html"><style type="text/css">
-#T_2858b tr:nth-child(even) {
+#T_995d8 tr:nth-child(even) {
   background-color: rgba(139, 69, 19, 0.08);
 }
-#T_2858b tr:nth-child(odd) {
+#T_995d8 tr:nth-child(odd) {
   background: #FFF;
 }
-#T_2858b tr {
+#T_995d8 tr {
   font-size: 14px;
+  padding: 12px;
 }
-#T_2858b th:nth-child(1) {
+#T_995d8 th:nth-child(1) {
   background-color: #FFF;
   text-align: right;
 }
-#T_2858b caption {
+#T_995d8 caption {
   font-size: 14px;
   font-style: italic;
   caption-side: bottom;
@@ -981,50 +989,50 @@ The __combined daily total__ is the sum of the objects of interest per sample. I
   margin-top: 10px;
 }
 </style>
-<table id="T_2858b">
+<table id="T_995d8">
   <caption>The observed values from the training and testing data.</caption>
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_2858b_level0_col0" class="col_heading level0 col0" >Training</th>
-      <th id="T_2858b_level0_col1" class="col_heading level0 col1" >Testing</th>
+      <th id="T_995d8_level0_col0" class="col_heading level0 col0" >Training</th>
+      <th id="T_995d8_level0_col1" class="col_heading level0 col1" >Testing</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_2858b_level0_row0" class="row_heading level0 row0" >weight all samples</th>
-      <td id="T_2858b_row0_col0" class="data row0 col0" >0.78</td>
-      <td id="T_2858b_row0_col1" class="data row0 col1" >0.22</td>
+      <th id="T_995d8_level0_row0" class="row_heading level0 row0" >weight all samples</th>
+      <td id="T_995d8_row0_col0" class="data row0 col0" >0.77</td>
+      <td id="T_995d8_row0_col1" class="data row0 col1" >0.23</td>
     </tr>
     <tr>
-      <th id="T_2858b_level0_row1" class="row_heading level0 row1" >Number of samples</th>
-      <td id="T_2858b_row1_col0" class="data row1 col0" >246</td>
-      <td id="T_2858b_row1_col1" class="data row1 col1" >71</td>
+      <th id="T_995d8_level0_row1" class="row_heading level0 row1" >Number of samples</th>
+      <td id="T_995d8_row1_col0" class="data row1 col0" >246</td>
+      <td id="T_995d8_row1_col1" class="data row1 col1" >73</td>
     </tr>
     <tr>
-      <th id="T_2858b_level0_row2" class="row_heading level0 row2" >Median</th>
-      <td id="T_2858b_row2_col0" class="data row2 col0" >3.70</td>
-      <td id="T_2858b_row2_col1" class="data row2 col1" >2.00</td>
+      <th id="T_995d8_level0_row2" class="row_heading level0 row2" >Median</th>
+      <td id="T_995d8_row2_col0" class="data row2 col0" >3.70</td>
+      <td id="T_995d8_row2_col1" class="data row2 col1" >2.34</td>
     </tr>
     <tr>
-      <th id="T_2858b_level0_row3" class="row_heading level0 row3" >Average</th>
-      <td id="T_2858b_row3_col0" class="data row3 col0" >6.67</td>
-      <td id="T_2858b_row3_col1" class="data row3 col1" >3.03</td>
+      <th id="T_995d8_level0_row3" class="row_heading level0 row3" >Average</th>
+      <td id="T_995d8_row3_col0" class="data row3 col0" >6.67</td>
+      <td id="T_995d8_row3_col1" class="data row3 col1" >3.16</td>
     </tr>
     <tr>
-      <th id="T_2858b_level0_row4" class="row_heading level0 row4" >25th percentile</th>
-      <td id="T_2858b_row4_col0" class="data row4 col0" >1.75</td>
-      <td id="T_2858b_row4_col1" class="data row4 col1" >0.67</td>
+      <th id="T_995d8_level0_row4" class="row_heading level0 row4" >25th percentile</th>
+      <td id="T_995d8_row4_col0" class="data row4 col0" >1.75</td>
+      <td id="T_995d8_row4_col1" class="data row4 col1" >0.78</td>
     </tr>
     <tr>
-      <th id="T_2858b_level0_row5" class="row_heading level0 row5" >75th percentile</th>
-      <td id="T_2858b_row5_col0" class="data row5 col0" >7.47</td>
-      <td id="T_2858b_row5_col1" class="data row5 col1" >3.80</td>
+      <th id="T_995d8_level0_row5" class="row_heading level0 row5" >75th percentile</th>
+      <td id="T_995d8_row5_col0" class="data row5 col0" >7.47</td>
+      <td id="T_995d8_row5_col1" class="data row5 col1" >3.99</td>
     </tr>
   </tbody>
 </table>
 </span></p></td>
-<td class="text-center"><p><img alt="_images/2b1663061574667854a482925372410387b0a0a1c3110fc5d63362c59f736130.png" src="_images/2b1663061574667854a482925372410387b0a0a1c3110fc5d63362c59f736130.png" /></p></td>
+<td class="text-center"><p><img alt="_images/06cbb76c93103aa26814ca16a0828c5a1101c0cd2f2d4cb67f199969cfa9b9fa.png" src="_images/06cbb76c93103aa26814ca16a0828c5a1101c0cd2f2d4cb67f199969cfa9b9fa.png" /></p></td>
 </tr>
 </tbody>
 </table>
@@ -1067,20 +1075,21 @@ The __combined daily total__ is the sum of the objects of interest per sample. I
 </thead>
 <tbody>
 <tr class="row-even"><td class="text-left"><p><span class="output text_html"><style type="text/css">
-#T_aed51 tr:nth-child(even) {
+#T_5faa8 tr:nth-child(even) {
   background-color: rgba(139, 69, 19, 0.08);
 }
-#T_aed51 tr:nth-child(odd) {
+#T_5faa8 tr:nth-child(odd) {
   background: #FFF;
 }
-#T_aed51 tr {
+#T_5faa8 tr {
   font-size: 14px;
+  padding: 12px;
 }
-#T_aed51 th:nth-child(1) {
+#T_5faa8 th:nth-child(1) {
   background-color: #FFF;
   text-align: right;
 }
-#T_aed51 caption {
+#T_5faa8 caption {
   font-size: 14px;
   font-style: italic;
   caption-side: bottom;
@@ -1088,34 +1097,34 @@ The __combined daily total__ is the sum of the objects of interest per sample. I
   margin-top: 10px;
 }
 </style>
-<table id="T_aed51">
+<table id="T_5faa8">
   <caption>The probability that a survey in 2024 will exceed the median (50%) from 2021</caption>
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_aed51_level0_col0" class="col_heading level0 col0" >P</th>
+      <th id="T_5faa8_level0_col0" class="col_heading level0 col0" >P</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_aed51_level0_row0" class="row_heading level0 row0" >Unknown</th>
-      <td id="T_aed51_row0_col0" class="data row0 col0" >0.53</td>
+      <th id="T_5faa8_level0_row0" class="row_heading level0 row0" >Unknown</th>
+      <td id="T_5faa8_row0_col0" class="data row0 col0" >0.53</td>
     </tr>
     <tr>
-      <th id="T_aed51_level0_row1" class="row_heading level0 row1" >Personal consumption</th>
-      <td id="T_aed51_row1_col0" class="data row1 col0" >0.43</td>
+      <th id="T_5faa8_level0_row1" class="row_heading level0 row1" >Personal consumption</th>
+      <td id="T_5faa8_row1_col0" class="data row1 col0" >0.43</td>
     </tr>
     <tr>
-      <th id="T_aed51_level0_row2" class="row_heading level0 row2" >Personal hygiene</th>
-      <td id="T_aed51_row2_col0" class="data row2 col0" >0.46</td>
+      <th id="T_5faa8_level0_row2" class="row_heading level0 row2" >Personal hygiene</th>
+      <td id="T_5faa8_row2_col0" class="data row2 col0" >0.46</td>
     </tr>
     <tr>
-      <th id="T_aed51_level0_row3" class="row_heading level0 row3" >Recreation/sports</th>
-      <td id="T_aed51_row3_col0" class="data row3 col0" >0.45</td>
+      <th id="T_5faa8_level0_row3" class="row_heading level0 row3" >Recreation/sports</th>
+      <td id="T_5faa8_row3_col0" class="data row3 col0" >0.45</td>
     </tr>
     <tr>
-      <th id="T_aed51_level0_row4" class="row_heading level0 row4" >Industrial/professional</th>
-      <td id="T_aed51_row4_col0" class="data row4 col0" >0.42</td>
+      <th id="T_5faa8_level0_row4" class="row_heading level0 row4" >Industrial/professional</th>
+      <td id="T_5faa8_row4_col0" class="data row4 col0" >0.42</td>
     </tr>
   </tbody>
 </table>
@@ -1135,22 +1144,23 @@ The __combined daily total__ is the sum of the objects of interest per sample. I
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-center"><p><img alt="_images/90dc4dffb21717de9bc13b72ab59b2f5c50c420b960b4a1f4ee844ae27d055c7.png" src="_images/90dc4dffb21717de9bc13b72ab59b2f5c50c420b960b4a1f4ee844ae27d055c7.png" /></p></td>
+<tr class="row-even"><td class="text-center"><p><img alt="_images/4aac0286680ae22075917afaaf6acd5182748c062a0ca4dcd692d452c4192ddb.png" src="_images/4aac0286680ae22075917afaaf6acd5182748c062a0ca4dcd692d452c4192ddb.png" /></p></td>
 <td class="text-center"><p><span class="output text_html"><style type="text/css">
-#T_09063 tr:nth-child(even) {
+#T_98c2a tr:nth-child(even) {
   background-color: rgba(139, 69, 19, 0.08);
 }
-#T_09063 tr:nth-child(odd) {
+#T_98c2a tr:nth-child(odd) {
   background: #FFF;
 }
-#T_09063 tr {
+#T_98c2a tr {
   font-size: 14px;
+  padding: 12px;
 }
-#T_09063 th:nth-child(1) {
+#T_98c2a th:nth-child(1) {
   background-color: #FFF;
   text-align: right;
 }
-#T_09063 caption {
+#T_98c2a caption {
   font-size: 14px;
   font-style: italic;
   caption-side: bottom;
@@ -1158,54 +1168,55 @@ The __combined daily total__ is the sum of the objects of interest per sample. I
   margin-top: 10px;
 }
 </style>
-<table id="T_09063">
+<table id="T_98c2a">
   <caption>Previous and expected median values of the combined daily totals of the Unkown objects group</caption>
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_09063_level0_col0" class="col_heading level0 col0" >pcs/m</th>
+      <th id="T_98c2a_level0_col0" class="col_heading level0 col0" >pcs/m</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_09063_level0_row0" class="row_heading level0 row0" >Median 2021</th>
-      <td id="T_09063_row0_col0" class="data row0 col0" >0.52</td>
+      <th id="T_98c2a_level0_row0" class="row_heading level0 row0" >Median 2021</th>
+      <td id="T_98c2a_row0_col0" class="data row0 col0" >0.52</td>
     </tr>
     <tr>
-      <th id="T_09063_level0_row1" class="row_heading level0 row1" >Median 2022</th>
-      <td id="T_09063_row1_col0" class="data row1 col0" >0.85</td>
+      <th id="T_98c2a_level0_row1" class="row_heading level0 row1" >Median 2022</th>
+      <td id="T_98c2a_row1_col0" class="data row1 col0" >0.85</td>
     </tr>
     <tr>
-      <th id="T_09063_level0_row2" class="row_heading level0 row2" >Expected sampling median 2024</th>
-      <td id="T_09063_row2_col0" class="data row2 col0" >0.56</td>
+      <th id="T_98c2a_level0_row2" class="row_heading level0 row2" >Expected sampling median 2024</th>
+      <td id="T_98c2a_row2_col0" class="data row2 col0" >0.56</td>
     </tr>
     <tr>
-      <th id="T_09063_level0_row3" class="row_heading level0 row3" >% 2022 in 50% IQR  predicted</th>
-      <td id="T_09063_row3_col0" class="data row3 col0" >0.41</td>
+      <th id="T_98c2a_level0_row3" class="row_heading level0 row3" >% 2022 in 50% IQR  predicted</th>
+      <td id="T_98c2a_row3_col0" class="data row3 col0" >0.41</td>
     </tr>
     <tr>
-      <th id="T_09063_level0_row4" class="row_heading level0 row4" >% 2022 in 94% IQR  predicted</th>
-      <td id="T_09063_row4_col0" class="data row4 col0" >0.99</td>
+      <th id="T_98c2a_level0_row4" class="row_heading level0 row4" >% 2022 in 94% IQR  predicted</th>
+      <td id="T_98c2a_row4_col0" class="data row4 col0" >0.99</td>
     </tr>
   </tbody>
 </table>
 </span></p></td>
 </tr>
 <tr class="row-odd"><td class="text-center"><p><span class="output text_html"><style type="text/css">
-#T_a5b87 tr:nth-child(even) {
+#T_8116a tr:nth-child(even) {
   background-color: rgba(139, 69, 19, 0.08);
 }
-#T_a5b87 tr:nth-child(odd) {
+#T_8116a tr:nth-child(odd) {
   background: #FFF;
 }
-#T_a5b87 tr {
+#T_8116a tr {
   font-size: 14px;
+  padding: 12px;
 }
-#T_a5b87 th:nth-child(1) {
+#T_8116a th:nth-child(1) {
   background-color: #FFF;
   text-align: right;
 }
-#T_a5b87 caption {
+#T_8116a caption {
   font-size: 14px;
   font-style: italic;
   caption-side: bottom;
@@ -1213,50 +1224,50 @@ The __combined daily total__ is the sum of the objects of interest per sample. I
   margin-top: 10px;
 }
 </style>
-<table id="T_a5b87">
+<table id="T_8116a">
   <caption>The observed values from the training and testing data.</caption>
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_a5b87_level0_col0" class="col_heading level0 col0" >Training</th>
-      <th id="T_a5b87_level0_col1" class="col_heading level0 col1" >Testing</th>
+      <th id="T_8116a_level0_col0" class="col_heading level0 col0" >Training</th>
+      <th id="T_8116a_level0_col1" class="col_heading level0 col1" >Testing</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_a5b87_level0_row0" class="row_heading level0 row0" >weight all samples</th>
-      <td id="T_a5b87_row0_col0" class="data row0 col0" >0.78</td>
-      <td id="T_a5b87_row0_col1" class="data row0 col1" >0.22</td>
+      <th id="T_8116a_level0_row0" class="row_heading level0 row0" >weight all samples</th>
+      <td id="T_8116a_row0_col0" class="data row0 col0" >0.78</td>
+      <td id="T_8116a_row0_col1" class="data row0 col1" >0.22</td>
     </tr>
     <tr>
-      <th id="T_a5b87_level0_row1" class="row_heading level0 row1" >Number of samples</th>
-      <td id="T_a5b87_row1_col0" class="data row1 col0" >246</td>
-      <td id="T_a5b87_row1_col1" class="data row1 col1" >69</td>
+      <th id="T_8116a_level0_row1" class="row_heading level0 row1" >Number of samples</th>
+      <td id="T_8116a_row1_col0" class="data row1 col0" >246</td>
+      <td id="T_8116a_row1_col1" class="data row1 col1" >69</td>
     </tr>
     <tr>
-      <th id="T_a5b87_level0_row2" class="row_heading level0 row2" >Median</th>
-      <td id="T_a5b87_row2_col0" class="data row2 col0" >0.52</td>
-      <td id="T_a5b87_row2_col1" class="data row2 col1" >0.85</td>
+      <th id="T_8116a_level0_row2" class="row_heading level0 row2" >Median</th>
+      <td id="T_8116a_row2_col0" class="data row2 col0" >0.52</td>
+      <td id="T_8116a_row2_col1" class="data row2 col1" >0.85</td>
     </tr>
     <tr>
-      <th id="T_a5b87_level0_row3" class="row_heading level0 row3" >Average</th>
-      <td id="T_a5b87_row3_col0" class="data row3 col0" >1.36</td>
-      <td id="T_a5b87_row3_col1" class="data row3 col1" >1.40</td>
+      <th id="T_8116a_level0_row3" class="row_heading level0 row3" >Average</th>
+      <td id="T_8116a_row3_col0" class="data row3 col0" >1.36</td>
+      <td id="T_8116a_row3_col1" class="data row3 col1" >1.40</td>
     </tr>
     <tr>
-      <th id="T_a5b87_level0_row4" class="row_heading level0 row4" >25th percentile</th>
-      <td id="T_a5b87_row4_col0" class="data row4 col0" >0.16</td>
-      <td id="T_a5b87_row4_col1" class="data row4 col1" >0.24</td>
+      <th id="T_8116a_level0_row4" class="row_heading level0 row4" >25th percentile</th>
+      <td id="T_8116a_row4_col0" class="data row4 col0" >0.16</td>
+      <td id="T_8116a_row4_col1" class="data row4 col1" >0.24</td>
     </tr>
     <tr>
-      <th id="T_a5b87_level0_row5" class="row_heading level0 row5" >75th percentile</th>
-      <td id="T_a5b87_row5_col0" class="data row5 col0" >1.29</td>
-      <td id="T_a5b87_row5_col1" class="data row5 col1" >2.08</td>
+      <th id="T_8116a_level0_row5" class="row_heading level0 row5" >75th percentile</th>
+      <td id="T_8116a_row5_col0" class="data row5 col0" >1.29</td>
+      <td id="T_8116a_row5_col1" class="data row5 col1" >2.08</td>
     </tr>
   </tbody>
 </table>
 </span></p></td>
-<td class="text-center"><p><img alt="_images/ce966e7dd272c8f70d23bc97d15bb7943f034ee5df23f17cdf29f19164bf01f7.png" src="_images/ce966e7dd272c8f70d23bc97d15bb7943f034ee5df23f17cdf29f19164bf01f7.png" /></p></td>
+<td class="text-center"><p><img alt="_images/0eb5521b13043ff066fe6e295017d00c2ebe299845ebd535bfa15a6c57492364.png" src="_images/0eb5521b13043ff066fe6e295017d00c2ebe299845ebd535bfa15a6c57492364.png" /></p></td>
 </tr>
 </tbody>
 </table>
@@ -1271,22 +1282,23 @@ The __combined daily total__ is the sum of the objects of interest per sample. I
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-center"><p><img alt="_images/6aaf148113a1792fab936786927753e995a4523c305ce114f1348b5558b08e9b.png" src="_images/6aaf148113a1792fab936786927753e995a4523c305ce114f1348b5558b08e9b.png" /></p></td>
+<tr class="row-even"><td class="text-center"><p><img alt="_images/2aa8addc4749dc0890569a491b8c4f81b8ae8e8b98388cf8012be79dfb460e0b.png" src="_images/2aa8addc4749dc0890569a491b8c4f81b8ae8e8b98388cf8012be79dfb460e0b.png" /></p></td>
 <td class="text-center"><p><span class="output text_html"><style type="text/css">
-#T_ac983 tr:nth-child(even) {
+#T_7bc58 tr:nth-child(even) {
   background-color: rgba(139, 69, 19, 0.08);
 }
-#T_ac983 tr:nth-child(odd) {
+#T_7bc58 tr:nth-child(odd) {
   background: #FFF;
 }
-#T_ac983 tr {
+#T_7bc58 tr {
   font-size: 14px;
+  padding: 12px;
 }
-#T_ac983 th:nth-child(1) {
+#T_7bc58 th:nth-child(1) {
   background-color: #FFF;
   text-align: right;
 }
-#T_ac983 caption {
+#T_7bc58 caption {
   font-size: 14px;
   font-style: italic;
   caption-side: bottom;
@@ -1294,54 +1306,55 @@ The __combined daily total__ is the sum of the objects of interest per sample. I
   margin-top: 10px;
 }
 </style>
-<table id="T_ac983">
+<table id="T_7bc58">
   <caption>Previous and expected median values of indentified Personal consumption group</caption>
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_ac983_level0_col0" class="col_heading level0 col0" >pcs/m</th>
+      <th id="T_7bc58_level0_col0" class="col_heading level0 col0" >pcs/m</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_ac983_level0_row0" class="row_heading level0 row0" >Median 2021</th>
-      <td id="T_ac983_row0_col0" class="data row0 col0" >1.75</td>
+      <th id="T_7bc58_level0_row0" class="row_heading level0 row0" >Median 2021</th>
+      <td id="T_7bc58_row0_col0" class="data row0 col0" >1.75</td>
     </tr>
     <tr>
-      <th id="T_ac983_level0_row1" class="row_heading level0 row1" >Median 2022</th>
-      <td id="T_ac983_row1_col0" class="data row1 col0" >0.56</td>
+      <th id="T_7bc58_level0_row1" class="row_heading level0 row1" >Median 2022</th>
+      <td id="T_7bc58_row1_col0" class="data row1 col0" >0.56</td>
     </tr>
     <tr>
-      <th id="T_ac983_level0_row2" class="row_heading level0 row2" >Expected sampling median 2024</th>
-      <td id="T_ac983_row2_col0" class="data row2 col0" >1.46</td>
+      <th id="T_7bc58_level0_row2" class="row_heading level0 row2" >Expected sampling median 2024</th>
+      <td id="T_7bc58_row2_col0" class="data row2 col0" >1.46</td>
     </tr>
     <tr>
-      <th id="T_ac983_level0_row3" class="row_heading level0 row3" >% 2022 in 50% IQR  predicted</th>
-      <td id="T_ac983_row3_col0" class="data row3 col0" >0.39</td>
+      <th id="T_7bc58_level0_row3" class="row_heading level0 row3" >% 2022 in 50% IQR  predicted</th>
+      <td id="T_7bc58_row3_col0" class="data row3 col0" >0.39</td>
     </tr>
     <tr>
-      <th id="T_ac983_level0_row4" class="row_heading level0 row4" >% 2022 in 94% IQR  predicted</th>
-      <td id="T_ac983_row4_col0" class="data row4 col0" >0.72</td>
+      <th id="T_7bc58_level0_row4" class="row_heading level0 row4" >% 2022 in 94% IQR  predicted</th>
+      <td id="T_7bc58_row4_col0" class="data row4 col0" >0.72</td>
     </tr>
   </tbody>
 </table>
 </span></p></td>
 </tr>
 <tr class="row-odd"><td class="text-center"><p><span class="output text_html"><style type="text/css">
-#T_97548 tr:nth-child(even) {
+#T_358d4 tr:nth-child(even) {
   background-color: rgba(139, 69, 19, 0.08);
 }
-#T_97548 tr:nth-child(odd) {
+#T_358d4 tr:nth-child(odd) {
   background: #FFF;
 }
-#T_97548 tr {
+#T_358d4 tr {
   font-size: 14px;
+  padding: 12px;
 }
-#T_97548 th:nth-child(1) {
+#T_358d4 th:nth-child(1) {
   background-color: #FFF;
   text-align: right;
 }
-#T_97548 caption {
+#T_358d4 caption {
   font-size: 14px;
   font-style: italic;
   caption-side: bottom;
@@ -1349,50 +1362,50 @@ The __combined daily total__ is the sum of the objects of interest per sample. I
   margin-top: 10px;
 }
 </style>
-<table id="T_97548">
+<table id="T_358d4">
   <caption>The observed values from the training and testing data.</caption>
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_97548_level0_col0" class="col_heading level0 col0" >Training</th>
-      <th id="T_97548_level0_col1" class="col_heading level0 col1" >Testing</th>
+      <th id="T_358d4_level0_col0" class="col_heading level0 col0" >Training</th>
+      <th id="T_358d4_level0_col1" class="col_heading level0 col1" >Testing</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_97548_level0_row0" class="row_heading level0 row0" >weight all samples</th>
-      <td id="T_97548_row0_col0" class="data row0 col0" >0.78</td>
-      <td id="T_97548_row0_col1" class="data row0 col1" >0.22</td>
+      <th id="T_358d4_level0_row0" class="row_heading level0 row0" >weight all samples</th>
+      <td id="T_358d4_row0_col0" class="data row0 col0" >0.78</td>
+      <td id="T_358d4_row0_col1" class="data row0 col1" >0.22</td>
     </tr>
     <tr>
-      <th id="T_97548_level0_row1" class="row_heading level0 row1" >Number of samples</th>
-      <td id="T_97548_row1_col0" class="data row1 col0" >246</td>
-      <td id="T_97548_row1_col1" class="data row1 col1" >69</td>
+      <th id="T_358d4_level0_row1" class="row_heading level0 row1" >Number of samples</th>
+      <td id="T_358d4_row1_col0" class="data row1 col0" >246</td>
+      <td id="T_358d4_row1_col1" class="data row1 col1" >69</td>
     </tr>
     <tr>
-      <th id="T_97548_level0_row2" class="row_heading level0 row2" >Median</th>
-      <td id="T_97548_row2_col0" class="data row2 col0" >1.75</td>
-      <td id="T_97548_row2_col1" class="data row2 col1" >0.56</td>
+      <th id="T_358d4_level0_row2" class="row_heading level0 row2" >Median</th>
+      <td id="T_358d4_row2_col0" class="data row2 col0" >1.75</td>
+      <td id="T_358d4_row2_col1" class="data row2 col1" >0.56</td>
     </tr>
     <tr>
-      <th id="T_97548_level0_row3" class="row_heading level0 row3" >Average</th>
-      <td id="T_97548_row3_col0" class="data row3 col0" >2.82</td>
-      <td id="T_97548_row3_col1" class="data row3 col1" >1.01</td>
+      <th id="T_358d4_level0_row3" class="row_heading level0 row3" >Average</th>
+      <td id="T_358d4_row3_col0" class="data row3 col0" >2.82</td>
+      <td id="T_358d4_row3_col1" class="data row3 col1" >1.01</td>
     </tr>
     <tr>
-      <th id="T_97548_level0_row4" class="row_heading level0 row4" >25th percentile</th>
-      <td id="T_97548_row4_col0" class="data row4 col0" >0.66</td>
-      <td id="T_97548_row4_col1" class="data row4 col1" >0.16</td>
+      <th id="T_358d4_level0_row4" class="row_heading level0 row4" >25th percentile</th>
+      <td id="T_358d4_row4_col0" class="data row4 col0" >0.66</td>
+      <td id="T_358d4_row4_col1" class="data row4 col1" >0.16</td>
     </tr>
     <tr>
-      <th id="T_97548_level0_row5" class="row_heading level0 row5" >75th percentile</th>
-      <td id="T_97548_row5_col0" class="data row5 col0" >3.27</td>
-      <td id="T_97548_row5_col1" class="data row5 col1" >1.34</td>
+      <th id="T_358d4_level0_row5" class="row_heading level0 row5" >75th percentile</th>
+      <td id="T_358d4_row5_col0" class="data row5 col0" >3.27</td>
+      <td id="T_358d4_row5_col1" class="data row5 col1" >1.34</td>
     </tr>
   </tbody>
 </table>
 </span></p></td>
-<td class="text-center"><p><img alt="_images/a9e5e69cfc769033b4729693b503f67a48a0f9b38ce1ca808625b23dc69a01b3.png" src="_images/a9e5e69cfc769033b4729693b503f67a48a0f9b38ce1ca808625b23dc69a01b3.png" /></p></td>
+<td class="text-center"><p><img alt="_images/91f48e49efa02149a58f34a252b8b2be9eeb06158f9e1a7f9cd36c1ef5077d56.png" src="_images/91f48e49efa02149a58f34a252b8b2be9eeb06158f9e1a7f9cd36c1ef5077d56.png" /></p></td>
 </tr>
 </tbody>
 </table>
@@ -1421,20 +1434,21 @@ The __combined daily total__ is the sum of the objects of interest per sample. I
 </thead>
 <tbody>
 <tr class="row-even"><td class="text-center"><p><span class="output text_html"><style type="text/css">
-#T_68d37 tr:nth-child(even) {
+#T_e7241 tr:nth-child(even) {
   background-color: rgba(139, 69, 19, 0.08);
 }
-#T_68d37 tr:nth-child(odd) {
+#T_e7241 tr:nth-child(odd) {
   background: #FFF;
 }
-#T_68d37 tr {
+#T_e7241 tr {
   font-size: 14px;
+  padding: 12px;
 }
-#T_68d37 th:nth-child(1) {
+#T_e7241 th:nth-child(1) {
   background-color: #FFF;
   text-align: right;
 }
-#T_68d37 caption {
+#T_e7241 caption {
   font-size: 14px;
   font-style: italic;
   caption-side: bottom;
@@ -1442,66 +1456,67 @@ The __combined daily total__ is the sum of the objects of interest per sample. I
   margin-top: 10px;
 }
 </style>
-<table id="T_68d37">
-  <caption>Previous and expected results and the percent of observed samples from 2022 that were included in either the 50% IQR or the 94% IQR of the predicted values.</caption>
+<table id="T_e7241">
+  <caption>Table 10: Previous and expected results and the percent of observed samples from 2022 that were included in either the 50% IQR or the 94% IQR of the predicted values.</caption>
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_68d37_level0_col0" class="col_heading level0 col0" >Unk</th>
-      <th id="T_68d37_level0_col1" class="col_heading level0 col1" >Pc</th>
-      <th id="T_68d37_level0_col2" class="col_heading level0 col2" >Ph</th>
-      <th id="T_68d37_level0_col3" class="col_heading level0 col3" >Rc</th>
-      <th id="T_68d37_level0_col4" class="col_heading level0 col4" >Ip</th>
+      <th id="T_e7241_level0_col0" class="col_heading level0 col0" >Unk</th>
+      <th id="T_e7241_level0_col1" class="col_heading level0 col1" >Pc</th>
+      <th id="T_e7241_level0_col2" class="col_heading level0 col2" >Ph</th>
+      <th id="T_e7241_level0_col3" class="col_heading level0 col3" >Rc</th>
+      <th id="T_e7241_level0_col4" class="col_heading level0 col4" >Ip</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_68d37_level0_row0" class="row_heading level0 row0" >Median 2021</th>
-      <td id="T_68d37_row0_col0" class="data row0 col0" >0.52</td>
-      <td id="T_68d37_row0_col1" class="data row0 col1" >1.75</td>
-      <td id="T_68d37_row0_col2" class="data row0 col2" >0.16</td>
-      <td id="T_68d37_row0_col3" class="data row0 col3" >0.02</td>
-      <td id="T_68d37_row0_col4" class="data row0 col4" >0.73</td>
+      <th id="T_e7241_level0_row0" class="row_heading level0 row0" >Median 2021</th>
+      <td id="T_e7241_row0_col0" class="data row0 col0" >0.52</td>
+      <td id="T_e7241_row0_col1" class="data row0 col1" >1.75</td>
+      <td id="T_e7241_row0_col2" class="data row0 col2" >0.16</td>
+      <td id="T_e7241_row0_col3" class="data row0 col3" >0.02</td>
+      <td id="T_e7241_row0_col4" class="data row0 col4" >0.73</td>
     </tr>
     <tr>
-      <th id="T_68d37_level0_row1" class="row_heading level0 row1" >Median 2022</th>
-      <td id="T_68d37_row1_col0" class="data row1 col0" >0.85</td>
-      <td id="T_68d37_row1_col1" class="data row1 col1" >0.56</td>
-      <td id="T_68d37_row1_col2" class="data row1 col2" >0.00</td>
-      <td id="T_68d37_row1_col3" class="data row1 col3" >0.00</td>
-      <td id="T_68d37_row1_col4" class="data row1 col4" >0.06</td>
+      <th id="T_e7241_level0_row1" class="row_heading level0 row1" >Median 2022</th>
+      <td id="T_e7241_row1_col0" class="data row1 col0" >0.85</td>
+      <td id="T_e7241_row1_col1" class="data row1 col1" >0.56</td>
+      <td id="T_e7241_row1_col2" class="data row1 col2" >0.00</td>
+      <td id="T_e7241_row1_col3" class="data row1 col3" >0.00</td>
+      <td id="T_e7241_row1_col4" class="data row1 col4" >0.06</td>
     </tr>
     <tr>
-      <th id="T_68d37_level0_row2" class="row_heading level0 row2" >Expected sampling median 2024</th>
-      <td id="T_68d37_row2_col0" class="data row2 col0" >0.56</td>
-      <td id="T_68d37_row2_col1" class="data row2 col1" >1.46</td>
-      <td id="T_68d37_row2_col2" class="data row2 col2" >0.14</td>
-      <td id="T_68d37_row2_col3" class="data row2 col3" >0.01</td>
-      <td id="T_68d37_row2_col4" class="data row2 col4" >0.57</td>
+      <th id="T_e7241_level0_row2" class="row_heading level0 row2" >Expected sampling median 2024</th>
+      <td id="T_e7241_row2_col0" class="data row2 col0" >0.56</td>
+      <td id="T_e7241_row2_col1" class="data row2 col1" >1.46</td>
+      <td id="T_e7241_row2_col2" class="data row2 col2" >0.14</td>
+      <td id="T_e7241_row2_col3" class="data row2 col3" >0.01</td>
+      <td id="T_e7241_row2_col4" class="data row2 col4" >0.57</td>
     </tr>
     <tr>
-      <th id="T_68d37_level0_row3" class="row_heading level0 row3" >% 2022 in 50% IQR  predicted</th>
-      <td id="T_68d37_row3_col0" class="data row3 col0" >0.41</td>
-      <td id="T_68d37_row3_col1" class="data row3 col1" >0.46</td>
-      <td id="T_68d37_row3_col2" class="data row3 col2" >0.42</td>
-      <td id="T_68d37_row3_col3" class="data row3 col3" >0.91</td>
-      <td id="T_68d37_row3_col4" class="data row3 col4" >0.33</td>
+      <th id="T_e7241_level0_row3" class="row_heading level0 row3" >% 2022 in 50% IQR  predicted</th>
+      <td id="T_e7241_row3_col0" class="data row3 col0" >0.41</td>
+      <td id="T_e7241_row3_col1" class="data row3 col1" >0.45</td>
+      <td id="T_e7241_row3_col2" class="data row3 col2" >0.41</td>
+      <td id="T_e7241_row3_col3" class="data row3 col3" >0.91</td>
+      <td id="T_e7241_row3_col4" class="data row3 col4" >0.32</td>
     </tr>
     <tr>
-      <th id="T_68d37_level0_row4" class="row_heading level0 row4" >% 2022 in 94% IQR  predicted</th>
-      <td id="T_68d37_row4_col0" class="data row4 col0" >0.99</td>
-      <td id="T_68d37_row4_col1" class="data row4 col1" >0.88</td>
-      <td id="T_68d37_row4_col2" class="data row4 col2" >1.00</td>
-      <td id="T_68d37_row4_col3" class="data row4 col3" >1.00</td>
-      <td id="T_68d37_row4_col4" class="data row4 col4" >1.00</td>
+      <th id="T_e7241_level0_row4" class="row_heading level0 row4" >% 2022 in 94% IQR  predicted</th>
+      <td id="T_e7241_row4_col0" class="data row4 col0" >0.99</td>
+      <td id="T_e7241_row4_col1" class="data row4 col1" >0.88</td>
+      <td id="T_e7241_row4_col2" class="data row4 col2" >1.00</td>
+      <td id="T_e7241_row4_col3" class="data row4 col3" >1.00</td>
+      <td id="T_e7241_row4_col4" class="data row4 col4" >1.00</td>
     </tr>
   </tbody>
 </table>
 </span></p></td>
 </tr>
+<tr class="row-odd"><td class="text-center"><p><strong>Legend:</strong> Unk = Unknown group, PC = personal consumption, Ph = personal hygiene, Rc = recreation, Ip = industrial professional</p></td>
+</tr>
 </tbody>
 </table>
-<p><strong>Legend:</strong> Unk = Unknown group, PC = personal consumption, Ph = personal hygiene, Rc = recreation, Ip = industrial professional</p>
 </div>
 </div>
 </div>
@@ -1527,22 +1542,23 @@ The __combined daily total__ is the sum of the objects of interest per sample. I
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-center"><p><img alt="_images/91c7eac7289b26771657204f14bfe457b394d3faf927df129aea8a4ffcb3c7f2.png" src="_images/91c7eac7289b26771657204f14bfe457b394d3faf927df129aea8a4ffcb3c7f2.png" /></p></td>
+<tr class="row-even"><td class="text-center"><p><img alt="_images/609b0795eac15cd08b89a6f72aecde68b3bc5e2a4ca5e6294db149b5e42c239e.png" src="_images/609b0795eac15cd08b89a6f72aecde68b3bc5e2a4ca5e6294db149b5e42c239e.png" /></p></td>
 <td class="text-center"><p><span class="output text_html"><style type="text/css">
-#T_142c2 tr:nth-child(even) {
+#T_c8a52 tr:nth-child(even) {
   background-color: rgba(139, 69, 19, 0.08);
 }
-#T_142c2 tr:nth-child(odd) {
+#T_c8a52 tr:nth-child(odd) {
   background: #FFF;
 }
-#T_142c2 tr {
+#T_c8a52 tr {
   font-size: 14px;
+  padding: 12px;
 }
-#T_142c2 th:nth-child(1) {
+#T_c8a52 th:nth-child(1) {
   background-color: #FFF;
   text-align: right;
 }
-#T_142c2 caption {
+#T_c8a52 caption {
   font-size: 14px;
   font-style: italic;
   caption-side: bottom;
@@ -1550,54 +1566,55 @@ The __combined daily total__ is the sum of the objects of interest per sample. I
   margin-top: 10px;
 }
 </style>
-<table id="T_142c2">
+<table id="T_c8a52">
   <caption>Previous and expected median values of the combined daily totals of the Unkown objects group</caption>
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_142c2_level0_col0" class="col_heading level0 col0" >pcs/m</th>
+      <th id="T_c8a52_level0_col0" class="col_heading level0 col0" >pcs/m</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_142c2_level0_row0" class="row_heading level0 row0" >Median 2021</th>
-      <td id="T_142c2_row0_col0" class="data row0 col0" >5.64</td>
+      <th id="T_c8a52_level0_row0" class="row_heading level0 row0" >Median 2021</th>
+      <td id="T_c8a52_row0_col0" class="data row0 col0" >5.64</td>
     </tr>
     <tr>
-      <th id="T_142c2_level0_row1" class="row_heading level0 row1" >Median 2022</th>
-      <td id="T_142c2_row1_col0" class="data row1 col0" >6.90</td>
+      <th id="T_c8a52_level0_row1" class="row_heading level0 row1" >Median 2022</th>
+      <td id="T_c8a52_row1_col0" class="data row1 col0" >6.90</td>
     </tr>
     <tr>
-      <th id="T_142c2_level0_row2" class="row_heading level0 row2" >Expected sampling median 2024</th>
-      <td id="T_142c2_row2_col0" class="data row2 col0" >6.34</td>
+      <th id="T_c8a52_level0_row2" class="row_heading level0 row2" >Expected sampling median 2024</th>
+      <td id="T_c8a52_row2_col0" class="data row2 col0" >6.34</td>
     </tr>
     <tr>
-      <th id="T_142c2_level0_row3" class="row_heading level0 row3" >% 2022 in 50% IQR  predicted</th>
-      <td id="T_142c2_row3_col0" class="data row3 col0" >0.53</td>
+      <th id="T_c8a52_level0_row3" class="row_heading level0 row3" >% 2022 in 50% IQR  predicted</th>
+      <td id="T_c8a52_row3_col0" class="data row3 col0" >0.53</td>
     </tr>
     <tr>
-      <th id="T_142c2_level0_row4" class="row_heading level0 row4" >% 2022 in 94% IQR  predicted</th>
-      <td id="T_142c2_row4_col0" class="data row4 col0" >0.88</td>
+      <th id="T_c8a52_level0_row4" class="row_heading level0 row4" >% 2022 in 94% IQR  predicted</th>
+      <td id="T_c8a52_row4_col0" class="data row4 col0" >0.88</td>
     </tr>
   </tbody>
 </table>
 </span></p></td>
 </tr>
 <tr class="row-odd"><td class="text-center"><p><span class="output text_html"><style type="text/css">
-#T_f9ba3 tr:nth-child(even) {
+#T_57142 tr:nth-child(even) {
   background-color: rgba(139, 69, 19, 0.08);
 }
-#T_f9ba3 tr:nth-child(odd) {
+#T_57142 tr:nth-child(odd) {
   background: #FFF;
 }
-#T_f9ba3 tr {
+#T_57142 tr {
   font-size: 14px;
+  padding: 12px;
 }
-#T_f9ba3 th:nth-child(1) {
+#T_57142 th:nth-child(1) {
   background-color: #FFF;
   text-align: right;
 }
-#T_f9ba3 caption {
+#T_57142 caption {
   font-size: 14px;
   font-style: italic;
   caption-side: bottom;
@@ -1605,50 +1622,50 @@ The __combined daily total__ is the sum of the objects of interest per sample. I
   margin-top: 10px;
 }
 </style>
-<table id="T_f9ba3">
+<table id="T_57142">
   <caption>The observed values from the training and testing data.</caption>
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_f9ba3_level0_col0" class="col_heading level0 col0" >Training</th>
-      <th id="T_f9ba3_level0_col1" class="col_heading level0 col1" >Testing</th>
+      <th id="T_57142_level0_col0" class="col_heading level0 col0" >Training</th>
+      <th id="T_57142_level0_col1" class="col_heading level0 col1" >Testing</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_f9ba3_level0_row0" class="row_heading level0 row0" >weight all samples</th>
-      <td id="T_f9ba3_row0_col0" class="data row0 col0" >0.55</td>
-      <td id="T_f9ba3_row0_col1" class="data row0 col1" >0.45</td>
+      <th id="T_57142_level0_row0" class="row_heading level0 row0" >weight all samples</th>
+      <td id="T_57142_row0_col0" class="data row0 col0" >0.55</td>
+      <td id="T_57142_row0_col1" class="data row0 col1" >0.45</td>
     </tr>
     <tr>
-      <th id="T_f9ba3_level0_row1" class="row_heading level0 row1" >Number of samples</th>
-      <td id="T_f9ba3_row1_col0" class="data row1 col0" >21</td>
-      <td id="T_f9ba3_row1_col1" class="data row1 col1" >17</td>
+      <th id="T_57142_level0_row1" class="row_heading level0 row1" >Number of samples</th>
+      <td id="T_57142_row1_col0" class="data row1 col0" >21</td>
+      <td id="T_57142_row1_col1" class="data row1 col1" >17</td>
     </tr>
     <tr>
-      <th id="T_f9ba3_level0_row2" class="row_heading level0 row2" >Median</th>
-      <td id="T_f9ba3_row2_col0" class="data row2 col0" >5.64</td>
-      <td id="T_f9ba3_row2_col1" class="data row2 col1" >6.90</td>
+      <th id="T_57142_level0_row2" class="row_heading level0 row2" >Median</th>
+      <td id="T_57142_row2_col0" class="data row2 col0" >5.64</td>
+      <td id="T_57142_row2_col1" class="data row2 col1" >6.90</td>
     </tr>
     <tr>
-      <th id="T_f9ba3_level0_row3" class="row_heading level0 row3" >Average</th>
-      <td id="T_f9ba3_row3_col0" class="data row3 col0" >7.88</td>
-      <td id="T_f9ba3_row3_col1" class="data row3 col1" >12.26</td>
+      <th id="T_57142_level0_row3" class="row_heading level0 row3" >Average</th>
+      <td id="T_57142_row3_col0" class="data row3 col0" >7.88</td>
+      <td id="T_57142_row3_col1" class="data row3 col1" >12.26</td>
     </tr>
     <tr>
-      <th id="T_f9ba3_level0_row4" class="row_heading level0 row4" >25th percentile</th>
-      <td id="T_f9ba3_row4_col0" class="data row4 col0" >2.70</td>
-      <td id="T_f9ba3_row4_col1" class="data row4 col1" >3.90</td>
+      <th id="T_57142_level0_row4" class="row_heading level0 row4" >25th percentile</th>
+      <td id="T_57142_row4_col0" class="data row4 col0" >2.70</td>
+      <td id="T_57142_row4_col1" class="data row4 col1" >3.90</td>
     </tr>
     <tr>
-      <th id="T_f9ba3_level0_row5" class="row_heading level0 row5" >75th percentile</th>
-      <td id="T_f9ba3_row5_col0" class="data row5 col0" >7.89</td>
-      <td id="T_f9ba3_row5_col1" class="data row5 col1" >11.58</td>
+      <th id="T_57142_level0_row5" class="row_heading level0 row5" >75th percentile</th>
+      <td id="T_57142_row5_col0" class="data row5 col0" >7.89</td>
+      <td id="T_57142_row5_col1" class="data row5 col1" >11.58</td>
     </tr>
   </tbody>
 </table>
 </span></p></td>
-<td class="text-center"><p><img alt="_images/df605415be88894041414351aa3c0e6a69a9ab1ea50fea0c5ece946b28ee6dc8.png" src="_images/df605415be88894041414351aa3c0e6a69a9ab1ea50fea0c5ece946b28ee6dc8.png" /></p></td>
+<td class="text-center"><p><img alt="_images/b9bc387042ade404392e6b4cef51e0bed82e6450eb4c65fafc5ee4965c3d9009.png" src="_images/b9bc387042ade404392e6b4cef51e0bed82e6450eb4c65fafc5ee4965c3d9009.png" /></p></td>
 </tr>
 </tbody>
 </table>
@@ -1680,20 +1697,21 @@ The __combined daily total__ is the sum of the objects of interest per sample. I
 </thead>
 <tbody>
 <tr class="row-even"><td class="text-left"><p><span class="output text_html"><style type="text/css">
-#T_9cfa7 tr:nth-child(even) {
+#T_2bf74 tr:nth-child(even) {
   background-color: rgba(139, 69, 19, 0.08);
 }
-#T_9cfa7 tr:nth-child(odd) {
+#T_2bf74 tr:nth-child(odd) {
   background: #FFF;
 }
-#T_9cfa7 tr {
+#T_2bf74 tr {
   font-size: 14px;
+  padding: 12px;
 }
-#T_9cfa7 th:nth-child(1) {
+#T_2bf74 th:nth-child(1) {
   background-color: #FFF;
   text-align: right;
 }
-#T_9cfa7 caption {
+#T_2bf74 caption {
   font-size: 14px;
   font-style: italic;
   caption-side: bottom;
@@ -1701,34 +1719,34 @@ The __combined daily total__ is the sum of the objects of interest per sample. I
   margin-top: 10px;
 }
 </style>
-<table id="T_9cfa7">
+<table id="T_2bf74">
   <caption>The probability that a survey in 2024 will exceed the median (50%) from 2021</caption>
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_9cfa7_level0_col0" class="col_heading level0 col0" >P</th>
+      <th id="T_2bf74_level0_col0" class="col_heading level0 col0" >P</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_9cfa7_level0_row0" class="row_heading level0 row0" >Unknown</th>
-      <td id="T_9cfa7_row0_col0" class="data row0 col0" >0.61</td>
+      <th id="T_2bf74_level0_row0" class="row_heading level0 row0" >Unknown</th>
+      <td id="T_2bf74_row0_col0" class="data row0 col0" >0.61</td>
     </tr>
     <tr>
-      <th id="T_9cfa7_level0_row1" class="row_heading level0 row1" >Personal consumption</th>
-      <td id="T_9cfa7_row1_col0" class="data row1 col0" >0.55</td>
+      <th id="T_2bf74_level0_row1" class="row_heading level0 row1" >Personal consumption</th>
+      <td id="T_2bf74_row1_col0" class="data row1 col0" >0.55</td>
     </tr>
     <tr>
-      <th id="T_9cfa7_level0_row2" class="row_heading level0 row2" >Personal hygiene</th>
-      <td id="T_9cfa7_row2_col0" class="data row2 col0" >0.55</td>
+      <th id="T_2bf74_level0_row2" class="row_heading level0 row2" >Personal hygiene</th>
+      <td id="T_2bf74_row2_col0" class="data row2 col0" >0.55</td>
     </tr>
     <tr>
-      <th id="T_9cfa7_level0_row3" class="row_heading level0 row3" >Recreation/sports</th>
-      <td id="T_9cfa7_row3_col0" class="data row3 col0" >0.97</td>
+      <th id="T_2bf74_level0_row3" class="row_heading level0 row3" >Recreation/sports</th>
+      <td id="T_2bf74_row3_col0" class="data row3 col0" >0.97</td>
     </tr>
     <tr>
-      <th id="T_9cfa7_level0_row4" class="row_heading level0 row4" >Industrial/professional</th>
-      <td id="T_9cfa7_row4_col0" class="data row4 col0" >0.58</td>
+      <th id="T_2bf74_level0_row4" class="row_heading level0 row4" >Industrial/professional</th>
+      <td id="T_2bf74_row4_col0" class="data row4 col0" >0.58</td>
     </tr>
   </tbody>
 </table>
@@ -1748,22 +1766,23 @@ The __combined daily total__ is the sum of the objects of interest per sample. I
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-center"><p><img alt="_images/ea8444377226e9132fb5049ed45b76cd2569ef6ae2a1972edcae8f8a25bba0b5.png" src="_images/ea8444377226e9132fb5049ed45b76cd2569ef6ae2a1972edcae8f8a25bba0b5.png" /></p></td>
+<tr class="row-even"><td class="text-center"><p><img alt="_images/f4bb3f5fbb963a7b5214b76dd57b30806dc7158ba739b60f0a0370275357d962.png" src="_images/f4bb3f5fbb963a7b5214b76dd57b30806dc7158ba739b60f0a0370275357d962.png" /></p></td>
 <td class="text-center"><p><span class="output text_html"><style type="text/css">
-#T_86c41 tr:nth-child(even) {
+#T_93c00 tr:nth-child(even) {
   background-color: rgba(139, 69, 19, 0.08);
 }
-#T_86c41 tr:nth-child(odd) {
+#T_93c00 tr:nth-child(odd) {
   background: #FFF;
 }
-#T_86c41 tr {
+#T_93c00 tr {
   font-size: 14px;
+  padding: 12px;
 }
-#T_86c41 th:nth-child(1) {
+#T_93c00 th:nth-child(1) {
   background-color: #FFF;
   text-align: right;
 }
-#T_86c41 caption {
+#T_93c00 caption {
   font-size: 14px;
   font-style: italic;
   caption-side: bottom;
@@ -1771,54 +1790,55 @@ The __combined daily total__ is the sum of the objects of interest per sample. I
   margin-top: 10px;
 }
 </style>
-<table id="T_86c41">
+<table id="T_93c00">
   <caption>Previous and expected median values of the combined daily totals of the Unkown objects group</caption>
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_86c41_level0_col0" class="col_heading level0 col0" >pcs/m</th>
+      <th id="T_93c00_level0_col0" class="col_heading level0 col0" >pcs/m</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_86c41_level0_row0" class="row_heading level0 row0" >Median 2021</th>
-      <td id="T_86c41_row0_col0" class="data row0 col0" >0.85</td>
+      <th id="T_93c00_level0_row0" class="row_heading level0 row0" >Median 2021</th>
+      <td id="T_93c00_row0_col0" class="data row0 col0" >0.85</td>
     </tr>
     <tr>
-      <th id="T_86c41_level0_row1" class="row_heading level0 row1" >Median 2022</th>
-      <td id="T_86c41_row1_col0" class="data row1 col0" >2.28</td>
+      <th id="T_93c00_level0_row1" class="row_heading level0 row1" >Median 2022</th>
+      <td id="T_93c00_row1_col0" class="data row1 col0" >2.28</td>
     </tr>
     <tr>
-      <th id="T_86c41_level0_row2" class="row_heading level0 row2" >Expected sampling median 2024</th>
-      <td id="T_86c41_row2_col0" class="data row2 col0" >0.98</td>
+      <th id="T_93c00_level0_row2" class="row_heading level0 row2" >Expected sampling median 2024</th>
+      <td id="T_93c00_row2_col0" class="data row2 col0" >0.98</td>
     </tr>
     <tr>
-      <th id="T_86c41_level0_row3" class="row_heading level0 row3" >% 2022 in 50% IQR  predicted</th>
-      <td id="T_86c41_row3_col0" class="data row3 col0" >0.18</td>
+      <th id="T_93c00_level0_row3" class="row_heading level0 row3" >% 2022 in 50% IQR  predicted</th>
+      <td id="T_93c00_row3_col0" class="data row3 col0" >0.18</td>
     </tr>
     <tr>
-      <th id="T_86c41_level0_row4" class="row_heading level0 row4" >% 2022 in 94% IQR  predicted</th>
-      <td id="T_86c41_row4_col0" class="data row4 col0" >0.82</td>
+      <th id="T_93c00_level0_row4" class="row_heading level0 row4" >% 2022 in 94% IQR  predicted</th>
+      <td id="T_93c00_row4_col0" class="data row4 col0" >0.82</td>
     </tr>
   </tbody>
 </table>
 </span></p></td>
 </tr>
 <tr class="row-odd"><td class="text-center"><p><span class="output text_html"><style type="text/css">
-#T_ae158 tr:nth-child(even) {
+#T_ff1f3 tr:nth-child(even) {
   background-color: rgba(139, 69, 19, 0.08);
 }
-#T_ae158 tr:nth-child(odd) {
+#T_ff1f3 tr:nth-child(odd) {
   background: #FFF;
 }
-#T_ae158 tr {
+#T_ff1f3 tr {
   font-size: 14px;
+  padding: 12px;
 }
-#T_ae158 th:nth-child(1) {
+#T_ff1f3 th:nth-child(1) {
   background-color: #FFF;
   text-align: right;
 }
-#T_ae158 caption {
+#T_ff1f3 caption {
   font-size: 14px;
   font-style: italic;
   caption-side: bottom;
@@ -1826,50 +1846,50 @@ The __combined daily total__ is the sum of the objects of interest per sample. I
   margin-top: 10px;
 }
 </style>
-<table id="T_ae158">
+<table id="T_ff1f3">
   <caption>The observed values from the training and testing data.</caption>
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_ae158_level0_col0" class="col_heading level0 col0" >Training</th>
-      <th id="T_ae158_level0_col1" class="col_heading level0 col1" >Testing</th>
+      <th id="T_ff1f3_level0_col0" class="col_heading level0 col0" >Training</th>
+      <th id="T_ff1f3_level0_col1" class="col_heading level0 col1" >Testing</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_ae158_level0_row0" class="row_heading level0 row0" >weight all samples</th>
-      <td id="T_ae158_row0_col0" class="data row0 col0" >0.55</td>
-      <td id="T_ae158_row0_col1" class="data row0 col1" >0.45</td>
+      <th id="T_ff1f3_level0_row0" class="row_heading level0 row0" >weight all samples</th>
+      <td id="T_ff1f3_row0_col0" class="data row0 col0" >0.55</td>
+      <td id="T_ff1f3_row0_col1" class="data row0 col1" >0.45</td>
     </tr>
     <tr>
-      <th id="T_ae158_level0_row1" class="row_heading level0 row1" >Number of samples</th>
-      <td id="T_ae158_row1_col0" class="data row1 col0" >21</td>
-      <td id="T_ae158_row1_col1" class="data row1 col1" >17</td>
+      <th id="T_ff1f3_level0_row1" class="row_heading level0 row1" >Number of samples</th>
+      <td id="T_ff1f3_row1_col0" class="data row1 col0" >21</td>
+      <td id="T_ff1f3_row1_col1" class="data row1 col1" >17</td>
     </tr>
     <tr>
-      <th id="T_ae158_level0_row2" class="row_heading level0 row2" >Median</th>
-      <td id="T_ae158_row2_col0" class="data row2 col0" >0.85</td>
-      <td id="T_ae158_row2_col1" class="data row2 col1" >2.28</td>
+      <th id="T_ff1f3_level0_row2" class="row_heading level0 row2" >Median</th>
+      <td id="T_ff1f3_row2_col0" class="data row2 col0" >0.85</td>
+      <td id="T_ff1f3_row2_col1" class="data row2 col1" >2.28</td>
     </tr>
     <tr>
-      <th id="T_ae158_level0_row3" class="row_heading level0 row3" >Average</th>
-      <td id="T_ae158_row3_col0" class="data row3 col0" >2.67</td>
-      <td id="T_ae158_row3_col1" class="data row3 col1" >3.89</td>
+      <th id="T_ff1f3_level0_row3" class="row_heading level0 row3" >Average</th>
+      <td id="T_ff1f3_row3_col0" class="data row3 col0" >2.67</td>
+      <td id="T_ff1f3_row3_col1" class="data row3 col1" >3.89</td>
     </tr>
     <tr>
-      <th id="T_ae158_level0_row4" class="row_heading level0 row4" >25th percentile</th>
-      <td id="T_ae158_row4_col0" class="data row4 col0" >0.63</td>
-      <td id="T_ae158_row4_col1" class="data row4 col1" >0.83</td>
+      <th id="T_ff1f3_level0_row4" class="row_heading level0 row4" >25th percentile</th>
+      <td id="T_ff1f3_row4_col0" class="data row4 col0" >0.63</td>
+      <td id="T_ff1f3_row4_col1" class="data row4 col1" >0.83</td>
     </tr>
     <tr>
-      <th id="T_ae158_level0_row5" class="row_heading level0 row5" >75th percentile</th>
-      <td id="T_ae158_row5_col0" class="data row5 col0" >1.20</td>
-      <td id="T_ae158_row5_col1" class="data row5 col1" >3.30</td>
+      <th id="T_ff1f3_level0_row5" class="row_heading level0 row5" >75th percentile</th>
+      <td id="T_ff1f3_row5_col0" class="data row5 col0" >1.20</td>
+      <td id="T_ff1f3_row5_col1" class="data row5 col1" >3.30</td>
     </tr>
   </tbody>
 </table>
 </span></p></td>
-<td class="text-center"><p><img alt="_images/d1cefd71bcb3d145fb1aee44c5a644dc83376d0d268ff98f47a28326c84532b6.png" src="_images/d1cefd71bcb3d145fb1aee44c5a644dc83376d0d268ff98f47a28326c84532b6.png" /></p></td>
+<td class="text-center"><p><img alt="_images/8481c17ea2100d8e9784a5457031687e33aaa6006339d10e9d6c96d4cbe7d164.png" src="_images/8481c17ea2100d8e9784a5457031687e33aaa6006339d10e9d6c96d4cbe7d164.png" /></p></td>
 </tr>
 </tbody>
 </table>
@@ -1884,25 +1904,26 @@ The __combined daily total__ is the sum of the objects of interest per sample. I
 <p>Beach litter density at Saint Sulpice is expected to increase. Given the data from 2022 we expect the survey results to increase from the 2021 levels and the density at Saint Sulpice is expected to be greater than the expected value for the lake in general.</p>
 <table class="colwidths-auto table">
 <thead>
-<tr class="row-odd"><th class="text-center head"><p>Table 10</p></th>
+<tr class="row-odd"><th class="text-center head"><p>Table 16</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td class="text-center"><p><span class="output text_html"><style type="text/css">
-#T_c02a1 tr:nth-child(even) {
+#T_914f1 tr:nth-child(even) {
   background-color: rgba(139, 69, 19, 0.08);
 }
-#T_c02a1 tr:nth-child(odd) {
+#T_914f1 tr:nth-child(odd) {
   background: #FFF;
 }
-#T_c02a1 tr {
+#T_914f1 tr {
   font-size: 14px;
+  padding: 12px;
 }
-#T_c02a1 th:nth-child(1) {
+#T_914f1 th:nth-child(1) {
   background-color: #FFF;
   text-align: right;
 }
-#T_c02a1 caption {
+#T_914f1 caption {
   font-size: 14px;
   font-style: italic;
   caption-side: bottom;
@@ -1910,58 +1931,58 @@ The __combined daily total__ is the sum of the objects of interest per sample. I
   margin-top: 10px;
 }
 </style>
-<table id="T_c02a1">
+<table id="T_914f1">
   <caption>Previous and expected results and the percent of observed samples from 2022 that were included in either the 50% IQR or the 94% IQR of the predicted values.</caption>
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_c02a1_level0_col0" class="col_heading level0 col0" >Unk</th>
-      <th id="T_c02a1_level0_col1" class="col_heading level0 col1" >Pc</th>
-      <th id="T_c02a1_level0_col2" class="col_heading level0 col2" >Ph</th>
-      <th id="T_c02a1_level0_col3" class="col_heading level0 col3" >Rc</th>
-      <th id="T_c02a1_level0_col4" class="col_heading level0 col4" >Ip</th>
+      <th id="T_914f1_level0_col0" class="col_heading level0 col0" >Unk</th>
+      <th id="T_914f1_level0_col1" class="col_heading level0 col1" >Pc</th>
+      <th id="T_914f1_level0_col2" class="col_heading level0 col2" >Ph</th>
+      <th id="T_914f1_level0_col3" class="col_heading level0 col3" >Rc</th>
+      <th id="T_914f1_level0_col4" class="col_heading level0 col4" >Ip</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_c02a1_level0_row0" class="row_heading level0 row0" >Median 2021</th>
-      <td id="T_c02a1_row0_col0" class="data row0 col0" >0.85</td>
-      <td id="T_c02a1_row0_col1" class="data row0 col1" >2.11</td>
-      <td id="T_c02a1_row0_col2" class="data row0 col2" >0.52</td>
-      <td id="T_c02a1_row0_col3" class="data row0 col3" >0.00</td>
-      <td id="T_c02a1_row0_col4" class="data row0 col4" >0.73</td>
+      <th id="T_914f1_level0_row0" class="row_heading level0 row0" >Median 2021</th>
+      <td id="T_914f1_row0_col0" class="data row0 col0" >0.85</td>
+      <td id="T_914f1_row0_col1" class="data row0 col1" >2.11</td>
+      <td id="T_914f1_row0_col2" class="data row0 col2" >0.52</td>
+      <td id="T_914f1_row0_col3" class="data row0 col3" >0.00</td>
+      <td id="T_914f1_row0_col4" class="data row0 col4" >0.73</td>
     </tr>
     <tr>
-      <th id="T_c02a1_level0_row1" class="row_heading level0 row1" >Median 2022</th>
-      <td id="T_c02a1_row1_col0" class="data row1 col0" >2.28</td>
-      <td id="T_c02a1_row1_col1" class="data row1 col1" >2.40</td>
-      <td id="T_c02a1_row1_col2" class="data row1 col2" >0.68</td>
-      <td id="T_c02a1_row1_col3" class="data row1 col3" >0.04</td>
-      <td id="T_c02a1_row1_col4" class="data row1 col4" >1.30</td>
+      <th id="T_914f1_level0_row1" class="row_heading level0 row1" >Median 2022</th>
+      <td id="T_914f1_row1_col0" class="data row1 col0" >2.28</td>
+      <td id="T_914f1_row1_col1" class="data row1 col1" >2.40</td>
+      <td id="T_914f1_row1_col2" class="data row1 col2" >0.68</td>
+      <td id="T_914f1_row1_col3" class="data row1 col3" >0.04</td>
+      <td id="T_914f1_row1_col4" class="data row1 col4" >1.30</td>
     </tr>
     <tr>
-      <th id="T_c02a1_level0_row2" class="row_heading level0 row2" >Expected sampling median 2024</th>
-      <td id="T_c02a1_row2_col0" class="data row2 col0" >0.98</td>
-      <td id="T_c02a1_row2_col1" class="data row2 col1" >2.31</td>
-      <td id="T_c02a1_row2_col2" class="data row2 col2" >0.57</td>
-      <td id="T_c02a1_row2_col3" class="data row2 col3" >0.07</td>
-      <td id="T_c02a1_row2_col4" class="data row2 col4" >1.06</td>
+      <th id="T_914f1_level0_row2" class="row_heading level0 row2" >Expected sampling median 2024</th>
+      <td id="T_914f1_row2_col0" class="data row2 col0" >0.98</td>
+      <td id="T_914f1_row2_col1" class="data row2 col1" >2.31</td>
+      <td id="T_914f1_row2_col2" class="data row2 col2" >0.57</td>
+      <td id="T_914f1_row2_col3" class="data row2 col3" >0.07</td>
+      <td id="T_914f1_row2_col4" class="data row2 col4" >1.06</td>
     </tr>
     <tr>
-      <th id="T_c02a1_level0_row3" class="row_heading level0 row3" >% 2022 in 50% IQR  predicted</th>
-      <td id="T_c02a1_row3_col0" class="data row3 col0" >0.18</td>
-      <td id="T_c02a1_row3_col1" class="data row3 col1" >0.71</td>
-      <td id="T_c02a1_row3_col2" class="data row3 col2" >0.59</td>
-      <td id="T_c02a1_row3_col3" class="data row3 col3" >0.41</td>
-      <td id="T_c02a1_row3_col4" class="data row3 col4" >0.35</td>
+      <th id="T_914f1_level0_row3" class="row_heading level0 row3" >% 2022 in 50% IQR  predicted</th>
+      <td id="T_914f1_row3_col0" class="data row3 col0" >0.18</td>
+      <td id="T_914f1_row3_col1" class="data row3 col1" >0.71</td>
+      <td id="T_914f1_row3_col2" class="data row3 col2" >0.59</td>
+      <td id="T_914f1_row3_col3" class="data row3 col3" >0.41</td>
+      <td id="T_914f1_row3_col4" class="data row3 col4" >0.35</td>
     </tr>
     <tr>
-      <th id="T_c02a1_level0_row4" class="row_heading level0 row4" >% 2022 in 94% IQR  predicted</th>
-      <td id="T_c02a1_row4_col0" class="data row4 col0" >0.82</td>
-      <td id="T_c02a1_row4_col1" class="data row4 col1" >0.76</td>
-      <td id="T_c02a1_row4_col2" class="data row4 col2" >0.82</td>
-      <td id="T_c02a1_row4_col3" class="data row4 col3" >0.65</td>
-      <td id="T_c02a1_row4_col4" class="data row4 col4" >0.82</td>
+      <th id="T_914f1_level0_row4" class="row_heading level0 row4" >% 2022 in 94% IQR  predicted</th>
+      <td id="T_914f1_row4_col0" class="data row4 col0" >0.82</td>
+      <td id="T_914f1_row4_col1" class="data row4 col1" >0.76</td>
+      <td id="T_914f1_row4_col2" class="data row4 col2" >0.82</td>
+      <td id="T_914f1_row4_col3" class="data row4 col3" >0.65</td>
+      <td id="T_914f1_row4_col4" class="data row4 col4" >0.82</td>
     </tr>
   </tbody>
 </table>
@@ -1977,11 +1998,10 @@ The __combined daily total__ is the sum of the objects of interest per sample. I
 <h2><span class="section-number">2.10. </span>Discussion<a class="headerlink" href="#discussion" title="Permalink to this headline">#</a></h2>
 <p>Potential points of discussion</p>
 <ol class="arabic simple">
-<li><p>The lake samples show a decline but the results at Saint Sulpice show an increase. Could this be because the samples at the lake level came from one group and at Saint Sulpice from anothe</p></li>
-<li><p>There were no tampon applicators identified in 2022 but yet they were identified in 40% of samples from 2015-2021.</p></li>
+<li><p>The lake samples show a decline but the results at Saint Sulpice show an increase. Could this be because the samples at the lake level came from one sampling group and at Saint Sulpice from another?</p></li>
 <li><p>Fragmented plastics are 40% of the objects in 2022 and but hisotrically it is around 20% for the lake. Why is their such a difference?</p></li>
 <li><p>Is their other evidence to support the expected decline of personal consumption products found on the beach?</p></li>
-<li><p>Were there changes to the water treatment facilities (or processes) that would support an anticipated decline in personal hygiene products in general but an increase at Saint Sulpice?</p></li>
+<li><p>Were there changes to the water treatment facilities (or processes) that would support an anticipated decline in personal hygiene products in general but an increase at Saint Sulpice? For example there were no tampon applicators identified in 2022 but yet they were identified in 40% of samples from 2015-2021.</p></li>
 <li><p>What does the presence of shotgun shells on the beach at Saint Sulpice say about hydrological transport mechanisms in lake?</p></li>
 </ol>
 </div>
@@ -1999,25 +2019,28 @@ The __combined daily total__ is the sum of the objects of interest per sample. I
 <p>This is unfunded</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<p>This script updated 25/08/2023 in Biel, CH</p>
+<p>This script updated 28/08/2023 in Biel, CH</p>
 <blockquote>
 <div><p>❤️ what you do everyday</p>
 </div></blockquote>
 <p><em>analyst at hammerdirt</em></p>
 </div>
 </div>
-<div class="cell tag_remove-input docutils container">
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">watermark</span> --iversions -b -r
+</pre></div>
+</div>
+</div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Git repo: https://github.com/hammerdirt-analyst/patelmanuscript.git
 
 Git branch: newsummary
 
-scipy     : 1.10.1
 pandas    : 2.0.2
-matplotlib: 3.7.1
-slugify   : 8.0.1
-numpy     : 1.24.3
 seaborn   : 0.12.2
+matplotlib: 3.7.1
+numpy     : 1.24.3
 </pre></div>
 </div>
 </div>
