@@ -7,7 +7,9 @@ options:
     numbered: True
 chapters:
 - file: summary_2015_2021
-- file: ptog.ipynb
+- file: grid_approximation
+- file: grids_2023
+
 
    
     

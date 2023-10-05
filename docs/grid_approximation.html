@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>2. Estimating values &#8212; Progress towards a goal</title>
+    <title>2. Empirical Bayes: grid approximations &#8212; Solid waste team</title>
   
   
   
@@ -64,7 +64,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'grid_approximation';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="1. Monitoring beach litter with future engineers" href="summary_2015_2021.html" />
+    <link rel="next" title="3. Testing 2023 predictions" href="grids_2023.html" />
+    <link rel="prev" title="1. Results 2015 - 2021" href="summary_2015_2021.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -136,14 +137,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   
-    <p class="title logo__title">Progress towards a goal</p>
+    <p class="title logo__title">Solid waste team</p>
   
 </a></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="summary_2015_2021.html">1. Monitoring beach litter with future engineers</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">2. Estimating values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="summary_2015_2021.html">1. Results 2015 - 2021</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">2. Empirical Bayes: grid approximations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="grids_2023.html">3. Testing 2023 predictions</a></li>
 </ul>
 
     </div>
@@ -279,7 +281,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Estimating values</h1>
+    <h1>Empirical Bayes: grid approximations</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -322,20 +324,9 @@ document.write(`
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#results-saint-sulpice">2.9. Results Saint Sulpice</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2.9.1. Previous and expected survey totals</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">2.9.2. Previous and expected survey results of objects of interest</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">2.9.2.1. Expected results fragmented plastics</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-expected-survey-results-saint-sulpice">2.9.3. Summary of expected survey results Saint Sulpice</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion">2.10. Discussion</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusions">2.11. Conclusions</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#next-steps">2.11.1. Next steps</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#participating-organizations">2.11.2. Participating organizations</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#financial-disclosure">2.11.3. Financial disclosure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion">2.9. Discussion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusions">2.10. Conclusions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#next-steps">2.10.1. Next steps</a></li>
 </ul>
 </li>
 </ul>
@@ -353,8 +344,8 @@ document.write(`
 </div>
 <div class="cell tag_remove-input docutils container">
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="estimating-values">
-<h1><span class="section-number">2. </span>Estimating values<a class="headerlink" href="#estimating-values" title="Permalink to this headline">#</a></h1>
+<div class="tex2jax_ignore mathjax_ignore section" id="empirical-bayes-grid-approximations">
+<h1><span class="section-number">2. </span>Empirical Bayes: grid approximations<a class="headerlink" href="#empirical-bayes-grid-approximations" title="Permalink to this headline">#</a></h1>
 <p><strong>Note to colleagues:</strong></p>
 <p>This concerns the data from the federal report and a subset of data gathered in 2022. Since the puplication of IQAASL in December 2021 there has been addtional data collection events on Lac Léman:</p>
 <ol class="arabic simple">
@@ -393,7 +384,7 @@ document.write(`
 </li>
 <li><p>Sampling strategy:</p>
 <ol class="arabic simple">
-<li><p>Consistent with 1 and given the context in which the samples were collected <a class="reference internal" href="#data-context"><span class="std std-ref">Summary test and training data</span></a> and because of the work in 2.3 we can see the benefits in sampling many different locations. We have uncertainty about where the ‘median’ is based on the spread of the sampling statistic but we are not concerned about the geographic spread.</p></li>
+<li><p>Consistent with 1 and given the context in which the samples were collected <a class="reference internal" href="grids_2023.html#data-context"><span class="std std-ref">Summary test and training data</span></a> and because of the work in 2.3 we can see the benefits in sampling many different locations. We have uncertainty about where the ‘median’ is based on the spread of the sampling statistic but we are not concerned about the geographic spread.</p></li>
 <li><p>The experience with the students demonstrates the importance of small actions. On their own they do not say much about the lake. However, in relation to and combined with the observations with the other groups we have a better idea of what we might find in general and some specific information about Saint Sulpice <a class="reference internal" href="summary_2015_2021.html#diff-groups"><span class="std std-ref">Section one - differences between groups</span></a>.</p></li>
 </ol>
 </li>
@@ -578,23 +569,23 @@ document.write(`
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-center"><p><img alt="_images/b674618fddc8c4fef06fc1107ba9d27765afecfe79f727b7e5356bddf020c3f1.png" src="_images/b674618fddc8c4fef06fc1107ba9d27765afecfe79f727b7e5356bddf020c3f1.png" /></p></td>
+<tr class="row-even"><td class="text-center"><p><img alt="_images/586ed83cd40d3eb027c8a3d17a59b92fe8eb7272125341fdad9c223a8ffcf715.png" src="_images/586ed83cd40d3eb027c8a3d17a59b92fe8eb7272125341fdad9c223a8ffcf715.png" /></p></td>
 <td class="text-center"><p><span class="output text_html"><style type="text/css">
-#T_eb075 tr:nth-child(even) {
+#T_d70e5 tr:nth-child(even) {
   background-color: rgba(139, 69, 19, 0.08);
 }
-#T_eb075 tr:nth-child(odd) {
+#T_d70e5 tr:nth-child(odd) {
   background: #FFF;
 }
-#T_eb075 tr {
+#T_d70e5 tr {
   font-size: 14px;
   padding: 12px;
 }
-#T_eb075 th:nth-child(1) {
+#T_d70e5 th:nth-child(1) {
   background-color: #FFF;
   text-align: right;
 }
-#T_eb075 caption {
+#T_d70e5 caption {
   font-size: 14px;
   font-style: italic;
   caption-side: bottom;
@@ -602,66 +593,66 @@ document.write(`
   margin-top: 10px;
 }
 </style>
-<table id="T_eb075">
+<table id="T_d70e5">
   <caption>The observed values from the training and testing data. Remark that the testing data is only 22% of all the data. This is because we are only in the first year of a six year sampling period</caption>
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_eb075_level0_col0" class="col_heading level0 col0" >Training</th>
-      <th id="T_eb075_level0_col1" class="col_heading level0 col1" >Testing</th>
+      <th id="T_d70e5_level0_col0" class="col_heading level0 col0" >Training</th>
+      <th id="T_d70e5_level0_col1" class="col_heading level0 col1" >Testing</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_eb075_level0_row0" class="row_heading level0 row0" >weight all samples</th>
-      <td id="T_eb075_row0_col0" class="data row0 col0" >0.77</td>
-      <td id="T_eb075_row0_col1" class="data row0 col1" >0.23</td>
+      <th id="T_d70e5_level0_row0" class="row_heading level0 row0" >weight all samples</th>
+      <td id="T_d70e5_row0_col0" class="data row0 col0" >0.78</td>
+      <td id="T_d70e5_row0_col1" class="data row0 col1" >0.22</td>
     </tr>
     <tr>
-      <th id="T_eb075_level0_row1" class="row_heading level0 row1" >Number of samples</th>
-      <td id="T_eb075_row1_col0" class="data row1 col0" >246</td>
-      <td id="T_eb075_row1_col1" class="data row1 col1" >73</td>
+      <th id="T_d70e5_level0_row1" class="row_heading level0 row1" >Number of samples</th>
+      <td id="T_d70e5_row1_col0" class="data row1 col0" >263</td>
+      <td id="T_d70e5_row1_col1" class="data row1 col1" >73</td>
     </tr>
     <tr>
-      <th id="T_eb075_level0_row2" class="row_heading level0 row2" >Median</th>
-      <td id="T_eb075_row2_col0" class="data row2 col0" >3.70</td>
-      <td id="T_eb075_row2_col1" class="data row2 col1" >2.34</td>
+      <th id="T_d70e5_level0_row2" class="row_heading level0 row2" >Median</th>
+      <td id="T_d70e5_row2_col0" class="data row2 col0" >3.62</td>
+      <td id="T_d70e5_row2_col1" class="data row2 col1" >2.34</td>
     </tr>
     <tr>
-      <th id="T_eb075_level0_row3" class="row_heading level0 row3" >Average</th>
-      <td id="T_eb075_row3_col0" class="data row3 col0" >6.67</td>
-      <td id="T_eb075_row3_col1" class="data row3 col1" >3.16</td>
+      <th id="T_d70e5_level0_row3" class="row_heading level0 row3" >Average</th>
+      <td id="T_d70e5_row3_col0" class="data row3 col0" >6.35</td>
+      <td id="T_d70e5_row3_col1" class="data row3 col1" >3.16</td>
     </tr>
     <tr>
-      <th id="T_eb075_level0_row4" class="row_heading level0 row4" >25th percentile</th>
-      <td id="T_eb075_row4_col0" class="data row4 col0" >1.75</td>
-      <td id="T_eb075_row4_col1" class="data row4 col1" >0.78</td>
+      <th id="T_d70e5_level0_row4" class="row_heading level0 row4" >25th percentile</th>
+      <td id="T_d70e5_row4_col0" class="data row4 col0" >1.63</td>
+      <td id="T_d70e5_row4_col1" class="data row4 col1" >0.78</td>
     </tr>
     <tr>
-      <th id="T_eb075_level0_row5" class="row_heading level0 row5" >75th percentile</th>
-      <td id="T_eb075_row5_col0" class="data row5 col0" >7.47</td>
-      <td id="T_eb075_row5_col1" class="data row5 col1" >3.99</td>
+      <th id="T_d70e5_level0_row5" class="row_heading level0 row5" >75th percentile</th>
+      <td id="T_d70e5_row5_col0" class="data row5 col0" >6.87</td>
+      <td id="T_d70e5_row5_col1" class="data row5 col1" >3.99</td>
     </tr>
   </tbody>
 </table>
 </span></p></td>
 </tr>
 <tr class="row-odd"><td class="text-center"><p><span class="output text_html"><style type="text/css">
-#T_cf71f tr:nth-child(even) {
+#T_930f0 tr:nth-child(even) {
   background-color: rgba(139, 69, 19, 0.08);
 }
-#T_cf71f tr:nth-child(odd) {
+#T_930f0 tr:nth-child(odd) {
   background: #FFF;
 }
-#T_cf71f tr {
+#T_930f0 tr {
   font-size: 14px;
   padding: 12px;
 }
-#T_cf71f th:nth-child(1) {
+#T_930f0 th:nth-child(1) {
   background-color: #FFF;
   text-align: right;
 }
-#T_cf71f caption {
+#T_930f0 caption {
   font-size: 14px;
   font-style: italic;
   caption-side: bottom;
@@ -669,35 +660,35 @@ document.write(`
   margin-top: 10px;
 }
 </style>
-<table id="T_cf71f">
-  <caption>The number of different locations and cities for the data. Note that there are 25 different municipalitites in all.</caption>
+<table id="T_930f0">
+  <caption>The number of different locations and cities for the data. Note that there are 31 different municipalitites in all.</caption>
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_cf71f_level0_col0" class="col_heading level0 col0" >Training</th>
-      <th id="T_cf71f_level0_col1" class="col_heading level0 col1" >Testing</th>
+      <th id="T_930f0_level0_col0" class="col_heading level0 col0" >Training</th>
+      <th id="T_930f0_level0_col1" class="col_heading level0 col1" >Testing</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_cf71f_level0_row0" class="row_heading level0 row0" >Number of cities</th>
-      <td id="T_cf71f_row0_col0" class="data row0 col0" >15</td>
-      <td id="T_cf71f_row0_col1" class="data row0 col1" >19</td>
+      <th id="T_930f0_level0_row0" class="row_heading level0 row0" >Number of cities</th>
+      <td id="T_930f0_row0_col0" class="data row0 col0" >21</td>
+      <td id="T_930f0_row0_col1" class="data row0 col1" >19</td>
     </tr>
     <tr>
-      <th id="T_cf71f_level0_row1" class="row_heading level0 row1" >Number of locations</th>
-      <td id="T_cf71f_row1_col0" class="data row1 col0" >38</td>
-      <td id="T_cf71f_row1_col1" class="data row1 col1" >23</td>
+      <th id="T_930f0_level0_row1" class="row_heading level0 row1" >Number of locations</th>
+      <td id="T_930f0_row1_col0" class="data row1 col0" >48</td>
+      <td id="T_930f0_row1_col1" class="data row1 col1" >23</td>
     </tr>
     <tr>
-      <th id="T_cf71f_level0_row2" class="row_heading level0 row2" >Total objects</th>
-      <td id="T_cf71f_row2_col0" class="data row2 col0" >58,295</td>
-      <td id="T_cf71f_row2_col1" class="data row2 col1" >13,804</td>
+      <th id="T_930f0_level0_row2" class="row_heading level0 row2" >Total objects</th>
+      <td id="T_930f0_row2_col0" class="data row2 col0" >59,839</td>
+      <td id="T_930f0_row2_col1" class="data row2 col1" >13,804</td>
     </tr>
   </tbody>
 </table>
 </span></p></td>
-<td class="text-center"><p><img alt="_images/724a8af3e3cdbb16255594aa144b903aa8c84aeed2780aae4504d1d186cb8217.png" src="_images/724a8af3e3cdbb16255594aa144b903aa8c84aeed2780aae4504d1d186cb8217.png" /></p></td>
+<td class="text-center"><p><img alt="_images/a899cf20520052283631cc9fcee111ea7419bfc0ad59be37bb275f9c3e99b498.png" src="_images/a899cf20520052283631cc9fcee111ea7419bfc0ad59be37bb275f9c3e99b498.png" /></p></td>
 </tr>
 </tbody>
 </table>
@@ -754,15 +745,15 @@ posterior =&amp;  \frac{likelihood*prior}{evidence}\tag{7}\\[10pt]
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>The beta distribution (8) is the prior conjugate to the binomial distribution (9) (<a class="reference external" href="https://www.stat.cmu.edu/~larry/=sml/Bayes.pdf">Statistical Machine Learning</a>, <a class="reference external" href="https://en.wikipedia.org/wiki/Conjugate_prior">Conjugate prior</a>). This means that the posterior distribution can be solved analytically. The evidence (11) which is an integral can be solved by recognizing that (11) is another way to write the beta distribution which integrates to one.</p>
+<p>The mean (average) of the beta distribution above is <span class="math notranslate nohighlight">\(\frac{a + s}{a + b + n}\)</span>, which is the value that is calculated for each interval in the grid approximation.</p>
+</div>
 <p>Therefore we can write the solution of Bayes theorem using the beta binomial conjugate model as:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{align}
-p(a|b) \sim &amp; \ Beta(s+a, n+b-s) \tag{12} \\[12pt]
+p(a|b) \sim &amp; \ Beta(s+a, n+b-s) \tag{12} \\
 \end{align}
 \end{split}\]</div>
-<p>The mean (average) of the beta distribution above is <span class="math notranslate nohighlight">\(\frac{a + s}{a + b + n}\)</span>, which is the value that is calculated for each interval in the grid approximation.</p>
-</div>
 </div>
 <div class="section" id="the-priors">
 <h3><span class="section-number">2.7.3. </span>The priors<a class="headerlink" href="#the-priors" title="Permalink to this headline">#</a></h3>
@@ -830,23 +821,6 @@ p(a|b) \sim &amp; \ Beta(s+a, n+b-s) \tag{12} \\[12pt]
 </div>
 <div class="cell tag_remove-input docutils container">
 </div>
-<div class="cell tag_remove-input docutils container">
-</div>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="text-center head"><p>Figure 3</p></th>
-<th class="text-center head"><p>Figure 4</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td class="text-center"><p><img alt="_images/8db7b910c57cb3a4700ab9ae1ea9f405fe3e089f19c663d12b5ece9203d4120a.png" src="_images/8db7b910c57cb3a4700ab9ae1ea9f405fe3e089f19c663d12b5ece9203d4120a.png" /></p></td>
-<td class="text-center"><p><img alt="_images/df626c7c6ff2f0e031246a375e0740254d6131d77156e334cec6bddcad009e20.png" src="_images/df626c7c6ff2f0e031246a375e0740254d6131d77156e334cec6bddcad009e20.png" /></p></td>
-</tr>
-<tr class="row-odd"><td class="text-center"><p>Correlation of land-use variables from the prior data.</p></td>
-<td class="text-center"><p>Correlation of land-use variables from the likelihood data</p></td>
-</tr>
-</tbody>
-</table>
 </div>
 </div>
 </div>
@@ -874,23 +848,23 @@ The __combined daily total__ is the sum of the objects of interest per sample. I
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-center"><p><img alt="_images/b1b0af7d6eef8bcbeb5e8db5480746b5419b3b1e8465da137c9ca48b13b67591.png" src="_images/b1b0af7d6eef8bcbeb5e8db5480746b5419b3b1e8465da137c9ca48b13b67591.png" /></p></td>
+<tr class="row-even"><td class="text-center"><p><img alt="_images/d18f50d27340492abcad23b294ac7e9553befc30c624a8d0a68f58779dbde934.png" src="_images/d18f50d27340492abcad23b294ac7e9553befc30c624a8d0a68f58779dbde934.png" /></p></td>
 <td class="text-center"><p><span class="output text_html"><style type="text/css">
-#T_b3e63 tr:nth-child(even) {
+#T_7ec6e tr:nth-child(even) {
   background-color: rgba(139, 69, 19, 0.08);
 }
-#T_b3e63 tr:nth-child(odd) {
+#T_7ec6e tr:nth-child(odd) {
   background: #FFF;
 }
-#T_b3e63 tr {
+#T_7ec6e tr {
   font-size: 14px;
   padding: 12px;
 }
-#T_b3e63 th:nth-child(1) {
+#T_7ec6e th:nth-child(1) {
   background-color: #FFF;
   text-align: right;
 }
-#T_b3e63 caption {
+#T_7ec6e caption {
   font-size: 14px;
   font-style: italic;
   caption-side: bottom;
@@ -898,55 +872,55 @@ The __combined daily total__ is the sum of the objects of interest per sample. I
   margin-top: 10px;
 }
 </style>
-<table id="T_b3e63">
+<table id="T_7ec6e">
   <caption>Previous and expected median values of the combined daily totals of the Unkown objects group</caption>
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_b3e63_level0_col0" class="col_heading level0 col0" >pcs/m</th>
+      <th id="T_7ec6e_level0_col0" class="col_heading level0 col0" >pcs/m</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_b3e63_level0_row0" class="row_heading level0 row0" >Median 2021</th>
-      <td id="T_b3e63_row0_col0" class="data row0 col0" >3.70</td>
+      <th id="T_7ec6e_level0_row0" class="row_heading level0 row0" >Median 2021</th>
+      <td id="T_7ec6e_row0_col0" class="data row0 col0" >3.62</td>
     </tr>
     <tr>
-      <th id="T_b3e63_level0_row1" class="row_heading level0 row1" >Median 2022</th>
-      <td id="T_b3e63_row1_col0" class="data row1 col0" >2.34</td>
+      <th id="T_7ec6e_level0_row1" class="row_heading level0 row1" >Median 2022</th>
+      <td id="T_7ec6e_row1_col0" class="data row1 col0" >2.34</td>
     </tr>
     <tr>
-      <th id="T_b3e63_level0_row2" class="row_heading level0 row2" >Expected sampling median 2024</th>
-      <td id="T_b3e63_row2_col0" class="data row2 col0" >2.78</td>
+      <th id="T_7ec6e_level0_row2" class="row_heading level0 row2" >Expected sampling median 2024</th>
+      <td id="T_7ec6e_row2_col0" class="data row2 col0" >2.75</td>
     </tr>
     <tr>
-      <th id="T_b3e63_level0_row3" class="row_heading level0 row3" >% 2022 in 50% IQR  predicted</th>
-      <td id="T_b3e63_row3_col0" class="data row3 col0" >0.44</td>
+      <th id="T_7ec6e_level0_row3" class="row_heading level0 row3" >% 2022 in 50% IQR  predicted</th>
+      <td id="T_7ec6e_row3_col0" class="data row3 col0" >0.42</td>
     </tr>
     <tr>
-      <th id="T_b3e63_level0_row4" class="row_heading level0 row4" >% 2022 in 94% IQR  predicted</th>
-      <td id="T_b3e63_row4_col0" class="data row4 col0" >0.82</td>
+      <th id="T_7ec6e_level0_row4" class="row_heading level0 row4" >% 2022 in 94% IQR  predicted</th>
+      <td id="T_7ec6e_row4_col0" class="data row4 col0" >0.86</td>
     </tr>
   </tbody>
 </table>
 </span></p></td>
 </tr>
 <tr class="row-odd"><td class="text-center"><p><span class="output text_html"><style type="text/css">
-#T_995d8 tr:nth-child(even) {
+#T_6ef56 tr:nth-child(even) {
   background-color: rgba(139, 69, 19, 0.08);
 }
-#T_995d8 tr:nth-child(odd) {
+#T_6ef56 tr:nth-child(odd) {
   background: #FFF;
 }
-#T_995d8 tr {
+#T_6ef56 tr {
   font-size: 14px;
   padding: 12px;
 }
-#T_995d8 th:nth-child(1) {
+#T_6ef56 th:nth-child(1) {
   background-color: #FFF;
   text-align: right;
 }
-#T_995d8 caption {
+#T_6ef56 caption {
   font-size: 14px;
   font-style: italic;
   caption-side: bottom;
@@ -954,50 +928,50 @@ The __combined daily total__ is the sum of the objects of interest per sample. I
   margin-top: 10px;
 }
 </style>
-<table id="T_995d8">
+<table id="T_6ef56">
   <caption>The observed values from the training and testing data.</caption>
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_995d8_level0_col0" class="col_heading level0 col0" >Training</th>
-      <th id="T_995d8_level0_col1" class="col_heading level0 col1" >Testing</th>
+      <th id="T_6ef56_level0_col0" class="col_heading level0 col0" >Training</th>
+      <th id="T_6ef56_level0_col1" class="col_heading level0 col1" >Testing</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_995d8_level0_row0" class="row_heading level0 row0" >weight all samples</th>
-      <td id="T_995d8_row0_col0" class="data row0 col0" >0.77</td>
-      <td id="T_995d8_row0_col1" class="data row0 col1" >0.23</td>
+      <th id="T_6ef56_level0_row0" class="row_heading level0 row0" >weight all samples</th>
+      <td id="T_6ef56_row0_col0" class="data row0 col0" >0.78</td>
+      <td id="T_6ef56_row0_col1" class="data row0 col1" >0.22</td>
     </tr>
     <tr>
-      <th id="T_995d8_level0_row1" class="row_heading level0 row1" >Number of samples</th>
-      <td id="T_995d8_row1_col0" class="data row1 col0" >246</td>
-      <td id="T_995d8_row1_col1" class="data row1 col1" >73</td>
+      <th id="T_6ef56_level0_row1" class="row_heading level0 row1" >Number of samples</th>
+      <td id="T_6ef56_row1_col0" class="data row1 col0" >263</td>
+      <td id="T_6ef56_row1_col1" class="data row1 col1" >73</td>
     </tr>
     <tr>
-      <th id="T_995d8_level0_row2" class="row_heading level0 row2" >Median</th>
-      <td id="T_995d8_row2_col0" class="data row2 col0" >3.70</td>
-      <td id="T_995d8_row2_col1" class="data row2 col1" >2.34</td>
+      <th id="T_6ef56_level0_row2" class="row_heading level0 row2" >Median</th>
+      <td id="T_6ef56_row2_col0" class="data row2 col0" >3.62</td>
+      <td id="T_6ef56_row2_col1" class="data row2 col1" >2.34</td>
     </tr>
     <tr>
-      <th id="T_995d8_level0_row3" class="row_heading level0 row3" >Average</th>
-      <td id="T_995d8_row3_col0" class="data row3 col0" >6.67</td>
-      <td id="T_995d8_row3_col1" class="data row3 col1" >3.16</td>
+      <th id="T_6ef56_level0_row3" class="row_heading level0 row3" >Average</th>
+      <td id="T_6ef56_row3_col0" class="data row3 col0" >6.35</td>
+      <td id="T_6ef56_row3_col1" class="data row3 col1" >3.16</td>
     </tr>
     <tr>
-      <th id="T_995d8_level0_row4" class="row_heading level0 row4" >25th percentile</th>
-      <td id="T_995d8_row4_col0" class="data row4 col0" >1.75</td>
-      <td id="T_995d8_row4_col1" class="data row4 col1" >0.78</td>
+      <th id="T_6ef56_level0_row4" class="row_heading level0 row4" >25th percentile</th>
+      <td id="T_6ef56_row4_col0" class="data row4 col0" >1.63</td>
+      <td id="T_6ef56_row4_col1" class="data row4 col1" >0.78</td>
     </tr>
     <tr>
-      <th id="T_995d8_level0_row5" class="row_heading level0 row5" >75th percentile</th>
-      <td id="T_995d8_row5_col0" class="data row5 col0" >7.47</td>
-      <td id="T_995d8_row5_col1" class="data row5 col1" >3.99</td>
+      <th id="T_6ef56_level0_row5" class="row_heading level0 row5" >75th percentile</th>
+      <td id="T_6ef56_row5_col0" class="data row5 col0" >6.87</td>
+      <td id="T_6ef56_row5_col1" class="data row5 col1" >3.99</td>
     </tr>
   </tbody>
 </table>
 </span></p></td>
-<td class="text-center"><p><img alt="_images/06cbb76c93103aa26814ca16a0828c5a1101c0cd2f2d4cb67f199969cfa9b9fa.png" src="_images/06cbb76c93103aa26814ca16a0828c5a1101c0cd2f2d4cb67f199969cfa9b9fa.png" /></p></td>
+<td class="text-center"><p><img alt="_images/9106edadbd9d4577b51add05debc6f2ca94dcb9fb3d65b2bc796e49f5a8e0a2c.png" src="_images/9106edadbd9d4577b51add05debc6f2ca94dcb9fb3d65b2bc796e49f5a8e0a2c.png" /></p></td>
 </tr>
 </tbody>
 </table>
@@ -1040,21 +1014,21 @@ The __combined daily total__ is the sum of the objects of interest per sample. I
 </thead>
 <tbody>
 <tr class="row-even"><td class="text-left"><p><span class="output text_html"><style type="text/css">
-#T_5faa8 tr:nth-child(even) {
+#T_ff851 tr:nth-child(even) {
   background-color: rgba(139, 69, 19, 0.08);
 }
-#T_5faa8 tr:nth-child(odd) {
+#T_ff851 tr:nth-child(odd) {
   background: #FFF;
 }
-#T_5faa8 tr {
+#T_ff851 tr {
   font-size: 14px;
   padding: 12px;
 }
-#T_5faa8 th:nth-child(1) {
+#T_ff851 th:nth-child(1) {
   background-color: #FFF;
   text-align: right;
 }
-#T_5faa8 caption {
+#T_ff851 caption {
   font-size: 14px;
   font-style: italic;
   caption-side: bottom;
@@ -1062,34 +1036,34 @@ The __combined daily total__ is the sum of the objects of interest per sample. I
   margin-top: 10px;
 }
 </style>
-<table id="T_5faa8">
+<table id="T_ff851">
   <caption>The probability that a survey in 2024 will exceed the median (50%) from 2021</caption>
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_5faa8_level0_col0" class="col_heading level0 col0" >P</th>
+      <th id="T_ff851_level0_col0" class="col_heading level0 col0" >P</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_5faa8_level0_row0" class="row_heading level0 row0" >Unknown</th>
-      <td id="T_5faa8_row0_col0" class="data row0 col0" >0.53</td>
+      <th id="T_ff851_level0_row0" class="row_heading level0 row0" >Unknown</th>
+      <td id="T_ff851_row0_col0" class="data row0 col0" >0.53</td>
     </tr>
     <tr>
-      <th id="T_5faa8_level0_row1" class="row_heading level0 row1" >Personal consumption</th>
-      <td id="T_5faa8_row1_col0" class="data row1 col0" >0.43</td>
+      <th id="T_ff851_level0_row1" class="row_heading level0 row1" >Personal consumption</th>
+      <td id="T_ff851_row1_col0" class="data row1 col0" >0.45</td>
     </tr>
     <tr>
-      <th id="T_5faa8_level0_row2" class="row_heading level0 row2" >Personal hygiene</th>
-      <td id="T_5faa8_row2_col0" class="data row2 col0" >0.46</td>
+      <th id="T_ff851_level0_row2" class="row_heading level0 row2" >Personal hygiene</th>
+      <td id="T_ff851_row2_col0" class="data row2 col0" >0.46</td>
     </tr>
     <tr>
-      <th id="T_5faa8_level0_row3" class="row_heading level0 row3" >Recreation/sports</th>
-      <td id="T_5faa8_row3_col0" class="data row3 col0" >0.45</td>
+      <th id="T_ff851_level0_row3" class="row_heading level0 row3" >Recreation/sports</th>
+      <td id="T_ff851_row3_col0" class="data row3 col0" >0.48</td>
     </tr>
     <tr>
-      <th id="T_5faa8_level0_row4" class="row_heading level0 row4" >Industrial/professional</th>
-      <td id="T_5faa8_row4_col0" class="data row4 col0" >0.42</td>
+      <th id="T_ff851_level0_row4" class="row_heading level0 row4" >Industrial/professional</th>
+      <td id="T_ff851_row4_col0" class="data row4 col0" >0.43</td>
     </tr>
   </tbody>
 </table>
@@ -1109,23 +1083,23 @@ The __combined daily total__ is the sum of the objects of interest per sample. I
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-center"><p><img alt="_images/4aac0286680ae22075917afaaf6acd5182748c062a0ca4dcd692d452c4192ddb.png" src="_images/4aac0286680ae22075917afaaf6acd5182748c062a0ca4dcd692d452c4192ddb.png" /></p></td>
+<tr class="row-even"><td class="text-center"><p><img alt="_images/82004dcfdd458f507a0f54bf90fb42009a4fe0da9e0df820269cedfaa1335628.png" src="_images/82004dcfdd458f507a0f54bf90fb42009a4fe0da9e0df820269cedfaa1335628.png" /></p></td>
 <td class="text-center"><p><span class="output text_html"><style type="text/css">
-#T_98c2a tr:nth-child(even) {
+#T_a8182 tr:nth-child(even) {
   background-color: rgba(139, 69, 19, 0.08);
 }
-#T_98c2a tr:nth-child(odd) {
+#T_a8182 tr:nth-child(odd) {
   background: #FFF;
 }
-#T_98c2a tr {
+#T_a8182 tr {
   font-size: 14px;
   padding: 12px;
 }
-#T_98c2a th:nth-child(1) {
+#T_a8182 th:nth-child(1) {
   background-color: #FFF;
   text-align: right;
 }
-#T_98c2a caption {
+#T_a8182 caption {
   font-size: 14px;
   font-style: italic;
   caption-side: bottom;
@@ -1133,55 +1107,55 @@ The __combined daily total__ is the sum of the objects of interest per sample. I
   margin-top: 10px;
 }
 </style>
-<table id="T_98c2a">
+<table id="T_a8182">
   <caption>Previous and expected median values of the combined daily totals of the Unkown objects group</caption>
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_98c2a_level0_col0" class="col_heading level0 col0" >pcs/m</th>
+      <th id="T_a8182_level0_col0" class="col_heading level0 col0" >pcs/m</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_98c2a_level0_row0" class="row_heading level0 row0" >Median 2021</th>
-      <td id="T_98c2a_row0_col0" class="data row0 col0" >0.52</td>
+      <th id="T_a8182_level0_row0" class="row_heading level0 row0" >Median 2021</th>
+      <td id="T_a8182_row0_col0" class="data row0 col0" >0.52</td>
     </tr>
     <tr>
-      <th id="T_98c2a_level0_row1" class="row_heading level0 row1" >Median 2022</th>
-      <td id="T_98c2a_row1_col0" class="data row1 col0" >0.85</td>
+      <th id="T_a8182_level0_row1" class="row_heading level0 row1" >Median 2022</th>
+      <td id="T_a8182_row1_col0" class="data row1 col0" >0.85</td>
     </tr>
     <tr>
-      <th id="T_98c2a_level0_row2" class="row_heading level0 row2" >Expected sampling median 2024</th>
-      <td id="T_98c2a_row2_col0" class="data row2 col0" >0.56</td>
+      <th id="T_a8182_level0_row2" class="row_heading level0 row2" >Expected sampling median 2024</th>
+      <td id="T_a8182_row2_col0" class="data row2 col0" >0.56</td>
     </tr>
     <tr>
-      <th id="T_98c2a_level0_row3" class="row_heading level0 row3" >% 2022 in 50% IQR  predicted</th>
-      <td id="T_98c2a_row3_col0" class="data row3 col0" >0.41</td>
+      <th id="T_a8182_level0_row3" class="row_heading level0 row3" >% 2022 in 50% IQR  predicted</th>
+      <td id="T_a8182_row3_col0" class="data row3 col0" >0.41</td>
     </tr>
     <tr>
-      <th id="T_98c2a_level0_row4" class="row_heading level0 row4" >% 2022 in 94% IQR  predicted</th>
-      <td id="T_98c2a_row4_col0" class="data row4 col0" >0.99</td>
+      <th id="T_a8182_level0_row4" class="row_heading level0 row4" >% 2022 in 94% IQR  predicted</th>
+      <td id="T_a8182_row4_col0" class="data row4 col0" >0.99</td>
     </tr>
   </tbody>
 </table>
 </span></p></td>
 </tr>
 <tr class="row-odd"><td class="text-center"><p><span class="output text_html"><style type="text/css">
-#T_8116a tr:nth-child(even) {
+#T_590b6 tr:nth-child(even) {
   background-color: rgba(139, 69, 19, 0.08);
 }
-#T_8116a tr:nth-child(odd) {
+#T_590b6 tr:nth-child(odd) {
   background: #FFF;
 }
-#T_8116a tr {
+#T_590b6 tr {
   font-size: 14px;
   padding: 12px;
 }
-#T_8116a th:nth-child(1) {
+#T_590b6 th:nth-child(1) {
   background-color: #FFF;
   text-align: right;
 }
-#T_8116a caption {
+#T_590b6 caption {
   font-size: 14px;
   font-style: italic;
   caption-side: bottom;
@@ -1189,50 +1163,50 @@ The __combined daily total__ is the sum of the objects of interest per sample. I
   margin-top: 10px;
 }
 </style>
-<table id="T_8116a">
+<table id="T_590b6">
   <caption>The observed values from the training and testing data.</caption>
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_8116a_level0_col0" class="col_heading level0 col0" >Training</th>
-      <th id="T_8116a_level0_col1" class="col_heading level0 col1" >Testing</th>
+      <th id="T_590b6_level0_col0" class="col_heading level0 col0" >Training</th>
+      <th id="T_590b6_level0_col1" class="col_heading level0 col1" >Testing</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_8116a_level0_row0" class="row_heading level0 row0" >weight all samples</th>
-      <td id="T_8116a_row0_col0" class="data row0 col0" >0.78</td>
-      <td id="T_8116a_row0_col1" class="data row0 col1" >0.22</td>
+      <th id="T_590b6_level0_row0" class="row_heading level0 row0" >weight all samples</th>
+      <td id="T_590b6_row0_col0" class="data row0 col0" >0.78</td>
+      <td id="T_590b6_row0_col1" class="data row0 col1" >0.22</td>
     </tr>
     <tr>
-      <th id="T_8116a_level0_row1" class="row_heading level0 row1" >Number of samples</th>
-      <td id="T_8116a_row1_col0" class="data row1 col0" >246</td>
-      <td id="T_8116a_row1_col1" class="data row1 col1" >69</td>
+      <th id="T_590b6_level0_row1" class="row_heading level0 row1" >Number of samples</th>
+      <td id="T_590b6_row1_col0" class="data row1 col0" >246</td>
+      <td id="T_590b6_row1_col1" class="data row1 col1" >69</td>
     </tr>
     <tr>
-      <th id="T_8116a_level0_row2" class="row_heading level0 row2" >Median</th>
-      <td id="T_8116a_row2_col0" class="data row2 col0" >0.52</td>
-      <td id="T_8116a_row2_col1" class="data row2 col1" >0.85</td>
+      <th id="T_590b6_level0_row2" class="row_heading level0 row2" >Median</th>
+      <td id="T_590b6_row2_col0" class="data row2 col0" >0.52</td>
+      <td id="T_590b6_row2_col1" class="data row2 col1" >0.85</td>
     </tr>
     <tr>
-      <th id="T_8116a_level0_row3" class="row_heading level0 row3" >Average</th>
-      <td id="T_8116a_row3_col0" class="data row3 col0" >1.36</td>
-      <td id="T_8116a_row3_col1" class="data row3 col1" >1.40</td>
+      <th id="T_590b6_level0_row3" class="row_heading level0 row3" >Average</th>
+      <td id="T_590b6_row3_col0" class="data row3 col0" >1.36</td>
+      <td id="T_590b6_row3_col1" class="data row3 col1" >1.40</td>
     </tr>
     <tr>
-      <th id="T_8116a_level0_row4" class="row_heading level0 row4" >25th percentile</th>
-      <td id="T_8116a_row4_col0" class="data row4 col0" >0.16</td>
-      <td id="T_8116a_row4_col1" class="data row4 col1" >0.24</td>
+      <th id="T_590b6_level0_row4" class="row_heading level0 row4" >25th percentile</th>
+      <td id="T_590b6_row4_col0" class="data row4 col0" >0.16</td>
+      <td id="T_590b6_row4_col1" class="data row4 col1" >0.24</td>
     </tr>
     <tr>
-      <th id="T_8116a_level0_row5" class="row_heading level0 row5" >75th percentile</th>
-      <td id="T_8116a_row5_col0" class="data row5 col0" >1.29</td>
-      <td id="T_8116a_row5_col1" class="data row5 col1" >2.08</td>
+      <th id="T_590b6_level0_row5" class="row_heading level0 row5" >75th percentile</th>
+      <td id="T_590b6_row5_col0" class="data row5 col0" >1.29</td>
+      <td id="T_590b6_row5_col1" class="data row5 col1" >2.08</td>
     </tr>
   </tbody>
 </table>
 </span></p></td>
-<td class="text-center"><p><img alt="_images/0eb5521b13043ff066fe6e295017d00c2ebe299845ebd535bfa15a6c57492364.png" src="_images/0eb5521b13043ff066fe6e295017d00c2ebe299845ebd535bfa15a6c57492364.png" /></p></td>
+<td class="text-center"><p><img alt="_images/5bb7d3ad0fbb01abcd5c822096014b33eb87d26e81710c137784966b97a6facf.png" src="_images/5bb7d3ad0fbb01abcd5c822096014b33eb87d26e81710c137784966b97a6facf.png" /></p></td>
 </tr>
 </tbody>
 </table>
@@ -1247,23 +1221,23 @@ The __combined daily total__ is the sum of the objects of interest per sample. I
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-center"><p><img alt="_images/2aa8addc4749dc0890569a491b8c4f81b8ae8e8b98388cf8012be79dfb460e0b.png" src="_images/2aa8addc4749dc0890569a491b8c4f81b8ae8e8b98388cf8012be79dfb460e0b.png" /></p></td>
+<tr class="row-even"><td class="text-center"><p><img alt="_images/23e718387d3ddfe61775e10558a0facfdda5a6119063ab696f28e40efdba8ebb.png" src="_images/23e718387d3ddfe61775e10558a0facfdda5a6119063ab696f28e40efdba8ebb.png" /></p></td>
 <td class="text-center"><p><span class="output text_html"><style type="text/css">
-#T_7bc58 tr:nth-child(even) {
+#T_e8692 tr:nth-child(even) {
   background-color: rgba(139, 69, 19, 0.08);
 }
-#T_7bc58 tr:nth-child(odd) {
+#T_e8692 tr:nth-child(odd) {
   background: #FFF;
 }
-#T_7bc58 tr {
+#T_e8692 tr {
   font-size: 14px;
   padding: 12px;
 }
-#T_7bc58 th:nth-child(1) {
+#T_e8692 th:nth-child(1) {
   background-color: #FFF;
   text-align: right;
 }
-#T_7bc58 caption {
+#T_e8692 caption {
   font-size: 14px;
   font-style: italic;
   caption-side: bottom;
@@ -1271,55 +1245,55 @@ The __combined daily total__ is the sum of the objects of interest per sample. I
   margin-top: 10px;
 }
 </style>
-<table id="T_7bc58">
+<table id="T_e8692">
   <caption>Previous and expected median values of indentified Personal consumption group</caption>
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_7bc58_level0_col0" class="col_heading level0 col0" >pcs/m</th>
+      <th id="T_e8692_level0_col0" class="col_heading level0 col0" >pcs/m</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_7bc58_level0_row0" class="row_heading level0 row0" >Median 2021</th>
-      <td id="T_7bc58_row0_col0" class="data row0 col0" >1.75</td>
+      <th id="T_e8692_level0_row0" class="row_heading level0 row0" >Median 2021</th>
+      <td id="T_e8692_row0_col0" class="data row0 col0" >1.75</td>
     </tr>
     <tr>
-      <th id="T_7bc58_level0_row1" class="row_heading level0 row1" >Median 2022</th>
-      <td id="T_7bc58_row1_col0" class="data row1 col0" >0.56</td>
+      <th id="T_e8692_level0_row1" class="row_heading level0 row1" >Median 2022</th>
+      <td id="T_e8692_row1_col0" class="data row1 col0" >0.56</td>
     </tr>
     <tr>
-      <th id="T_7bc58_level0_row2" class="row_heading level0 row2" >Expected sampling median 2024</th>
-      <td id="T_7bc58_row2_col0" class="data row2 col0" >1.46</td>
+      <th id="T_e8692_level0_row2" class="row_heading level0 row2" >Expected sampling median 2024</th>
+      <td id="T_e8692_row2_col0" class="data row2 col0" >1.46</td>
     </tr>
     <tr>
-      <th id="T_7bc58_level0_row3" class="row_heading level0 row3" >% 2022 in 50% IQR  predicted</th>
-      <td id="T_7bc58_row3_col0" class="data row3 col0" >0.39</td>
+      <th id="T_e8692_level0_row3" class="row_heading level0 row3" >% 2022 in 50% IQR  predicted</th>
+      <td id="T_e8692_row3_col0" class="data row3 col0" >0.39</td>
     </tr>
     <tr>
-      <th id="T_7bc58_level0_row4" class="row_heading level0 row4" >% 2022 in 94% IQR  predicted</th>
-      <td id="T_7bc58_row4_col0" class="data row4 col0" >0.72</td>
+      <th id="T_e8692_level0_row4" class="row_heading level0 row4" >% 2022 in 94% IQR  predicted</th>
+      <td id="T_e8692_row4_col0" class="data row4 col0" >0.72</td>
     </tr>
   </tbody>
 </table>
 </span></p></td>
 </tr>
 <tr class="row-odd"><td class="text-center"><p><span class="output text_html"><style type="text/css">
-#T_358d4 tr:nth-child(even) {
+#T_3b481 tr:nth-child(even) {
   background-color: rgba(139, 69, 19, 0.08);
 }
-#T_358d4 tr:nth-child(odd) {
+#T_3b481 tr:nth-child(odd) {
   background: #FFF;
 }
-#T_358d4 tr {
+#T_3b481 tr {
   font-size: 14px;
   padding: 12px;
 }
-#T_358d4 th:nth-child(1) {
+#T_3b481 th:nth-child(1) {
   background-color: #FFF;
   text-align: right;
 }
-#T_358d4 caption {
+#T_3b481 caption {
   font-size: 14px;
   font-style: italic;
   caption-side: bottom;
@@ -1327,50 +1301,50 @@ The __combined daily total__ is the sum of the objects of interest per sample. I
   margin-top: 10px;
 }
 </style>
-<table id="T_358d4">
+<table id="T_3b481">
   <caption>The observed values from the training and testing data.</caption>
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_358d4_level0_col0" class="col_heading level0 col0" >Training</th>
-      <th id="T_358d4_level0_col1" class="col_heading level0 col1" >Testing</th>
+      <th id="T_3b481_level0_col0" class="col_heading level0 col0" >Training</th>
+      <th id="T_3b481_level0_col1" class="col_heading level0 col1" >Testing</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_358d4_level0_row0" class="row_heading level0 row0" >weight all samples</th>
-      <td id="T_358d4_row0_col0" class="data row0 col0" >0.78</td>
-      <td id="T_358d4_row0_col1" class="data row0 col1" >0.22</td>
+      <th id="T_3b481_level0_row0" class="row_heading level0 row0" >weight all samples</th>
+      <td id="T_3b481_row0_col0" class="data row0 col0" >0.78</td>
+      <td id="T_3b481_row0_col1" class="data row0 col1" >0.22</td>
     </tr>
     <tr>
-      <th id="T_358d4_level0_row1" class="row_heading level0 row1" >Number of samples</th>
-      <td id="T_358d4_row1_col0" class="data row1 col0" >246</td>
-      <td id="T_358d4_row1_col1" class="data row1 col1" >69</td>
+      <th id="T_3b481_level0_row1" class="row_heading level0 row1" >Number of samples</th>
+      <td id="T_3b481_row1_col0" class="data row1 col0" >246</td>
+      <td id="T_3b481_row1_col1" class="data row1 col1" >69</td>
     </tr>
     <tr>
-      <th id="T_358d4_level0_row2" class="row_heading level0 row2" >Median</th>
-      <td id="T_358d4_row2_col0" class="data row2 col0" >1.75</td>
-      <td id="T_358d4_row2_col1" class="data row2 col1" >0.56</td>
+      <th id="T_3b481_level0_row2" class="row_heading level0 row2" >Median</th>
+      <td id="T_3b481_row2_col0" class="data row2 col0" >1.75</td>
+      <td id="T_3b481_row2_col1" class="data row2 col1" >0.56</td>
     </tr>
     <tr>
-      <th id="T_358d4_level0_row3" class="row_heading level0 row3" >Average</th>
-      <td id="T_358d4_row3_col0" class="data row3 col0" >2.82</td>
-      <td id="T_358d4_row3_col1" class="data row3 col1" >1.01</td>
+      <th id="T_3b481_level0_row3" class="row_heading level0 row3" >Average</th>
+      <td id="T_3b481_row3_col0" class="data row3 col0" >2.82</td>
+      <td id="T_3b481_row3_col1" class="data row3 col1" >1.01</td>
     </tr>
     <tr>
-      <th id="T_358d4_level0_row4" class="row_heading level0 row4" >25th percentile</th>
-      <td id="T_358d4_row4_col0" class="data row4 col0" >0.66</td>
-      <td id="T_358d4_row4_col1" class="data row4 col1" >0.16</td>
+      <th id="T_3b481_level0_row4" class="row_heading level0 row4" >25th percentile</th>
+      <td id="T_3b481_row4_col0" class="data row4 col0" >0.66</td>
+      <td id="T_3b481_row4_col1" class="data row4 col1" >0.16</td>
     </tr>
     <tr>
-      <th id="T_358d4_level0_row5" class="row_heading level0 row5" >75th percentile</th>
-      <td id="T_358d4_row5_col0" class="data row5 col0" >3.27</td>
-      <td id="T_358d4_row5_col1" class="data row5 col1" >1.34</td>
+      <th id="T_3b481_level0_row5" class="row_heading level0 row5" >75th percentile</th>
+      <td id="T_3b481_row5_col0" class="data row5 col0" >3.27</td>
+      <td id="T_3b481_row5_col1" class="data row5 col1" >1.34</td>
     </tr>
   </tbody>
 </table>
 </span></p></td>
-<td class="text-center"><p><img alt="_images/91f48e49efa02149a58f34a252b8b2be9eeb06158f9e1a7f9cd36c1ef5077d56.png" src="_images/91f48e49efa02149a58f34a252b8b2be9eeb06158f9e1a7f9cd36c1ef5077d56.png" /></p></td>
+<td class="text-center"><p><img alt="_images/c6bb2a7576048fb3cf26f0a3481b75f38cb0134b7960547201491a72a108145e.png" src="_images/c6bb2a7576048fb3cf26f0a3481b75f38cb0134b7960547201491a72a108145e.png" /></p></td>
 </tr>
 </tbody>
 </table>
@@ -1399,21 +1373,21 @@ The __combined daily total__ is the sum of the objects of interest per sample. I
 </thead>
 <tbody>
 <tr class="row-even"><td class="text-center"><p><span class="output text_html"><style type="text/css">
-#T_e7241 tr:nth-child(even) {
+#T_fc3eb tr:nth-child(even) {
   background-color: rgba(139, 69, 19, 0.08);
 }
-#T_e7241 tr:nth-child(odd) {
+#T_fc3eb tr:nth-child(odd) {
   background: #FFF;
 }
-#T_e7241 tr {
+#T_fc3eb tr {
   font-size: 14px;
   padding: 12px;
 }
-#T_e7241 th:nth-child(1) {
+#T_fc3eb th:nth-child(1) {
   background-color: #FFF;
   text-align: right;
 }
-#T_e7241 caption {
+#T_fc3eb caption {
   font-size: 14px;
   font-style: italic;
   caption-side: bottom;
@@ -1421,58 +1395,58 @@ The __combined daily total__ is the sum of the objects of interest per sample. I
   margin-top: 10px;
 }
 </style>
-<table id="T_e7241">
+<table id="T_fc3eb">
   <caption>Table 10: Previous and expected results and the percent of observed samples from 2022 that were included in either the 50% IQR or the 94% IQR of the predicted values.</caption>
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_e7241_level0_col0" class="col_heading level0 col0" >Unk</th>
-      <th id="T_e7241_level0_col1" class="col_heading level0 col1" >Pc</th>
-      <th id="T_e7241_level0_col2" class="col_heading level0 col2" >Ph</th>
-      <th id="T_e7241_level0_col3" class="col_heading level0 col3" >Rc</th>
-      <th id="T_e7241_level0_col4" class="col_heading level0 col4" >Ip</th>
+      <th id="T_fc3eb_level0_col0" class="col_heading level0 col0" >Unk</th>
+      <th id="T_fc3eb_level0_col1" class="col_heading level0 col1" >Pc</th>
+      <th id="T_fc3eb_level0_col2" class="col_heading level0 col2" >Ph</th>
+      <th id="T_fc3eb_level0_col3" class="col_heading level0 col3" >Rc</th>
+      <th id="T_fc3eb_level0_col4" class="col_heading level0 col4" >Ip</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_e7241_level0_row0" class="row_heading level0 row0" >Median 2021</th>
-      <td id="T_e7241_row0_col0" class="data row0 col0" >0.52</td>
-      <td id="T_e7241_row0_col1" class="data row0 col1" >1.75</td>
-      <td id="T_e7241_row0_col2" class="data row0 col2" >0.16</td>
-      <td id="T_e7241_row0_col3" class="data row0 col3" >0.02</td>
-      <td id="T_e7241_row0_col4" class="data row0 col4" >0.73</td>
+      <th id="T_fc3eb_level0_row0" class="row_heading level0 row0" >Median 2021</th>
+      <td id="T_fc3eb_row0_col0" class="data row0 col0" >0.52</td>
+      <td id="T_fc3eb_row0_col1" class="data row0 col1" >1.58</td>
+      <td id="T_fc3eb_row0_col2" class="data row0 col2" >0.15</td>
+      <td id="T_fc3eb_row0_col3" class="data row0 col3" >0.01</td>
+      <td id="T_fc3eb_row0_col4" class="data row0 col4" >0.73</td>
     </tr>
     <tr>
-      <th id="T_e7241_level0_row1" class="row_heading level0 row1" >Median 2022</th>
-      <td id="T_e7241_row1_col0" class="data row1 col0" >0.85</td>
-      <td id="T_e7241_row1_col1" class="data row1 col1" >0.56</td>
-      <td id="T_e7241_row1_col2" class="data row1 col2" >0.00</td>
-      <td id="T_e7241_row1_col3" class="data row1 col3" >0.00</td>
-      <td id="T_e7241_row1_col4" class="data row1 col4" >0.06</td>
+      <th id="T_fc3eb_level0_row1" class="row_heading level0 row1" >Median 2022</th>
+      <td id="T_fc3eb_row1_col0" class="data row1 col0" >0.85</td>
+      <td id="T_fc3eb_row1_col1" class="data row1 col1" >0.56</td>
+      <td id="T_fc3eb_row1_col2" class="data row1 col2" >0.00</td>
+      <td id="T_fc3eb_row1_col3" class="data row1 col3" >0.00</td>
+      <td id="T_fc3eb_row1_col4" class="data row1 col4" >0.06</td>
     </tr>
     <tr>
-      <th id="T_e7241_level0_row2" class="row_heading level0 row2" >Expected sampling median 2024</th>
-      <td id="T_e7241_row2_col0" class="data row2 col0" >0.56</td>
-      <td id="T_e7241_row2_col1" class="data row2 col1" >1.46</td>
-      <td id="T_e7241_row2_col2" class="data row2 col2" >0.14</td>
-      <td id="T_e7241_row2_col3" class="data row2 col3" >0.01</td>
-      <td id="T_e7241_row2_col4" class="data row2 col4" >0.57</td>
+      <th id="T_fc3eb_level0_row2" class="row_heading level0 row2" >Expected sampling median 2024</th>
+      <td id="T_fc3eb_row2_col0" class="data row2 col0" >0.56</td>
+      <td id="T_fc3eb_row2_col1" class="data row2 col1" >1.35</td>
+      <td id="T_fc3eb_row2_col2" class="data row2 col2" >0.14</td>
+      <td id="T_fc3eb_row2_col3" class="data row2 col3" >0.01</td>
+      <td id="T_fc3eb_row2_col4" class="data row2 col4" >0.57</td>
     </tr>
     <tr>
-      <th id="T_e7241_level0_row3" class="row_heading level0 row3" >% 2022 in 50% IQR  predicted</th>
-      <td id="T_e7241_row3_col0" class="data row3 col0" >0.41</td>
-      <td id="T_e7241_row3_col1" class="data row3 col1" >0.45</td>
-      <td id="T_e7241_row3_col2" class="data row3 col2" >0.41</td>
-      <td id="T_e7241_row3_col3" class="data row3 col3" >0.91</td>
-      <td id="T_e7241_row3_col4" class="data row3 col4" >0.32</td>
+      <th id="T_fc3eb_level0_row3" class="row_heading level0 row3" >% 2022 in 50% IQR  predicted</th>
+      <td id="T_fc3eb_row3_col0" class="data row3 col0" >0.41</td>
+      <td id="T_fc3eb_row3_col1" class="data row3 col1" >0.49</td>
+      <td id="T_fc3eb_row3_col2" class="data row3 col2" >0.41</td>
+      <td id="T_fc3eb_row3_col3" class="data row3 col3" >0.90</td>
+      <td id="T_fc3eb_row3_col4" class="data row3 col4" >0.30</td>
     </tr>
     <tr>
-      <th id="T_e7241_level0_row4" class="row_heading level0 row4" >% 2022 in 94% IQR  predicted</th>
-      <td id="T_e7241_row4_col0" class="data row4 col0" >0.99</td>
-      <td id="T_e7241_row4_col1" class="data row4 col1" >0.88</td>
-      <td id="T_e7241_row4_col2" class="data row4 col2" >1.00</td>
-      <td id="T_e7241_row4_col3" class="data row4 col3" >1.00</td>
-      <td id="T_e7241_row4_col4" class="data row4 col4" >1.00</td>
+      <th id="T_fc3eb_level0_row4" class="row_heading level0 row4" >% 2022 in 94% IQR  predicted</th>
+      <td id="T_fc3eb_row4_col0" class="data row4 col0" >0.99</td>
+      <td id="T_fc3eb_row4_col1" class="data row4 col1" >0.91</td>
+      <td id="T_fc3eb_row4_col2" class="data row4 col2" >1.00</td>
+      <td id="T_fc3eb_row4_col3" class="data row4 col3" >1.00</td>
+      <td id="T_fc3eb_row4_col4" class="data row4 col4" >1.00</td>
     </tr>
   </tbody>
 </table>
@@ -1483,387 +1457,6 @@ The __combined daily total__ is the sum of the objects of interest per sample. I
 </tbody>
 </table>
 </div>
-</div>
-</div>
-</div>
-<div class="section" id="results-saint-sulpice">
-<h2><span class="section-number">2.9. </span>Results Saint Sulpice<a class="headerlink" href="#results-saint-sulpice" title="Permalink to this headline">#</a></h2>
-<div class="cell tag_remove-input docutils container">
-</div>
-<div class="cell tag_remove-input docutils container">
-</div>
-<div class="cell tag_remove-input docutils container">
-</div>
-<div class="section" id="id2">
-<h3><span class="section-number">2.9.1. </span>Previous and expected survey totals<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
-<div class="admonition-given-the-data-from-2022-is-there-an-increase-decrease-or-no-change-in-the-expected-survey-results-given-the-consolidated-results-from-2015-2021 admonition">
-<p class="admonition-title">Given the data from 2022, Is there an increase, decrease or no change in the expected survey results given the consolidated results from 2015 - 2021?</p>
-<p>The average number of objects counted and indentified per meter at Saint Sulpice is expected to decline going into 2024 (figure 11, table 12). The difference between 2021 and 2022 is minimal (table 11). If we consider that the estimated median is a point estimate of the probable distribution for 2024 (table 12) then there will be no noticable change in 2024 for the residents of Saint Sulpice (figure 12).</p>
-</div>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="text-center head"><p>Figure 11, Table 11</p></th>
-<th class="text-center head"><p>Table 12, Figure 12</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td class="text-center"><p><img alt="_images/609b0795eac15cd08b89a6f72aecde68b3bc5e2a4ca5e6294db149b5e42c239e.png" src="_images/609b0795eac15cd08b89a6f72aecde68b3bc5e2a4ca5e6294db149b5e42c239e.png" /></p></td>
-<td class="text-center"><p><span class="output text_html"><style type="text/css">
-#T_c8a52 tr:nth-child(even) {
-  background-color: rgba(139, 69, 19, 0.08);
-}
-#T_c8a52 tr:nth-child(odd) {
-  background: #FFF;
-}
-#T_c8a52 tr {
-  font-size: 14px;
-  padding: 12px;
-}
-#T_c8a52 th:nth-child(1) {
-  background-color: #FFF;
-  text-align: right;
-}
-#T_c8a52 caption {
-  font-size: 14px;
-  font-style: italic;
-  caption-side: bottom;
-  text-align: left;
-  margin-top: 10px;
-}
-</style>
-<table id="T_c8a52">
-  <caption>Previous and expected median values of the combined daily totals of the Unkown objects group</caption>
-  <thead>
-    <tr>
-      <th class="blank level0" >&nbsp;</th>
-      <th id="T_c8a52_level0_col0" class="col_heading level0 col0" >pcs/m</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th id="T_c8a52_level0_row0" class="row_heading level0 row0" >Median 2021</th>
-      <td id="T_c8a52_row0_col0" class="data row0 col0" >5.64</td>
-    </tr>
-    <tr>
-      <th id="T_c8a52_level0_row1" class="row_heading level0 row1" >Median 2022</th>
-      <td id="T_c8a52_row1_col0" class="data row1 col0" >6.90</td>
-    </tr>
-    <tr>
-      <th id="T_c8a52_level0_row2" class="row_heading level0 row2" >Expected sampling median 2024</th>
-      <td id="T_c8a52_row2_col0" class="data row2 col0" >6.34</td>
-    </tr>
-    <tr>
-      <th id="T_c8a52_level0_row3" class="row_heading level0 row3" >% 2022 in 50% IQR  predicted</th>
-      <td id="T_c8a52_row3_col0" class="data row3 col0" >0.53</td>
-    </tr>
-    <tr>
-      <th id="T_c8a52_level0_row4" class="row_heading level0 row4" >% 2022 in 94% IQR  predicted</th>
-      <td id="T_c8a52_row4_col0" class="data row4 col0" >0.88</td>
-    </tr>
-  </tbody>
-</table>
-</span></p></td>
-</tr>
-<tr class="row-odd"><td class="text-center"><p><span class="output text_html"><style type="text/css">
-#T_57142 tr:nth-child(even) {
-  background-color: rgba(139, 69, 19, 0.08);
-}
-#T_57142 tr:nth-child(odd) {
-  background: #FFF;
-}
-#T_57142 tr {
-  font-size: 14px;
-  padding: 12px;
-}
-#T_57142 th:nth-child(1) {
-  background-color: #FFF;
-  text-align: right;
-}
-#T_57142 caption {
-  font-size: 14px;
-  font-style: italic;
-  caption-side: bottom;
-  text-align: left;
-  margin-top: 10px;
-}
-</style>
-<table id="T_57142">
-  <caption>The observed values from the training and testing data.</caption>
-  <thead>
-    <tr>
-      <th class="blank level0" >&nbsp;</th>
-      <th id="T_57142_level0_col0" class="col_heading level0 col0" >Training</th>
-      <th id="T_57142_level0_col1" class="col_heading level0 col1" >Testing</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th id="T_57142_level0_row0" class="row_heading level0 row0" >weight all samples</th>
-      <td id="T_57142_row0_col0" class="data row0 col0" >0.55</td>
-      <td id="T_57142_row0_col1" class="data row0 col1" >0.45</td>
-    </tr>
-    <tr>
-      <th id="T_57142_level0_row1" class="row_heading level0 row1" >Number of samples</th>
-      <td id="T_57142_row1_col0" class="data row1 col0" >21</td>
-      <td id="T_57142_row1_col1" class="data row1 col1" >17</td>
-    </tr>
-    <tr>
-      <th id="T_57142_level0_row2" class="row_heading level0 row2" >Median</th>
-      <td id="T_57142_row2_col0" class="data row2 col0" >5.64</td>
-      <td id="T_57142_row2_col1" class="data row2 col1" >6.90</td>
-    </tr>
-    <tr>
-      <th id="T_57142_level0_row3" class="row_heading level0 row3" >Average</th>
-      <td id="T_57142_row3_col0" class="data row3 col0" >7.88</td>
-      <td id="T_57142_row3_col1" class="data row3 col1" >12.26</td>
-    </tr>
-    <tr>
-      <th id="T_57142_level0_row4" class="row_heading level0 row4" >25th percentile</th>
-      <td id="T_57142_row4_col0" class="data row4 col0" >2.70</td>
-      <td id="T_57142_row4_col1" class="data row4 col1" >3.90</td>
-    </tr>
-    <tr>
-      <th id="T_57142_level0_row5" class="row_heading level0 row5" >75th percentile</th>
-      <td id="T_57142_row5_col0" class="data row5 col0" >7.89</td>
-      <td id="T_57142_row5_col1" class="data row5 col1" >11.58</td>
-    </tr>
-  </tbody>
-</table>
-</span></p></td>
-<td class="text-center"><p><img alt="_images/b9bc387042ade404392e6b4cef51e0bed82e6450eb4c65fafc5ee4965c3d9009.png" src="_images/b9bc387042ade404392e6b4cef51e0bed82e6450eb4c65fafc5ee4965c3d9009.png" /></p></td>
-</tr>
-</tbody>
-</table>
-<div class="cell tag_remove-input docutils container">
-</div>
-<div class="cell tag_remove-input docutils container">
-</div>
-<div class="cell tag_remove-input docutils container">
-</div>
-<div class="cell tag_remove-input docutils container">
-</div>
-<div class="cell tag_remove-input docutils container">
-</div>
-<div class="cell tag_remove-input docutils container">
-</div>
-<div class="cell tag_remove-input docutils container">
-</div>
-<div class="cell tag_remove-input docutils container">
-</div>
-</div>
-<div class="section" id="id3">
-<h3><span class="section-number">2.9.2. </span>Previous and expected survey results of objects of interest<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
-<div class="admonition-given-the-median-value-for-the-objects-of-interest-in-2021-what-is-the-chance-that-a-survey-in-2022-will-exceed-this-value admonition">
-<p class="admonition-title">Given the median value for the objects of interest in 2021, what is the chance that a survey in 2022 will exceed this value?</p>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="text-left head"><p>Table 13</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td class="text-left"><p><span class="output text_html"><style type="text/css">
-#T_2bf74 tr:nth-child(even) {
-  background-color: rgba(139, 69, 19, 0.08);
-}
-#T_2bf74 tr:nth-child(odd) {
-  background: #FFF;
-}
-#T_2bf74 tr {
-  font-size: 14px;
-  padding: 12px;
-}
-#T_2bf74 th:nth-child(1) {
-  background-color: #FFF;
-  text-align: right;
-}
-#T_2bf74 caption {
-  font-size: 14px;
-  font-style: italic;
-  caption-side: bottom;
-  text-align: left;
-  margin-top: 10px;
-}
-</style>
-<table id="T_2bf74">
-  <caption>The probability that a survey in 2024 will exceed the median (50%) from 2021</caption>
-  <thead>
-    <tr>
-      <th class="blank level0" >&nbsp;</th>
-      <th id="T_2bf74_level0_col0" class="col_heading level0 col0" >P</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th id="T_2bf74_level0_row0" class="row_heading level0 row0" >Unknown</th>
-      <td id="T_2bf74_row0_col0" class="data row0 col0" >0.61</td>
-    </tr>
-    <tr>
-      <th id="T_2bf74_level0_row1" class="row_heading level0 row1" >Personal consumption</th>
-      <td id="T_2bf74_row1_col0" class="data row1 col0" >0.55</td>
-    </tr>
-    <tr>
-      <th id="T_2bf74_level0_row2" class="row_heading level0 row2" >Personal hygiene</th>
-      <td id="T_2bf74_row2_col0" class="data row2 col0" >0.55</td>
-    </tr>
-    <tr>
-      <th id="T_2bf74_level0_row3" class="row_heading level0 row3" >Recreation/sports</th>
-      <td id="T_2bf74_row3_col0" class="data row3 col0" >0.97</td>
-    </tr>
-    <tr>
-      <th id="T_2bf74_level0_row4" class="row_heading level0 row4" >Industrial/professional</th>
-      <td id="T_2bf74_row4_col0" class="data row4 col0" >0.58</td>
-    </tr>
-  </tbody>
-</table>
-</span></p></td>
-</tr>
-<tr class="row-odd"><td class="text-left"><p>Contrary to the trend of the lake, we expect an increase in the amount of beach litter density at Saint Sulpice. This is valid for all object groups.</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="section" id="id4">
-<h4><span class="section-number">2.9.2.1. </span>Expected results fragmented plastics<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h4>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="text-center head"><p>Figure 12, Table 14</p></th>
-<th class="text-center head"><p>Table 15, Figure 13</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td class="text-center"><p><img alt="_images/f4bb3f5fbb963a7b5214b76dd57b30806dc7158ba739b60f0a0370275357d962.png" src="_images/f4bb3f5fbb963a7b5214b76dd57b30806dc7158ba739b60f0a0370275357d962.png" /></p></td>
-<td class="text-center"><p><span class="output text_html"><style type="text/css">
-#T_93c00 tr:nth-child(even) {
-  background-color: rgba(139, 69, 19, 0.08);
-}
-#T_93c00 tr:nth-child(odd) {
-  background: #FFF;
-}
-#T_93c00 tr {
-  font-size: 14px;
-  padding: 12px;
-}
-#T_93c00 th:nth-child(1) {
-  background-color: #FFF;
-  text-align: right;
-}
-#T_93c00 caption {
-  font-size: 14px;
-  font-style: italic;
-  caption-side: bottom;
-  text-align: left;
-  margin-top: 10px;
-}
-</style>
-<table id="T_93c00">
-  <caption>Previous and expected median values of the combined daily totals of the Unkown objects group</caption>
-  <thead>
-    <tr>
-      <th class="blank level0" >&nbsp;</th>
-      <th id="T_93c00_level0_col0" class="col_heading level0 col0" >pcs/m</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th id="T_93c00_level0_row0" class="row_heading level0 row0" >Median 2021</th>
-      <td id="T_93c00_row0_col0" class="data row0 col0" >0.85</td>
-    </tr>
-    <tr>
-      <th id="T_93c00_level0_row1" class="row_heading level0 row1" >Median 2022</th>
-      <td id="T_93c00_row1_col0" class="data row1 col0" >2.28</td>
-    </tr>
-    <tr>
-      <th id="T_93c00_level0_row2" class="row_heading level0 row2" >Expected sampling median 2024</th>
-      <td id="T_93c00_row2_col0" class="data row2 col0" >0.98</td>
-    </tr>
-    <tr>
-      <th id="T_93c00_level0_row3" class="row_heading level0 row3" >% 2022 in 50% IQR  predicted</th>
-      <td id="T_93c00_row3_col0" class="data row3 col0" >0.18</td>
-    </tr>
-    <tr>
-      <th id="T_93c00_level0_row4" class="row_heading level0 row4" >% 2022 in 94% IQR  predicted</th>
-      <td id="T_93c00_row4_col0" class="data row4 col0" >0.82</td>
-    </tr>
-  </tbody>
-</table>
-</span></p></td>
-</tr>
-<tr class="row-odd"><td class="text-center"><p><span class="output text_html"><style type="text/css">
-#T_ff1f3 tr:nth-child(even) {
-  background-color: rgba(139, 69, 19, 0.08);
-}
-#T_ff1f3 tr:nth-child(odd) {
-  background: #FFF;
-}
-#T_ff1f3 tr {
-  font-size: 14px;
-  padding: 12px;
-}
-#T_ff1f3 th:nth-child(1) {
-  background-color: #FFF;
-  text-align: right;
-}
-#T_ff1f3 caption {
-  font-size: 14px;
-  font-style: italic;
-  caption-side: bottom;
-  text-align: left;
-  margin-top: 10px;
-}
-</style>
-<table id="T_ff1f3">
-  <caption>The observed values from the training and testing data.</caption>
-  <thead>
-    <tr>
-      <th class="blank level0" >&nbsp;</th>
-      <th id="T_ff1f3_level0_col0" class="col_heading level0 col0" >Training</th>
-      <th id="T_ff1f3_level0_col1" class="col_heading level0 col1" >Testing</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th id="T_ff1f3_level0_row0" class="row_heading level0 row0" >weight all samples</th>
-      <td id="T_ff1f3_row0_col0" class="data row0 col0" >0.55</td>
-      <td id="T_ff1f3_row0_col1" class="data row0 col1" >0.45</td>
-    </tr>
-    <tr>
-      <th id="T_ff1f3_level0_row1" class="row_heading level0 row1" >Number of samples</th>
-      <td id="T_ff1f3_row1_col0" class="data row1 col0" >21</td>
-      <td id="T_ff1f3_row1_col1" class="data row1 col1" >17</td>
-    </tr>
-    <tr>
-      <th id="T_ff1f3_level0_row2" class="row_heading level0 row2" >Median</th>
-      <td id="T_ff1f3_row2_col0" class="data row2 col0" >0.85</td>
-      <td id="T_ff1f3_row2_col1" class="data row2 col1" >2.28</td>
-    </tr>
-    <tr>
-      <th id="T_ff1f3_level0_row3" class="row_heading level0 row3" >Average</th>
-      <td id="T_ff1f3_row3_col0" class="data row3 col0" >2.67</td>
-      <td id="T_ff1f3_row3_col1" class="data row3 col1" >3.89</td>
-    </tr>
-    <tr>
-      <th id="T_ff1f3_level0_row4" class="row_heading level0 row4" >25th percentile</th>
-      <td id="T_ff1f3_row4_col0" class="data row4 col0" >0.63</td>
-      <td id="T_ff1f3_row4_col1" class="data row4 col1" >0.83</td>
-    </tr>
-    <tr>
-      <th id="T_ff1f3_level0_row5" class="row_heading level0 row5" >75th percentile</th>
-      <td id="T_ff1f3_row5_col0" class="data row5 col0" >1.20</td>
-      <td id="T_ff1f3_row5_col1" class="data row5 col1" >3.30</td>
-    </tr>
-  </tbody>
-</table>
-</span></p></td>
-<td class="text-center"><p><img alt="_images/8481c17ea2100d8e9784a5457031687e33aaa6006339d10e9d6c96d4cbe7d164.png" src="_images/8481c17ea2100d8e9784a5457031687e33aaa6006339d10e9d6c96d4cbe7d164.png" /></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="section" id="summary-of-expected-survey-results-saint-sulpice">
-<h3><span class="section-number">2.9.3. </span>Summary of expected survey results Saint Sulpice<a class="headerlink" href="#summary-of-expected-survey-results-saint-sulpice" title="Permalink to this headline">#</a></h3>
-<div class="cell tag_remove-input docutils container">
-</div>
 <div class="admonition-how-do-the-results-from-2022-change-the-expected-survey-results-going-forward admonition">
 <p class="admonition-title">How do the results from 2022 change the expected survey results going forward??</p>
 <p>Beach litter density at Saint Sulpice is expected to increase. Given the data from 2022 we expect the survey results to increase from the 2021 levels and the density at Saint Sulpice is expected to be greater than the expected value for the lake in general.</p>
@@ -1873,85 +1466,7 @@ The __combined daily total__ is the sum of the objects of interest per sample. I
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-center"><p><span class="output text_html"><style type="text/css">
-#T_914f1 tr:nth-child(even) {
-  background-color: rgba(139, 69, 19, 0.08);
-}
-#T_914f1 tr:nth-child(odd) {
-  background: #FFF;
-}
-#T_914f1 tr {
-  font-size: 14px;
-  padding: 12px;
-}
-#T_914f1 th:nth-child(1) {
-  background-color: #FFF;
-  text-align: right;
-}
-#T_914f1 caption {
-  font-size: 14px;
-  font-style: italic;
-  caption-side: bottom;
-  text-align: left;
-  margin-top: 10px;
-}
-</style>
-<table id="T_914f1">
-  <caption>Previous and expected results and the percent of observed samples from 2022 that were included in either the 50% IQR or the 94% IQR of the predicted values.</caption>
-  <thead>
-    <tr>
-      <th class="blank level0" >&nbsp;</th>
-      <th id="T_914f1_level0_col0" class="col_heading level0 col0" >Unk</th>
-      <th id="T_914f1_level0_col1" class="col_heading level0 col1" >Pc</th>
-      <th id="T_914f1_level0_col2" class="col_heading level0 col2" >Ph</th>
-      <th id="T_914f1_level0_col3" class="col_heading level0 col3" >Rc</th>
-      <th id="T_914f1_level0_col4" class="col_heading level0 col4" >Ip</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th id="T_914f1_level0_row0" class="row_heading level0 row0" >Median 2021</th>
-      <td id="T_914f1_row0_col0" class="data row0 col0" >0.85</td>
-      <td id="T_914f1_row0_col1" class="data row0 col1" >2.11</td>
-      <td id="T_914f1_row0_col2" class="data row0 col2" >0.52</td>
-      <td id="T_914f1_row0_col3" class="data row0 col3" >0.00</td>
-      <td id="T_914f1_row0_col4" class="data row0 col4" >0.73</td>
-    </tr>
-    <tr>
-      <th id="T_914f1_level0_row1" class="row_heading level0 row1" >Median 2022</th>
-      <td id="T_914f1_row1_col0" class="data row1 col0" >2.28</td>
-      <td id="T_914f1_row1_col1" class="data row1 col1" >2.40</td>
-      <td id="T_914f1_row1_col2" class="data row1 col2" >0.68</td>
-      <td id="T_914f1_row1_col3" class="data row1 col3" >0.04</td>
-      <td id="T_914f1_row1_col4" class="data row1 col4" >1.30</td>
-    </tr>
-    <tr>
-      <th id="T_914f1_level0_row2" class="row_heading level0 row2" >Expected sampling median 2024</th>
-      <td id="T_914f1_row2_col0" class="data row2 col0" >0.98</td>
-      <td id="T_914f1_row2_col1" class="data row2 col1" >2.31</td>
-      <td id="T_914f1_row2_col2" class="data row2 col2" >0.57</td>
-      <td id="T_914f1_row2_col3" class="data row2 col3" >0.07</td>
-      <td id="T_914f1_row2_col4" class="data row2 col4" >1.06</td>
-    </tr>
-    <tr>
-      <th id="T_914f1_level0_row3" class="row_heading level0 row3" >% 2022 in 50% IQR  predicted</th>
-      <td id="T_914f1_row3_col0" class="data row3 col0" >0.18</td>
-      <td id="T_914f1_row3_col1" class="data row3 col1" >0.71</td>
-      <td id="T_914f1_row3_col2" class="data row3 col2" >0.59</td>
-      <td id="T_914f1_row3_col3" class="data row3 col3" >0.41</td>
-      <td id="T_914f1_row3_col4" class="data row3 col4" >0.35</td>
-    </tr>
-    <tr>
-      <th id="T_914f1_level0_row4" class="row_heading level0 row4" >% 2022 in 94% IQR  predicted</th>
-      <td id="T_914f1_row4_col0" class="data row4 col0" >0.82</td>
-      <td id="T_914f1_row4_col1" class="data row4 col1" >0.76</td>
-      <td id="T_914f1_row4_col2" class="data row4 col2" >0.82</td>
-      <td id="T_914f1_row4_col3" class="data row4 col3" >0.65</td>
-      <td id="T_914f1_row4_col4" class="data row4 col4" >0.82</td>
-    </tr>
-  </tbody>
-</table>
-</span></p></td>
+<tr class="row-even"><td class="text-center"><p></p></td>
 </tr>
 </tbody>
 </table>
@@ -1959,8 +1474,9 @@ The __combined daily total__ is the sum of the objects of interest per sample. I
 </div>
 </div>
 </div>
+</div>
 <div class="section" id="discussion">
-<h2><span class="section-number">2.10. </span>Discussion<a class="headerlink" href="#discussion" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.9. </span>Discussion<a class="headerlink" href="#discussion" title="Permalink to this headline">#</a></h2>
 <p>Potential points of discussion</p>
 <ol class="arabic simple">
 <li><p>The lake samples show a decline but the results at Saint Sulpice show an increase. Could this be because the samples at the lake level came from one sampling group and at Saint Sulpice from another?</p></li>
@@ -1971,41 +1487,26 @@ The __combined daily total__ is the sum of the objects of interest per sample. I
 </ol>
 </div>
 <div class="section" id="conclusions">
-<h2><span class="section-number">2.11. </span>Conclusions<a class="headerlink" href="#conclusions" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.10. </span>Conclusions<a class="headerlink" href="#conclusions" title="Permalink to this headline">#</a></h2>
 <p>The grid approximations function as we expected. The flat areas in the predicted curves demonstrate the need for a more comprehensive model. However, the observed samples in 2022 are within the 94% HDI of the predictions. In most cases we can account for 80% - 100% of the observed with the prediction.</p>
 <div class="section" id="next-steps">
-<h3><span class="section-number">2.11.1. </span>Next steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">#</a></h3>
-</div>
-<div class="section" id="participating-organizations">
-<h3><span class="section-number">2.11.2. </span>Participating organizations<a class="headerlink" href="#participating-organizations" title="Permalink to this headline">#</a></h3>
-</div>
-<div class="section" id="financial-disclosure">
-<h3><span class="section-number">2.11.3. </span>Financial disclosure<a class="headerlink" href="#financial-disclosure" title="Permalink to this headline">#</a></h3>
-<p>This is unfunded</p>
+<h3><span class="section-number">2.10.1. </span>Next steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">#</a></h3>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<p>This script updated 28/08/2023 in Biel, CH</p>
-<blockquote>
-<div><p>❤️ what you do everyday</p>
-</div></blockquote>
-<p><em>analyst at hammerdirt</em></p>
+<p>This script updated 05/10/2023 in Biel, CH</p>
+<p>❤️ <strong>what you do everyday:</strong> <em>analyst at hammerdirt</em></p>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">watermark</span> --iversions -b -r
-</pre></div>
-</div>
-</div>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Git repo: https://github.com/hammerdirt-analyst/patelmanuscript.git
 
 Git branch: newsummary
 
+numpy     : 1.24.3
 pandas    : 2.0.2
 seaborn   : 0.12.2
 matplotlib: 3.7.1
-numpy     : 1.24.3
 </pre></div>
 </div>
 </div>
@@ -2051,8 +1552,17 @@ numpy     : 1.24.3
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">1. </span>Monitoring beach litter with future engineers</p>
+        <p class="prev-next-title"><span class="section-number">1. </span>Results 2015 - 2021</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="grids_2023.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>Testing 2023 predictions</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div></div>
   
@@ -2105,20 +1615,9 @@ numpy     : 1.24.3
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#results-saint-sulpice">2.9. Results Saint Sulpice</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2.9.1. Previous and expected survey totals</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">2.9.2. Previous and expected survey results of objects of interest</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">2.9.2.1. Expected results fragmented plastics</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-expected-survey-results-saint-sulpice">2.9.3. Summary of expected survey results Saint Sulpice</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion">2.10. Discussion</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusions">2.11. Conclusions</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#next-steps">2.11.1. Next steps</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#participating-organizations">2.11.2. Participating organizations</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#financial-disclosure">2.11.3. Financial disclosure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion">2.9. Discussion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusions">2.10. Conclusions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#next-steps">2.10.1. Next steps</a></li>
 </ul>
 </li>
 </ul>

@@ -1,0 +1,39 @@
+NAMN,layer,path,region,alabel,slug,latitude,longitude,city,water_name,water
+Le Léman,iqaasl_lakes_outlines_named,/home/roger/geo/temp/iqaasl_lakes_outlines_named.shp,h,Haut lac,anarchy-beach,46.447215999999997,6.859612000000000,La Tour-de-Peilz,Lac Léman,l
+Le Léman,iqaasl_lakes_outlines_named,/home/roger/geo/temp/iqaasl_lakes_outlines_named.shp,h,Haut lac,arabie,46.462099000000002,6.834972000000000,Vevey,Lac Léman,l
+Le Léman,iqaasl_lakes_outlines_named,/home/roger/geo/temp/iqaasl_lakes_outlines_named.shp,h,Haut lac,bain-des-dames,46.450506799999999,6.858091800000000,La Tour-de-Peilz,Lac Léman,l
+Le Léman,iqaasl_lakes_outlines_named,/home/roger/geo/temp/iqaasl_lakes_outlines_named.shp,h,Haut lac,baye-de-clarens,46.439787000000003,6.888903000000000,Montreux,Lac Léman,l
+Le Léman,iqaasl_lakes_outlines_named,/home/roger/geo/temp/iqaasl_lakes_outlines_named.shp,h,Haut lac,baye-de-montreux-d,46.430962000000001,6.908673000000000,Montreux,Lac Léman,l
+Le Léman,iqaasl_lakes_outlines_named,/home/roger/geo/temp/iqaasl_lakes_outlines_named.shp,h,Haut lac,baye-de-montreux-g,46.430833999999997,6.908778000000000,Montreux,Lac Léman,l
+Le Léman,iqaasl_lakes_outlines_named,/home/roger/geo/temp/iqaasl_lakes_outlines_named.shp,h,Haut lac,cully-plage,46.488886600000001,6.741396100000000,Bourg-en-Lavaux,Lac Léman,l
+Le Léman,iqaasl_lakes_outlines_named,/home/roger/geo/temp/iqaasl_lakes_outlines_named.shp,h,Haut lac,grand-clos,46.387746000000000,6.843686000000000,Saint-Gingolph,Lac Léman,l
+Le Léman,iqaasl_lakes_outlines_named,/home/roger/geo/temp/iqaasl_lakes_outlines_named.shp,h,Haut lac,le-pierrier,46.439726999999998,6.888968000000000,Montreux,Lac Léman,l
+Le Léman,iqaasl_lakes_outlines_named,/home/roger/geo/temp/iqaasl_lakes_outlines_named.shp,h,Haut lac,le-port,46.452244999999998,6.855180000000000,La Tour-de-Peilz,Lac Léman,l
+Le Léman,iqaasl_lakes_outlines_named,/home/roger/geo/temp/iqaasl_lakes_outlines_named.shp,h,Haut lac,maladaire,46.446295999999997,6.876960000000000,La Tour-de-Peilz,Lac Léman,l
+Le Léman,iqaasl_lakes_outlines_named,/home/roger/geo/temp/iqaasl_lakes_outlines_named.shp,h,Haut lac,oyonne,46.456682000000001,6.852262000000000,La Tour-de-Peilz,Lac Léman,l
+Le Léman,iqaasl_lakes_outlines_named,/home/roger/geo/temp/iqaasl_lakes_outlines_named.shp,h,Haut lac,pierrier-sud,46.439560100000001,6.891000100000000,Montreux,Lac Léman,l
+Le Léman,iqaasl_lakes_outlines_named,/home/roger/geo/temp/iqaasl_lakes_outlines_named.shp,h,Haut lac,quai-maria-belgia,46.460155999999998,6.836718000000000,Vevey,Lac Léman,l
+Le Léman,iqaasl_lakes_outlines_named,/home/roger/geo/temp/iqaasl_lakes_outlines_named.shp,h,Haut lac,veveyse,46.461022000000000,6.834983000000000,Vevey,Lac Léman,l
+Le Léman,iqaasl_lakes_outlines_named,/home/roger/geo/temp/iqaasl_lakes_outlines_named.shp,p,Petit lac,baby-plage-geneva,46.208557999999996,6.162923000000000,Genève,Lac Léman,l
+Le Léman,iqaasl_lakes_outlines_named,/home/roger/geo/temp/iqaasl_lakes_outlines_named.shp,p,Petit lac,baby-plage-ii-geneve,46.208939999999998,6.164330000000000,Genève,Lac Léman,l
+Le Léman,iqaasl_lakes_outlines_named,/home/roger/geo/temp/iqaasl_lakes_outlines_named.shp,p,Petit lac,jardin-botanique,46.225908799999999,6.149357200000000,Genève,Lac Léman,l
+Le Léman,iqaasl_lakes_outlines_named,/home/roger/geo/temp/iqaasl_lakes_outlines_named.shp,p,Petit lac,lacleman_gland_kubela,46.402869299999999,6.281935800000000,Gland,Lac Léman,l
+Le Léman,iqaasl_lakes_outlines_named,/home/roger/geo/temp/iqaasl_lakes_outlines_named.shp,p,Petit lac,lacleman_gland_lecoanets,46.402810600000002,6.281958600000000,Gland,Lac Léman,l
+Le Léman,iqaasl_lakes_outlines_named,/home/roger/geo/temp/iqaasl_lakes_outlines_named.shp,p,Petit lac,rocky-plage,46.209736749999998,6.164952370000000,Genève,Lac Léman,l
+Le Léman,iqaasl_lakes_outlines_named,/home/roger/geo/temp/iqaasl_lakes_outlines_named.shp,p,Petit lac,versoix,46.289194000000002,6.170569300000000,Versoix,Lac Léman,l
+Le Léman,iqaasl_lakes_outlines_named,/home/roger/geo/temp/iqaasl_lakes_outlines_named.shp,p,Petit lac,villa-barton,46.222349999999999,6.152500000000000,Genève,Lac Léman,l
+Le Léman,,,g,Grand lac,boiron,46.491029699999999,6.480161800000000,Tolochenaz,Lac Léman,l
+Le Léman,,,g,Grand lac,la-morges,46.504063000000002,6.494099000000000,Morges,Lac Léman,l
+Le Léman,,,g,Grand lac,la-pecherie,46.463918700000001,6.385732100000000,Allaman,Lac Léman,l
+Le Léman,,,g,Grand lac,lacleman_vidy_santie,46.518317799999998,6.589607800000000,Lausanne,Lac Léman,l
+Le Léman,,,g,Grand lac,parc-des-pierrettes,46.515214999999998,6.575531000000000,Saint-Sulpice (VD),Lac Léman,l
+Le Léman,,,g,Grand lac,plage-de-dorigny,46.518169000000000,6.583319000000000,Saint-Sulpice (VD),Lac Léman,l
+Le Léman,,,g,Grand lac,plage-de-st-sulpice,46.513264999999997,6.570977000000000,Saint-Sulpice (VD),Lac Léman,l
+Le Léman,,,g,Grand lac,preverenges,46.512689999999999,6.527657000000000,Préverenges,Lac Léman,l
+Le Léman,,,g,Grand lac,preverenges-le-sout,46.508904899999997,6.534526300000000,Préverenges,Lac Léman,l
+Le Léman,,,g,Grand lac,rolle-plage,46.461300000000001,6.349739000000000,Rolle,Lac Léman,l
+Le Léman,,,g,Grand lac,saint-sulpice,46.507807999999997,6.545344000000000,Saint-Sulpice (VD),Lac Léman,l
+Le Léman,,,g,Grand lac,tiger-duck-beach,46.518256000000001,6.582546000000000,Saint-Sulpice (VD),Lac Léman,l
+Le Léman,,,g,Grand lac,tolochenaz,46.497509500000000,6.482874700000000,Tolochenaz,Lac Léman,l
+Le Léman,,,g,Grand lac,vidy,46.514715500000001,6.598588400000000,Lausanne,Lac Léman,l
+Le Léman,,,g,Grand lac,vidy-ruines,46.516221000000002,6.596279000000000,Lausanne,Lac Léman,l
