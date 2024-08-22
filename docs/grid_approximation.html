@@ -1,72 +1,68 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>2. Empirical Bayes: grid approximations &#8212; Solid waste team</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>3. Empirical Bayes: grid approximations &#8212; Solid waste team</title>
   
   
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=87e54e7c" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'grid_approximation';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="3. Testing 2023 predictions" href="grids_2023.html" />
-    <link rel="prev" title="1. Results 2015 - 2021" href="summary_2015_2021.html" />
+    <link rel="prev" title="2. Testing 2023 predictions" href="grids_2023.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -76,19 +72,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -110,12 +110,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -130,6 +138,7 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="titlepage.html">
@@ -138,16 +147,27 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   
+  
     <p class="title logo__title">Solid waste team</p>
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="summary_2015_2021.html">1. Results 2015 - 2021</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">2. Empirical Bayes: grid approximations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="grids_2023.html">3. Testing 2023 predictions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="plastic_shotgun_wadding.html">4. Plastic shotgun shell wadding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plastic_shotgun_wadding.html">1. Plastic shotgun shell wadding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="grids_2023.html">2. Testing 2023 predictions</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">3. Empirical Bayes: grid approximations</a></li>
 </ul>
 
     </div>
@@ -163,7 +183,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -172,14 +192,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -253,26 +273,28 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -293,42 +315,42 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#research-questions">2.1. Research questions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-applications">2.2. Practical applications</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#constraints">2.3. Constraints</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definitions">2.4. Definitions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions">2.5. Assumptions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-data-training-data-and-objects-of-interest">2.6. Test data, training data and objects of interest</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-training-data">2.6.1. The training data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-test-data">2.6.2. The test data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-objects-of-interest">2.6.3. The objects of interest</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-test-and-training-data">2.6.4. Summary test and training data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#research-questions">3.1. Research questions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-applications">3.2. Practical applications</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#constraints">3.3. Constraints</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definitions">3.4. Definitions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions">3.5. Assumptions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-data-training-data-and-objects-of-interest">3.6. Test data, training data and objects of interest</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-training-data">3.6.1. The training data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-test-data">3.6.2. The test data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-objects-of-interest">3.6.3. The objects of interest</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-test-and-training-data">3.6.4. Summary test and training data</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methods">2.7. Methods</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grid-approximation">2.7.1. Grid Approximation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-probability">2.7.2. Conditional probability</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-priors">2.7.3. The priors</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-informed-prior">2.7.3.1. The informed prior</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-uninformed-prior">2.7.3.2. The uninformed prior</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-measured-land-use-attributes">2.7.3.3. The measured land-use attributes</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#results-lake-geneva">2.8. Results Lake Geneva</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#previous-and-expected-survey-totals">2.8.1. Previous and expected survey totals</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#previous-and-expected-survey-results-of-objects-of-interest">2.8.2. Previous and expected survey results of objects of interest</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#expected-results-fragmented-plastics">2.8.2.1. Expected results fragmented plastics</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#expected-results-personal-consumption">2.8.2.2. Expected results personal consumption</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-expected-survey-results-lake-geneva">2.8.2.3. Summary of expected survey results Lake Geneva</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methods">3.7. Methods</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grid-approximation">3.7.1. Grid Approximation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-probability">3.7.2. Conditional probability</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-priors">3.7.3. The priors</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-informed-prior">3.7.3.1. The informed prior</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-uninformed-prior">3.7.3.2. The uninformed prior</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-measured-land-use-attributes">3.7.3.3. The measured land-use attributes</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion">2.9. Discussion</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusions">2.10. Conclusions</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#next-steps">2.10.1. Next steps</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#results-lake-geneva">3.8. Results Lake Geneva</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#previous-and-expected-survey-totals">3.8.1. Previous and expected survey totals</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#previous-and-expected-survey-results-of-objects-of-interest">3.8.2. Previous and expected survey results of objects of interest</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#expected-results-fragmented-plastics">3.8.2.1. Expected results fragmented plastics</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#expected-results-personal-consumption">3.8.2.2. Expected results personal consumption</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-expected-survey-results-lake-geneva">3.8.2.3. Summary of expected survey results Lake Geneva</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion">3.9. Discussion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusions">3.10. Conclusions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#next-steps">3.10.1. Next steps</a></li>
 </ul>
 </li>
 </ul>
@@ -340,14 +362,14 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <div class="cell tag_remove-input docutils container">
 </div>
 <div class="cell tag_remove-input docutils container">
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="empirical-bayes-grid-approximations">
-<h1><span class="section-number">2. </span>Empirical Bayes: grid approximations<a class="headerlink" href="#empirical-bayes-grid-approximations" title="Permalink to this heading">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="empirical-bayes-grid-approximations">
+<h1><span class="section-number">3. </span>Empirical Bayes: grid approximations<a class="headerlink" href="#empirical-bayes-grid-approximations" title="Link to this heading">#</a></h1>
 <p><strong>Note to colleagues:</strong></p>
 <p>This concerns the data from the federal report and a subset of data gathered in 2022. Since the puplication of IQAASL in December 2021 there has been addtional data collection events on Lac Léman:</p>
 <ol class="arabic simple">
@@ -379,32 +401,32 @@ document.write(`
 <ol class="arabic simple" start="2">
 <li><p>Application:</p>
 <ol class="arabic simple">
-<li><p><strong>Environmental assessment:</strong> Where this fits in the environmental assessment process is not clear. For example, when the health of the lake is considered are the findings for litter-data considered alongside bathing water quality? The EU adopted the principle of precaution when the suggested threshold of beach litter was set to 20 pieces of trash for 100 meters <a class="reference external" href="https://mcc.jrc.ec.europa.eu/main/dev.py?N=41&amp;O=454">Beach litter thresholds</a>.</p></li>
-<li><p><strong>Stakeholder impact:</strong> Despite the differences in the surveying groups <a class="reference internal" href="summary_2015_2021.html#diff-groups"><span class="std std-ref">Section one - differences between groups</span></a> we see that the group with the most samples has the greatest range in the IQR. However, the median value is still close to the others indicating that we have not yet found a maximum but there is some consensus between the groups where the median might be for the lake.</p></li>
+<li><p><strong>Environmental assessment:</strong> Where this fits in the environmental assessment process is not clear. For example, when the health of the lake is considered are the findings for litter-data considered alongside bathing water quality? The EU adopted the principle of precaution when the suggested threshold of beach litter was set to 20 pieces of trash for 100 meters <a class="reference external" href="https://mcc.jrc.ec.europa.eu/main/dev.py?N=41&amp;amp;O=454">Beach litter thresholds</a>.</p></li>
+<li><p><strong>Stakeholder impact:</strong> Despite the differences in the surveying groups <a class="reference internal" href="#diff-groups"><span class="xref myst">Section one - differences between groups</span></a> we see that the group with the most samples has the greatest range in the IQR. However, the median value is still close to the others indicating that we have not yet found a maximum but there is some consensus between the groups where the median might be for the lake.</p></li>
 <li><p><strong>Parameters of interest:</strong> Considerable effort has been put to exploring the covariance between litter objects and topographical features. There are many positive covariates among objects and topographical features <a class="reference external" href="https://hammerdirt-analyst.github.io/landuse/titlepage.html">Near or far</a>. Suggesting that certain features may be used as parameter values when constructing models. We test this hypothesis when constructing predictions for municipal locations.</p></li>
 </ol>
 </li>
 <li><p>Sampling strategy:</p>
 <ol class="arabic simple">
 <li><p>Consistent with 1 and given the context in which the samples were collected <a class="reference internal" href="grids_2023.html#data-context"><span class="std std-ref">Summary test and training data</span></a> and because of the work in 2.3 we can see the benefits in sampling many different locations. We have uncertainty about where the ‘median’ is based on the spread of the sampling statistic but we are not concerned about the geographic spread.</p></li>
-<li><p>The experience with the students demonstrates the importance of small actions. On their own they do not say much about the lake. However, in relation to and combined with the observations with the other groups we have a better idea of what we might find in general and some specific information about Saint Sulpice <a class="reference internal" href="summary_2015_2021.html#diff-groups"><span class="std std-ref">Section one - differences between groups</span></a>.</p></li>
+<li><p>The experience with the students demonstrates the importance of small actions. On their own they do not say much about the lake. However, in relation to and combined with the observations with the other groups we have a better idea of what we might find in general and some specific information about Saint Sulpice <a class="reference internal" href="#diff-groups"><span class="xref myst">Section one - differences between groups</span></a>.</p></li>
 </ol>
 </li>
 </ol>
 <p><strong>Six year sampling period</strong></p>
-<p>The timing of the newest samples, seven years after the first samples were recorded, could be interpreted as the begining of a new six year sampling period that started in January 2022. The Joint Research Center (JRC) at the EU suggest a six year sampling period with preferably ~ 40 surveys in that time, for each beach that is being monitored <a class="reference external" href="https://mcc.jrc.ec.europa.eu/main/dev.py?N=41&amp;O=454">Beach litter thresholds</a>. If these conditions are met a baseline value can be established for the location in question. The baseline value, using this method is the median value of the surveys for the time period.</p>
+<p>The timing of the newest samples, seven years after the first samples were recorded, could be interpreted as the begining of a new six year sampling period that started in January 2022. The Joint Research Center (JRC) at the EU suggest a six year sampling period with preferably ~ 40 surveys in that time, for each beach that is being monitored <a class="reference external" href="https://mcc.jrc.ec.europa.eu/main/dev.py?N=41&amp;amp;O=454">Beach litter thresholds</a>. If these conditions are met a baseline value can be established for the location in question. The baseline value, using this method is the median value of the surveys for the time period.</p>
 <p>There are over 250 samples from 38 different locations on the lake in the initial six year period. There are no locations that have 40 surveys, therefore the method described previously would not be appropriate for any single location, but it is more than enough for the lake.</p>
-<div class="section" id="research-questions">
-<h2><span class="section-number">2.1. </span>Research questions<a class="headerlink" href="#research-questions" title="Permalink to this heading">#</a></h2>
+<section id="research-questions">
+<h2><span class="section-number">3.1. </span>Research questions<a class="headerlink" href="#research-questions" title="Link to this heading">#</a></h2>
 <p><strong>For the lake and Saint Sulpice:</strong></p>
 <ol class="arabic simple">
 <li><p>Given the data from 2022, Is there an increase, decrease or no change in the expected survey results given the consolidated results from 2015 - 2021?</p></li>
 <li><p>Given the median value for the objects of interest in 2021, what is the chance that a survey in 2022 will exceed this value?</p></li>
 <li><p>How do the results from 2022 change the expected survey results going forward?</p></li>
 </ol>
-</div>
-<div class="section" id="practical-applications">
-<h2><span class="section-number">2.2. </span>Practical applications<a class="headerlink" href="#practical-applications" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="practical-applications">
+<h2><span class="section-number">3.2. </span>Practical applications<a class="headerlink" href="#practical-applications" title="Link to this heading">#</a></h2>
 <p>Investments have been made to either prevent or remove litter from the public space. The investments are made with the intention of reducing litter in the environment. The answers to the research questions should help evaluate the return on investment (ROI) from previous projects and provide insights for projects going forward.</p>
 <ol class="arabic simple">
 <li><p><strong>Did the investment result in a net decline in litter?</strong></p></li>
@@ -412,9 +434,9 @@ document.write(`
 <li><p><strong>How does the municpality compare to the rest of the lake?</strong></p></li>
 <li><p><strong>Where are areas that are in need of the most investment?</strong></p></li>
 </ol>
-</div>
-<div class="section" id="constraints">
-<h2><span class="section-number">2.3. </span>Constraints<a class="headerlink" href="#constraints" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="constraints">
+<h2><span class="section-number">3.3. </span>Constraints<a class="headerlink" href="#constraints" title="Link to this heading">#</a></h2>
 <p>The assessment method must produce information that directly answers the research question and can be put to practical application immediatley. The data produced should reduce the effort required to produce more specific models.</p>
 <ol class="arabic simple">
 <li><p>There must be a method to check results integrated into the process.</p>
@@ -437,9 +459,9 @@ document.write(`
 </li>
 <li><p>Discarding or disregarding data is highly discouraged.</p></li>
 </ol>
-</div>
-<div class="section" id="definitions">
-<h2><span class="section-number">2.4. </span>Definitions<a class="headerlink" href="#definitions" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="definitions">
+<h2><span class="section-number">3.4. </span>Definitions<a class="headerlink" href="#definitions" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p><strong>threshold:</strong> The pieces of trash per meter of interest. A float value between 0 and 9.99. This represents between 0 and 999 pieces of trash for every 100 meters. Survey values of individual objects rarely exceeded this range.</p></li>
 <li><p><strong>object-code:</strong> Connects the survey data to information about the category of the object counted. This contains information like material type or intended use. Groups of <em>object-codes</em> can be used to define sources or orgins.</p></li>
@@ -451,9 +473,9 @@ document.write(`
 <li><p><strong>event:</strong> The action of picking up a certain number of pieces of trash, indentifying them and counting them</p></li>
 <li><p><strong>probability:</strong> The conditional probability <span class="math notranslate nohighlight">\(\theta\)</span> that the number of <em>events</em> will exceed a threshold for a given <em>object-code</em> under the defined conditions of the <em>bounding-hex</em></p></li>
 </ol>
-</div>
-<div class="section" id="assumptions">
-<span id="id1"></span><h2><span class="section-number">2.5. </span>Assumptions<a class="headerlink" href="#assumptions" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="assumptions">
+<span id="id1"></span><h2><span class="section-number">3.5. </span>Assumptions<a class="headerlink" href="#assumptions" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Locations that have similar environmental conditions will yield similar survey results</p></li>
 <li><p>There is an exchange of material (trash) between the beach and body of water</p></li>
@@ -469,9 +491,9 @@ document.write(`
 </li>
 <li><p>Following one through 6: <strong>the survey results are a reasonable estimate of the minimum number of objects that were present at the time the survey was completed</strong></p></li>
 </ol>
-</div>
-<div class="section" id="test-data-training-data-and-objects-of-interest">
-<h2><span class="section-number">2.6. </span>Test data, training data and objects of interest<a class="headerlink" href="#test-data-training-data-and-objects-of-interest" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="test-data-training-data-and-objects-of-interest">
+<h2><span class="section-number">3.6. </span>Test data, training data and objects of interest<a class="headerlink" href="#test-data-training-data-and-objects-of-interest" title="Link to this heading">#</a></h2>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This report does not inculde surveys from the French side of the lake. This is becasue the orginal six years was done using the set of topographical data from Swiss geo admin. To include French locations in this model regional authoritities/experts need to define the appropriate map layers or data sources from France and then a correspondance needs to be established between the two sources.</p>
@@ -482,18 +504,18 @@ document.write(`
 <li><p><strong>objects of interest:</strong> The object(s) for which further information is requested. Identified by the object-code.</p></li>
 </ul>
 <p>The test and training data is the set of all data collected in Switzerland using the protocol defined in <em>the guide</em> (<a class="reference external" href="https://publications.jrc.ec.europa.eu/repository/handle/JRC83985">Guidance on Monitoring Marine Litter in European Seas</a>). More specifically: the test and training data are the results of object (trash) counts from individual survey locations over a delimitted length or surface area that is bordered on one side by a lake. <em>The guide</em> suggests a standard length of 100 m of shoreline, this was encouraged but not considered a criteria for exclusion. The minimum recorded survey length of the training data is 5 m, in the test data it is 18 m. The width is measured from the water line to the high-water mark or the physical limits of the beach itself. For the purposes of this study the only minimum length or width for a survey to be valid is that which is imposed by the data itself.</p>
-<div class="section" id="the-training-data">
-<h3><span class="section-number">2.6.1. </span>The training data<a class="headerlink" href="#the-training-data" title="Permalink to this heading">#</a></h3>
+<section id="the-training-data">
+<h3><span class="section-number">3.6.1. </span>The training data<a class="headerlink" href="#the-training-data" title="Link to this heading">#</a></h3>
 <p>The training data was collected by a variety of organizations over a six year period. In the first sampling campaign (MCBP: 2015-2016) the data from Lake Geneva is primarily from the south part of the lake and collected by two people. Residents of the area would know the region as the <em>Haut Lac</em> with most of the samples coming from the <em>Riviera</em> (agglomermation of Vevey, La Tour-de-Peilz and Montreux). In the second sampling campaign (SLR: 2017-2018) the samples were collected by volunteers from the WWF (<a class="reference external" href="https://www.wwf.ch/de">WWF</a>). The range extended from the <em>Haut Lac</em> to Gland, including survey locations in Lausanne.</p>
 <p>The last survey campaign (IQAASL: 2020 - 2021) collected samples from each major region of the lake monthly at fixed locations, other locations were added spontaneously. When the results of SLR were compared to IQAASL a decrease in the number of objects associated with food and tobacco use was considered probable. However, it was unclear if that decline was due to the pandemic restrictions of 2020, <a class="reference external" href="https://hammerdirt-analyst.github.io/IQAASL-End-0f-Sampling-2021/slr-iqaasl.html#fazit">Conclusion SLR v/s IQAASL</a>.</p>
-</div>
-<div class="section" id="the-test-data">
-<h3><span class="section-number">2.6.2. </span>The test data<a class="headerlink" href="#the-test-data" title="Permalink to this heading">#</a></h3>
+</section>
+<section id="the-test-data">
+<h3><span class="section-number">3.6.2. </span>The test data<a class="headerlink" href="#the-test-data" title="Link to this heading">#</a></h3>
 <p>The test data is a combination of the data collected by the ASL and the SWE team. Plastock is a project run by the ASL between January and December 2022. They conducted 95 beach liter surveys, from 25 different locations (<a class="reference external" href="https://hammerdirt-analyst.github.io/plastock/">plastock</a>). The data was analyzed in partnership with the project manager from the ASL to determine suitability for this study. The protocol for plastock was based off of the national survey protocol (<a class="reference external" href="https://hammerdirt-analyst.github.io/IQAASL-End-0f-Sampling-2021/land_use_correlation.html">IQAASL</a>), the collection and identification was completed by volunteers.</p>
 <p>The survey dimensions in 2022 (test data) were on average longer 69 m v/s 48 m and wider 430 m² v/s 209 m² than the training data. There are a total of 245 samples in the training data, this is all the data collected in the first six year sampling period. There are 99 samples in the test data, 95 samples from the ASL and 4 samples from SWE. The test and training data are described by seven columns: <em>loc_date (location and date)</em>, <em>location</em>, <em>date</em>, <em>day of year (doy)</em>, <em>project (testing or training)</em>, <em>code (object code)</em>, <em>pcs/m (pieces per meter)</em>.</p>
-</div>
-<div class="section" id="the-objects-of-interest">
-<span id="objects-of-interest"></span><h3><span class="section-number">2.6.3. </span>The objects of interest<a class="headerlink" href="#the-objects-of-interest" title="Permalink to this heading">#</a></h3>
+</section>
+<section id="the-objects-of-interest">
+<span id="objects-of-interest"></span><h3><span class="section-number">3.6.3. </span>The objects of interest<a class="headerlink" href="#the-objects-of-interest" title="Link to this heading">#</a></h3>
 <p>From the 2021 report there are 230 object-codes that can be attributed to each one of the 384 surveys. Some objects were found and counted only once, such as paint brushes (G166) others were found in 87% of all samples, cigarette ends (G27). The 15 most abundant objects from Lake Geneva indentified in IQAASL account for 75% of all the objects counted that year <a class="reference external" href="https://hammerdirt-analyst.github.io/IQAASL-End-0f-Sampling-2021/lac-leman.html">Lake Geneva IQAASL</a>, table one. There are some exceptions that must be eliminated, and explained:</p>
 <ol class="arabic simple">
 <li><p>Nurdles or injection molding pellets were not counted prior to 2020</p></li>
@@ -506,7 +528,7 @@ document.write(`
 <li><p>Gfrags: Fragmented plastics, object-codes: G78, G79, G80, G75, G76, G77</p></li>
 <li><p>Gcaps: Plastic bottle lids and lid rings, object-codes: G21, G23, G24</p></li>
 </ol>
-<p>Note that aggregating object codes into groups is a common strategy. When evaluating litter densities in the marine environment <em>Single Use Plastics</em> (SUP’s) is a common group that contains the objects like plastic bottles or disposable food containers another common group is <em>fishing gear</em> <a class="reference external" href="https://mcc.jrc.ec.europa.eu/main/dev.py?N=41&amp;O=454">Beach litter thresholds</a>. There are 16 objects of interest for this initial study (including the three aggregated groups). These objects represent different use-cases and sources. It is these use cases we will evaluate.</p>
+<p>Note that aggregating object codes into groups is a common strategy. When evaluating litter densities in the marine environment <em>Single Use Plastics</em> (SUP’s) is a common group that contains the objects like plastic bottles or disposable food containers another common group is <em>fishing gear</em> <a class="reference external" href="https://mcc.jrc.ec.europa.eu/main/dev.py?N=41&amp;amp;O=454">Beach litter thresholds</a>. There are 16 objects of interest for this initial study (including the three aggregated groups). These objects represent different use-cases and sources. It is these use cases we will evaluate.</p>
 <ol class="arabic simple">
 <li><p><strong>Personal hygiene (Ph)</strong>, spatial source: diffuse, toilets, water treatment facilities</p>
 <ol class="arabic simple">
@@ -548,9 +570,9 @@ document.write(`
 </div>
 <div class="cell tag_remove-input docutils container">
 </div>
-</div>
-<div class="section" id="summary-test-and-training-data">
-<span id="data-context"></span><h3><span class="section-number">2.6.4. </span>Summary test and training data<a class="headerlink" href="#summary-test-and-training-data" title="Permalink to this heading">#</a></h3>
+</section>
+<section id="summary-test-and-training-data">
+<span id="data-context"></span><h3><span class="section-number">3.6.4. </span>Summary test and training data<a class="headerlink" href="#summary-test-and-training-data" title="Link to this heading">#</a></h3>
 <p>Another way to look at this collection of observations is that each sampling group collected the data for reasons that were specific to that group, the protocol provided a framework for ensuring consistency and a pathway to interpreting the results. However, this does not mean that each group interpreted the protocol in the same manner, nor does it mean that all objects collected were counted. By limiting analysis to specific object-codes, those that appear most often and/or those that are easily identified, uncertainty is reduced by leveraging frequency of occurence and domain experience.</p>
 <div class="cell tag_remove-input docutils container">
 </div>
@@ -564,30 +586,30 @@ document.write(`
 </div>
 <div class="cell tag_remove-input docutils container">
 </div>
-<table class="colwidths-auto table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
-<tr class="row-odd"><th class="text-center head"><p>Figure 1, Table 1</p></th>
-<th class="text-center head"><p>Table 2, Figure 3</p></th>
+<tr class="row-odd"><th class="head text-center"><p>Figure 1, Table 1</p></th>
+<th class="head text-center"><p>Table 2, Figure 3</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-center"><p><img alt="_images/586ed83cd40d3eb027c8a3d17a59b92fe8eb7272125341fdad9c223a8ffcf715.png" src="_images/586ed83cd40d3eb027c8a3d17a59b92fe8eb7272125341fdad9c223a8ffcf715.png" /></p></td>
+<tr class="row-even"><td class="text-center"><p><img alt="_images/17029e79b6ae9e823a740290992cb35d6fc0d1bb2cd3fb8725c461bba00eeaa2.png" src="_images/17029e79b6ae9e823a740290992cb35d6fc0d1bb2cd3fb8725c461bba00eeaa2.png" /></p></td>
 <td class="text-center"><p><span class="output text_html"><style type="text/css">
-#T_79ee1 tr:nth-child(even) {
+#T_b84ce tr:nth-child(even) {
   background-color: rgba(139, 69, 19, 0.08);
 }
-#T_79ee1 tr:nth-child(odd) {
+#T_b84ce tr:nth-child(odd) {
   background: #FFF;
 }
-#T_79ee1 tr {
+#T_b84ce tr {
   font-size: 14px;
   padding: 12px;
 }
-#T_79ee1 th:nth-child(1) {
+#T_b84ce th:nth-child(1) {
   background-color: #FFF;
   text-align: right;
 }
-#T_79ee1 caption {
+#T_b84ce caption {
   font-size: 14px;
   font-style: italic;
   caption-side: bottom;
@@ -595,66 +617,66 @@ document.write(`
   margin-top: 10px;
 }
 </style>
-<table id="T_79ee1">
+<table id="T_b84ce">
   <caption>The observed values from the training and testing data. Remark that the testing data is only 22% of all the data. This is because we are only in the first year of a six year sampling period</caption>
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_79ee1_level0_col0" class="col_heading level0 col0" >Training</th>
-      <th id="T_79ee1_level0_col1" class="col_heading level0 col1" >Testing</th>
+      <th id="T_b84ce_level0_col0" class="col_heading level0 col0" >Training</th>
+      <th id="T_b84ce_level0_col1" class="col_heading level0 col1" >Testing</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_79ee1_level0_row0" class="row_heading level0 row0" >weight all samples</th>
-      <td id="T_79ee1_row0_col0" class="data row0 col0" >0.78</td>
-      <td id="T_79ee1_row0_col1" class="data row0 col1" >0.22</td>
+      <th id="T_b84ce_level0_row0" class="row_heading level0 row0" >weight all samples</th>
+      <td id="T_b84ce_row0_col0" class="data row0 col0" >0.78</td>
+      <td id="T_b84ce_row0_col1" class="data row0 col1" >0.22</td>
     </tr>
     <tr>
-      <th id="T_79ee1_level0_row1" class="row_heading level0 row1" >Number of samples</th>
-      <td id="T_79ee1_row1_col0" class="data row1 col0" >263</td>
-      <td id="T_79ee1_row1_col1" class="data row1 col1" >73</td>
+      <th id="T_b84ce_level0_row1" class="row_heading level0 row1" >Number of samples</th>
+      <td id="T_b84ce_row1_col0" class="data row1 col0" >263</td>
+      <td id="T_b84ce_row1_col1" class="data row1 col1" >73</td>
     </tr>
     <tr>
-      <th id="T_79ee1_level0_row2" class="row_heading level0 row2" >Median</th>
-      <td id="T_79ee1_row2_col0" class="data row2 col0" >3.62</td>
-      <td id="T_79ee1_row2_col1" class="data row2 col1" >2.34</td>
+      <th id="T_b84ce_level0_row2" class="row_heading level0 row2" >Median</th>
+      <td id="T_b84ce_row2_col0" class="data row2 col0" >3.62</td>
+      <td id="T_b84ce_row2_col1" class="data row2 col1" >2.34</td>
     </tr>
     <tr>
-      <th id="T_79ee1_level0_row3" class="row_heading level0 row3" >Average</th>
-      <td id="T_79ee1_row3_col0" class="data row3 col0" >6.35</td>
-      <td id="T_79ee1_row3_col1" class="data row3 col1" >3.16</td>
+      <th id="T_b84ce_level0_row3" class="row_heading level0 row3" >Average</th>
+      <td id="T_b84ce_row3_col0" class="data row3 col0" >6.35</td>
+      <td id="T_b84ce_row3_col1" class="data row3 col1" >3.16</td>
     </tr>
     <tr>
-      <th id="T_79ee1_level0_row4" class="row_heading level0 row4" >25th percentile</th>
-      <td id="T_79ee1_row4_col0" class="data row4 col0" >1.63</td>
-      <td id="T_79ee1_row4_col1" class="data row4 col1" >0.78</td>
+      <th id="T_b84ce_level0_row4" class="row_heading level0 row4" >25th percentile</th>
+      <td id="T_b84ce_row4_col0" class="data row4 col0" >1.63</td>
+      <td id="T_b84ce_row4_col1" class="data row4 col1" >0.78</td>
     </tr>
     <tr>
-      <th id="T_79ee1_level0_row5" class="row_heading level0 row5" >75th percentile</th>
-      <td id="T_79ee1_row5_col0" class="data row5 col0" >6.87</td>
-      <td id="T_79ee1_row5_col1" class="data row5 col1" >3.99</td>
+      <th id="T_b84ce_level0_row5" class="row_heading level0 row5" >75th percentile</th>
+      <td id="T_b84ce_row5_col0" class="data row5 col0" >6.87</td>
+      <td id="T_b84ce_row5_col1" class="data row5 col1" >3.99</td>
     </tr>
   </tbody>
 </table>
 </span></p></td>
 </tr>
 <tr class="row-odd"><td class="text-center"><p><span class="output text_html"><style type="text/css">
-#T_3bf46 tr:nth-child(even) {
+#T_4a7f1 tr:nth-child(even) {
   background-color: rgba(139, 69, 19, 0.08);
 }
-#T_3bf46 tr:nth-child(odd) {
+#T_4a7f1 tr:nth-child(odd) {
   background: #FFF;
 }
-#T_3bf46 tr {
+#T_4a7f1 tr {
   font-size: 14px;
   padding: 12px;
 }
-#T_3bf46 th:nth-child(1) {
+#T_4a7f1 th:nth-child(1) {
   background-color: #FFF;
   text-align: right;
 }
-#T_3bf46 caption {
+#T_4a7f1 caption {
   font-size: 14px;
   font-style: italic;
   caption-side: bottom;
@@ -662,42 +684,43 @@ document.write(`
   margin-top: 10px;
 }
 </style>
-<table id="T_3bf46">
+<table id="T_4a7f1">
   <caption>The number of different locations and cities for the data. Note that there are 31 different municipalitites in all.</caption>
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_3bf46_level0_col0" class="col_heading level0 col0" >Training</th>
-      <th id="T_3bf46_level0_col1" class="col_heading level0 col1" >Testing</th>
+      <th id="T_4a7f1_level0_col0" class="col_heading level0 col0" >Training</th>
+      <th id="T_4a7f1_level0_col1" class="col_heading level0 col1" >Testing</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_3bf46_level0_row0" class="row_heading level0 row0" >Number of cities</th>
-      <td id="T_3bf46_row0_col0" class="data row0 col0" >21</td>
-      <td id="T_3bf46_row0_col1" class="data row0 col1" >19</td>
+      <th id="T_4a7f1_level0_row0" class="row_heading level0 row0" >Number of cities</th>
+      <td id="T_4a7f1_row0_col0" class="data row0 col0" >21</td>
+      <td id="T_4a7f1_row0_col1" class="data row0 col1" >19</td>
     </tr>
     <tr>
-      <th id="T_3bf46_level0_row1" class="row_heading level0 row1" >Number of locations</th>
-      <td id="T_3bf46_row1_col0" class="data row1 col0" >48</td>
-      <td id="T_3bf46_row1_col1" class="data row1 col1" >23</td>
+      <th id="T_4a7f1_level0_row1" class="row_heading level0 row1" >Number of locations</th>
+      <td id="T_4a7f1_row1_col0" class="data row1 col0" >48</td>
+      <td id="T_4a7f1_row1_col1" class="data row1 col1" >23</td>
     </tr>
     <tr>
-      <th id="T_3bf46_level0_row2" class="row_heading level0 row2" >Total objects</th>
-      <td id="T_3bf46_row2_col0" class="data row2 col0" >59,839</td>
-      <td id="T_3bf46_row2_col1" class="data row2 col1" >13,804</td>
+      <th id="T_4a7f1_level0_row2" class="row_heading level0 row2" >Total objects</th>
+      <td id="T_4a7f1_row2_col0" class="data row2 col0" >59,839</td>
+      <td id="T_4a7f1_row2_col1" class="data row2 col1" >13,804</td>
     </tr>
   </tbody>
 </table>
 </span></p></td>
-<td class="text-center"><p><img alt="_images/a899cf20520052283631cc9fcee111ea7419bfc0ad59be37bb275f9c3e99b498.png" src="_images/a899cf20520052283631cc9fcee111ea7419bfc0ad59be37bb275f9c3e99b498.png" /></p></td>
+<td class="text-center"><p><img alt="_images/f6252658f766dc7aca23b33a1b559459f651fd7cccc78a76dea995519be269df.png" src="_images/f6252658f766dc7aca23b33a1b559459f651fd7cccc78a76dea995519be269df.png" /></p></td>
 </tr>
 </tbody>
 </table>
 </div>
-</div>
-<div class="section" id="methods">
-<h2><span class="section-number">2.7. </span>Methods<a class="headerlink" href="#methods" title="Permalink to this heading">#</a></h2>
+</section>
+</section>
+<section id="methods">
+<h2><span class="section-number">3.7. </span>Methods<a class="headerlink" href="#methods" title="Link to this heading">#</a></h2>
 <p>The research questions and practical applications are inquiring about expected results at the municipal level. There are records for 25 municipalities on Lake Geneva, some only have one sample in the entire sampling period. The negative binomial distribution was used to model expected survey results at the river bassin and national level <a class="reference external" href="https://www.plagespropres.ch/baselines.html#calculating-baselines">Estimating baselines IQAASL</a>. Here we are abandoning the assumption that the data has a particular shape and solving the binomial portion of the negative binomial distribution at each interval on the set of numbers from 0 - 10, every 0.01.</p>
 <p>We use conditional probability because of the assumptions of our model. In this sense we are following trends from the conservationists and wildlife biologists. Both fields have a rich history of treating observations from the field that originate from citizen science projects and/or difficult field sampling conditions. Beach litter data collection is one such program. (<a class="reference external" href="https://www.fs.usda.gov/psw/publications/documents/psw_gtr191/psw_gtr191_0762-0770_sauer.pdf">summarizing bird counts</a>, <a class="reference external" href="https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.14077">estimating age of survival</a>, <a class="reference external" href="https://hal.science/hal-02637100/">estimating tick abundance</a>). The magnitude of the exchange between the water source and the beach is yet another variable that is for the most part unknown, except that which can be interpreted from the survey data (<a class="reference external" href="https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2021GL097214">Identifying Marine Sources of Beached Plastics</a>). In summary, there are many sources of variance, only one of which is the sampling error.</p>
 <p>The applied method would best be classified as Empirical Bayes, in the sense that the prior is derived from the data (<a class="reference external" href="https://users.aalto.fi/~ssarkka/pub/cup_book_online_20131111.pdf">Bayesian Filtering and Smoothing</a>, <a class="reference external" href="https://link.springer.com/article/10.1007/s40300-014-0044-1">Empirical Bayes methods in classical and Bayesian inference</a>). However, we share the concerns of Davidson-Pillon (<a class="reference external" href="https://dataorigami.net/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers/#contents">Bayesian methods for hackers</a>) about double counting and eliminate it as part of the formulation of the prior. This is possible because of the number of different locations and regions that were sampled durring the sampling period. The basis for this method was originally explored in the Swiss federal report and then again with much more rigor in <a class="reference external" href="https://hammerdirt-analyst.github.io/landuse/titlepage.html">Near or far</a>.</p>
@@ -705,17 +728,17 @@ document.write(`
 <p class="admonition-title">Note</p>
 <p>Model types or analytical labels are only important if the context is understood. Empirical Bayes means we are building a probabilistic model that uses existing data to establish those probabilities.</p>
 </div>
-<div class="section" id="grid-approximation">
-<h3><span class="section-number">2.7.1. </span>Grid Approximation<a class="headerlink" href="#grid-approximation" title="Permalink to this heading">#</a></h3>
+<section id="grid-approximation">
+<h3><span class="section-number">3.7.1. </span>Grid Approximation<a class="headerlink" href="#grid-approximation" title="Link to this heading">#</a></h3>
 <p>Grid approximations are made from a series of point estimates calculated using Bayes theorem. Condtional probability and Bayes theorem makes it possible to measure the magnitude of an unknown parameter as long as the conditions can be quantified. There is no assumption about the underlying relationships between variables except that a realtionship exists. The relationship is defined in the notation: <em>the probability of a given b</em> or <span class="math notranslate nohighlight">\(p(a|b)\)</span>. (<a class="reference external" href="https://www.stat.cmu.edu/~larry/=sml/Bayes.pdf">Statistical Machine Learning</a> <a class="reference external" href="https://en.wikipedia.org/wiki/Bayes%27_theorem">Bayes’ theorem</a>) (<a class="reference external" href="https://en.wikipedia.org/wiki/Conditional_probability">conditional proabability</a>).</p>
 <p>The proposed model only demands whether or not a threshold has been exceeded. This is a binary variable. Therfore each step in the grid can be modeled using the binomial distribution (<a class="reference external" href="https://allendowney.github.io/ThinkBayes2/chap02.html">Think Bayes 2</a>, <a class="reference external" href="https://www.bayesrulesbook.com/chapter-6.html">Bayes Rules! An Introduction to Applied Bayesian Modeling</a>). The prior data can be introduced and the integral can be solved analytically by using the prior conjugate of the binomial(<a class="reference external" href="https://dataorigami.net/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers/#contents">Bayesian methods for hackers</a>,<a class="reference external" href="https://bayes.wustl.edu/etj/articles/prior.pdf">Prior Probabilities</a>). The grid we are covering is relatively small, 1000 points, but it does represent real values in pieces of trash per meter between 0 and 10. This accounts for 99% of the data in the previous section.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>A grid approximation is not the same as a hierarchical model. The grid approximation is away to explore the suitability of the method with the data, in relation to the research question without the overhead of developing a full model. Because of the compromise a grid approximation is less accurate than a hierarchical model.</p>
 </div>
-</div>
-<div class="section" id="conditional-probability">
-<h3><span class="section-number">2.7.2. </span>Conditional probability<a class="headerlink" href="#conditional-probability" title="Permalink to this heading">#</a></h3>
+</section>
+<section id="conditional-probability">
+<h3><span class="section-number">3.7.2. </span>Conditional probability<a class="headerlink" href="#conditional-probability" title="Link to this heading">#</a></h3>
 <p>Conditional probability is the measure of the probability of an event occuring given that another event has occurred (<a class="reference external" href="https://en.wikipedia.org/wiki/Conditional_probability">Wikepedia</a>). For this study the event under consideration is whether or not a threshold was exceeded. The probability of that event is noted <span class="math notranslate nohighlight">\(p(\theta)\)</span>, the probability of <span class="math notranslate nohighlight">\(\theta\)</span> given a condition or set of condtions is <span class="math notranslate nohighlight">\(p(\theta | condition(s))\)</span>.</p>
 <p><strong>The general case</strong></p>
 <p>Using the formal definition of conditional probability let a = <span class="math notranslate nohighlight">\(\theta\)</span> and b = <em>event data</em>, the probability of an event given a condtion is:</p>
@@ -756,13 +779,13 @@ posterior =&amp;  \frac{likelihood*prior}{evidence}\tag{7}\\[10pt]
 p(a|b) \sim &amp; \ Beta(s+a, n+b-s) \tag{12} \\
 \end{align}
 \end{split}\]</div>
-</div>
-<div class="section" id="the-priors">
-<h3><span class="section-number">2.7.3. </span>The priors<a class="headerlink" href="#the-priors" title="Permalink to this heading">#</a></h3>
+</section>
+<section id="the-priors">
+<h3><span class="section-number">3.7.3. </span>The priors<a class="headerlink" href="#the-priors" title="Link to this heading">#</a></h3>
 <p>The priors used in this model are <em>subjective</em>, this is by definition because they come from the data (<a class="reference external" href="https://users.aalto.fi/~ssarkka/pub/cup_book_online_20131111.pdf">Bayesian Filtering and Smoothing</a>). The subjecitve bias is caused by the use of data from similar experiments that were carried out under different conditions at similar locations. However, we omit the location(s) of interest from the prior data. Instead we rely on other locations that have similar a land-use configuration as the locations of interest.</p>
 <p>This use of the prior fits well with the initial assumptions of the model and the previous work using Spearmans <span class="math notranslate nohighlight">\(\rho\)</span> to indentify covariates between objects and topographical features (<a class="reference external" href="https://hammerdirt-analyst.github.io/landuse/titlepage.html">Near or far</a>). This increases the amount of available data for any single location. A distance component is used to capture the locations closest to the locations of interest. Regional denominations work well also. In this model the three regions of the lake are all considered subsets of prior data. (<a class="reference external" href="https://link.springer.com/article/10.1007/s40300-014-0044-1">Empirical Bayes methods in classical and Bayesian inference</a>)</p>
-<div class="section" id="the-informed-prior">
-<h4><span class="section-number">2.7.3.1. </span>The informed prior<a class="headerlink" href="#the-informed-prior" title="Permalink to this heading">#</a></h4>
+<section id="the-informed-prior">
+<h4><span class="section-number">3.7.3.1. </span>The informed prior<a class="headerlink" href="#the-informed-prior" title="Link to this heading">#</a></h4>
 <p>An informed prior is a collection of results from different locations that have smilar magnitudes of specific land-use attributes. An informed prior does not contain survey results from the components of the likelihood. It is located at least within the same river bassin and most often on the same body of water as the likelihood component. This can be made even more explicit:</p>
 <ol class="arabic simple">
 <li><p>informed prior: The probability of x described by a subset of the data that was observed at a date on or before the maximum date of the likelihood data being evaluated.</p></li>
@@ -784,14 +807,14 @@ p(a|b) \sim &amp; \ Beta(s+a, n+b-s) \tag{12} \\
 </ol>
 <p>It may be benficial to note that this prior satisfies the condition of testability. Even though we do not know exactly what the prior distribution will be at any moment the conditions imposed give us an expected result based on experiences accrued elsewhere under similar conditions. In that sense we remain consistent with our assumptions and testable in the sense that the priors are quantifiable (<a class="reference external" href="https://bayes.wustl.edu/etj/articles/prior.pdf">Prior Probabilities</a>).</p>
 <p>The set of available data is small and choices or statements about the value of the <span class="math notranslate nohighlight">\(prior\)</span> have considerable weight in reference to the posterior distribution. Having multiple possible values for the <span class="math notranslate nohighlight">\(prior\)</span> is consistent with Bayesian analysis.(<a class="reference external" href="http://www.stat.columbia.edu/~gelman/research/published/p039-_o.pdf">Gelman prior distribution</a>).</p>
-</div>
-<div class="section" id="the-uninformed-prior">
-<h4><span class="section-number">2.7.3.2. </span>The uninformed prior<a class="headerlink" href="#the-uninformed-prior" title="Permalink to this heading">#</a></h4>
+</section>
+<section id="the-uninformed-prior">
+<h4><span class="section-number">3.7.3.2. </span>The uninformed prior<a class="headerlink" href="#the-uninformed-prior" title="Link to this heading">#</a></h4>
 <p>The uninformed prior is the initial prior we used, whch captures the expectations of most beach litter surveyors: <em>you can find anything and if you do it long enough you will</em>. The uninformed prior is the distribution such that every value of x on the described interval has an equal chance of occuring: 0.5 or 1/2 or even 50%. We use this prior when their is no source of prior data. For example, for Lake Geneva there is no other source of comparable data in the river bassin.</p>
 <p>These values are exchanged in the form of the coeficients <span class="math notranslate nohighlight">\(k, n-k\)</span> in (8). The value that is in the grid is the mean of the binomial distribution of the probability of exceeding the threshold at that point. The grid has 1000 points. Having multiple possible values for the <span class="math notranslate nohighlight">\(prior\)</span> is analagous with looking at the problem from different angles or changing some baseline assumptions <a class="reference internal" href="#assumptions"><span class="std std-ref">Our assumptions</span></a> .</p>
-</div>
-<div class="section" id="the-measured-land-use-attributes">
-<h4><span class="section-number">2.7.3.3. </span>The measured land-use attributes<a class="headerlink" href="#the-measured-land-use-attributes" title="Permalink to this heading">#</a></h4>
+</section>
+<section id="the-measured-land-use-attributes">
+<h4><span class="section-number">3.7.3.3. </span>The measured land-use attributes<a class="headerlink" href="#the-measured-land-use-attributes" title="Link to this heading">#</a></h4>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>There are slight changes in the way the land-use variables are handled and described with respect to <a class="reference external" href="https://hammerdirt-analyst.github.io/landuse/titlepage.html">Near or far</a>. Notably the infrastruture and recreation variables are scaled separately from the land-cover variables.</p>
@@ -823,11 +846,11 @@ p(a|b) \sim &amp; \ Beta(s+a, n+b-s) \tag{12} \\
 </div>
 <div class="cell tag_remove-input docutils container">
 </div>
-</div>
-</div>
-</div>
-<div class="section" id="results-lake-geneva">
-<h2><span class="section-number">2.8. </span>Results Lake Geneva<a class="headerlink" href="#results-lake-geneva" title="Permalink to this heading">#</a></h2>
+</section>
+</section>
+</section>
+<section id="results-lake-geneva">
+<h2><span class="section-number">3.8. </span>Results Lake Geneva<a class="headerlink" href="#results-lake-geneva" title="Link to this heading">#</a></h2>
 <!-- > 1. Given the data from 2022, Is there an increase, decrease or no change in the expected survey results given the consolidated results from 2015 - 2021?
 
 The __combined daily total__ is the sum of the objects of interest per sample. In this case we are concerned with the objects listed in the [Objects of interest](objects-of-interest) section. The average number of objects counted and indentified per meter is expected to decline going into 2024. However, the reduction is minimal (Figure 5) and not equally spread between all object groups or survey locations. Which means that these changes will not be readily observable and also the sampling distribution for 2024 will be very close to 2021 (Table 4, Figure 6). -->
@@ -839,34 +862,34 @@ The __combined daily total__ is the sum of the objects of interest per sample. I
 </div>
 <div class="cell tag_remove-input docutils container">
 </div>
-<div class="section" id="previous-and-expected-survey-totals">
-<h3><span class="section-number">2.8.1. </span>Previous and expected survey totals<a class="headerlink" href="#previous-and-expected-survey-totals" title="Permalink to this heading">#</a></h3>
+<section id="previous-and-expected-survey-totals">
+<h3><span class="section-number">3.8.1. </span>Previous and expected survey totals<a class="headerlink" href="#previous-and-expected-survey-totals" title="Link to this heading">#</a></h3>
 <div class="cell tag_remove-input docutils container">
 </div>
-<table class="colwidths-auto table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
-<tr class="row-odd"><th class="text-center head"><p>Figure 5, Table 3</p></th>
-<th class="text-center head"><p>Table 4, Figure 6</p></th>
+<tr class="row-odd"><th class="head text-center"><p>Figure 5, Table 3</p></th>
+<th class="head text-center"><p>Table 4, Figure 6</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-center"><p><img alt="_images/70031595f4f948b8d2b063292d6b6394f86b1c957712fd38209968fd2e6338fa.png" src="_images/70031595f4f948b8d2b063292d6b6394f86b1c957712fd38209968fd2e6338fa.png" /></p></td>
+<tr class="row-even"><td class="text-center"><p><img alt="_images/64f9a4a91cd7a0f77e4f1340bd1aa22ea16c57690d627d478557fe34cab5c92b.png" src="_images/64f9a4a91cd7a0f77e4f1340bd1aa22ea16c57690d627d478557fe34cab5c92b.png" /></p></td>
 <td class="text-center"><p><span class="output text_html"><style type="text/css">
-#T_ef59c tr:nth-child(even) {
+#T_d748b tr:nth-child(even) {
   background-color: rgba(139, 69, 19, 0.08);
 }
-#T_ef59c tr:nth-child(odd) {
+#T_d748b tr:nth-child(odd) {
   background: #FFF;
 }
-#T_ef59c tr {
+#T_d748b tr {
   font-size: 14px;
   padding: 12px;
 }
-#T_ef59c th:nth-child(1) {
+#T_d748b th:nth-child(1) {
   background-color: #FFF;
   text-align: right;
 }
-#T_ef59c caption {
+#T_d748b caption {
   font-size: 14px;
   font-style: italic;
   caption-side: bottom;
@@ -874,55 +897,55 @@ The __combined daily total__ is the sum of the objects of interest per sample. I
   margin-top: 10px;
 }
 </style>
-<table id="T_ef59c">
+<table id="T_d748b">
   <caption>Previous and expected median values of the combined daily totals of the Unkown objects group</caption>
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_ef59c_level0_col0" class="col_heading level0 col0" >pcs/m</th>
+      <th id="T_d748b_level0_col0" class="col_heading level0 col0" >pcs/m</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_ef59c_level0_row0" class="row_heading level0 row0" >Median 2021</th>
-      <td id="T_ef59c_row0_col0" class="data row0 col0" >3.62</td>
+      <th id="T_d748b_level0_row0" class="row_heading level0 row0" >Median 2021</th>
+      <td id="T_d748b_row0_col0" class="data row0 col0" >3.62</td>
     </tr>
     <tr>
-      <th id="T_ef59c_level0_row1" class="row_heading level0 row1" >Median 2022</th>
-      <td id="T_ef59c_row1_col0" class="data row1 col0" >2.34</td>
+      <th id="T_d748b_level0_row1" class="row_heading level0 row1" >Median 2022</th>
+      <td id="T_d748b_row1_col0" class="data row1 col0" >2.34</td>
     </tr>
     <tr>
-      <th id="T_ef59c_level0_row2" class="row_heading level0 row2" >Expected sampling median 2024</th>
-      <td id="T_ef59c_row2_col0" class="data row2 col0" >2.85</td>
+      <th id="T_d748b_level0_row2" class="row_heading level0 row2" >Expected sampling median 2024</th>
+      <td id="T_d748b_row2_col0" class="data row2 col0" >2.71</td>
     </tr>
     <tr>
-      <th id="T_ef59c_level0_row3" class="row_heading level0 row3" >% 2022 in 50% IQR  predicted</th>
-      <td id="T_ef59c_row3_col0" class="data row3 col0" >0.42</td>
+      <th id="T_d748b_level0_row3" class="row_heading level0 row3" >% 2022 in 50% IQR  predicted</th>
+      <td id="T_d748b_row3_col0" class="data row3 col0" >0.42</td>
     </tr>
     <tr>
-      <th id="T_ef59c_level0_row4" class="row_heading level0 row4" >% 2022 in 94% IQR  predicted</th>
-      <td id="T_ef59c_row4_col0" class="data row4 col0" >0.86</td>
+      <th id="T_d748b_level0_row4" class="row_heading level0 row4" >% 2022 in 94% IQR  predicted</th>
+      <td id="T_d748b_row4_col0" class="data row4 col0" >0.86</td>
     </tr>
   </tbody>
 </table>
 </span></p></td>
 </tr>
 <tr class="row-odd"><td class="text-center"><p><span class="output text_html"><style type="text/css">
-#T_74710 tr:nth-child(even) {
+#T_c11de tr:nth-child(even) {
   background-color: rgba(139, 69, 19, 0.08);
 }
-#T_74710 tr:nth-child(odd) {
+#T_c11de tr:nth-child(odd) {
   background: #FFF;
 }
-#T_74710 tr {
+#T_c11de tr {
   font-size: 14px;
   padding: 12px;
 }
-#T_74710 th:nth-child(1) {
+#T_c11de th:nth-child(1) {
   background-color: #FFF;
   text-align: right;
 }
-#T_74710 caption {
+#T_c11de caption {
   font-size: 14px;
   font-style: italic;
   caption-side: bottom;
@@ -930,53 +953,54 @@ The __combined daily total__ is the sum of the objects of interest per sample. I
   margin-top: 10px;
 }
 </style>
-<table id="T_74710">
+<table id="T_c11de">
   <caption>The observed values from the training and testing data.</caption>
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_74710_level0_col0" class="col_heading level0 col0" >Training</th>
-      <th id="T_74710_level0_col1" class="col_heading level0 col1" >Testing</th>
+      <th id="T_c11de_level0_col0" class="col_heading level0 col0" >Training</th>
+      <th id="T_c11de_level0_col1" class="col_heading level0 col1" >Testing</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_74710_level0_row0" class="row_heading level0 row0" >weight all samples</th>
-      <td id="T_74710_row0_col0" class="data row0 col0" >0.78</td>
-      <td id="T_74710_row0_col1" class="data row0 col1" >0.22</td>
+      <th id="T_c11de_level0_row0" class="row_heading level0 row0" >weight all samples</th>
+      <td id="T_c11de_row0_col0" class="data row0 col0" >0.78</td>
+      <td id="T_c11de_row0_col1" class="data row0 col1" >0.22</td>
     </tr>
     <tr>
-      <th id="T_74710_level0_row1" class="row_heading level0 row1" >Number of samples</th>
-      <td id="T_74710_row1_col0" class="data row1 col0" >263</td>
-      <td id="T_74710_row1_col1" class="data row1 col1" >73</td>
+      <th id="T_c11de_level0_row1" class="row_heading level0 row1" >Number of samples</th>
+      <td id="T_c11de_row1_col0" class="data row1 col0" >263</td>
+      <td id="T_c11de_row1_col1" class="data row1 col1" >73</td>
     </tr>
     <tr>
-      <th id="T_74710_level0_row2" class="row_heading level0 row2" >Median</th>
-      <td id="T_74710_row2_col0" class="data row2 col0" >3.62</td>
-      <td id="T_74710_row2_col1" class="data row2 col1" >2.34</td>
+      <th id="T_c11de_level0_row2" class="row_heading level0 row2" >Median</th>
+      <td id="T_c11de_row2_col0" class="data row2 col0" >3.62</td>
+      <td id="T_c11de_row2_col1" class="data row2 col1" >2.34</td>
     </tr>
     <tr>
-      <th id="T_74710_level0_row3" class="row_heading level0 row3" >Average</th>
-      <td id="T_74710_row3_col0" class="data row3 col0" >6.35</td>
-      <td id="T_74710_row3_col1" class="data row3 col1" >3.16</td>
+      <th id="T_c11de_level0_row3" class="row_heading level0 row3" >Average</th>
+      <td id="T_c11de_row3_col0" class="data row3 col0" >6.35</td>
+      <td id="T_c11de_row3_col1" class="data row3 col1" >3.16</td>
     </tr>
     <tr>
-      <th id="T_74710_level0_row4" class="row_heading level0 row4" >25th percentile</th>
-      <td id="T_74710_row4_col0" class="data row4 col0" >1.63</td>
-      <td id="T_74710_row4_col1" class="data row4 col1" >0.78</td>
+      <th id="T_c11de_level0_row4" class="row_heading level0 row4" >25th percentile</th>
+      <td id="T_c11de_row4_col0" class="data row4 col0" >1.63</td>
+      <td id="T_c11de_row4_col1" class="data row4 col1" >0.78</td>
     </tr>
     <tr>
-      <th id="T_74710_level0_row5" class="row_heading level0 row5" >75th percentile</th>
-      <td id="T_74710_row5_col0" class="data row5 col0" >6.87</td>
-      <td id="T_74710_row5_col1" class="data row5 col1" >3.99</td>
+      <th id="T_c11de_level0_row5" class="row_heading level0 row5" >75th percentile</th>
+      <td id="T_c11de_row5_col0" class="data row5 col0" >6.87</td>
+      <td id="T_c11de_row5_col1" class="data row5 col1" >3.99</td>
     </tr>
   </tbody>
 </table>
 </span></p></td>
-<td class="text-center"><p><img alt="_images/bfbfbd55875382edca04ad5fdc8f447f3391ec8139cd817a1e6c5016f79937a1.png" src="_images/bfbfbd55875382edca04ad5fdc8f447f3391ec8139cd817a1e6c5016f79937a1.png" /></p></td>
+<td class="text-center"><p><img alt="_images/4fd5eeab0eb028336e7142261029c19f7916355afa0d527b530b98b7e0db6179.png" src="_images/4fd5eeab0eb028336e7142261029c19f7916355afa0d527b530b98b7e0db6179.png" /></p></td>
 </tr>
 </tbody>
 </table>
+</div>
 <div class="cell tag_remove-input docutils container">
 </div>
 <div class="cell tag_remove-input docutils container">
@@ -1004,33 +1028,33 @@ The __combined daily total__ is the sum of the objects of interest per sample. I
 </div>
 <div class="cell tag_remove-input docutils container">
 </div>
-</div>
-<div class="section" id="previous-and-expected-survey-results-of-objects-of-interest">
-<h3><span class="section-number">2.8.2. </span>Previous and expected survey results of objects of interest<a class="headerlink" href="#previous-and-expected-survey-results-of-objects-of-interest" title="Permalink to this heading">#</a></h3>
+</section>
+<section id="previous-and-expected-survey-results-of-objects-of-interest">
+<h3><span class="section-number">3.8.2. </span>Previous and expected survey results of objects of interest<a class="headerlink" href="#previous-and-expected-survey-results-of-objects-of-interest" title="Link to this heading">#</a></h3>
 <div class="admonition-given-the-median-value-for-the-objects-of-interest-in-2021-what-is-the-chance-that-a-survey-in-2022-will-exceed-this-value admonition">
 <p class="admonition-title">Given the median value for the objects of interest in 2021, what is the chance that a survey in 2022 will exceed this value?</p>
-<table class="colwidths-auto table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
-<tr class="row-odd"><th class="text-left head"><p>Table 5</p></th>
+<tr class="row-odd"><th class="head text-left"><p>Table 5</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td class="text-left"><p><span class="output text_html"><style type="text/css">
-#T_25dd9 tr:nth-child(even) {
+#T_bd8b0 tr:nth-child(even) {
   background-color: rgba(139, 69, 19, 0.08);
 }
-#T_25dd9 tr:nth-child(odd) {
+#T_bd8b0 tr:nth-child(odd) {
   background: #FFF;
 }
-#T_25dd9 tr {
+#T_bd8b0 tr {
   font-size: 14px;
   padding: 12px;
 }
-#T_25dd9 th:nth-child(1) {
+#T_bd8b0 th:nth-child(1) {
   background-color: #FFF;
   text-align: right;
 }
-#T_25dd9 caption {
+#T_bd8b0 caption {
   font-size: 14px;
   font-style: italic;
   caption-side: bottom;
@@ -1038,34 +1062,34 @@ The __combined daily total__ is the sum of the objects of interest per sample. I
   margin-top: 10px;
 }
 </style>
-<table id="T_25dd9">
+<table id="T_bd8b0">
   <caption>The probability that a survey in 2024 will exceed the median (50%) from 2021</caption>
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_25dd9_level0_col0" class="col_heading level0 col0" >P</th>
+      <th id="T_bd8b0_level0_col0" class="col_heading level0 col0" >P</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_25dd9_level0_row0" class="row_heading level0 row0" >Unknown</th>
-      <td id="T_25dd9_row0_col0" class="data row0 col0" >0.53</td>
+      <th id="T_bd8b0_level0_row0" class="row_heading level0 row0" >Unknown</th>
+      <td id="T_bd8b0_row0_col0" class="data row0 col0" >0.53</td>
     </tr>
     <tr>
-      <th id="T_25dd9_level0_row1" class="row_heading level0 row1" >Personal consumption</th>
-      <td id="T_25dd9_row1_col0" class="data row1 col0" >0.45</td>
+      <th id="T_bd8b0_level0_row1" class="row_heading level0 row1" >Personal consumption</th>
+      <td id="T_bd8b0_row1_col0" class="data row1 col0" >0.45</td>
     </tr>
     <tr>
-      <th id="T_25dd9_level0_row2" class="row_heading level0 row2" >Personal hygiene</th>
-      <td id="T_25dd9_row2_col0" class="data row2 col0" >0.46</td>
+      <th id="T_bd8b0_level0_row2" class="row_heading level0 row2" >Personal hygiene</th>
+      <td id="T_bd8b0_row2_col0" class="data row2 col0" >0.46</td>
     </tr>
     <tr>
-      <th id="T_25dd9_level0_row3" class="row_heading level0 row3" >Recreation/sports</th>
-      <td id="T_25dd9_row3_col0" class="data row3 col0" >0.48</td>
+      <th id="T_bd8b0_level0_row3" class="row_heading level0 row3" >Recreation/sports</th>
+      <td id="T_bd8b0_row3_col0" class="data row3 col0" >0.48</td>
     </tr>
     <tr>
-      <th id="T_25dd9_level0_row4" class="row_heading level0 row4" >Industrial/professional</th>
-      <td id="T_25dd9_row4_col0" class="data row4 col0" >0.43</td>
+      <th id="T_bd8b0_level0_row4" class="row_heading level0 row4" >Industrial/professional</th>
+      <td id="T_bd8b0_row4_col0" class="data row4 col0" >0.43</td>
     </tr>
   </tbody>
 </table>
@@ -1076,32 +1100,33 @@ The __combined daily total__ is the sum of the objects of interest per sample. I
 </tbody>
 </table>
 </div>
-<div class="section" id="expected-results-fragmented-plastics">
-<h4><span class="section-number">2.8.2.1. </span>Expected results fragmented plastics<a class="headerlink" href="#expected-results-fragmented-plastics" title="Permalink to this heading">#</a></h4>
-<table class="colwidths-auto table">
+</div>
+<section id="expected-results-fragmented-plastics">
+<h4><span class="section-number">3.8.2.1. </span>Expected results fragmented plastics<a class="headerlink" href="#expected-results-fragmented-plastics" title="Link to this heading">#</a></h4>
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
-<tr class="row-odd"><th class="text-center head"><p>Figure 7, Table 6</p></th>
-<th class="text-center head"><p>Table 7, Figure 8</p></th>
+<tr class="row-odd"><th class="head text-center"><p>Figure 7, Table 6</p></th>
+<th class="head text-center"><p>Table 7, Figure 8</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-center"><p><img alt="_images/17a5781ee8927c015ccb662680e0bd647f4948fe23de8b2e70c197292c8040fd.png" src="_images/17a5781ee8927c015ccb662680e0bd647f4948fe23de8b2e70c197292c8040fd.png" /></p></td>
+<tr class="row-even"><td class="text-center"><p><img alt="_images/8c8755753ef9c5d98a2e054836fd834295f5d28910ec3b5de72b6fc13905553a.png" src="_images/8c8755753ef9c5d98a2e054836fd834295f5d28910ec3b5de72b6fc13905553a.png" /></p></td>
 <td class="text-center"><p><span class="output text_html"><style type="text/css">
-#T_cdefb tr:nth-child(even) {
+#T_e61c9 tr:nth-child(even) {
   background-color: rgba(139, 69, 19, 0.08);
 }
-#T_cdefb tr:nth-child(odd) {
+#T_e61c9 tr:nth-child(odd) {
   background: #FFF;
 }
-#T_cdefb tr {
+#T_e61c9 tr {
   font-size: 14px;
   padding: 12px;
 }
-#T_cdefb th:nth-child(1) {
+#T_e61c9 th:nth-child(1) {
   background-color: #FFF;
   text-align: right;
 }
-#T_cdefb caption {
+#T_e61c9 caption {
   font-size: 14px;
   font-style: italic;
   caption-side: bottom;
@@ -1109,55 +1134,55 @@ The __combined daily total__ is the sum of the objects of interest per sample. I
   margin-top: 10px;
 }
 </style>
-<table id="T_cdefb">
+<table id="T_e61c9">
   <caption>Previous and expected median values of the combined daily totals of the Unkown objects group</caption>
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_cdefb_level0_col0" class="col_heading level0 col0" >pcs/m</th>
+      <th id="T_e61c9_level0_col0" class="col_heading level0 col0" >pcs/m</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_cdefb_level0_row0" class="row_heading level0 row0" >Median 2021</th>
-      <td id="T_cdefb_row0_col0" class="data row0 col0" >0.52</td>
+      <th id="T_e61c9_level0_row0" class="row_heading level0 row0" >Median 2021</th>
+      <td id="T_e61c9_row0_col0" class="data row0 col0" >0.52</td>
     </tr>
     <tr>
-      <th id="T_cdefb_level0_row1" class="row_heading level0 row1" >Median 2022</th>
-      <td id="T_cdefb_row1_col0" class="data row1 col0" >0.85</td>
+      <th id="T_e61c9_level0_row1" class="row_heading level0 row1" >Median 2022</th>
+      <td id="T_e61c9_row1_col0" class="data row1 col0" >0.85</td>
     </tr>
     <tr>
-      <th id="T_cdefb_level0_row2" class="row_heading level0 row2" >Expected sampling median 2024</th>
-      <td id="T_cdefb_row2_col0" class="data row2 col0" >0.56</td>
+      <th id="T_e61c9_level0_row2" class="row_heading level0 row2" >Expected sampling median 2024</th>
+      <td id="T_e61c9_row2_col0" class="data row2 col0" >0.56</td>
     </tr>
     <tr>
-      <th id="T_cdefb_level0_row3" class="row_heading level0 row3" >% 2022 in 50% IQR  predicted</th>
-      <td id="T_cdefb_row3_col0" class="data row3 col0" >0.41</td>
+      <th id="T_e61c9_level0_row3" class="row_heading level0 row3" >% 2022 in 50% IQR  predicted</th>
+      <td id="T_e61c9_row3_col0" class="data row3 col0" >0.41</td>
     </tr>
     <tr>
-      <th id="T_cdefb_level0_row4" class="row_heading level0 row4" >% 2022 in 94% IQR  predicted</th>
-      <td id="T_cdefb_row4_col0" class="data row4 col0" >0.99</td>
+      <th id="T_e61c9_level0_row4" class="row_heading level0 row4" >% 2022 in 94% IQR  predicted</th>
+      <td id="T_e61c9_row4_col0" class="data row4 col0" >0.99</td>
     </tr>
   </tbody>
 </table>
 </span></p></td>
 </tr>
 <tr class="row-odd"><td class="text-center"><p><span class="output text_html"><style type="text/css">
-#T_0f503 tr:nth-child(even) {
+#T_04e3b tr:nth-child(even) {
   background-color: rgba(139, 69, 19, 0.08);
 }
-#T_0f503 tr:nth-child(odd) {
+#T_04e3b tr:nth-child(odd) {
   background: #FFF;
 }
-#T_0f503 tr {
+#T_04e3b tr {
   font-size: 14px;
   padding: 12px;
 }
-#T_0f503 th:nth-child(1) {
+#T_04e3b th:nth-child(1) {
   background-color: #FFF;
   text-align: right;
 }
-#T_0f503 caption {
+#T_04e3b caption {
   font-size: 14px;
   font-style: italic;
   caption-side: bottom;
@@ -1165,81 +1190,82 @@ The __combined daily total__ is the sum of the objects of interest per sample. I
   margin-top: 10px;
 }
 </style>
-<table id="T_0f503">
+<table id="T_04e3b">
   <caption>The observed values from the training and testing data.</caption>
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_0f503_level0_col0" class="col_heading level0 col0" >Training</th>
-      <th id="T_0f503_level0_col1" class="col_heading level0 col1" >Testing</th>
+      <th id="T_04e3b_level0_col0" class="col_heading level0 col0" >Training</th>
+      <th id="T_04e3b_level0_col1" class="col_heading level0 col1" >Testing</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_0f503_level0_row0" class="row_heading level0 row0" >weight all samples</th>
-      <td id="T_0f503_row0_col0" class="data row0 col0" >0.78</td>
-      <td id="T_0f503_row0_col1" class="data row0 col1" >0.22</td>
+      <th id="T_04e3b_level0_row0" class="row_heading level0 row0" >weight all samples</th>
+      <td id="T_04e3b_row0_col0" class="data row0 col0" >0.78</td>
+      <td id="T_04e3b_row0_col1" class="data row0 col1" >0.22</td>
     </tr>
     <tr>
-      <th id="T_0f503_level0_row1" class="row_heading level0 row1" >Number of samples</th>
-      <td id="T_0f503_row1_col0" class="data row1 col0" >246</td>
-      <td id="T_0f503_row1_col1" class="data row1 col1" >69</td>
+      <th id="T_04e3b_level0_row1" class="row_heading level0 row1" >Number of samples</th>
+      <td id="T_04e3b_row1_col0" class="data row1 col0" >246</td>
+      <td id="T_04e3b_row1_col1" class="data row1 col1" >69</td>
     </tr>
     <tr>
-      <th id="T_0f503_level0_row2" class="row_heading level0 row2" >Median</th>
-      <td id="T_0f503_row2_col0" class="data row2 col0" >0.52</td>
-      <td id="T_0f503_row2_col1" class="data row2 col1" >0.85</td>
+      <th id="T_04e3b_level0_row2" class="row_heading level0 row2" >Median</th>
+      <td id="T_04e3b_row2_col0" class="data row2 col0" >0.52</td>
+      <td id="T_04e3b_row2_col1" class="data row2 col1" >0.85</td>
     </tr>
     <tr>
-      <th id="T_0f503_level0_row3" class="row_heading level0 row3" >Average</th>
-      <td id="T_0f503_row3_col0" class="data row3 col0" >1.36</td>
-      <td id="T_0f503_row3_col1" class="data row3 col1" >1.40</td>
+      <th id="T_04e3b_level0_row3" class="row_heading level0 row3" >Average</th>
+      <td id="T_04e3b_row3_col0" class="data row3 col0" >1.36</td>
+      <td id="T_04e3b_row3_col1" class="data row3 col1" >1.40</td>
     </tr>
     <tr>
-      <th id="T_0f503_level0_row4" class="row_heading level0 row4" >25th percentile</th>
-      <td id="T_0f503_row4_col0" class="data row4 col0" >0.16</td>
-      <td id="T_0f503_row4_col1" class="data row4 col1" >0.24</td>
+      <th id="T_04e3b_level0_row4" class="row_heading level0 row4" >25th percentile</th>
+      <td id="T_04e3b_row4_col0" class="data row4 col0" >0.16</td>
+      <td id="T_04e3b_row4_col1" class="data row4 col1" >0.24</td>
     </tr>
     <tr>
-      <th id="T_0f503_level0_row5" class="row_heading level0 row5" >75th percentile</th>
-      <td id="T_0f503_row5_col0" class="data row5 col0" >1.29</td>
-      <td id="T_0f503_row5_col1" class="data row5 col1" >2.08</td>
+      <th id="T_04e3b_level0_row5" class="row_heading level0 row5" >75th percentile</th>
+      <td id="T_04e3b_row5_col0" class="data row5 col0" >1.29</td>
+      <td id="T_04e3b_row5_col1" class="data row5 col1" >2.08</td>
     </tr>
   </tbody>
 </table>
 </span></p></td>
-<td class="text-center"><p><img alt="_images/a218cd5be6b5c4658d6c570559606f3a90399b5feb63fce845ae036d460fd009.png" src="_images/a218cd5be6b5c4658d6c570559606f3a90399b5feb63fce845ae036d460fd009.png" /></p></td>
+<td class="text-center"><p><img alt="_images/b1183d82d855a43ba9905edeb0defe0fb2b2ac2bfea278dfcbb4c6ad20765543.png" src="_images/b1183d82d855a43ba9905edeb0defe0fb2b2ac2bfea278dfcbb4c6ad20765543.png" /></p></td>
 </tr>
 </tbody>
 </table>
 </div>
-<div class="section" id="expected-results-personal-consumption">
-<h4><span class="section-number">2.8.2.2. </span>Expected results personal consumption<a class="headerlink" href="#expected-results-personal-consumption" title="Permalink to this heading">#</a></h4>
+</section>
+<section id="expected-results-personal-consumption">
+<h4><span class="section-number">3.8.2.2. </span>Expected results personal consumption<a class="headerlink" href="#expected-results-personal-consumption" title="Link to this heading">#</a></h4>
 <p><strong>Example: Personal consumption.</strong> The personal consumption objects are those objects that are likely to be used at the beach by visitors, this includes food and tobaco items. There were less personal consumption objects identified per/meter in 2022 than 2021 (Figure 9, Table 8). This effect should be the most noticeable in communities that have active prevention programs (Table 9, Figure 10).</p>
-<table class="colwidths-auto table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
-<tr class="row-odd"><th class="text-center head"><p>Figure 9, Table 8</p></th>
-<th class="text-center head"><p>Table 9, Figure 10</p></th>
+<tr class="row-odd"><th class="head text-center"><p>Figure 9, Table 8</p></th>
+<th class="head text-center"><p>Table 9, Figure 10</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-center"><p><img alt="_images/cec696b59e15e93a4cc9d777f88138754410440fe68ed5511285a1edc4549c96.png" src="_images/cec696b59e15e93a4cc9d777f88138754410440fe68ed5511285a1edc4549c96.png" /></p></td>
+<tr class="row-even"><td class="text-center"><p><img alt="_images/07438415f754a367b5965ed81771e2767041e449309b58053a05365d13b9338b.png" src="_images/07438415f754a367b5965ed81771e2767041e449309b58053a05365d13b9338b.png" /></p></td>
 <td class="text-center"><p><span class="output text_html"><style type="text/css">
-#T_66e68 tr:nth-child(even) {
+#T_1f338 tr:nth-child(even) {
   background-color: rgba(139, 69, 19, 0.08);
 }
-#T_66e68 tr:nth-child(odd) {
+#T_1f338 tr:nth-child(odd) {
   background: #FFF;
 }
-#T_66e68 tr {
+#T_1f338 tr {
   font-size: 14px;
   padding: 12px;
 }
-#T_66e68 th:nth-child(1) {
+#T_1f338 th:nth-child(1) {
   background-color: #FFF;
   text-align: right;
 }
-#T_66e68 caption {
+#T_1f338 caption {
   font-size: 14px;
   font-style: italic;
   caption-side: bottom;
@@ -1247,55 +1273,55 @@ The __combined daily total__ is the sum of the objects of interest per sample. I
   margin-top: 10px;
 }
 </style>
-<table id="T_66e68">
+<table id="T_1f338">
   <caption>Previous and expected median values of indentified Personal consumption group</caption>
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_66e68_level0_col0" class="col_heading level0 col0" >pcs/m</th>
+      <th id="T_1f338_level0_col0" class="col_heading level0 col0" >pcs/m</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_66e68_level0_row0" class="row_heading level0 row0" >Median 2021</th>
-      <td id="T_66e68_row0_col0" class="data row0 col0" >1.75</td>
+      <th id="T_1f338_level0_row0" class="row_heading level0 row0" >Median 2021</th>
+      <td id="T_1f338_row0_col0" class="data row0 col0" >1.75</td>
     </tr>
     <tr>
-      <th id="T_66e68_level0_row1" class="row_heading level0 row1" >Median 2022</th>
-      <td id="T_66e68_row1_col0" class="data row1 col0" >0.56</td>
+      <th id="T_1f338_level0_row1" class="row_heading level0 row1" >Median 2022</th>
+      <td id="T_1f338_row1_col0" class="data row1 col0" >0.56</td>
     </tr>
     <tr>
-      <th id="T_66e68_level0_row2" class="row_heading level0 row2" >Expected sampling median 2024</th>
-      <td id="T_66e68_row2_col0" class="data row2 col0" >1.46</td>
+      <th id="T_1f338_level0_row2" class="row_heading level0 row2" >Expected sampling median 2024</th>
+      <td id="T_1f338_row2_col0" class="data row2 col0" >1.46</td>
     </tr>
     <tr>
-      <th id="T_66e68_level0_row3" class="row_heading level0 row3" >% 2022 in 50% IQR  predicted</th>
-      <td id="T_66e68_row3_col0" class="data row3 col0" >0.39</td>
+      <th id="T_1f338_level0_row3" class="row_heading level0 row3" >% 2022 in 50% IQR  predicted</th>
+      <td id="T_1f338_row3_col0" class="data row3 col0" >0.39</td>
     </tr>
     <tr>
-      <th id="T_66e68_level0_row4" class="row_heading level0 row4" >% 2022 in 94% IQR  predicted</th>
-      <td id="T_66e68_row4_col0" class="data row4 col0" >0.72</td>
+      <th id="T_1f338_level0_row4" class="row_heading level0 row4" >% 2022 in 94% IQR  predicted</th>
+      <td id="T_1f338_row4_col0" class="data row4 col0" >0.72</td>
     </tr>
   </tbody>
 </table>
 </span></p></td>
 </tr>
 <tr class="row-odd"><td class="text-center"><p><span class="output text_html"><style type="text/css">
-#T_3ceab tr:nth-child(even) {
+#T_d2e7d tr:nth-child(even) {
   background-color: rgba(139, 69, 19, 0.08);
 }
-#T_3ceab tr:nth-child(odd) {
+#T_d2e7d tr:nth-child(odd) {
   background: #FFF;
 }
-#T_3ceab tr {
+#T_d2e7d tr {
   font-size: 14px;
   padding: 12px;
 }
-#T_3ceab th:nth-child(1) {
+#T_d2e7d th:nth-child(1) {
   background-color: #FFF;
   text-align: right;
 }
-#T_3ceab caption {
+#T_d2e7d caption {
   font-size: 14px;
   font-style: italic;
   caption-side: bottom;
@@ -1303,56 +1329,57 @@ The __combined daily total__ is the sum of the objects of interest per sample. I
   margin-top: 10px;
 }
 </style>
-<table id="T_3ceab">
+<table id="T_d2e7d">
   <caption>The observed values from the training and testing data.</caption>
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_3ceab_level0_col0" class="col_heading level0 col0" >Training</th>
-      <th id="T_3ceab_level0_col1" class="col_heading level0 col1" >Testing</th>
+      <th id="T_d2e7d_level0_col0" class="col_heading level0 col0" >Training</th>
+      <th id="T_d2e7d_level0_col1" class="col_heading level0 col1" >Testing</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_3ceab_level0_row0" class="row_heading level0 row0" >weight all samples</th>
-      <td id="T_3ceab_row0_col0" class="data row0 col0" >0.78</td>
-      <td id="T_3ceab_row0_col1" class="data row0 col1" >0.22</td>
+      <th id="T_d2e7d_level0_row0" class="row_heading level0 row0" >weight all samples</th>
+      <td id="T_d2e7d_row0_col0" class="data row0 col0" >0.78</td>
+      <td id="T_d2e7d_row0_col1" class="data row0 col1" >0.22</td>
     </tr>
     <tr>
-      <th id="T_3ceab_level0_row1" class="row_heading level0 row1" >Number of samples</th>
-      <td id="T_3ceab_row1_col0" class="data row1 col0" >246</td>
-      <td id="T_3ceab_row1_col1" class="data row1 col1" >69</td>
+      <th id="T_d2e7d_level0_row1" class="row_heading level0 row1" >Number of samples</th>
+      <td id="T_d2e7d_row1_col0" class="data row1 col0" >246</td>
+      <td id="T_d2e7d_row1_col1" class="data row1 col1" >69</td>
     </tr>
     <tr>
-      <th id="T_3ceab_level0_row2" class="row_heading level0 row2" >Median</th>
-      <td id="T_3ceab_row2_col0" class="data row2 col0" >1.75</td>
-      <td id="T_3ceab_row2_col1" class="data row2 col1" >0.56</td>
+      <th id="T_d2e7d_level0_row2" class="row_heading level0 row2" >Median</th>
+      <td id="T_d2e7d_row2_col0" class="data row2 col0" >1.75</td>
+      <td id="T_d2e7d_row2_col1" class="data row2 col1" >0.56</td>
     </tr>
     <tr>
-      <th id="T_3ceab_level0_row3" class="row_heading level0 row3" >Average</th>
-      <td id="T_3ceab_row3_col0" class="data row3 col0" >2.82</td>
-      <td id="T_3ceab_row3_col1" class="data row3 col1" >1.01</td>
+      <th id="T_d2e7d_level0_row3" class="row_heading level0 row3" >Average</th>
+      <td id="T_d2e7d_row3_col0" class="data row3 col0" >2.82</td>
+      <td id="T_d2e7d_row3_col1" class="data row3 col1" >1.01</td>
     </tr>
     <tr>
-      <th id="T_3ceab_level0_row4" class="row_heading level0 row4" >25th percentile</th>
-      <td id="T_3ceab_row4_col0" class="data row4 col0" >0.66</td>
-      <td id="T_3ceab_row4_col1" class="data row4 col1" >0.16</td>
+      <th id="T_d2e7d_level0_row4" class="row_heading level0 row4" >25th percentile</th>
+      <td id="T_d2e7d_row4_col0" class="data row4 col0" >0.66</td>
+      <td id="T_d2e7d_row4_col1" class="data row4 col1" >0.16</td>
     </tr>
     <tr>
-      <th id="T_3ceab_level0_row5" class="row_heading level0 row5" >75th percentile</th>
-      <td id="T_3ceab_row5_col0" class="data row5 col0" >3.27</td>
-      <td id="T_3ceab_row5_col1" class="data row5 col1" >1.34</td>
+      <th id="T_d2e7d_level0_row5" class="row_heading level0 row5" >75th percentile</th>
+      <td id="T_d2e7d_row5_col0" class="data row5 col0" >3.27</td>
+      <td id="T_d2e7d_row5_col1" class="data row5 col1" >1.34</td>
     </tr>
   </tbody>
 </table>
 </span></p></td>
-<td class="text-center"><p><img alt="_images/1ad0fba71727fd801a65395cb4cc6248c0edbabd5ab5bded0250f28cf93af84f.png" src="_images/1ad0fba71727fd801a65395cb4cc6248c0edbabd5ab5bded0250f28cf93af84f.png" /></p></td>
+<td class="text-center"><p><img alt="_images/9516b0aa44b2af56ba1adecad8714ed3275c8a74d3382073c674e3953489718c.png" src="_images/9516b0aa44b2af56ba1adecad8714ed3275c8a74d3382073c674e3953489718c.png" /></p></td>
 </tr>
 </tbody>
 </table>
 </div>
-<div class="section" id="summary-of-expected-survey-results-lake-geneva">
-<h4><span class="section-number">2.8.2.3. </span>Summary of expected survey results Lake Geneva<a class="headerlink" href="#summary-of-expected-survey-results-lake-geneva" title="Permalink to this heading">#</a></h4>
+</section>
+<section id="summary-of-expected-survey-results-lake-geneva">
+<h4><span class="section-number">3.8.2.3. </span>Summary of expected survey results Lake Geneva<a class="headerlink" href="#summary-of-expected-survey-results-lake-geneva" title="Link to this heading">#</a></h4>
 <div class="cell tag_remove-input docutils container">
 </div>
 <div class="admonition-how-do-the-results-from-2022-change-the-expected-survey-results-going-forward admonition">
@@ -1368,28 +1395,28 @@ The __combined daily total__ is the sum of the objects of interest per sample. I
 <li><p>Pheromone baits</p></li>
 </ol>
 <p>The expected decline in Personal hygiene products is encouraging. However, there is no other reason to support the data. For example we are unaware if the sales of plastic cotton swabs has declined or if there is a proposed ban on these products like in France. We also note that there were no reported <em>plastic tampon applicators</em> indentified in 2022.  This also may be case of lack of experience, given that <em>plastic tampon applicators</em> were found in 40% of the samples in 2021 <a class="reference external" href="https://hammerdirt-analyst.github.io/finding-one-object/chance_of_an_encounter.html#results-and-discussion">Finding one object</a>.</p>
-<table class="colwidths-auto table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
-<tr class="row-odd"><th class="text-center head"><p>Table 10</p></th>
+<tr class="row-odd"><th class="head text-center"><p>Table 10</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td class="text-center"><p><span class="output text_html"><style type="text/css">
-#T_efbb8 tr:nth-child(even) {
+#T_223ad tr:nth-child(even) {
   background-color: rgba(139, 69, 19, 0.08);
 }
-#T_efbb8 tr:nth-child(odd) {
+#T_223ad tr:nth-child(odd) {
   background: #FFF;
 }
-#T_efbb8 tr {
+#T_223ad tr {
   font-size: 14px;
   padding: 12px;
 }
-#T_efbb8 th:nth-child(1) {
+#T_223ad th:nth-child(1) {
   background-color: #FFF;
   text-align: right;
 }
-#T_efbb8 caption {
+#T_223ad caption {
   font-size: 14px;
   font-style: italic;
   caption-side: bottom;
@@ -1397,58 +1424,58 @@ The __combined daily total__ is the sum of the objects of interest per sample. I
   margin-top: 10px;
 }
 </style>
-<table id="T_efbb8">
+<table id="T_223ad">
   <caption>Table 10: Previous and expected results and the percent of observed samples from 2022 that were included in either the 50% IQR or the 94% IQR of the predicted values.</caption>
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_efbb8_level0_col0" class="col_heading level0 col0" >Unk</th>
-      <th id="T_efbb8_level0_col1" class="col_heading level0 col1" >Pc</th>
-      <th id="T_efbb8_level0_col2" class="col_heading level0 col2" >Ph</th>
-      <th id="T_efbb8_level0_col3" class="col_heading level0 col3" >Rc</th>
-      <th id="T_efbb8_level0_col4" class="col_heading level0 col4" >Ip</th>
+      <th id="T_223ad_level0_col0" class="col_heading level0 col0" >Unk</th>
+      <th id="T_223ad_level0_col1" class="col_heading level0 col1" >Pc</th>
+      <th id="T_223ad_level0_col2" class="col_heading level0 col2" >Ph</th>
+      <th id="T_223ad_level0_col3" class="col_heading level0 col3" >Rc</th>
+      <th id="T_223ad_level0_col4" class="col_heading level0 col4" >Ip</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_efbb8_level0_row0" class="row_heading level0 row0" >Median 2021</th>
-      <td id="T_efbb8_row0_col0" class="data row0 col0" >0.52</td>
-      <td id="T_efbb8_row0_col1" class="data row0 col1" >1.58</td>
-      <td id="T_efbb8_row0_col2" class="data row0 col2" >0.15</td>
-      <td id="T_efbb8_row0_col3" class="data row0 col3" >0.01</td>
-      <td id="T_efbb8_row0_col4" class="data row0 col4" >0.73</td>
+      <th id="T_223ad_level0_row0" class="row_heading level0 row0" >Median 2021</th>
+      <td id="T_223ad_row0_col0" class="data row0 col0" >0.52</td>
+      <td id="T_223ad_row0_col1" class="data row0 col1" >1.58</td>
+      <td id="T_223ad_row0_col2" class="data row0 col2" >0.15</td>
+      <td id="T_223ad_row0_col3" class="data row0 col3" >0.01</td>
+      <td id="T_223ad_row0_col4" class="data row0 col4" >0.73</td>
     </tr>
     <tr>
-      <th id="T_efbb8_level0_row1" class="row_heading level0 row1" >Median 2022</th>
-      <td id="T_efbb8_row1_col0" class="data row1 col0" >0.85</td>
-      <td id="T_efbb8_row1_col1" class="data row1 col1" >0.56</td>
-      <td id="T_efbb8_row1_col2" class="data row1 col2" >0.00</td>
-      <td id="T_efbb8_row1_col3" class="data row1 col3" >0.00</td>
-      <td id="T_efbb8_row1_col4" class="data row1 col4" >0.06</td>
+      <th id="T_223ad_level0_row1" class="row_heading level0 row1" >Median 2022</th>
+      <td id="T_223ad_row1_col0" class="data row1 col0" >0.85</td>
+      <td id="T_223ad_row1_col1" class="data row1 col1" >0.56</td>
+      <td id="T_223ad_row1_col2" class="data row1 col2" >0.00</td>
+      <td id="T_223ad_row1_col3" class="data row1 col3" >0.00</td>
+      <td id="T_223ad_row1_col4" class="data row1 col4" >0.06</td>
     </tr>
     <tr>
-      <th id="T_efbb8_level0_row2" class="row_heading level0 row2" >Expected sampling median 2024</th>
-      <td id="T_efbb8_row2_col0" class="data row2 col0" >0.56</td>
-      <td id="T_efbb8_row2_col1" class="data row2 col1" >1.35</td>
-      <td id="T_efbb8_row2_col2" class="data row2 col2" >0.14</td>
-      <td id="T_efbb8_row2_col3" class="data row2 col3" >0.01</td>
-      <td id="T_efbb8_row2_col4" class="data row2 col4" >0.57</td>
+      <th id="T_223ad_level0_row2" class="row_heading level0 row2" >Expected sampling median 2024</th>
+      <td id="T_223ad_row2_col0" class="data row2 col0" >0.56</td>
+      <td id="T_223ad_row2_col1" class="data row2 col1" >1.35</td>
+      <td id="T_223ad_row2_col2" class="data row2 col2" >0.14</td>
+      <td id="T_223ad_row2_col3" class="data row2 col3" >0.01</td>
+      <td id="T_223ad_row2_col4" class="data row2 col4" >0.57</td>
     </tr>
     <tr>
-      <th id="T_efbb8_level0_row3" class="row_heading level0 row3" >% 2022 in 50% IQR  predicted</th>
-      <td id="T_efbb8_row3_col0" class="data row3 col0" >0.41</td>
-      <td id="T_efbb8_row3_col1" class="data row3 col1" >0.49</td>
-      <td id="T_efbb8_row3_col2" class="data row3 col2" >0.41</td>
-      <td id="T_efbb8_row3_col3" class="data row3 col3" >0.90</td>
-      <td id="T_efbb8_row3_col4" class="data row3 col4" >0.30</td>
+      <th id="T_223ad_level0_row3" class="row_heading level0 row3" >% 2022 in 50% IQR  predicted</th>
+      <td id="T_223ad_row3_col0" class="data row3 col0" >0.41</td>
+      <td id="T_223ad_row3_col1" class="data row3 col1" >0.49</td>
+      <td id="T_223ad_row3_col2" class="data row3 col2" >0.41</td>
+      <td id="T_223ad_row3_col3" class="data row3 col3" >0.90</td>
+      <td id="T_223ad_row3_col4" class="data row3 col4" >0.30</td>
     </tr>
     <tr>
-      <th id="T_efbb8_level0_row4" class="row_heading level0 row4" >% 2022 in 94% IQR  predicted</th>
-      <td id="T_efbb8_row4_col0" class="data row4 col0" >0.99</td>
-      <td id="T_efbb8_row4_col1" class="data row4 col1" >0.91</td>
-      <td id="T_efbb8_row4_col2" class="data row4 col2" >1.00</td>
-      <td id="T_efbb8_row4_col3" class="data row4 col3" >1.00</td>
-      <td id="T_efbb8_row4_col4" class="data row4 col4" >1.00</td>
+      <th id="T_223ad_level0_row4" class="row_heading level0 row4" >% 2022 in 94% IQR  predicted</th>
+      <td id="T_223ad_row4_col0" class="data row4 col0" >0.99</td>
+      <td id="T_223ad_row4_col1" class="data row4 col1" >0.91</td>
+      <td id="T_223ad_row4_col2" class="data row4 col2" >1.00</td>
+      <td id="T_223ad_row4_col3" class="data row4 col3" >1.00</td>
+      <td id="T_223ad_row4_col4" class="data row4 col4" >1.00</td>
     </tr>
   </tbody>
 </table>
@@ -1459,15 +1486,16 @@ The __combined daily total__ is the sum of the objects of interest per sample. I
 </tbody>
 </table>
 </div>
+</div>
 <div class="admonition-how-do-the-results-from-2022-change-the-expected-survey-results-going-forward admonition">
 <p class="admonition-title">How do the results from 2022 change the expected survey results going forward??</p>
 <p>Beach litter density at Saint Sulpice is expected to increase. Given the data from 2022 we expect the survey results to increase from the 2021 levels and the density at Saint Sulpice is expected to be greater than the expected value for the lake in general.</p>
 </div>
-</div>
-</div>
-</div>
-<div class="section" id="discussion">
-<h2><span class="section-number">2.9. </span>Discussion<a class="headerlink" href="#discussion" title="Permalink to this heading">#</a></h2>
+</section>
+</section>
+</section>
+<section id="discussion">
+<h2><span class="section-number">3.9. </span>Discussion<a class="headerlink" href="#discussion" title="Link to this heading">#</a></h2>
 <p>Potential points of discussion</p>
 <ol class="arabic simple">
 <li><p>The lake samples show a decline but the results at Saint Sulpice show an increase. Could this be because the samples at the lake level came from one sampling group and at Saint Sulpice from another?</p></li>
@@ -1476,15 +1504,15 @@ The __combined daily total__ is the sum of the objects of interest per sample. I
 <li><p>Were there changes to the water treatment facilities (or processes) that would support an anticipated decline in personal hygiene products in general but an increase at Saint Sulpice? For example there were no tampon applicators identified in 2022 but yet they were identified in 40% of samples from 2015-2021.</p></li>
 <li><p>What does the presence of shotgun shells on the beach at Saint Sulpice say about hydrological transport mechanisms in lake?</p></li>
 </ol>
-</div>
-<div class="section" id="conclusions">
-<h2><span class="section-number">2.10. </span>Conclusions<a class="headerlink" href="#conclusions" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="conclusions">
+<h2><span class="section-number">3.10. </span>Conclusions<a class="headerlink" href="#conclusions" title="Link to this heading">#</a></h2>
 <p>The grid approximations function as we expected. The flat areas in the predicted curves demonstrate the need for a more comprehensive model. However, the observed samples in 2022 are within the 94% HDI of the predictions. In most cases we can account for 80% - 100% of the observed with the prediction.</p>
-<div class="section" id="next-steps">
-<h3><span class="section-number">2.10.1. </span>Next steps<a class="headerlink" href="#next-steps" title="Permalink to this heading">#</a></h3>
+<section id="next-steps">
+<h3><span class="section-number">3.10.1. </span>Next steps<a class="headerlink" href="#next-steps" title="Link to this heading">#</a></h3>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<p>This script updated 21/03/2024 in Biel, CH</p>
+<p>This script updated 22/08/2024 in Biel, CH</p>
 <p>❤️ <strong>what you do everyday:</strong> <em>analyst at hammerdirt</em></p>
 </div>
 </div>
@@ -1492,19 +1520,19 @@ The __combined daily total__ is the sum of the objects of interest per sample. I
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Git repo: https://github.com/hammerdirt-analyst/solid-waste-team.git
 
-Git branch: review
+Git branch: main
 
-pandas    : 2.0.3
-seaborn   : 0.12.2
-matplotlib: 3.7.1
-numpy     : 1.25.2
+seaborn   : 0.13.2
+numpy     : 1.26.4
+pandas    : 2.2.2
+matplotlib: 3.8.4
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1531,34 +1559,21 @@ numpy     : 1.25.2
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="summary_2015_2021.html"
+       href="grids_2023.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">1. </span>Results 2015 - 2021</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>Testing 2023 predictions</p>
       </div>
     </a>
-    <a class="right-next"
-       href="grids_2023.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">3. </span>Testing 2023 predictions</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -1567,48 +1582,49 @@ numpy     : 1.25.2
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#research-questions">2.1. Research questions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-applications">2.2. Practical applications</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#constraints">2.3. Constraints</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definitions">2.4. Definitions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions">2.5. Assumptions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-data-training-data-and-objects-of-interest">2.6. Test data, training data and objects of interest</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-training-data">2.6.1. The training data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-test-data">2.6.2. The test data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-objects-of-interest">2.6.3. The objects of interest</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-test-and-training-data">2.6.4. Summary test and training data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#research-questions">3.1. Research questions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-applications">3.2. Practical applications</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#constraints">3.3. Constraints</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definitions">3.4. Definitions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions">3.5. Assumptions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-data-training-data-and-objects-of-interest">3.6. Test data, training data and objects of interest</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-training-data">3.6.1. The training data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-test-data">3.6.2. The test data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-objects-of-interest">3.6.3. The objects of interest</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-test-and-training-data">3.6.4. Summary test and training data</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methods">2.7. Methods</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grid-approximation">2.7.1. Grid Approximation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-probability">2.7.2. Conditional probability</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-priors">2.7.3. The priors</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-informed-prior">2.7.3.1. The informed prior</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-uninformed-prior">2.7.3.2. The uninformed prior</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-measured-land-use-attributes">2.7.3.3. The measured land-use attributes</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#results-lake-geneva">2.8. Results Lake Geneva</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#previous-and-expected-survey-totals">2.8.1. Previous and expected survey totals</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#previous-and-expected-survey-results-of-objects-of-interest">2.8.2. Previous and expected survey results of objects of interest</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#expected-results-fragmented-plastics">2.8.2.1. Expected results fragmented plastics</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#expected-results-personal-consumption">2.8.2.2. Expected results personal consumption</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-expected-survey-results-lake-geneva">2.8.2.3. Summary of expected survey results Lake Geneva</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methods">3.7. Methods</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grid-approximation">3.7.1. Grid Approximation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-probability">3.7.2. Conditional probability</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-priors">3.7.3. The priors</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-informed-prior">3.7.3.1. The informed prior</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-uninformed-prior">3.7.3.2. The uninformed prior</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-measured-land-use-attributes">3.7.3.3. The measured land-use attributes</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion">2.9. Discussion</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusions">2.10. Conclusions</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#next-steps">2.10.1. Next steps</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#results-lake-geneva">3.8. Results Lake Geneva</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#previous-and-expected-survey-totals">3.8.1. Previous and expected survey totals</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#previous-and-expected-survey-results-of-objects-of-interest">3.8.2. Previous and expected survey results of objects of interest</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#expected-results-fragmented-plastics">3.8.2.1. Expected results fragmented plastics</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#expected-results-personal-consumption">3.8.2.2. Expected results personal consumption</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-expected-survey-results-lake-geneva">3.8.2.3. Summary of expected survey results Lake Geneva</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion">3.9. Discussion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusions">3.10. Conclusions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#next-steps">3.10.1. Next steps</a></li>
 </ul>
 </li>
 </ul>
@@ -1632,6 +1648,7 @@ By All
   
   <div class="footer-item">
     
+
   </div>
   
   <div class="footer-item">
@@ -1657,8 +1674,8 @@ By All
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
 
   <footer class="bd-footer">
   </footer>

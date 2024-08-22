@@ -1,6 +1,6 @@
 # The solid waste experience
 
-Students have been colecting beach litter samples in Saint Sulpice, on the shore of Lake Geneva since 2016. This is the record 
+Students have been collecting beach litter samples in Saint Sulpice, on the shore of Lake Geneva since 2016. This is the record 
 of that experience. Their data has contributed to federal and regional reports that help others make decisions and inform the public.
 The methods for assessing shoreline litter contamination were first tested with the students before being included in IQAASL and
 Pla'stock. Our focus is on the data generating process and how we can consider the data in the context of that process.
@@ -17,9 +17,8 @@ Careful consideration of the surrounding economic environment reveals a vast net
 prevent objects from entering the environment. This system is complex and has different domains like prevention, recycling, 
 education, engineering and finally removal and disposal. 
 
-From the perspective of most volunteers these objects are a nuisance and likely harmful to the environment. How they got there
-is not the focus of their observation, the focus is the interaction with the environment (we are all part of the 
-data generating process). The ability to forecast values is just support to the argument that solutions exist. 
+Ultimately, the object counts are failures. If you take a purely statistical approach (how many cigarettes get smoked 
+compared to the number we find) it is a wonder there is not more. It is not statistics that takes a person to the forest or the beach. 
 
 ## Financial disclosure
 
@@ -28,4 +27,4 @@ This has never been funded
 
 __Authors:__ Roger, Montserrat
 
-For information regarding the contents of this document conatact analyst@hammerdirt.ch
+For information regarding the contents of this document contact analyst@hammerdirt.ch
