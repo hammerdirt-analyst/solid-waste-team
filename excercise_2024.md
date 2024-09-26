@@ -21,16 +21,15 @@ Among the most common items found on the lakes beaches in 2022 are the usual sus
 and snack wrappers (8% of the total). We find also objects that are not associated with activities at the beach. For example, fragmented plastics (41% of the total)
 industrial plastic pellets (6% of the total), cotton swabs (4% of the total) plastic construction materials (3% of the total) and shotgun cartridges (1% of the total).
 
-All the previous items have are found in similar proportions in the marine environment in european space, [EEA data viewer](https://www.eea.europa.eu/en/analysis/maps-and-charts/marine-litterwatch-data-viewer-marine-litterwatch-data-viewer).
-The federal report of 2021, [IQAASL](https://www.bafu.admin.ch/bafu/en/home/topics/waste/state/data-and-indicators/indicators/indicators-on-waste-and-resources.html), reported included 
-medical containers, straws and stirrers and toys as common objects on the beaches of lake Geneva.
+All the previous items mentioned are found in similar proportions in the marine environment in the european space, [EEA data viewer](https://www.eea.europa.eu/en/analysis/maps-and-charts/marine-litterwatch-data-viewer-marine-litterwatch-data-viewer).
+The federal report of 2021, [IQAASL](https://www.bafu.admin.ch/bafu/en/home/topics/waste/state/data-and-indicators/indicators/indicators-on-waste-and-resources.html), report included medical containers, straws and stirrers and toys as common objects on the beaches of lake Geneva.
 
 ## First encounters
 
 __Objective: In the field identify and count specific beach litter items.__
 
 The guide for monitoring beach litter, [MLW Guide](https://publications.jrc.ec.europa.eu/repository/handle/JRC83985), lists 200 items that can be found on the beach. The OSPAR 
-commission has a similar list of 150 items [OSPAR](https://www.ospar.org/documents?v=44122). Today we are going to focus on identifying the counting 7 items:
+commission has a similar list of 150 items [OSPAR](https://www.ospar.org/documents?v=44122). Today we are going to focus on identifying and counting 7 items:
 
 1. Plastic medical containers
 2. Cotton swabs
