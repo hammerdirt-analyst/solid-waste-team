@@ -6,8 +6,9 @@ root: titlepage
 options:
     numbered: True
 chapters:
-- file: plastic_shotgun_wadding
+- file: excercise_2024
 - file: grids_2023
+- file: plastic_shotgun_wadding
 - file: grid_approximation
 
 

@@ -17,8 +17,8 @@ Careful consideration of the surrounding economic environment reveals a vast net
 prevent objects from entering the environment. This system is complex and has different domains like prevention, recycling, 
 education, engineering and finally removal and disposal. 
 
-Ultimately, the object counts are failures. If you take a purely statistical approach (how many cigarettes get smoked 
-compared to the number we find) it is a wonder there is not more. It is not statistics that takes a person to the forest or the beach. 
+Ultimately, the object counts are failures of the system in place. However, If you take a purely statistical approach 
+(how many cigarettes get smoked compared to the number we find) it is a wonder there is not more.  
 
 ## Financial disclosure
 
