@@ -349,106 +349,7 @@ document.write(`
                   
   <div class="cell tag_remove-input docutils container">
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">work_data</span><span class="p">[(</span><span class="n">work_data</span><span class="o">.</span><span class="n">city</span> <span class="o">==</span> <span class="s1">&#39;Saint-Sulpice (VD)&#39;</span><span class="p">)]</span><span class="o">.</span><span class="n">location</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;parc-des-pierrettes&#39;, &#39;plage-de-dorigny&#39;, &#39;plage-de-st-sulpice&#39;,
-       &#39;saint-sulpice&#39;, &#39;tiger-duck-beach&#39;], dtype=object)
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">codesx</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;G70&#39;</span><span class="p">,</span> <span class="s1">&#39;G96&#39;</span><span class="p">,</span> <span class="s1">&#39;G112&#39;</span><span class="p">,</span> <span class="s1">&#39;G89&#39;</span><span class="p">,</span> <span class="s1">&#39;G95&#39;</span><span class="p">,</span> <span class="s1">&#39;G91&#39;</span><span class="p">,</span> <span class="s1">&#39;G35&#39;</span><span class="p">,</span> <span class="s1">&#39;G100&#39;</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">work_data</span><span class="p">[(</span><span class="n">work_data</span><span class="o">.</span><span class="n">location</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s1">&#39;parc-des-pierrettes&#39;</span><span class="p">,</span> <span class="s1">&#39;plage-de-st-sulpice&#39;</span> <span class="p">]))</span><span class="o">&amp;</span><span class="p">(</span><span class="n">work_data</span><span class="o">.</span><span class="n">code</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">codesx</span><span class="p">))]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">codes</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;resources/data/u_codes.csv&#39;</span><span class="p">)</span>
-<span class="n">codes</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;code&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">t</span><span class="p">[</span><span class="s1">&#39;object&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">code</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">codes</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="s1">&#39;description&#39;</span><span class="p">])</span>
-<span class="n">t</span><span class="p">[</span><span class="s1">&#39;found&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">t</span><span class="p">[[</span><span class="s1">&#39;object&#39;</span><span class="p">,</span> <span class="s1">&#39;quantity&#39;</span><span class="p">,</span> <span class="s1">&#39;found&#39;</span><span class="p">,</span> <span class="s1">&#39;sample_id&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;object&#39;</span><span class="p">,</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s1">&#39;quantity&#39;</span><span class="p">:</span><span class="s1">&#39;sum&#39;</span><span class="p">,</span> <span class="s1">&#39;found&#39;</span><span class="p">:</span><span class="s1">&#39;sum&#39;</span><span class="p">,</span> <span class="s1">&#39;sample_id&#39;</span><span class="p">:</span><span class="s1">&#39;nunique&#39;</span><span class="p">})</span><span class="o">.</span><span class="n">to_markdown</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;|    | object                                              |   quantity |   found |   sample_id |\n|---:|:----------------------------------------------------|-----------:|--------:|------------:|\n|  0 | Biomass holder                                      |         14 |       0 |           8 |\n|  1 | Cotton bud/swab sticks                              |        368 |       0 |           8 |\n|  2 | Industrial pellets (nurdles)                        |         22 |       0 |           8 |\n|  3 | Medical; containers/tubes/ packaging                |        133 |       0 |           8 |\n|  4 | Plastic construction waste                          |        110 |       0 |           7 |\n|  5 | Sanitary pads /panty liners/tampons and applicators |         31 |       0 |           8 |\n|  6 | Shotgun cartridges                                  |         23 |       0 |           8 |\n|  7 | Straws and stirrers                                 |         29 |       0 |           8 |&#39;
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grouped</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;object&#39;</span><span class="p">])</span>
-<span class="c1"># Step 2: Count samples per location and code</span>
-<span class="n">counts</span> <span class="o">=</span> <span class="n">grouped</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;total_samples&#39;</span><span class="p">)</span>
-
-<span class="c1"># Step 3: Apply conditions and count how many times quantity &gt; 1, 2, 3, and 4</span>
-<span class="n">conditions</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
-    <span class="n">greater_than_1</span><span class="o">=</span><span class="n">t</span><span class="p">[</span><span class="s1">&#39;quantity&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="n">greater_than_2</span><span class="o">=</span><span class="n">t</span><span class="p">[</span><span class="s1">&#39;quantity&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">,</span>
-    <span class="n">greater_than_3</span><span class="o">=</span><span class="n">t</span><span class="p">[</span><span class="s1">&#39;quantity&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">,</span>
-    <span class="n">greater_than_4</span><span class="o">=</span><span class="n">t</span><span class="p">[</span><span class="s1">&#39;quantity&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">4</span>
-<span class="p">)</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;location&#39;</span><span class="p">,</span> <span class="s1">&#39;code&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span>
-    <span class="n">greater_than_1</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;greater_than_1&#39;</span><span class="p">,</span> <span class="s1">&#39;sum&#39;</span><span class="p">),</span>
-    <span class="n">greater_than_2</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;greater_than_2&#39;</span><span class="p">,</span> <span class="s1">&#39;sum&#39;</span><span class="p">),</span>
-    <span class="n">greater_than_3</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;greater_than_3&#39;</span><span class="p">,</span> <span class="s1">&#39;sum&#39;</span><span class="p">),</span>
-    <span class="n">greater_than_4</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;greater_than_4&#39;</span><span class="p">,</span> <span class="s1">&#39;sum&#39;</span><span class="p">)</span>
-<span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
-
-<span class="n">grouped</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;object&#39;</span><span class="p">])</span>
-<span class="c1"># Step 2: Count samples per location and code</span>
-<span class="n">counts</span> <span class="o">=</span> <span class="n">grouped</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;total_samples&#39;</span><span class="p">)</span>
-
-<span class="c1"># Step 3: Apply conditions and count how many times quantity &gt; 1, 2, 3, and 4</span>
-<span class="n">conditions</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
-    <span class="n">greater_than_1</span><span class="o">=</span><span class="n">t</span><span class="p">[</span><span class="s1">&#39;quantity&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="n">greater_than_2</span><span class="o">=</span><span class="n">t</span><span class="p">[</span><span class="s1">&#39;quantity&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">,</span>
-    <span class="n">greater_than_3</span><span class="o">=</span><span class="n">t</span><span class="p">[</span><span class="s1">&#39;quantity&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">,</span>
-    <span class="n">greater_than_4</span><span class="o">=</span><span class="n">t</span><span class="p">[</span><span class="s1">&#39;quantity&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">4</span><span class="p">,</span>
-    <span class="n">greater_than_10</span><span class="o">=</span><span class="n">t</span><span class="p">[</span><span class="s1">&#39;quantity&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">10</span>
-<span class="p">)</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;object&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span>
-    <span class="n">greater_than_1</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;greater_than_1&#39;</span><span class="p">,</span> <span class="s1">&#39;sum&#39;</span><span class="p">),</span>
-    <span class="n">greater_than_2</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;greater_than_2&#39;</span><span class="p">,</span> <span class="s1">&#39;sum&#39;</span><span class="p">),</span>
-    <span class="n">greater_than_3</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;greater_than_3&#39;</span><span class="p">,</span> <span class="s1">&#39;sum&#39;</span><span class="p">),</span>
-    <span class="n">greater_than_4</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;greater_than_4&#39;</span><span class="p">,</span> <span class="s1">&#39;sum&#39;</span><span class="p">),</span>
-    <span class="n">greater_than_10</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;greater_than_10&#39;</span><span class="p">,</span> <span class="s1">&#39;sum&#39;</span><span class="p">)</span>
-<span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
-
-
-<span class="c1"># Step 4: Merge the total sample count with the conditions</span>
-<span class="n">merged</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">counts</span><span class="p">,</span> <span class="n">conditions</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;object&#39;</span><span class="p">])</span>
-<span class="c1"># Step 5: Calculate the ratio of each condition to the total number of samples</span>
-<span class="n">merged</span><span class="p">[</span><span class="s1">&#39;greater than 1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">merged</span><span class="p">[</span><span class="s1">&#39;greater_than_1&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">merged</span><span class="p">[</span><span class="s1">&#39;total_samples&#39;</span><span class="p">]</span>
-<span class="n">merged</span><span class="p">[</span><span class="s1">&#39;greater than 2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">merged</span><span class="p">[</span><span class="s1">&#39;greater_than_2&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">merged</span><span class="p">[</span><span class="s1">&#39;total_samples&#39;</span><span class="p">]</span>
-<span class="n">merged</span><span class="p">[</span><span class="s1">&#39;greater than 3&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">merged</span><span class="p">[</span><span class="s1">&#39;greater_than_3&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">merged</span><span class="p">[</span><span class="s1">&#39;total_samples&#39;</span><span class="p">]</span>
-<span class="n">merged</span><span class="p">[</span><span class="s1">&#39;greater than 4&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">merged</span><span class="p">[</span><span class="s1">&#39;greater_than_4&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">merged</span><span class="p">[</span><span class="s1">&#39;total_samples&#39;</span><span class="p">]</span>
-<span class="n">merged</span><span class="p">[</span><span class="s1">&#39;greater than 10&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">merged</span><span class="p">[</span><span class="s1">&#39;greater_than_10&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">merged</span><span class="p">[</span><span class="s1">&#39;total_samples&#39;</span><span class="p">]</span>
-
-<span class="n">merged</span><span class="p">[[</span><span class="s1">&#39;object&#39;</span><span class="p">,</span> <span class="s1">&#39;greater than 1&#39;</span><span class="p">,</span> <span class="s1">&#39;greater than 2&#39;</span><span class="p">,</span> <span class="s1">&#39;greater than 3&#39;</span><span class="p">,</span> <span class="s1">&#39;greater than 4&#39;</span><span class="p">,</span> <span class="s1">&#39;greater than 10&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">to_markdown</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;|    | object                                              |   greater than 1 |   greater than 2 |   greater than 3 |   greater than 4 |   greater than 10 |\n|---:|:----------------------------------------------------|-----------------:|-----------------:|-----------------:|-----------------:|------------------:|\n|  0 | Biomass holder                                      |             0.5  |             0.38 |             0.38 |             0    |              0    |\n|  1 | Cotton bud/swab sticks                              |             0.88 |             0.88 |             0.88 |             0.88 |              0.88 |\n|  2 | Industrial pellets (nurdles)                        |             0.25 |             0.25 |             0.25 |             0.25 |              0.12 |\n|  3 | Medical; containers/tubes/ packaging                |             0.88 |             0.88 |             0.75 |             0.75 |              0.62 |\n|  4 | Plastic construction waste                          |             0.86 |             0.86 |             0.86 |             0.71 |              0.43 |\n|  5 | Sanitary pads /panty liners/tampons and applicators |             0.62 |             0.5  |             0.5  |             0.38 |              0    |\n|  6 | Shotgun cartridges                                  |             0.75 |             0.38 |             0.38 |             0.25 |              0    |\n|  7 | Straws and stirrers                                 |             0.62 |             0.5  |             0.5  |             0.38 |              0.12 |&#39;
-</pre></div>
-</div>
-</div>
+<div class="cell tag_remove-input docutils container">
 </div>
 <section class="tex2jax_ignore mathjax_ignore" id="plastic-shotgun-shell-wadding">
 <h1><span class="section-number">3. </span>Plastic shotgun shell wadding<a class="headerlink" href="#plastic-shotgun-shell-wadding" title="Link to this heading">#</a></h1>
@@ -537,20 +438,20 @@ The average PW per meter was 0.08 and the median was 0.004 PW per meter with a s
 </div>
 <div class="sd-card-body docutils">
 <div class="output text_html"><style type="text/css">
-#T_25d6b tr:nth-child(even) {
+#T_2179c tr:nth-child(even) {
   background-color: rgba(139, 69, 19, 0.08);
 }
-#T_25d6b tr:nth-child(odd) {
+#T_2179c tr:nth-child(odd) {
   background: #FFF;
 }
-#T_25d6b tr {
+#T_2179c tr {
   font-size: 14px;
 }
-#T_25d6b th:nth-child(1) {
+#T_2179c th:nth-child(1) {
   background-color: #FFF;
   text-align: right;
 }
-#T_25d6b caption {
+#T_2179c caption {
   font-size: 14px;
   font-style: italic;
   caption-side: bottom;
@@ -558,105 +459,105 @@ The average PW per meter was 0.08 and the median was 0.004 PW per meter with a s
   margin-top: 10px;
 }
 </style>
-<table id="T_25d6b">
+<table id="T_2179c">
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_25d6b_level0_col0" class="col_heading level0 col0" >pcs/m</th>
-      <th id="T_25d6b_level0_col1" class="col_heading level0 col1" >quantity</th>
-      <th id="T_25d6b_level0_col2" class="col_heading level0 col2" >nsamples</th>
+      <th id="T_2179c_level0_col0" class="col_heading level0 col0" >pcs/m</th>
+      <th id="T_2179c_level0_col1" class="col_heading level0 col1" >quantity</th>
+      <th id="T_2179c_level0_col2" class="col_heading level0 col2" >nsamples</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_25d6b_level0_row0" class="row_heading level0 row0" >Saint-Gingolph</th>
-      <td id="T_25d6b_row0_col0" class="data row0 col0" >0.68</td>
-      <td id="T_25d6b_row0_col1" class="data row0 col1" >268</td>
-      <td id="T_25d6b_row0_col2" class="data row0 col2" >13</td>
+      <th id="T_2179c_level0_row0" class="row_heading level0 row0" >Saint-Gingolph</th>
+      <td id="T_2179c_row0_col0" class="data row0 col0" >0.68</td>
+      <td id="T_2179c_row0_col1" class="data row0 col1" >268</td>
+      <td id="T_2179c_row0_col2" class="data row0 col2" >13</td>
     </tr>
     <tr>
-      <th id="T_25d6b_level0_row1" class="row_heading level0 row1" >Allaman</th>
-      <td id="T_25d6b_row1_col0" class="data row1 col0" >0.14</td>
-      <td id="T_25d6b_row1_col1" class="data row1 col1" >12</td>
-      <td id="T_25d6b_row1_col2" class="data row1 col2" >3</td>
+      <th id="T_2179c_level0_row1" class="row_heading level0 row1" >Allaman</th>
+      <td id="T_2179c_row1_col0" class="data row1 col0" >0.14</td>
+      <td id="T_2179c_row1_col1" class="data row1 col1" >12</td>
+      <td id="T_2179c_row1_col2" class="data row1 col2" >3</td>
     </tr>
     <tr>
-      <th id="T_25d6b_level0_row2" class="row_heading level0 row2" >Bourg-en-Lavaux</th>
-      <td id="T_25d6b_row2_col0" class="data row2 col0" >0.12</td>
-      <td id="T_25d6b_row2_col1" class="data row2 col1" >3</td>
-      <td id="T_25d6b_row2_col2" class="data row2 col2" >2</td>
+      <th id="T_2179c_level0_row2" class="row_heading level0 row2" >Bourg-en-Lavaux</th>
+      <td id="T_2179c_row2_col0" class="data row2 col0" >0.12</td>
+      <td id="T_2179c_row2_col1" class="data row2 col1" >3</td>
+      <td id="T_2179c_row2_col2" class="data row2 col2" >2</td>
     </tr>
     <tr>
-      <th id="T_25d6b_level0_row3" class="row_heading level0 row3" >La Tour-de-Peilz</th>
-      <td id="T_25d6b_row3_col0" class="data row3 col0" >0.12</td>
-      <td id="T_25d6b_row3_col1" class="data row3 col1" >102</td>
-      <td id="T_25d6b_row3_col2" class="data row3 col2" >25</td>
+      <th id="T_2179c_level0_row3" class="row_heading level0 row3" >La Tour-de-Peilz</th>
+      <td id="T_2179c_row3_col0" class="data row3 col0" >0.12</td>
+      <td id="T_2179c_row3_col1" class="data row3 col1" >102</td>
+      <td id="T_2179c_row3_col2" class="data row3 col2" >25</td>
     </tr>
     <tr>
-      <th id="T_25d6b_level0_row4" class="row_heading level0 row4" >Montreux</th>
-      <td id="T_25d6b_row4_col0" class="data row4 col0" >0.11</td>
-      <td id="T_25d6b_row4_col1" class="data row4 col1" >267</td>
-      <td id="T_25d6b_row4_col2" class="data row4 col2" >53</td>
+      <th id="T_2179c_level0_row4" class="row_heading level0 row4" >Montreux</th>
+      <td id="T_2179c_row4_col0" class="data row4 col0" >0.11</td>
+      <td id="T_2179c_row4_col1" class="data row4 col1" >267</td>
+      <td id="T_2179c_row4_col2" class="data row4 col2" >53</td>
     </tr>
     <tr>
-      <th id="T_25d6b_level0_row5" class="row_heading level0 row5" >Vevey</th>
-      <td id="T_25d6b_row5_col0" class="data row5 col0" >0.11</td>
-      <td id="T_25d6b_row5_col1" class="data row5 col1" >190</td>
-      <td id="T_25d6b_row5_col2" class="data row5 col2" >44</td>
+      <th id="T_2179c_level0_row5" class="row_heading level0 row5" >Vevey</th>
+      <td id="T_2179c_row5_col0" class="data row5 col0" >0.11</td>
+      <td id="T_2179c_row5_col1" class="data row5 col1" >190</td>
+      <td id="T_2179c_row5_col2" class="data row5 col2" >44</td>
     </tr>
     <tr>
-      <th id="T_25d6b_level0_row6" class="row_heading level0 row6" >Saint-Sulpice (VD)</th>
-      <td id="T_25d6b_row6_col0" class="data row6 col0" >0.06</td>
-      <td id="T_25d6b_row6_col1" class="data row6 col1" >34</td>
-      <td id="T_25d6b_row6_col2" class="data row6 col2" >15</td>
+      <th id="T_2179c_level0_row6" class="row_heading level0 row6" >Saint-Sulpice (VD)</th>
+      <td id="T_2179c_row6_col0" class="data row6 col0" >0.06</td>
+      <td id="T_2179c_row6_col1" class="data row6 col1" >34</td>
+      <td id="T_2179c_row6_col2" class="data row6 col2" >15</td>
     </tr>
     <tr>
-      <th id="T_25d6b_level0_row7" class="row_heading level0 row7" >Versoix</th>
-      <td id="T_25d6b_row7_col0" class="data row7 col0" >0.05</td>
-      <td id="T_25d6b_row7_col1" class="data row7 col1" >26</td>
-      <td id="T_25d6b_row7_col2" class="data row7 col2" >4</td>
+      <th id="T_2179c_level0_row7" class="row_heading level0 row7" >Versoix</th>
+      <td id="T_2179c_row7_col0" class="data row7 col0" >0.05</td>
+      <td id="T_2179c_row7_col1" class="data row7 col1" >26</td>
+      <td id="T_2179c_row7_col2" class="data row7 col2" >4</td>
     </tr>
     <tr>
-      <th id="T_25d6b_level0_row8" class="row_heading level0 row8" >Genève</th>
-      <td id="T_25d6b_row8_col0" class="data row8 col0" >0.03</td>
-      <td id="T_25d6b_row8_col1" class="data row8 col1" >34</td>
-      <td id="T_25d6b_row8_col2" class="data row8 col2" >29</td>
+      <th id="T_2179c_level0_row8" class="row_heading level0 row8" >Genève</th>
+      <td id="T_2179c_row8_col0" class="data row8 col0" >0.03</td>
+      <td id="T_2179c_row8_col1" class="data row8 col1" >34</td>
+      <td id="T_2179c_row8_col2" class="data row8 col2" >29</td>
     </tr>
     <tr>
-      <th id="T_25d6b_level0_row9" class="row_heading level0 row9" >Préverenges</th>
-      <td id="T_25d6b_row9_col0" class="data row9 col0" >0.01</td>
-      <td id="T_25d6b_row9_col1" class="data row9 col1" >8</td>
-      <td id="T_25d6b_row9_col2" class="data row9 col2" >15</td>
+      <th id="T_2179c_level0_row9" class="row_heading level0 row9" >Préverenges</th>
+      <td id="T_2179c_row9_col0" class="data row9 col0" >0.01</td>
+      <td id="T_2179c_row9_col1" class="data row9 col1" >8</td>
+      <td id="T_2179c_row9_col2" class="data row9 col2" >15</td>
     </tr>
     <tr>
-      <th id="T_25d6b_level0_row10" class="row_heading level0 row10" >Tolochenaz</th>
-      <td id="T_25d6b_row10_col0" class="data row10 col0" >0.01</td>
-      <td id="T_25d6b_row10_col1" class="data row10 col1" >2</td>
-      <td id="T_25d6b_row10_col2" class="data row10 col2" >3</td>
+      <th id="T_2179c_level0_row10" class="row_heading level0 row10" >Tolochenaz</th>
+      <td id="T_2179c_row10_col0" class="data row10 col0" >0.01</td>
+      <td id="T_2179c_row10_col1" class="data row10 col1" >2</td>
+      <td id="T_2179c_row10_col2" class="data row10 col2" >3</td>
     </tr>
     <tr>
-      <th id="T_25d6b_level0_row11" class="row_heading level0 row11" >Lausanne</th>
-      <td id="T_25d6b_row11_col0" class="data row11 col0" >0.01</td>
-      <td id="T_25d6b_row11_col1" class="data row11 col1" >1</td>
-      <td id="T_25d6b_row11_col2" class="data row11 col2" >20</td>
+      <th id="T_2179c_level0_row11" class="row_heading level0 row11" >Lausanne</th>
+      <td id="T_2179c_row11_col0" class="data row11 col0" >0.01</td>
+      <td id="T_2179c_row11_col1" class="data row11 col1" >1</td>
+      <td id="T_2179c_row11_col2" class="data row11 col2" >20</td>
     </tr>
     <tr>
-      <th id="T_25d6b_level0_row12" class="row_heading level0 row12" >Gland</th>
-      <td id="T_25d6b_row12_col0" class="data row12 col0" >0.00</td>
-      <td id="T_25d6b_row12_col1" class="data row12 col1" >2</td>
-      <td id="T_25d6b_row12_col2" class="data row12 col2" >22</td>
+      <th id="T_2179c_level0_row12" class="row_heading level0 row12" >Gland</th>
+      <td id="T_2179c_row12_col0" class="data row12 col0" >0.00</td>
+      <td id="T_2179c_row12_col1" class="data row12 col1" >2</td>
+      <td id="T_2179c_row12_col2" class="data row12 col2" >22</td>
     </tr>
     <tr>
-      <th id="T_25d6b_level0_row13" class="row_heading level0 row13" >Morges</th>
-      <td id="T_25d6b_row13_col0" class="data row13 col0" >0.00</td>
-      <td id="T_25d6b_row13_col1" class="data row13 col1" >0</td>
-      <td id="T_25d6b_row13_col2" class="data row13 col2" >1</td>
+      <th id="T_2179c_level0_row13" class="row_heading level0 row13" >Morges</th>
+      <td id="T_2179c_row13_col0" class="data row13 col0" >0.00</td>
+      <td id="T_2179c_row13_col1" class="data row13 col1" >0</td>
+      <td id="T_2179c_row13_col2" class="data row13 col2" >1</td>
     </tr>
     <tr>
-      <th id="T_25d6b_level0_row14" class="row_heading level0 row14" >Rolle</th>
-      <td id="T_25d6b_row14_col0" class="data row14 col0" >0.00</td>
-      <td id="T_25d6b_row14_col1" class="data row14 col1" >0</td>
-      <td id="T_25d6b_row14_col2" class="data row14 col2" >1</td>
+      <th id="T_2179c_level0_row14" class="row_heading level0 row14" >Rolle</th>
+      <td id="T_2179c_row14_col0" class="data row14 col0" >0.00</td>
+      <td id="T_2179c_row14_col1" class="data row14 col1" >0</td>
+      <td id="T_2179c_row14_col2" class="data row14 col2" >1</td>
     </tr>
   </tbody>
 </table>
@@ -674,20 +575,20 @@ The average PW per meter was 0.08 and the median was 0.004 PW per meter with a s
 </div>
 <div class="sd-card-body docutils">
 <div class="output text_html"><style type="text/css">
-#T_89a14 tr:nth-child(even) {
+#T_31d55 tr:nth-child(even) {
   background-color: rgba(139, 69, 19, 0.08);
 }
-#T_89a14 tr:nth-child(odd) {
+#T_31d55 tr:nth-child(odd) {
   background: #FFF;
 }
-#T_89a14 tr {
+#T_31d55 tr {
   font-size: 14px;
 }
-#T_89a14 th:nth-child(1) {
+#T_31d55 th:nth-child(1) {
   background-color: #FFF;
   text-align: right;
 }
-#T_89a14 caption {
+#T_31d55 caption {
   font-size: 14px;
   font-style: italic;
   caption-side: bottom;
@@ -695,159 +596,159 @@ The average PW per meter was 0.08 and the median was 0.004 PW per meter with a s
   margin-top: 10px;
 }
 </style>
-<table id="T_89a14">
+<table id="T_31d55">
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_89a14_level0_col0" class="col_heading level0 col0" >pcs/m</th>
-      <th id="T_89a14_level0_col1" class="col_heading level0 col1" >quantity</th>
-      <th id="T_89a14_level0_col2" class="col_heading level0 col2" >nsamples</th>
+      <th id="T_31d55_level0_col0" class="col_heading level0 col0" >pcs/m</th>
+      <th id="T_31d55_level0_col1" class="col_heading level0 col1" >quantity</th>
+      <th id="T_31d55_level0_col2" class="col_heading level0 col2" >nsamples</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_89a14_level0_row0" class="row_heading level0 row0" >Amphion</th>
-      <td id="T_89a14_row0_col0" class="data row0 col0" >0.17</td>
-      <td id="T_89a14_row0_col1" class="data row0 col1" >62</td>
-      <td id="T_89a14_row0_col2" class="data row0 col2" >4</td>
+      <th id="T_31d55_level0_row0" class="row_heading level0 row0" >Amphion</th>
+      <td id="T_31d55_row0_col0" class="data row0 col0" >0.17</td>
+      <td id="T_31d55_row0_col1" class="data row0 col1" >62</td>
+      <td id="T_31d55_row0_col2" class="data row0 col2" >4</td>
     </tr>
     <tr>
-      <th id="T_89a14_level0_row1" class="row_heading level0 row1" >Bouveret</th>
-      <td id="T_89a14_row1_col0" class="data row1 col0" >0.10</td>
-      <td id="T_89a14_row1_col1" class="data row1 col1" >46</td>
-      <td id="T_89a14_row1_col2" class="data row1 col2" >4</td>
+      <th id="T_31d55_level0_row1" class="row_heading level0 row1" >Bouveret</th>
+      <td id="T_31d55_row1_col0" class="data row1 col0" >0.10</td>
+      <td id="T_31d55_row1_col1" class="data row1 col1" >46</td>
+      <td id="T_31d55_row1_col2" class="data row1 col2" >4</td>
     </tr>
     <tr>
-      <th id="T_89a14_level0_row2" class="row_heading level0 row2" >Saint-Disdille</th>
-      <td id="T_89a14_row2_col0" class="data row2 col0" >0.07</td>
-      <td id="T_89a14_row2_col1" class="data row2 col1" >27</td>
-      <td id="T_89a14_row2_col2" class="data row2 col2" >4</td>
+      <th id="T_31d55_level0_row2" class="row_heading level0 row2" >Saint-Disdille</th>
+      <td id="T_31d55_row2_col0" class="data row2 col0" >0.07</td>
+      <td id="T_31d55_row2_col1" class="data row2 col1" >27</td>
+      <td id="T_31d55_row2_col2" class="data row2 col2" >4</td>
     </tr>
     <tr>
-      <th id="T_89a14_level0_row3" class="row_heading level0 row3" >Lutry</th>
-      <td id="T_89a14_row3_col0" class="data row3 col0" >0.05</td>
-      <td id="T_89a14_row3_col1" class="data row3 col1" >14</td>
-      <td id="T_89a14_row3_col2" class="data row3 col2" >4</td>
+      <th id="T_31d55_level0_row3" class="row_heading level0 row3" >Lutry</th>
+      <td id="T_31d55_row3_col0" class="data row3 col0" >0.05</td>
+      <td id="T_31d55_row3_col1" class="data row3 col1" >14</td>
+      <td id="T_31d55_row3_col2" class="data row3 col2" >4</td>
     </tr>
     <tr>
-      <th id="T_89a14_level0_row4" class="row_heading level0 row4" >Lugrin</th>
-      <td id="T_89a14_row4_col0" class="data row4 col0" >0.03</td>
-      <td id="T_89a14_row4_col1" class="data row4 col1" >9</td>
-      <td id="T_89a14_row4_col2" class="data row4 col2" >4</td>
+      <th id="T_31d55_level0_row4" class="row_heading level0 row4" >Lugrin</th>
+      <td id="T_31d55_row4_col0" class="data row4 col0" >0.03</td>
+      <td id="T_31d55_row4_col1" class="data row4 col1" >9</td>
+      <td id="T_31d55_row4_col2" class="data row4 col2" >4</td>
     </tr>
     <tr>
-      <th id="T_89a14_level0_row5" class="row_heading level0 row5" >Grangettes</th>
-      <td id="T_89a14_row5_col0" class="data row5 col0" >0.03</td>
-      <td id="T_89a14_row5_col1" class="data row5 col1" >8</td>
-      <td id="T_89a14_row5_col2" class="data row5 col2" >4</td>
+      <th id="T_31d55_level0_row5" class="row_heading level0 row5" >Grangettes</th>
+      <td id="T_31d55_row5_col0" class="data row5 col0" >0.03</td>
+      <td id="T_31d55_row5_col1" class="data row5 col1" >8</td>
+      <td id="T_31d55_row5_col2" class="data row5 col2" >4</td>
     </tr>
     <tr>
-      <th id="T_89a14_level0_row6" class="row_heading level0 row6" >Clarens</th>
-      <td id="T_89a14_row6_col0" class="data row6 col0" >0.03</td>
-      <td id="T_89a14_row6_col1" class="data row6 col1" >6</td>
-      <td id="T_89a14_row6_col2" class="data row6 col2" >4</td>
+      <th id="T_31d55_level0_row6" class="row_heading level0 row6" >Clarens</th>
+      <td id="T_31d55_row6_col0" class="data row6 col0" >0.03</td>
+      <td id="T_31d55_row6_col1" class="data row6 col1" >6</td>
+      <td id="T_31d55_row6_col2" class="data row6 col2" >4</td>
     </tr>
     <tr>
-      <th id="T_89a14_level0_row7" class="row_heading level0 row7" >Savonière</th>
-      <td id="T_89a14_row7_col0" class="data row7 col0" >0.02</td>
-      <td id="T_89a14_row7_col1" class="data row7 col1" >5</td>
-      <td id="T_89a14_row7_col2" class="data row7 col2" >4</td>
+      <th id="T_31d55_level0_row7" class="row_heading level0 row7" >Savonière</th>
+      <td id="T_31d55_row7_col0" class="data row7 col0" >0.02</td>
+      <td id="T_31d55_row7_col1" class="data row7 col1" >5</td>
+      <td id="T_31d55_row7_col2" class="data row7 col2" >4</td>
     </tr>
     <tr>
-      <th id="T_89a14_level0_row8" class="row_heading level0 row8" >Vidy</th>
-      <td id="T_89a14_row8_col0" class="data row8 col0" >0.02</td>
-      <td id="T_89a14_row8_col1" class="data row8 col1" >6</td>
-      <td id="T_89a14_row8_col2" class="data row8 col2" >4</td>
+      <th id="T_31d55_level0_row8" class="row_heading level0 row8" >Vidy</th>
+      <td id="T_31d55_row8_col0" class="data row8 col0" >0.02</td>
+      <td id="T_31d55_row8_col1" class="data row8 col1" >6</td>
+      <td id="T_31d55_row8_col2" class="data row8 col2" >4</td>
     </tr>
     <tr>
-      <th id="T_89a14_level0_row9" class="row_heading level0 row9" >Versoix</th>
-      <td id="T_89a14_row9_col0" class="data row9 col0" >0.01</td>
-      <td id="T_89a14_row9_col1" class="data row9 col1" >7</td>
-      <td id="T_89a14_row9_col2" class="data row9 col2" >8</td>
+      <th id="T_31d55_level0_row9" class="row_heading level0 row9" >Versoix</th>
+      <td id="T_31d55_row9_col0" class="data row9 col0" >0.01</td>
+      <td id="T_31d55_row9_col1" class="data row9 col1" >7</td>
+      <td id="T_31d55_row9_col2" class="data row9 col2" >8</td>
     </tr>
     <tr>
-      <th id="T_89a14_level0_row10" class="row_heading level0 row10" >Genève</th>
-      <td id="T_89a14_row10_col0" class="data row10 col0" >0.01</td>
-      <td id="T_89a14_row10_col1" class="data row10 col1" >3</td>
-      <td id="T_89a14_row10_col2" class="data row10 col2" >4</td>
+      <th id="T_31d55_level0_row10" class="row_heading level0 row10" >Genève</th>
+      <td id="T_31d55_row10_col0" class="data row10 col0" >0.01</td>
+      <td id="T_31d55_row10_col1" class="data row10 col1" >3</td>
+      <td id="T_31d55_row10_col2" class="data row10 col2" >4</td>
     </tr>
     <tr>
-      <th id="T_89a14_level0_row11" class="row_heading level0 row11" >Vevey</th>
-      <td id="T_89a14_row11_col0" class="data row11 col0" >0.01</td>
-      <td id="T_89a14_row11_col1" class="data row11 col1" >1</td>
-      <td id="T_89a14_row11_col2" class="data row11 col2" >4</td>
+      <th id="T_31d55_level0_row11" class="row_heading level0 row11" >Vevey</th>
+      <td id="T_31d55_row11_col0" class="data row11 col0" >0.01</td>
+      <td id="T_31d55_row11_col1" class="data row11 col1" >1</td>
+      <td id="T_31d55_row11_col2" class="data row11 col2" >4</td>
     </tr>
     <tr>
-      <th id="T_89a14_level0_row12" class="row_heading level0 row12" >Préverenges</th>
-      <td id="T_89a14_row12_col0" class="data row12 col0" >0.01</td>
-      <td id="T_89a14_row12_col1" class="data row12 col1" >3</td>
-      <td id="T_89a14_row12_col2" class="data row12 col2" >4</td>
+      <th id="T_31d55_level0_row12" class="row_heading level0 row12" >Préverenges</th>
+      <td id="T_31d55_row12_col0" class="data row12 col0" >0.01</td>
+      <td id="T_31d55_row12_col1" class="data row12 col1" >3</td>
+      <td id="T_31d55_row12_col2" class="data row12 col2" >4</td>
     </tr>
     <tr>
-      <th id="T_89a14_level0_row13" class="row_heading level0 row13" >Excenevex</th>
-      <td id="T_89a14_row13_col0" class="data row13 col0" >0.00</td>
-      <td id="T_89a14_row13_col1" class="data row13 col1" >2</td>
-      <td id="T_89a14_row13_col2" class="data row13 col2" >4</td>
+      <th id="T_31d55_level0_row13" class="row_heading level0 row13" >Excenevex</th>
+      <td id="T_31d55_row13_col0" class="data row13 col0" >0.00</td>
+      <td id="T_31d55_row13_col1" class="data row13 col1" >2</td>
+      <td id="T_31d55_row13_col2" class="data row13 col2" >4</td>
     </tr>
     <tr>
-      <th id="T_89a14_level0_row14" class="row_heading level0 row14" >Aubonne</th>
-      <td id="T_89a14_row14_col0" class="data row14 col0" >0.00</td>
-      <td id="T_89a14_row14_col1" class="data row14 col1" >0</td>
-      <td id="T_89a14_row14_col2" class="data row14 col2" >4</td>
+      <th id="T_31d55_level0_row14" class="row_heading level0 row14" >Aubonne</th>
+      <td id="T_31d55_row14_col0" class="data row14 col0" >0.00</td>
+      <td id="T_31d55_row14_col1" class="data row14 col1" >0</td>
+      <td id="T_31d55_row14_col2" class="data row14 col2" >4</td>
     </tr>
     <tr>
-      <th id="T_89a14_level0_row15" class="row_heading level0 row15" >Tougues</th>
-      <td id="T_89a14_row15_col0" class="data row15 col0" >0.00</td>
-      <td id="T_89a14_row15_col1" class="data row15 col1" >0</td>
-      <td id="T_89a14_row15_col2" class="data row15 col2" >4</td>
+      <th id="T_31d55_level0_row15" class="row_heading level0 row15" >Tougues</th>
+      <td id="T_31d55_row15_col0" class="data row15 col0" >0.00</td>
+      <td id="T_31d55_row15_col1" class="data row15 col1" >0</td>
+      <td id="T_31d55_row15_col2" class="data row15 col2" >4</td>
     </tr>
     <tr>
-      <th id="T_89a14_level0_row16" class="row_heading level0 row16" >Tolochenaz</th>
-      <td id="T_89a14_row16_col0" class="data row16 col0" >0.00</td>
-      <td id="T_89a14_row16_col1" class="data row16 col1" >0</td>
-      <td id="T_89a14_row16_col2" class="data row16 col2" >4</td>
+      <th id="T_31d55_level0_row16" class="row_heading level0 row16" >Tolochenaz</th>
+      <td id="T_31d55_row16_col0" class="data row16 col0" >0.00</td>
+      <td id="T_31d55_row16_col1" class="data row16 col1" >0</td>
+      <td id="T_31d55_row16_col2" class="data row16 col2" >4</td>
     </tr>
     <tr>
-      <th id="T_89a14_level0_row17" class="row_heading level0 row17" >Crans</th>
-      <td id="T_89a14_row17_col0" class="data row17 col0" >0.00</td>
-      <td id="T_89a14_row17_col1" class="data row17 col1" >0</td>
-      <td id="T_89a14_row17_col2" class="data row17 col2" >3</td>
+      <th id="T_31d55_level0_row17" class="row_heading level0 row17" >Crans</th>
+      <td id="T_31d55_row17_col0" class="data row17 col0" >0.00</td>
+      <td id="T_31d55_row17_col1" class="data row17 col1" >0</td>
+      <td id="T_31d55_row17_col2" class="data row17 col2" >3</td>
     </tr>
     <tr>
-      <th id="T_89a14_level0_row18" class="row_heading level0 row18" >Rolle</th>
-      <td id="T_89a14_row18_col0" class="data row18 col0" >0.00</td>
-      <td id="T_89a14_row18_col1" class="data row18 col1" >0</td>
-      <td id="T_89a14_row18_col2" class="data row18 col2" >3</td>
+      <th id="T_31d55_level0_row18" class="row_heading level0 row18" >Rolle</th>
+      <td id="T_31d55_row18_col0" class="data row18 col0" >0.00</td>
+      <td id="T_31d55_row18_col1" class="data row18 col1" >0</td>
+      <td id="T_31d55_row18_col2" class="data row18 col2" >3</td>
     </tr>
     <tr>
-      <th id="T_89a14_level0_row19" class="row_heading level0 row19" >Cully</th>
-      <td id="T_89a14_row19_col0" class="data row19 col0" >0.00</td>
-      <td id="T_89a14_row19_col1" class="data row19 col1" >0</td>
-      <td id="T_89a14_row19_col2" class="data row19 col2" >4</td>
+      <th id="T_31d55_level0_row19" class="row_heading level0 row19" >Cully</th>
+      <td id="T_31d55_row19_col0" class="data row19 col0" >0.00</td>
+      <td id="T_31d55_row19_col1" class="data row19 col1" >0</td>
+      <td id="T_31d55_row19_col2" class="data row19 col2" >4</td>
     </tr>
     <tr>
-      <th id="T_89a14_level0_row20" class="row_heading level0 row20" >Anthy</th>
-      <td id="T_89a14_row20_col0" class="data row20 col0" >0.00</td>
-      <td id="T_89a14_row20_col1" class="data row20 col1" >0</td>
-      <td id="T_89a14_row20_col2" class="data row20 col2" >4</td>
+      <th id="T_31d55_level0_row20" class="row_heading level0 row20" >Anthy</th>
+      <td id="T_31d55_row20_col0" class="data row20 col0" >0.00</td>
+      <td id="T_31d55_row20_col1" class="data row20 col1" >0</td>
+      <td id="T_31d55_row20_col2" class="data row20 col2" >4</td>
     </tr>
     <tr>
-      <th id="T_89a14_level0_row21" class="row_heading level0 row21" >Hermance</th>
-      <td id="T_89a14_row21_col0" class="data row21 col0" >0.00</td>
-      <td id="T_89a14_row21_col1" class="data row21 col1" >0</td>
-      <td id="T_89a14_row21_col2" class="data row21 col2" >4</td>
+      <th id="T_31d55_level0_row21" class="row_heading level0 row21" >Hermance</th>
+      <td id="T_31d55_row21_col0" class="data row21 col0" >0.00</td>
+      <td id="T_31d55_row21_col1" class="data row21 col1" >0</td>
+      <td id="T_31d55_row21_col2" class="data row21 col2" >4</td>
     </tr>
     <tr>
-      <th id="T_89a14_level0_row22" class="row_heading level0 row22" >Gland</th>
-      <td id="T_89a14_row22_col0" class="data row22 col0" >0.00</td>
-      <td id="T_89a14_row22_col1" class="data row22 col1" >0</td>
-      <td id="T_89a14_row22_col2" class="data row22 col2" >4</td>
+      <th id="T_31d55_level0_row22" class="row_heading level0 row22" >Gland</th>
+      <td id="T_31d55_row22_col0" class="data row22 col0" >0.00</td>
+      <td id="T_31d55_row22_col1" class="data row22 col1" >0</td>
+      <td id="T_31d55_row22_col2" class="data row22 col2" >4</td>
     </tr>
     <tr>
-      <th id="T_89a14_level0_row23" class="row_heading level0 row23" >Meillerie</th>
-      <td id="T_89a14_row23_col0" class="data row23 col0" >0.00</td>
-      <td id="T_89a14_row23_col1" class="data row23 col1" >0</td>
-      <td id="T_89a14_row23_col2" class="data row23 col2" >4</td>
+      <th id="T_31d55_level0_row23" class="row_heading level0 row23" >Meillerie</th>
+      <td id="T_31d55_row23_col0" class="data row23 col0" >0.00</td>
+      <td id="T_31d55_row23_col1" class="data row23 col1" >0</td>
+      <td id="T_31d55_row23_col2" class="data row23 col2" >4</td>
     </tr>
   </tbody>
 </table>
@@ -882,20 +783,20 @@ The average PW per meter was 0.08 and the median was 0.004 PW per meter with a s
 </div>
 <div class="sd-card-body docutils">
 <div class="output text_html"><style type="text/css">
-#T_65614 tr:nth-child(even) {
+#T_c8386 tr:nth-child(even) {
   background-color: rgba(139, 69, 19, 0.08);
 }
-#T_65614 tr:nth-child(odd) {
+#T_c8386 tr:nth-child(odd) {
   background: #FFF;
 }
-#T_65614 tr {
+#T_c8386 tr {
   font-size: 14px;
 }
-#T_65614 th:nth-child(1) {
+#T_c8386 th:nth-child(1) {
   background-color: #FFF;
   text-align: right;
 }
-#T_65614 caption {
+#T_c8386 caption {
   font-size: 14px;
   font-style: italic;
   caption-side: bottom;
@@ -903,25 +804,25 @@ The average PW per meter was 0.08 and the median was 0.004 PW per meter with a s
   margin-top: 10px;
 }
 </style>
-<table id="T_65614">
+<table id="T_c8386">
   <thead>
     <tr>
-      <th id="T_65614_level0_col0" class="col_heading level0 col0" >region</th>
-      <th id="T_65614_level0_col1" class="col_heading level0 col1" >pcs/m</th>
+      <th id="T_c8386_level0_col0" class="col_heading level0 col0" >region</th>
+      <th id="T_c8386_level0_col1" class="col_heading level0 col1" >pcs/m</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td id="T_65614_row0_col0" class="data row0 col0" >Grand lac</td>
-      <td id="T_65614_row0_col1" class="data row0 col1" >0.03</td>
+      <td id="T_c8386_row0_col0" class="data row0 col0" >Grand lac</td>
+      <td id="T_c8386_row0_col1" class="data row0 col1" >0.03</td>
     </tr>
     <tr>
-      <td id="T_65614_row1_col0" class="data row1 col0" >Haut lac</td>
-      <td id="T_65614_row1_col1" class="data row1 col1" >0.17</td>
+      <td id="T_c8386_row1_col0" class="data row1 col0" >Haut lac</td>
+      <td id="T_c8386_row1_col1" class="data row1 col1" >0.17</td>
     </tr>
     <tr>
-      <td id="T_65614_row2_col0" class="data row2 col0" >Petit lac</td>
-      <td id="T_65614_row2_col1" class="data row2 col1" >0.02</td>
+      <td id="T_c8386_row2_col0" class="data row2 col0" >Petit lac</td>
+      <td id="T_c8386_row2_col1" class="data row2 col1" >0.02</td>
     </tr>
   </tbody>
 </table>
@@ -944,20 +845,20 @@ lac.</p>
 </div>
 <div class="sd-card-body docutils">
 <div class="output text_html"><style type="text/css">
-#T_d3eac tr:nth-child(even) {
+#T_b8003 tr:nth-child(even) {
   background-color: rgba(139, 69, 19, 0.08);
 }
-#T_d3eac tr:nth-child(odd) {
+#T_b8003 tr:nth-child(odd) {
   background: #FFF;
 }
-#T_d3eac tr {
+#T_b8003 tr {
   font-size: 14px;
 }
-#T_d3eac th:nth-child(1) {
+#T_b8003 th:nth-child(1) {
   background-color: #FFF;
   text-align: right;
 }
-#T_d3eac caption {
+#T_b8003 caption {
   font-size: 14px;
   font-style: italic;
   caption-side: bottom;
@@ -965,25 +866,25 @@ lac.</p>
   margin-top: 10px;
 }
 </style>
-<table id="T_d3eac">
+<table id="T_b8003">
   <thead>
     <tr>
-      <th id="T_d3eac_level0_col0" class="col_heading level0 col0" >region</th>
-      <th id="T_d3eac_level0_col1" class="col_heading level0 col1" >pcs/m</th>
+      <th id="T_b8003_level0_col0" class="col_heading level0 col0" >region</th>
+      <th id="T_b8003_level0_col1" class="col_heading level0 col1" >pcs/m</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td id="T_d3eac_row0_col0" class="data row0 col0" >Grand lac</td>
-      <td id="T_d3eac_row0_col1" class="data row0 col1" >0.03</td>
+      <td id="T_b8003_row0_col0" class="data row0 col0" >Grand lac</td>
+      <td id="T_b8003_row0_col1" class="data row0 col1" >0.03</td>
     </tr>
     <tr>
-      <td id="T_d3eac_row1_col0" class="data row1 col0" >Haut lac</td>
-      <td id="T_d3eac_row1_col1" class="data row1 col1" >0.03</td>
+      <td id="T_b8003_row1_col0" class="data row1 col0" >Haut lac</td>
+      <td id="T_b8003_row1_col1" class="data row1 col1" >0.03</td>
     </tr>
     <tr>
-      <td id="T_d3eac_row2_col0" class="data row2 col0" >Petit lac</td>
-      <td id="T_d3eac_row2_col1" class="data row2 col1" >0.01</td>
+      <td id="T_b8003_row2_col0" class="data row2 col0" >Petit lac</td>
+      <td id="T_b8003_row2_col1" class="data row2 col1" >0.01</td>
     </tr>
   </tbody>
 </table>
@@ -1024,7 +925,7 @@ lac.</p>
 <div class="sd-col sd-d-flex-row docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
-<img alt="_images/092c04a511a9e076a30696dca916e8ab923847de58ed7f9435a56e3dbabe27a5.png" src="_images/092c04a511a9e076a30696dca916e8ab923847de58ed7f9435a56e3dbabe27a5.png" />
+<img alt="_images/bcd927764cf800c554fe5d55f01561f7b7c94807b5baf0608e067d88bf3c6a33.png" src="_images/bcd927764cf800c554fe5d55f01561f7b7c94807b5baf0608e067d88bf3c6a33.png" />
 </div>
 <div class="sd-card-footer docutils">
 <p class="sd-card-text">The previous, current and expected cumulative distribution of the minimum number of plastic shotgun wadding on the shore line of Lake Geneva.</p>
@@ -1141,7 +1042,7 @@ doi: 10.5555/2851115</p>
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<p>This script updated 26/09/2024 in Biel, CH</p>
+<p>This script updated 27/09/2024 in Biel, CH</p>
 <p>❤️ <strong>what you do everyday:</strong> <em>analyst at hammerdirt</em></p>
 </div>
 </div>
