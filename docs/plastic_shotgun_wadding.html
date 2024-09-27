@@ -349,6 +349,107 @@ document.write(`
                   
   <div class="cell tag_remove-input docutils container">
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">work_data</span><span class="p">[(</span><span class="n">work_data</span><span class="o">.</span><span class="n">city</span> <span class="o">==</span> <span class="s1">&#39;Saint-Sulpice (VD)&#39;</span><span class="p">)]</span><span class="o">.</span><span class="n">location</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;parc-des-pierrettes&#39;, &#39;plage-de-dorigny&#39;, &#39;plage-de-st-sulpice&#39;,
+       &#39;saint-sulpice&#39;, &#39;tiger-duck-beach&#39;], dtype=object)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">codesx</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;G70&#39;</span><span class="p">,</span> <span class="s1">&#39;G96&#39;</span><span class="p">,</span> <span class="s1">&#39;G112&#39;</span><span class="p">,</span> <span class="s1">&#39;G89&#39;</span><span class="p">,</span> <span class="s1">&#39;G95&#39;</span><span class="p">,</span> <span class="s1">&#39;G91&#39;</span><span class="p">,</span> <span class="s1">&#39;G35&#39;</span><span class="p">,</span> <span class="s1">&#39;G100&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">work_data</span><span class="p">[(</span><span class="n">work_data</span><span class="o">.</span><span class="n">location</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s1">&#39;parc-des-pierrettes&#39;</span><span class="p">,</span> <span class="s1">&#39;plage-de-st-sulpice&#39;</span> <span class="p">]))</span><span class="o">&amp;</span><span class="p">(</span><span class="n">work_data</span><span class="o">.</span><span class="n">code</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">codesx</span><span class="p">))]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">codes</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;resources/data/u_codes.csv&#39;</span><span class="p">)</span>
+<span class="n">codes</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;code&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">t</span><span class="p">[</span><span class="s1">&#39;object&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">code</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">codes</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="s1">&#39;description&#39;</span><span class="p">])</span>
+<span class="n">t</span><span class="p">[</span><span class="s1">&#39;found&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">t</span><span class="p">[[</span><span class="s1">&#39;object&#39;</span><span class="p">,</span> <span class="s1">&#39;quantity&#39;</span><span class="p">,</span> <span class="s1">&#39;found&#39;</span><span class="p">,</span> <span class="s1">&#39;sample_id&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;object&#39;</span><span class="p">,</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s1">&#39;quantity&#39;</span><span class="p">:</span><span class="s1">&#39;sum&#39;</span><span class="p">,</span> <span class="s1">&#39;found&#39;</span><span class="p">:</span><span class="s1">&#39;sum&#39;</span><span class="p">,</span> <span class="s1">&#39;sample_id&#39;</span><span class="p">:</span><span class="s1">&#39;nunique&#39;</span><span class="p">})</span><span class="o">.</span><span class="n">to_markdown</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;|    | object                                              |   quantity |   found |   sample_id |\n|---:|:----------------------------------------------------|-----------:|--------:|------------:|\n|  0 | Biomass holder                                      |         14 |       0 |           8 |\n|  1 | Cotton bud/swab sticks                              |        368 |       0 |           8 |\n|  2 | Industrial pellets (nurdles)                        |         22 |       0 |           8 |\n|  3 | Medical; containers/tubes/ packaging                |        133 |       0 |           8 |\n|  4 | Plastic construction waste                          |        110 |       0 |           7 |\n|  5 | Sanitary pads /panty liners/tampons and applicators |         31 |       0 |           8 |\n|  6 | Shotgun cartridges                                  |         23 |       0 |           8 |\n|  7 | Straws and stirrers                                 |         29 |       0 |           8 |&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grouped</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;object&#39;</span><span class="p">])</span>
+<span class="c1"># Step 2: Count samples per location and code</span>
+<span class="n">counts</span> <span class="o">=</span> <span class="n">grouped</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;total_samples&#39;</span><span class="p">)</span>
+
+<span class="c1"># Step 3: Apply conditions and count how many times quantity &gt; 1, 2, 3, and 4</span>
+<span class="n">conditions</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
+    <span class="n">greater_than_1</span><span class="o">=</span><span class="n">t</span><span class="p">[</span><span class="s1">&#39;quantity&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="n">greater_than_2</span><span class="o">=</span><span class="n">t</span><span class="p">[</span><span class="s1">&#39;quantity&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="n">greater_than_3</span><span class="o">=</span><span class="n">t</span><span class="p">[</span><span class="s1">&#39;quantity&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="n">greater_than_4</span><span class="o">=</span><span class="n">t</span><span class="p">[</span><span class="s1">&#39;quantity&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">4</span>
+<span class="p">)</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;location&#39;</span><span class="p">,</span> <span class="s1">&#39;code&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span>
+    <span class="n">greater_than_1</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;greater_than_1&#39;</span><span class="p">,</span> <span class="s1">&#39;sum&#39;</span><span class="p">),</span>
+    <span class="n">greater_than_2</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;greater_than_2&#39;</span><span class="p">,</span> <span class="s1">&#39;sum&#39;</span><span class="p">),</span>
+    <span class="n">greater_than_3</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;greater_than_3&#39;</span><span class="p">,</span> <span class="s1">&#39;sum&#39;</span><span class="p">),</span>
+    <span class="n">greater_than_4</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;greater_than_4&#39;</span><span class="p">,</span> <span class="s1">&#39;sum&#39;</span><span class="p">)</span>
+<span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+<span class="n">grouped</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;object&#39;</span><span class="p">])</span>
+<span class="c1"># Step 2: Count samples per location and code</span>
+<span class="n">counts</span> <span class="o">=</span> <span class="n">grouped</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;total_samples&#39;</span><span class="p">)</span>
+
+<span class="c1"># Step 3: Apply conditions and count how many times quantity &gt; 1, 2, 3, and 4</span>
+<span class="n">conditions</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
+    <span class="n">greater_than_1</span><span class="o">=</span><span class="n">t</span><span class="p">[</span><span class="s1">&#39;quantity&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="n">greater_than_2</span><span class="o">=</span><span class="n">t</span><span class="p">[</span><span class="s1">&#39;quantity&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="n">greater_than_3</span><span class="o">=</span><span class="n">t</span><span class="p">[</span><span class="s1">&#39;quantity&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="n">greater_than_4</span><span class="o">=</span><span class="n">t</span><span class="p">[</span><span class="s1">&#39;quantity&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">4</span><span class="p">,</span>
+    <span class="n">greater_than_10</span><span class="o">=</span><span class="n">t</span><span class="p">[</span><span class="s1">&#39;quantity&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">10</span>
+<span class="p">)</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;object&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span>
+    <span class="n">greater_than_1</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;greater_than_1&#39;</span><span class="p">,</span> <span class="s1">&#39;sum&#39;</span><span class="p">),</span>
+    <span class="n">greater_than_2</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;greater_than_2&#39;</span><span class="p">,</span> <span class="s1">&#39;sum&#39;</span><span class="p">),</span>
+    <span class="n">greater_than_3</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;greater_than_3&#39;</span><span class="p">,</span> <span class="s1">&#39;sum&#39;</span><span class="p">),</span>
+    <span class="n">greater_than_4</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;greater_than_4&#39;</span><span class="p">,</span> <span class="s1">&#39;sum&#39;</span><span class="p">),</span>
+    <span class="n">greater_than_10</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;greater_than_10&#39;</span><span class="p">,</span> <span class="s1">&#39;sum&#39;</span><span class="p">)</span>
+<span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+
+<span class="c1"># Step 4: Merge the total sample count with the conditions</span>
+<span class="n">merged</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">counts</span><span class="p">,</span> <span class="n">conditions</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;object&#39;</span><span class="p">])</span>
+<span class="c1"># Step 5: Calculate the ratio of each condition to the total number of samples</span>
+<span class="n">merged</span><span class="p">[</span><span class="s1">&#39;greater than 1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">merged</span><span class="p">[</span><span class="s1">&#39;greater_than_1&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">merged</span><span class="p">[</span><span class="s1">&#39;total_samples&#39;</span><span class="p">]</span>
+<span class="n">merged</span><span class="p">[</span><span class="s1">&#39;greater than 2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">merged</span><span class="p">[</span><span class="s1">&#39;greater_than_2&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">merged</span><span class="p">[</span><span class="s1">&#39;total_samples&#39;</span><span class="p">]</span>
+<span class="n">merged</span><span class="p">[</span><span class="s1">&#39;greater than 3&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">merged</span><span class="p">[</span><span class="s1">&#39;greater_than_3&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">merged</span><span class="p">[</span><span class="s1">&#39;total_samples&#39;</span><span class="p">]</span>
+<span class="n">merged</span><span class="p">[</span><span class="s1">&#39;greater than 4&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">merged</span><span class="p">[</span><span class="s1">&#39;greater_than_4&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">merged</span><span class="p">[</span><span class="s1">&#39;total_samples&#39;</span><span class="p">]</span>
+<span class="n">merged</span><span class="p">[</span><span class="s1">&#39;greater than 10&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">merged</span><span class="p">[</span><span class="s1">&#39;greater_than_10&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">merged</span><span class="p">[</span><span class="s1">&#39;total_samples&#39;</span><span class="p">]</span>
+
+<span class="n">merged</span><span class="p">[[</span><span class="s1">&#39;object&#39;</span><span class="p">,</span> <span class="s1">&#39;greater than 1&#39;</span><span class="p">,</span> <span class="s1">&#39;greater than 2&#39;</span><span class="p">,</span> <span class="s1">&#39;greater than 3&#39;</span><span class="p">,</span> <span class="s1">&#39;greater than 4&#39;</span><span class="p">,</span> <span class="s1">&#39;greater than 10&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">to_markdown</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;|    | object                                              |   greater than 1 |   greater than 2 |   greater than 3 |   greater than 4 |   greater than 10 |\n|---:|:----------------------------------------------------|-----------------:|-----------------:|-----------------:|-----------------:|------------------:|\n|  0 | Biomass holder                                      |             0.5  |             0.38 |             0.38 |             0    |              0    |\n|  1 | Cotton bud/swab sticks                              |             0.88 |             0.88 |             0.88 |             0.88 |              0.88 |\n|  2 | Industrial pellets (nurdles)                        |             0.25 |             0.25 |             0.25 |             0.25 |              0.12 |\n|  3 | Medical; containers/tubes/ packaging                |             0.88 |             0.88 |             0.75 |             0.75 |              0.62 |\n|  4 | Plastic construction waste                          |             0.86 |             0.86 |             0.86 |             0.71 |              0.43 |\n|  5 | Sanitary pads /panty liners/tampons and applicators |             0.62 |             0.5  |             0.5  |             0.38 |              0    |\n|  6 | Shotgun cartridges                                  |             0.75 |             0.38 |             0.38 |             0.25 |              0    |\n|  7 | Straws and stirrers                                 |             0.62 |             0.5  |             0.5  |             0.38 |              0.12 |&#39;
+</pre></div>
+</div>
+</div>
+</div>
 <section class="tex2jax_ignore mathjax_ignore" id="plastic-shotgun-shell-wadding">
 <h1><span class="section-number">3. </span>Plastic shotgun shell wadding<a class="headerlink" href="#plastic-shotgun-shell-wadding" title="Link to this heading">#</a></h1>
 <p><strong>A summary of observations on Lac Léman</strong></p>

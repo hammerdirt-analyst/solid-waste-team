@@ -22,11 +22,17 @@ and snack wrappers (8% of the total). We find also objects that are not associat
 industrial plastic pellets (6% of the total), cotton swabs (4% of the total) plastic construction materials (3% of the total) and shotgun cartridges (1% of the total).
 
 All the previous items mentioned are found in similar proportions in the marine environment in the european space, [EEA data viewer](https://www.eea.europa.eu/en/analysis/maps-and-charts/marine-litterwatch-data-viewer-marine-litterwatch-data-viewer).
-The federal report of 2021, [IQAASL](https://www.bafu.admin.ch/bafu/en/home/topics/waste/state/data-and-indicators/indicators/indicators-on-waste-and-resources.html), report included medical containers, straws and stirrers and toys as common objects on the beaches of lake Geneva.
+The federal report of 2021, [IQAASL](https://hammerdirt-analyst.github.io/IQAASL-End-0f-Sampling-2021/), included medical containers, straws and stirrers and toys as common objects on the beaches of lake Geneva.
 
 ## First encounters
 
-__Objective: In the field identify and count specific beach litter items.__
+**Objective : in the field identify and count specific beach litter items.**
+
+*Survey locations:*
+
+<iframe src="https://map.geo.admin.ch/#/embed?lang=fr&center=2533348.46,1151997.25&z=7.291&bgLayer=ch.swisstopo.pixelkarte-farbe&topic=ech&layers=ch.swisstopo.zeitreihen@year=1864,f;ch.bfs.gebaeude_wohnungs_register,f;ch.bav.haltestellen-oev,f;ch.swisstopo.swisstlm3d-wanderwege,f;ch.astra.wanderland-sperrungen_umleitungen,f;KML%7Chttps://public.geo.admin.ch/api/kml/files/zpNHEP7CTeKPUqy56qCwpg&featureInfo=bottomPanel" style="border: 0;width: 600px;height: 450px;max-width: 100%;max-height: 100%;" allow="geolocation"></iframe>
+
+### Items of interest
 
 The guide for monitoring beach litter, [MLW Guide](https://publications.jrc.ec.europa.eu/repository/handle/JRC83985), lists 200 items that can be found on the beach. The OSPAR 
 commission has a similar list of 150 items [OSPAR](https://www.ospar.org/documents?v=44122). Today we are going to focus on identifying and counting 7 items:
@@ -55,6 +61,40 @@ Record the number of each item found and the name of the beach where it was foun
 2. If the source is not apparent, what are the possible sources?
 4. What are the possible pathways for the object to reach the beach?
 5. What are the possible prevention measures?
+
+## Results
+
+_Legend :_ The cumulative results are the total number found on visits to the two beaches since 2016 up to the day before of the excercise.
+
+
+| object                                              |   cumulative |   found sep 26 |
+|:----------------------------------------------------|-----------:|--------:|
+| Biomass holder                                      |         14 |       2 |
+| Cotton bud/swab sticks                              |        368 |       8 |
+| Industrial pellets (nurdles)                        |         22 |       9 |
+| Medical; containers/tubes/ packaging                |        133 |       7 |
+| Plastic construction waste                          |        110 |       15|
+| Sanitary pads /panty liners/tampons and applicators |         31 |       2 |
+| Shotgun cartridges                                  |         23 |       0 |
+| Straws and stirrers                                 |         29 |       2 |
+
+
+### Probability of finding an amount
+
+_Legend :_ The historical probabilities (prior to field excercise) of finding a given quantity at the beaches surveyed (results combined):
+
+
+| object                                              |   at least 1 |   at least 2 |  at least 3 |   at least 4 | at least 10|
+|:----------------------------------------------------|-----------------:|-----------------:|-----------------:|-----------------:|------------------:|
+| Biomass holder                                      |             0.5  |             0.38 |             0.38 |             0    |              0    |
+| Cotton bud/swab sticks                              |             0.88 |             0.88 |             0.88 |             0.88 |              0.88 |
+| Industrial pellets (nurdles)                        |             0.25 |             0.25 |             0.25 |             0.25 |              0.12 |
+| Medical; containers/tubes/ packaging                |             0.88 |             0.88 |             0.75 |             0.75 |              0.62 |
+| Plastic construction waste                          |             0.86 |             0.86 |             0.86 |             0.71 |              0.43 |
+| Sanitary pads /panty liners/tampons and applicators |             0.62 |             0.5  |             0.5  |             0.38 |              0    |
+| Shotgun cartridges                                  |             0.75 |             0.38 |             0.38 |             0.25 |              0    |
+| Straws and stirrers                                 |             0.62 |             0.5  |             0.5  |             0.38 |              0.12 |
+
 
 ## Semester project: pathways
 
