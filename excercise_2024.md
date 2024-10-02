@@ -107,13 +107,16 @@ Interested in the topic? I am at your disposal for any questions on the topic: H
 
 __General information:__
 
-1. [The ocean cleanup](https://theoceancleanup.com/updates/)
-2. [EEA data viewer](https://www.eea.europa.eu/en/analysis/maps-and-charts/marine-litterwatch-data-viewer-marine-litterwatch-data-viewer)
-3. [MLW Guide](https://publications.jrc.ec.europa.eu/repository/handle/JRC83985)
-4. [OSPAR](https://www.ospar.org/documents?v=44122)
-5. [Pla'stock](https://associationsauvegardeleman.github.io/plastock/index.html)
-6. [Identifying sources of marine litter](https://publications.jrc.ec.europa.eu/repository/handle/JRC104038)
-7. contact roger@hammerdirt.ch for specific resources on a topic
+1. clean up: [The ocean cleanup](https://theoceancleanup.com/updates/)
+2. surfrider: [Surfrider](https://www.surfrider.org/)
+3. surfers against sewage: [SAS](https://https://www.sas.org.uk/plastic-pollution/)
+4. collected data EU: [EEA data viewer](https://www.eea.europa.eu/en/analysis/maps-and-charts/marine-litterwatch-data-viewer-marine-litterwatch-data-viewer)
+5. eu guide to monitoring: [MLW Guide](https://publications.jrc.ec.europa.eu/repository/handle/JRC83985)
+6. ospar guide to monitoring: [OSPAR](https://www.ospar.org/documents?v=44122)
+7. latest report Lake Geneva: [Pla'stock](https://associationsauvegardeleman.github.io/plastock/index.html)
+8. eu guide to sources: [Identifying sources of marine litter](https://publications.jrc.ec.europa.eu/repository/handle/JRC104038)
+9. effects of urban development: [land use](https://www.sciencedirect.com/science/article/pii/S0269749124016257?via%3Dihub)
+10. contact roger@hammerdirt.ch for specific resources on a topic
 
 
 
